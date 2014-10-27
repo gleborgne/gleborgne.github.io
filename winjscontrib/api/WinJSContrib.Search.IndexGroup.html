@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>WinJS Contrib Class: Task</title>
+	<title>WinJS Contrib Class: IndexGroup</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -32,10 +32,6 @@
 						</li>
 						
 						<li>
-							<a href="WinJSContrib.Alert.html">WinJSContrib.Alert</a>
-						</li>
-						
-						<li>
 							<a href="WinJSContrib.Bindings.html">WinJSContrib.Bindings</a>
 						</li>
 						
@@ -44,7 +40,35 @@
 						</li>
 						
 						<li>
+							<a href="WinJSContrib.CrossPlatform.isMobile.html">WinJSContrib.CrossPlatform.isMobile</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.Promise.html">WinJSContrib.Promise</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.Search.html">WinJSContrib.Search</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.Search.Stemming.html">WinJSContrib.Search.Stemming</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.Search.Stemming.Op.html">WinJSContrib.Search.Stemming.Op</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.Search.Stemming.StopWords.html">WinJSContrib.Search.Stemming.StopWords</a>
+						</li>
+						
+						<li>
 							<a href="WinJSContrib.UI.html">WinJSContrib.UI</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.UI.Animation.html">WinJSContrib.UI.Animation</a>
 						</li>
 						
 						<li>
@@ -59,6 +83,14 @@
 							<a href="WinJSContrib.Utils.html">WinJSContrib.Utils</a>
 						</li>
 						
+						<li>
+							<a href="WinJSContrib.WinRT.html">WinJSContrib.WinRT</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.WinRT.Alerts.html">WinJSContrib.WinRT.Alerts</a>
+						</li>
+						
 
 					</ul>
 				</li>
@@ -70,7 +102,35 @@
 					<ul class="dropdown-menu ">
 						
 						<li>
-							<a href="WinJSContrib.Task.html">WinJSContrib.Task</a>
+							<a href="WinJSContrib.Logger.html">WinJSContrib.Logger</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.Logger.LoggerClass.html">WinJSContrib.Logger.LoggerClass</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.Messenger.html">WinJSContrib.Messenger</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.Messenger.SmartWorker.html">WinJSContrib.Messenger.SmartWorker</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.Search.Index.html">WinJSContrib.Search.Index</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.Search.IndexGroup.html">WinJSContrib.Search.IndexGroup</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.Search.IndexWorkerProxy.html">WinJSContrib.Search.IndexWorkerProxy</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.Search.Stemming.Pipeline.html">WinJSContrib.Search.Stemming.Pipeline</a>
 						</li>
 						
 						<li>
@@ -110,14 +170,14 @@
 					
 
 
-	<h1 class="page-title">Class: Task</h1>
+	<h1 class="page-title">Class: IndexGroup</h1>
 <section>
 
 <header>
     <h2>
-        <span class="ancestors"><a href="WinJSContrib.html">WinJSContrib</a>.</span>
+        <span class="ancestors"><a href="WinJSContrib.html">WinJSContrib</a><a href="WinJSContrib.Search.html">.Search</a>.</span>
     
-    Task
+    IndexGroup
     </h2>
     
 </header>
@@ -129,18 +189,71 @@
     
         
 <dt>
-    <h4 class="name" id="Task"><span class="type-signature"></span>new Task<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="IndexGroup"><span class="type-signature"></span>new IndexGroup<span class="signature">(array)</span><span class="type-signature"></span></h4>
     
     
 </dt>
 <dd>
     
     
+    <div class="description">
+        <p>group of indexes</p>
+    </div>
+    
 
     
     
     
     
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>array</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>of definitions</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
     
     
     
@@ -169,13 +282,6 @@
 
 	
 
-	
-	<dt class="tag-see">See:</dt>
-	<dd class="tag-see">
-		<ul>
-			<li><a href="WinJSContrib.html#Tasks">WinJSContrib.Tasks</a></li>
-			</ul>
-	</dd>
 	
 
 	
@@ -216,7 +322,7 @@
         <dl>
             
 <dt>
-    <h4 class="name" id="batch"><span class="type-signature"></span>batch<span class="signature">(promiseCallback)</span><span class="type-signature"> &rarr; {WinJS.Promise}</span></h4>
+    <h4 class="name" id="addIndex"><span class="type-signature"></span>addIndex<span class="signature">(name, definition)</span><span class="type-signature"> &rarr; {<a href="WinJSContrib.Search.Index.html">WinJSContrib.Search.Index</a>}</span></h4>
     
     
 </dt>
@@ -224,7 +330,7 @@
     
     
     <div class="description">
-        <p>apply callback for each item in the array in batch of X parallel items</p>
+        <p>add an index to group</p>
     </div>
     
 
@@ -258,13 +364,13 @@
 
         <tr>
             
-                <td class="name"><code>promiseCallback</code></td>
+                <td class="name"><code>name</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">function</span>
+<span class="param-type">string</span>
 
 
             
@@ -274,13 +380,187 @@
 
             
 
-            <td class="description last"><p>function applyed to each item (could return a promise for item callback completion)</p></td>
+            <td class="description last"><p>index name</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>definition</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="WinJSContrib.Search.html#IndexDefinition">WinJSContrib.Search.IndexDefinition</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>index definition</p></td>
         </tr>
 
 	
 	</tbody>
 </table>
 
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="WinJSContrib.Search.Index.html">WinJSContrib.Search.Index</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="dispose"><span class="type-signature"></span>dispose<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>release all indexes</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="load"><span class="type-signature"></span>load<span class="signature">()</span><span class="type-signature"> &rarr; {WinJS.Promise}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>load group indexes</p>
+    </div>
+    
+
+    
+    
+    
+    
     
     
     
@@ -350,7 +630,7 @@
         
             
 <dt>
-    <h4 class="name" id="parallel"><span class="type-signature"></span>parallel<span class="signature">(promiseCallback)</span><span class="type-signature"> &rarr; {WinJS.Promise}</span></h4>
+    <h4 class="name" id="save"><span class="type-signature"></span>save<span class="signature">()</span><span class="type-signature"> &rarr; {WinJS.Promise}</span></h4>
     
     
 </dt>
@@ -358,7 +638,7 @@
     
     
     <div class="description">
-        <p>apply callback for each item in the array in parallel (equivalent to WinJS.Promise.join)</p>
+        <p>save group indexes</p>
     </div>
     
 
@@ -366,55 +646,6 @@
     
     
     
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>promiseCallback</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>function applyed to each item (could return a promise for item callback completion)</p></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
     
     
     
@@ -484,7 +715,7 @@
         
             
 <dt>
-    <h4 class="name" id="waterfall"><span class="type-signature"></span>waterfall<span class="signature">(promiseCallback)</span><span class="type-signature"> &rarr; {WinJS.Promise}</span></h4>
+    <h4 class="name" id="search"><span class="type-signature"></span>search<span class="signature">(querytext)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -492,7 +723,7 @@
     
     
     <div class="description">
-        <p>apply callback for each item in the array in waterfall</p>
+        <p>search group's indexes</p>
     </div>
     
 
@@ -526,13 +757,13 @@
 
         <tr>
             
-                <td class="name"><code>promiseCallback</code></td>
+                <td class="name"><code>querytext</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">function</span>
+<span class="param-type">string</span>
 
 
             
@@ -542,7 +773,7 @@
 
             
 
-            <td class="description last"><p>function applyed to each item (could return a promise for item callback completion)</p></td>
+            <td class="description last"><p>search query</p></td>
         </tr>
 
 	
@@ -592,25 +823,6 @@
     
     
     
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type">WinJS.Promise</span>
-
-
-	</dd>
-</dl>
-
-
-        
     
     
 </dd>
@@ -644,7 +856,7 @@
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a>
-		on 2014-10-22T21:52:14+02:00 using the <a
+		on 2014-10-28T00:11:02+01:00 using the <a
 			href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>

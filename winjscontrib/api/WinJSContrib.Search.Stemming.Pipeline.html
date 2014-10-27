@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>WinJS Contrib Class: ChildViewFlyout</title>
+	<title>WinJS Contrib Class: Pipeline</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -170,18 +170,15 @@
 					
 
 
-	<h1 class="page-title">Class: ChildViewFlyout</h1>
+	<h1 class="page-title">Class: Pipeline</h1>
 <section>
 
 <header>
     <h2>
-        <span class="ancestors"><a href="WinJSContrib.html">WinJSContrib</a><a href="WinJSContrib.UI.html">.UI</a>.</span>
+        <span class="ancestors"><a href="WinJSContrib.html">WinJSContrib</a><a href="WinJSContrib.Search.html">.Search</a><a href="WinJSContrib.Search.Stemming.html">.Stemming</a>.</span>
     
-    ChildViewFlyout
+    Pipeline
     </h2>
-    
-        <div class="class-description"><p>This control wrap a navigator into a flyout that appears typically as a side panel. 
-It's intended to provide a secondary navigation mecanism or to enable scenarios like master detail, or content selection</p></div>
     
 </header>
 
@@ -192,146 +189,26 @@ It's intended to provide a secondary navigation mecanism or to enable scenarios 
     
         
 <dt>
-    <h4 class="name" id="ChildViewFlyout"><span class="type-signature"></span>new ChildViewFlyout<span class="signature">(element, options)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Pipeline"><span class="type-signature"></span>new Pipeline<span class="signature">()</span><span class="type-signature"></span></h4>
     
     
 </dt>
 <dd>
     
     
+    <div class="description">
+        <p>stemming pipeline</p>
+    </div>
+    
 
     
     
     
     
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>element</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">HTMLElement</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>DOM element containing the control</p></td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
     
     
     
 <dl class="details">
-	
-
-	<h5 class="subsection-title">Properties:</h5>
-
-	<dl>
-
-<table class="props table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>pageControl</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">HTMLElement</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-</dl>
-
 	
 
 	
@@ -396,7 +273,7 @@ It's intended to provide a secondary navigation mecanism or to enable scenarios 
         <dl>
             
 <dt>
-    <h4 class="name" id="back"><span class="type-signature"></span>back<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="add"><span class="type-signature"></span>add<span class="signature">(callback)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -404,7 +281,7 @@ It's intended to provide a secondary navigation mecanism or to enable scenarios 
     
     
     <div class="description">
-        <p>navigate back</p>
+        <p>add a stemming function to pipeline</p>
     </div>
     
 
@@ -413,71 +290,54 @@ It's intended to provide a secondary navigation mecanism or to enable scenarios 
     
     
     
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
+        <h5>Parameters:</h5>
         
-            
-<dt>
-    <h4 class="name" id="canGoBack"><span class="type-signature"></span>canGoBack<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        <p>indicate if control can navigate back</p>
-    </div>
-    
 
-    
-    
-    
-    
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>stemming function</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
     
     
     
@@ -536,7 +396,7 @@ It's intended to provide a secondary navigation mecanism or to enable scenarios 
     
     
     <div class="description">
-        <p>clear all child view pages</p>
+        <p>remove all stemming functions from pipeline</p>
     </div>
     
 
@@ -594,7 +454,7 @@ It's intended to provide a secondary navigation mecanism or to enable scenarios 
         
             
 <dt>
-    <h4 class="name" id="closePage"><span class="type-signature"></span>closePage<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="registerDefault"><span class="type-signature"></span>registerDefault<span class="signature">()</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -602,7 +462,7 @@ It's intended to provide a secondary navigation mecanism or to enable scenarios 
     
     
     <div class="description">
-        <p>close current page</p>
+        <p>register default stemmings in pipeline</p>
     </div>
     
 
@@ -660,7 +520,7 @@ It's intended to provide a secondary navigation mecanism or to enable scenarios 
         
             
 <dt>
-    <h4 class="name" id="hide"><span class="type-signature"></span>hide<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="run"><span class="type-signature"></span>run<span class="signature">(text)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -668,73 +528,7 @@ It's intended to provide a secondary navigation mecanism or to enable scenarios 
     
     
     <div class="description">
-        <p>close all content and hide child view</p>
-    </div>
-    
-
-    
-    
-    
-    
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="navigate"><span class="type-signature"></span>navigate<span class="signature">(uri, options, skipHistory)</span><span class="type-signature"> &rarr; {WinJS.Promise}</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        <p>navigate to target uri</p>
+        <p>apply stemming pipeline to text</p>
     </div>
     
 
@@ -768,7 +562,7 @@ It's intended to provide a secondary navigation mecanism or to enable scenarios 
 
         <tr>
             
-                <td class="name"><code>uri</code></td>
+                <td class="name"><code>text</code></td>
             
 
             <td class="type">
@@ -784,53 +578,7 @@ It's intended to provide a secondary navigation mecanism or to enable scenarios 
 
             
 
-            <td class="description last"><p>target page uri</p></td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>options for target page</p></td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>skipHistory</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>indicate if navigation should skip being added to history</p></td>
+            <td class="description last"></td>
         </tr>
 
 	
@@ -880,205 +628,6 @@ It's intended to provide a secondary navigation mecanism or to enable scenarios 
     
     
     
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type">WinJS.Promise</span>
-
-
-	</dd>
-</dl>
-
-
-        
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="open"><span class="type-signature"></span>open<span class="signature">(uri, options, skipHistory)</span><span class="type-signature"> &rarr; {WinJS.Promise}</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        <p>display child view and navigate to target uri</p>
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>uri</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>target page uri</p></td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>options for target page</p></td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>skipHistory</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>indicate if navigation should skip being added to history</p></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type">WinJS.Promise</span>
-
-
-	</dd>
-</dl>
-
-
-        
     
     
 </dd>
