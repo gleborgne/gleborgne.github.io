@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>WinJS Contrib Class: EventTracker</title>
+	<title>WinJS Contrib Class: MultiPassItem</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -222,17 +222,15 @@
 					
 
 
-	<h1 class="page-title">Class: EventTracker</h1>
+	<h1 class="page-title">Class: MultiPassItem</h1>
 <section>
 
 <header>
     <h2>
         <span class="ancestors"><a href="WinJSContrib.html">WinJSContrib</a><a href="WinJSContrib.UI.html">.UI</a>.</span>
     
-    EventTracker
+    MultiPassItem
     </h2>
-    
-        <div class="class-description"><p>object to register and release events from addEventListener or bind</p></div>
     
 </header>
 
@@ -243,12 +241,16 @@
     
         
 <dt>
-    <h4 class="name" id="EventTracker"><span class="type-signature"></span>new EventTracker<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="MultiPassItem"><span class="type-signature"></span>new MultiPassItem<span class="signature">()</span><span class="type-signature"></span></h4>
     
     
 </dt>
 <dd>
     
+    
+    <div class="description">
+        <p>Item for multipass rendering</p>
+    </div>
     
 
     
@@ -323,7 +325,7 @@
         <dl>
             
 <dt>
-    <h4 class="name" id="addBinding"><span class="type-signature"></span>addBinding<span class="signature">(e, eventName, handler)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="empty"><span class="type-signature">&lt;static> </span>empty<span class="signature">()</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -331,7 +333,7 @@
     
     
     <div class="description">
-        <p>register binding event</p>
+        <p>empty item and mark it as unrendered</p>
     </div>
     
 
@@ -339,101 +341,6 @@
     
     
     
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>e</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>object containing bind method</p></td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>eventName</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>name of the binding event</p></td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>handler</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
     
     
     
@@ -484,7 +391,7 @@
         
             
 <dt>
-    <h4 class="name" id="addEvent"><span class="type-signature"></span>addEvent<span class="signature">(e, eventName, handler, capture)</span><span class="type-signature"> &rarr; {function}</span></h4>
+    <h4 class="name" id="render"><span class="type-signature">&lt;static> </span>render<span class="signature">()</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -492,214 +399,7 @@
     
     
     <div class="description">
-        <p>register an event from an object</p>
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>e</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>object containing addEventListener</p></td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>eventName</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>name of the event</p></td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>handler</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>capture</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <p>function to call for unregistering the event</p>
-</div>
-
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type">function</span>
-
-
-	</dd>
-</dl>
-
-
-        
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="dispose"><span class="type-signature"></span>dispose<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        <p>release all registered events</p>
+        <p>render item content</p>
     </div>
     
 
@@ -783,7 +483,7 @@
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a>
-		on 2015-01-05T10:21:19+01:00 using the <a
+		on 2015-01-05T10:21:20+01:00 using the <a
 			href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>
