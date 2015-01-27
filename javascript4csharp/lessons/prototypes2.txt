@@ -1,0 +1,22 @@
+//prototypes
+
+function Chanteur(){
+
+}
+
+Chanteur.prototype.chante = function(){
+	console.log('chante');
+}
+
+function Casserole(){
+
+}
+
+Casserole.prototype = new Chanteur();
+
+Casserole.prototype.chante = function(){
+	console.log('chante comme un pied');
+}
+
+var justin = new Casserole();
+justin.chante();

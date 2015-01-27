@@ -1,4 +1,4 @@
-﻿//En Javascript le scope est lié aux fonctions, pas aux blocs de code
+﻿//En Javascript le scope des variables est lié aux fonctions, pas aux blocs de code
 
 
 function maSuperFonction(items){
@@ -6,8 +6,8 @@ function maSuperFonction(items){
         var hello = 'world ' + i;
         setImmediate(function(){
 
-            //attention, la variable hello est en fait définie
-            //au niveau de la fonction !
+            //attention, la variable hello est définie
+            //au niveau de maSuperFonction !
 
             console.log('hello ' + hello);
         });
