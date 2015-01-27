@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <title>Techdays 2015 - JavaScript pour les devs C# !</title>
+    <link href="playground.css" rel="stylesheet" />
+    <script src="lib/jquery-2.1.1.js"></script>
+    <script src="lib/jquery-2.1.1.js"></script>
+    
+</head>
+<body>
+	<h1>Techdays 2015 - JavaScript pour les devs C#</h1>
+	<div id="container">
+		<div id="code-container">
+			<div id="code-actions" class="actionbar">
+				<input type="range" min="12" max="25" id="fontSize" value="14" />
+				<select id="lessons">
+					<option value="variablesscope" selected>1 - scope des variables</option>
+					<option value="variablesscope2">2 - scope des variables (!! piège)</option>
+					<option value="prototypes">3 - prototypes</option>
+				</select>
+				<button id="btnRunCode">Run</button>
+			</div>
+			<div id="code-view" contenteditable spellcheck="false">
+			</div>
+		</div>
+		<div id="console-container">
+			<div id="console-actions" class="actionbar">
+				&nbsp;
+			</div>
+			<div id="console-view">
+				
+			</div>
+		</div>
+	</div>
+	<script src="playground.js"></script>
+    <script src="play.js"></script>
+</body>
+</html>
