@@ -1,6 +1,10 @@
 var codeView = document.getElementById('code-view');
 var consoleView = document.getElementById('console-view');
-	
+var playgroundVersion = "1.1.1";
+
+var editor = ace.edit("code-view");
+    editor.session.setMode("ace/mode/javascript");
+
 function playground(callback){
 	var log = function(kind, data){
 		var m = document.createElement('div');
@@ -42,24 +46,26 @@ function playground(callback){
 		var txt = callback + '';
 		txt = txt.substr(txt.indexOf('{')+1, txt.length).trim();
 		txt = txt.substr(0, txt.lastIndexOf('}')).trim();
-		codeView.innerText = txt;
+		editor.setValue(txt, 0);
+		editor.clearSelection();
 		eval('(' + callback + ')();');
 	}catch(exception){
 		log('error', [exception]);	
 	}
-	
+	//editor = ace.edit("code-view");
+    //editor.session.setMode("ace/mode/javascript");
 }
 
 function fetch(lesson){
 	consoleView.innerHTML = '';
-	$.ajax({ url: 'lessons/' + lesson + '.txt' }).then(function(r){
+	$.ajax({ url: 'lessons/' + lesson + '.txt?v=' + playgroundVersion }).then(function(r){
 		console.log(JSON.stringify(r))
 		playground('function(){' + r + '}')
 	});
 }
 
 document.querySelector('#btnRunCode').onclick = function(){
-	var text = codeView.innerText;
+	var text = editor.getValue();
 	$('.message').fadeOut('fast').promise().then(function(){
 		consoleView.innerHTML = '';
 		playground('function(){' + text + '}');
