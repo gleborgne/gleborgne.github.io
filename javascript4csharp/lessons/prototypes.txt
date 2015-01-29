@@ -1,22 +1,23 @@
-//prototypes
+//javascript n'est pas un langage objet
+//c'est un langage prototypé: 
+//Les objets ne se conforment pas à une classe,
+//ils partagent un prototype
 
 function Chanteur(){
 
 }
-
 Chanteur.prototype.chante = function(){
 	console.log('chante');
 }
 
-function Casserole(){
+var justin = new Chanteur();
+justin.chante();
 
-}
+//le mot clé new fait à peu près ca :
+var justin = {};
+justin.__proto__ = Chanteur.prototype;
+Chanteur.apply(justin);
 
-Casserole.prototype = new Chanteur();
-
-Casserole.prototype.chante = function(){
-	console.log('chante comme un pied');
-}
-
-var justin = new Casserole();
+//a l'execution, le runtime regarde si l'objet contient 
+//le membre appelé, et si ce n'est pas le cas, regarde dans le prototype
 justin.chante();

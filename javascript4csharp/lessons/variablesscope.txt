@@ -1,4 +1,5 @@
-﻿//En Javascript le scope des variables est lié aux fonctions, pas aux blocs de code
+﻿//En Javascript le scope des variables est lié aux fonctions, 
+//pas aux blocs de code
 
 function inutile(){
     if (true){
@@ -11,6 +12,7 @@ function inutile(){
     function whatever() {
         var foo = "bar";
     }
+    //par contre, là ca coince...
     console.log('foo ' + foo);
 }
 

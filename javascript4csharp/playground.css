@@ -75,7 +75,7 @@ h1 {
   background-color: white;
 }
 #console-container {
-  width: 300px;
+  width: 350px;
   display: flex;
   flex-flow: column;
   max-height: 100%;
@@ -83,12 +83,12 @@ h1 {
 #console-container #console-view {
   flex-grow: 1;
   color: #888;
-  font-size: 0.8em;
   font-style: italic;
 }
 #console-container #console-view .message {
   padding: 5px 10px;
   border-top: 1px solid #DDD;
+  font-size: 0.8em;
 }
 #console-container #console-view .message.error {
   color: red;

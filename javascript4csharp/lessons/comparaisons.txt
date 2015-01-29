@@ -1,1 +1,23 @@
-var en = 'construction';
+//JavaScript possède la notion de "truthy" et "falsy"
+//null, undefined, false et 0 sont "falsy"
+//par défaut les opérateurs logiques évaluent l'expression sous la forme de "truthy" ou "falsy"
+//le runtime va convertir les types pour évaluer l'expression
+
+console.log("'0' == 0 : " + ('0' == 0));
+
+function evaluate(name, e){
+    if (e) {
+        console.log(name +  " is truthy");	
+    } else {
+        console.log(name + " is falsy");	
+    }
+}
+evaluate('null', null);
+evaluate('42', 42);
+evaluate('object', { a : 42 });
+
+
+//si on veut faire une comparaison en s'assurant qu'il n'y a pas d'interprétation
+//on utilise ===
+
+console.log("'0' === 0 : " + ('0' === 0));

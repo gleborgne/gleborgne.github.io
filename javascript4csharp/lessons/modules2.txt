@@ -1,1 +1,14 @@
-var en = 'construction';
+//le pattern de code de module permet
+//aussi de gérer efficacement des namespaces 
+//par exemple, pour créer des API
+
+var MaLib = MaLib || {};
+(function(MaLib){
+	'use strict';
+
+	var maVariablePrivee = 42;
+
+	MaLib.getSecret = function(){
+		return maVariablePrivee;
+	}
+})(MaLib);

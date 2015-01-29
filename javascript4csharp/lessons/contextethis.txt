@@ -1,1 +1,19 @@
-var en = 'construction';
+//"this" correspond au contexte d'execution d'une fonction
+
+function plop(msg){
+	this.myplop = msg;
+	console.log(this.myplop);
+}
+
+//quand on execute une fonction liée à un objet
+//le contexte est l'objet (par défaut)
+var a = { plop: plop };
+a.plop('to object');
+console.log('assigned : ' + a.myplop);
+
+//sinon "this" pointe sur le scope global,
+//dans une page : l'objet window
+
+plop('global');
+console.log('assigned : ' + window.myplop);
+

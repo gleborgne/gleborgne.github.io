@@ -1,9 +1,9 @@
-//prototypes
+//on peut faire de l'héritage en créant
+//une chaine de prototypes
 
 function Chanteur(){
 
 }
-
 Chanteur.prototype.chante = function(){
 	console.log('chante');
 }
@@ -11,12 +11,18 @@ Chanteur.prototype.chante = function(){
 function Casserole(){
 
 }
-
+//lien sur le prototype de Chanteur
 Casserole.prototype = new Chanteur();
-
 Casserole.prototype.chante = function(){
 	console.log('chante comme un pied');
 }
 
 var justin = new Casserole();
+justin.chante();
+
+justin.chante = function(){
+	Casserole.prototype.chante.apply(this, arguments);
+	console.log('...mais vraiment...');
+}
+
 justin.chante();

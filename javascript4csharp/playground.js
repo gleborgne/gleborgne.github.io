@@ -3,7 +3,8 @@ var consoleView = document.getElementById('console-view');
 var playgroundVersion = "1.1.1";
 
 var editor = ace.edit("code-view");
-    editor.session.setMode("ace/mode/javascript");
+editor.session.setMode("ace/mode/javascript");
+editor.renderer.setShowGutter(false); 
 
 function playground(callback){
 	var log = function(kind, data){
@@ -78,7 +79,9 @@ document.querySelector('#lessons').onchange = function setLesson(){
 
 document.querySelector('#fontSize').onchange = function setFontSize(){
 	codeView.style.fontSize = document.querySelector('#fontSize').value + "pt";
+	consoleView.style.fontSize = document.querySelector('#fontSize').value + "pt";
 }
 
 codeView.style.fontSize = document.querySelector('#fontSize').value + "pt";
+consoleView.style.fontSize = document.querySelector('#fontSize').value + "pt";
 fetch(document.querySelector('#lessons').value);
