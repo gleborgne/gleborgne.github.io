@@ -1,11 +1,10 @@
-﻿//En Javascript le scope des variables est lié aux fonctions, 
-//pas aux blocs de code
+//Avec ES6 on a aussi
 
 
 function maSuperFonction(items){
     for (var i=0; i<items.length; i++){
-        var hello = 'world ' + i;
-        setImmediate(function(){
+        let hello = 'world ' + i;
+        setImmediate(() => {
 
             //attention, la variable hello est définie
             //au niveau de maSuperFonction !

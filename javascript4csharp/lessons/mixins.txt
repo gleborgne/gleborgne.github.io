@@ -1,0 +1,19 @@
+//les mixins permettent de composer des comportements sur les objets
+
+function chanteurMixin(obj){
+    obj.chante = function(){
+        console.log(this.name + ' chante');
+    }
+}
+
+function Chanteur(name){
+	this.name = name;
+}
+chanteurMixin(Chanteur.prototype);
+var justin = new Chanteur('Bieber');
+justin.chante();
+
+
+var a = { name: 'objet' };
+chanteurMixin(a);
+a.chante();
