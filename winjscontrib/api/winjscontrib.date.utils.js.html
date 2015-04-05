@@ -171,6 +171,10 @@
 						</li>
 						
 						<li>
+							<a href="WinJSContrib.UI.FluentDOM.html">FluentDOM</a>
+						</li>
+						
+						<li>
 							<a href="WinJSContrib.UI.FlyoutPage.html">FlyoutPage</a>
 						</li>
 						
@@ -236,7 +240,7 @@
     <section>
         <article>
             <pre class="sunlight-highlight-javascript linenums">/* 
- * WinJS Contrib v2.0.1.0
+ * WinJS Contrib v2.0.3.0
  * licensed under MIT license (see http://opensource.org/licenses/MIT)
  * sources available at https://github.com/gleborgne/winjscontrib
  */
@@ -249,7 +253,7 @@ WinJSContrib.Utils = WinJSContrib.Utils || {};
 WinJSContrib.Bindings = WinJSContrib.Bindings || {};
 
 (function () {
-    'use strict';    
+    'use strict';
 
     /** 
      * format date using binding argument 'formatDate'
@@ -260,13 +264,20 @@ WinJSContrib.Bindings = WinJSContrib.Bindings || {};
      * @param {string[]} destProperty path to DOM element property targeted by binding
      */
     WinJSContrib.Bindings.formatDate = WinJS.Utilities.markSupportedForProcessing(function formatDateBinding(source, sourceProperty, dest, destProperty) {
-        var sourcedata = WinJSContrib.Utils.readProperty(source, sourceProperty);
-        if (!sourcedata) {
-            dest.innerText = '';
-        } else {
-            var arg = WinJSContrib.Bindings.bindingArguments(dest, 'formatDate');
-            dest.innerText = moment(sourcedata).format(arg);
+        function setDate() {
+            var sourcedata = WinJSContrib.Utils.readProperty(source, sourceProperty);
+            if (!sourcedata) {
+                dest.innerText = '';
+            } else {
+                var arg = WinJSContrib.Bindings.bindingArguments(dest, 'formatDate') || 'L';
+                dest.innerText = moment(sourcedata).format(arg);
+            }
         }
+
+        var bindingDesc = {
+        };
+        bindingDesc[sourceProperty] = setDate;
+        return WinJS.Binding.bind(source, bindingDesc);
     });
 
     /** 
@@ -278,12 +289,19 @@ WinJSContrib.Bindings = WinJSContrib.Bindings || {};
      * @param {string[]} destProperty path to DOM element property targeted by binding
      */
     WinJSContrib.Bindings.calendar = WinJS.Utilities.markSupportedForProcessing(function formatDateBinding(source, sourceProperty, dest, destProperty) {
-        var sourcedata = WinJSContrib.Utils.readProperty(source, sourceProperty);
-        if (!sourcedata) {
-            dest.innerText = '';
-        } else {
-            dest.innerText = moment(sourcedata).calendar();
+        function setDate() {
+            var sourcedata = WinJSContrib.Utils.readProperty(source, sourceProperty);
+            if (!sourcedata) {
+                dest.innerText = '';
+            } else {
+                dest.innerText = moment(sourcedata).calendar();
+            }
         }
+
+        var bindingDesc = {
+        };
+        bindingDesc[sourceProperty] = setDate;
+        return WinJS.Binding.bind(source, bindingDesc);
     });
 
     function daysSince(m, d, y) {
@@ -315,15 +333,22 @@ WinJSContrib.Bindings = WinJSContrib.Bindings || {};
      * @param {string[]} destProperty path to DOM element property targeted by binding
      */
     WinJSContrib.Bindings.daysSinceDate = WinJS.Utilities.markSupportedForProcessing(function daysSinceDateBinding(source, sourceProperty, dest, destProperty) {
-        var sourcedata = WinJSContrib.Utils.readProperty(source, sourceProperty);
-        if (!sourcedata) {
-            dest.innerText = '';
-        } else {
-            sourcedata = new Date(sourcedata);
-            var m = sourcedata.getMonth() + 1, d = sourcedata.getDate(), y = sourcedata.getFullYear();
-            var fromdate = daysSince(m, d, y);
-            dest.innerText = fromdate;
+        function setDate() {
+            var sourcedata = WinJSContrib.Utils.readProperty(source, sourceProperty);
+            if (!sourcedata) {
+                dest.innerText = '';
+            } else {
+                sourcedata = new Date(sourcedata);
+                var m = sourcedata.getMonth() + 1, d = sourcedata.getDate(), y = sourcedata.getFullYear();
+                var fromdate = daysSince(m, d, y);
+                dest.innerText = fromdate;
+            }
         }
+
+        var bindingDesc = {
+        };
+        bindingDesc[sourceProperty] = setDate;
+        return WinJS.Binding.bind(source, bindingDesc);
     });
 
     /**
@@ -335,14 +360,21 @@ WinJSContrib.Bindings = WinJSContrib.Bindings || {};
      * @param {string[]} destProperty path to DOM element property targeted by binding
      */
     WinJSContrib.Bindings.humanizeDate = WinJS.Utilities.markSupportedForProcessing(function humanizeDate(source, sourceProperty, dest, destProperty) {
-        var sourcedata = WinJSContrib.Utils.readProperty(source, sourceProperty);
-        if (!sourcedata) {
-            dest.innerText = '';
-        } else {
-            var arg = WinJSContrib.Bindings.bindingArguments(dest, "humanizeFormat"),
-                addSuffix = WinJSContrib.Bindings.bindingArguments(dest, "addSuffix");
-            dest.innerText = moment.duration(sourcedata, arg).humanize(addSuffix);
+        function setDate() {
+            var sourcedata = WinJSContrib.Utils.readProperty(source, sourceProperty);
+            if (!sourcedata) {
+                dest.innerText = '';
+            } else {
+                var arg = WinJSContrib.Bindings.bindingArguments(dest, "humanizeFormat"),
+                    addSuffix = WinJSContrib.Bindings.bindingArguments(dest, "addSuffix");
+                dest.innerText = moment.duration(sourcedata, arg).humanize(addSuffix);
+            }
         }
+
+        var bindingDesc = {
+        };
+        bindingDesc[sourceProperty] = setDate;
+        return WinJS.Binding.bind(source, bindingDesc);
     });
 
 
@@ -370,7 +402,7 @@ WinJSContrib.Bindings = WinJSContrib.Bindings || {};
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a>
-		on Mon Mar 09 2015 23:49:19 GMT+0100 (Romance Standard Time) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+		on Sun Apr 05 2015 23:50:42 GMT+0200 (Romance Daylight Time) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>
 			</div>

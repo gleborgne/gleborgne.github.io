@@ -171,6 +171,10 @@
 						</li>
 						
 						<li>
+							<a href="WinJSContrib.UI.FluentDOM.html">FluentDOM</a>
+						</li>
+						
+						<li>
 							<a href="WinJSContrib.UI.FlyoutPage.html">FlyoutPage</a>
 						</li>
 						
@@ -236,7 +240,7 @@
     <section>
         <article>
             <pre class="sunlight-highlight-javascript linenums">/* 
- * WinJS Contrib v2.0.1.0
+ * WinJS Contrib v2.0.3.0
  * licensed under MIT license (see http://opensource.org/licenses/MIT)
  * sources available at https://github.com/gleborgne/winjscontrib
  */
@@ -641,7 +645,7 @@ var WinJSContrib;
                     keyframeName += '-exagerated';
                 }
                 var stagger = staggerDelay(options.delay !== undefined ? options.delay : 5, options.itemdelay !== undefined ? options.itemdelay : 83, 1, options.maxdelay !== undefined ? options.maxdelay : 333);
-                var dur = options.duration || 300;
+                var dur = options.duration || 250;
                 var promise1 = WinJS.UI.executeAnimation(elements, {
                     keyframe: keyframeName,
                     property: equivalents.transform.cssName,
@@ -651,8 +655,8 @@ var WinJSContrib;
                 });
                 var promise2 = WinJS.UI.executeTransition(elements, {
                     property: "opacity",
-                    delay: (3 * dur / 4) + (options.delay !== undefined ? options.delay : 10),
-                    duration: (dur / 4),
+                    delay: stagger,
+                    duration: dur,
                     timing: options.easing || WinJSContrib.UI.Animation.Easings.easeInQuint,
                     from: 1,
                     to: 0
@@ -673,7 +677,7 @@ var WinJSContrib;
                 if (options.exagerated) {
                     keyframeName += '-exagerated';
                 }
-                var dur = options.duration || 300;
+                var dur = options.duration || 250;
                 var stagger = staggerDelay(options.delay !== undefined ? options.delay : 10, options.itemdelay !== undefined ? options.itemdelay : 83, 1, options.maxdelay !== undefined ? options.maxdelay : 333);
                 var promise1 = WinJS.UI.executeAnimation(elements, {
                     keyframe: keyframeName,
@@ -684,8 +688,8 @@ var WinJSContrib;
                 });
                 var promise2 = WinJS.UI.executeTransition(elements, {
                     property: "opacity",
-                    delay: (3 * dur / 4) + (options.delay !== undefined ? options.delay : 10),
-                    duration: (dur / 4),
+                    delay: stagger,
+                    duration: dur,
                     timing: WinJSContrib.UI.Animation.Easings.easeInQuint,
                     from: 1,
                     to: 0
@@ -703,7 +707,7 @@ var WinJSContrib;
                 var offsetArray;
                 options = getOpt(options);
                 var stagger = staggerDelay(options.delay !== undefined ? options.delay : 5, options.itemdelay !== undefined ? options.itemdelay : 83, 1, options.maxdelay !== undefined ? options.maxdelay : 333);
-                var dur = options.duration || 300;
+                var dur = options.duration || 250;
                 var promise1 = WinJS.UI.executeAnimation(elements, {
                     keyframe: "WinJSContrib-shrinkAndFall",
                     property: equivalents.transform.cssName,
@@ -714,7 +718,7 @@ var WinJSContrib;
                 var promise2 = WinJS.UI.executeTransition(elements, {
                     property: "opacity",
                     delay: stagger,
-                    duration: dur / 2,
+                    duration: dur,
                     timing: "ease-in",
                     from: 1,
                     to: 0
@@ -735,7 +739,7 @@ var WinJSContrib;
                 if (options.exagerated) {
                     keyframeName += '-exagerated';
                 }
-                var dur = options.duration || 300;
+                var dur = options.duration || 350;
                 var stagger = staggerDelay(options.delay !== undefined ? options.delay : 5, options.itemdelay !== undefined ? options.itemdelay : 83, 1, options.maxdelay !== undefined ? options.maxdelay : 333);
                 var promise1 = WinJS.UI.executeAnimation(elements, {
                     keyframe: keyframeName,
@@ -747,7 +751,7 @@ var WinJSContrib;
                 var promise2 = WinJS.UI.executeTransition(elements, {
                     property: "opacity",
                     delay: stagger,
-                    duration: dur / 3,
+                    duration: dur,
                     timing: options.easing || WinJSContrib.UI.Animation.Easings.easeOutQuint,
                     from: 0,
                     to: 1
@@ -768,7 +772,7 @@ var WinJSContrib;
                 if (options.exagerated) {
                     keyframeName += '-exagerated';
                 }
-                var dur = options.duration || 300;
+                var dur = options.duration || 350;
                 var stagger = staggerDelay(options.delay !== undefined ? options.delay : 5, options.itemdelay !== undefined ? options.itemdelay : 83, 1, options.maxdelay !== undefined ? options.maxdelay : 333);
                 var promise1 = WinJS.UI.executeAnimation(elements, {
                     keyframe: keyframeName,
@@ -780,7 +784,7 @@ var WinJSContrib;
                 var promise2 = WinJS.UI.executeTransition(elements, {
                     property: "opacity",
                     delay: stagger,
-                    duration: dur / 3,
+                    duration: dur,
                     timing: WinJSContrib.UI.Animation.Easings.easeOutQuint,
                     from: 0,
                     to: 1
@@ -816,7 +820,7 @@ var WinJSContrib;
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a>
-		on Mon Mar 09 2015 23:49:19 GMT+0100 (Romance Standard Time) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+		on Sun Apr 05 2015 23:50:42 GMT+0200 (Romance Daylight Time) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>
 			</div>
