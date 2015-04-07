@@ -1,13 +1,15 @@
 (function () {
     "use strict";
 
-    WinJS.UI.Pages.define("/winjswebcomponents/pages/detail/detail.html?v=" + AppVersion, {
-        ready: function (element, options) {
+    class DetailPage {
+    	ready(element, options) {
             var page = this;                        
         },
 
-        openHome : function(){
+        openHome(){
         	WinJS.Navigation.navigate("/winjswebcomponents/pages/home/home.html?v=" + AppVersion);
         }
-    });
+    }
+
+    WinJS.UI.Pages.define("/winjswebcomponents/pages/detail/detail.html?v=" + AppVersion, DetailPage);
 })();
