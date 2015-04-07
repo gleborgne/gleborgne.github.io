@@ -254,7 +254,7 @@
     
         
 <dt>
-    <h4 class="name" id="FluentDOM"><span class="type-signature"></span>new FluentDOM<span class="signature">(nodeType, parent)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="FluentDOM"><span class="type-signature"></span>new FluentDOM<span class="signature">(nodeType, className, parentElt, parent)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -319,6 +319,42 @@
 
         <tr>
             
+                <td class="name"><code>className</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>css classes</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>parentElt</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>parent DOM element</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
                 <td class="name"><code>parent</code></td>
             
 
@@ -367,7 +403,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1075">line 1075</a>
+        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1076">line 1076</a>
     </li></ul></dd>
     
 
@@ -389,6 +425,13 @@
     
     
     
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">{@lang javascript}
+var elt = new WinJSContrib.UI.FluentDOM('DIV', 'item-content').text(item.title).display('none').element;</pre>
+
+
     
 </dd>
 
@@ -498,7 +541,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1090">line 1090</a>
+        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1107">line 1107</a>
     </li></ul></dd>
     
 
@@ -545,7 +588,7 @@
         
             
 <dt>
-    <h4 class="name" id="append"><span class="type-signature"></span>append<span class="signature">(nodeType, callback)</span><span class="type-signature"> &rarr; {<a href="WinJSContrib.UI.FluentDOM.html">WinJSContrib.UI.FluentDOM</a>}</span></h4>
+    <h4 class="name" id="append"><span class="type-signature"></span>append<span class="signature">(nodeType, className, callback)</span><span class="type-signature"> &rarr; {<a href="WinJSContrib.UI.FluentDOM.html">WinJSContrib.UI.FluentDOM</a>}</span></h4>
     
     
 </dt>
@@ -605,6 +648,24 @@
 
         <tr>
             
+                <td class="name"><code>className</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>css classes</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
                 <td class="name"><code>callback</code></td>
             
 
@@ -648,7 +709,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1201">line 1201</a>
+        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1229">line 1229</a>
     </li></ul></dd>
     
 
@@ -780,7 +841,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1180">line 1180</a>
+        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1208">line 1208</a>
     </li></ul></dd>
     
 
@@ -930,7 +991,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1169">line 1169</a>
+        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1186">line 1186</a>
     </li></ul></dd>
     
 
@@ -1062,7 +1123,157 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1100">line 1100</a>
+        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1117">line 1117</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="WinJSContrib.UI.FluentDOM.html">WinJSContrib.UI.FluentDOM</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="ctrl"><span class="type-signature"></span>ctrl<span class="signature">(ctrl, options)</span><span class="type-signature"> &rarr; {<a href="WinJSContrib.UI.FluentDOM.html">WinJSContrib.UI.FluentDOM</a>}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>create a WinJS control</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>ctrl</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>constructor or full name of the control</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>control options</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1244">line 1244</a>
     </li></ul></dd>
     
 
@@ -1194,7 +1405,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1120">line 1120</a>
+        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1137">line 1137</a>
     </li></ul></dd>
     
 
@@ -1282,7 +1493,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1130">line 1130</a>
+        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1147">line 1147</a>
     </li></ul></dd>
     
 
@@ -1414,7 +1625,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1159">line 1159</a>
+        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1176">line 1176</a>
     </li></ul></dd>
     
 
@@ -1546,7 +1757,157 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1110">line 1110</a>
+        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1127">line 1127</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="WinJSContrib.UI.FluentDOM.html">WinJSContrib.UI.FluentDOM</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="style"><span class="type-signature"></span>style<span class="signature">(name, val)</span><span class="type-signature"> &rarr; {<a href="WinJSContrib.UI.FluentDOM.html">WinJSContrib.UI.FluentDOM</a>}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>set style property</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>attribute name</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>attribute value</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1197">line 1197</a>
     </li></ul></dd>
     
 
@@ -1696,7 +2057,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1190">line 1190</a>
+        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1218">line 1218</a>
     </li></ul></dd>
     
 
@@ -1828,7 +2189,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1149">line 1149</a>
+        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1166">line 1166</a>
     </li></ul></dd>
     
 
@@ -1960,7 +2321,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1139">line 1139</a>
+        <a href="winjscontrib.core.js.html">winjscontrib.core.js</a>, <a href="winjscontrib.core.js.html#sunlight-1-line-1156">line 1156</a>
     </li></ul></dd>
     
 
@@ -2033,7 +2394,7 @@
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a>
-		on Sun Apr 05 2015 23:50:43 GMT+0200 (Romance Daylight Time) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+		on Tue Apr 07 2015 08:54:10 GMT+0200 (Romance Daylight Time) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>
 			</div>
