@@ -1,4 +1,4 @@
-AppVersion = '1.0';
+AppVersion = '1.1';
 WinJS.Utilities.ready(function(){
 	WinJS.UI.processAll(document.body).then(function(){
 		console.log('DONE !!!');
