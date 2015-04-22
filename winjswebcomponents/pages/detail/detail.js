@@ -8,6 +8,11 @@
 
         openHome: function(){
         	WinJS.Navigation.navigate("/winjswebcomponents/pages/home/home.html?v=" + AppVersion);
+        },
+
+        changeValue: function(){
+        	var page = this;    
+        	page.mycontrol.text = page.txtValue.value;
         }
     });
 })();
