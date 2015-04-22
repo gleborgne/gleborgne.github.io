@@ -129,6 +129,7 @@ WinJSContrib.UI.WebComponents = WinJSContrib.UI.WebComponents || {};
 			var proto = Object.create(HTMLElement.prototype);
 			proto.createdCallback = function () {
 				var options = {};
+				this.mcnComponent = { attributes: [] };
 				if (this.dataset.winOptions) {
 					options = getWinJSOptions(this);
 				}
