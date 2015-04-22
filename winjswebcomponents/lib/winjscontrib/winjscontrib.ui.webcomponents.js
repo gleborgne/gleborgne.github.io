@@ -176,14 +176,13 @@ WinJSContrib.UI.WebComponents = WinJSContrib.UI.WebComponents || {};
 		if (component) {
 			component.attributes[propertyName.toUpperCase()] = function (val) {
 				var ctrl = element.winControl;
-				if (ctrl) {
-					if (resolve) {
-						var tmp = WinJSContrib.Utils.resolveValue(element, val);
-						if (tmp) {
-							ctrl[propertyName] = tmp;
-							return;
-						}
+				if (ctrl) {					
+					var tmp = WinJSContrib.Utils.resolveValue(element, val);
+					if (tmp) {
+						ctrl[propertyName] = tmp;
+						return;
 					}
+					
 					ctrl[propertyName] = val
 				}
 			}
