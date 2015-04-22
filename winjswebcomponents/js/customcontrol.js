@@ -13,9 +13,8 @@ var TestApp = TestApp || {};
 	}
 	TestApp.CustomControl = Control;
 
-	WinJSContrib.UI.WebComponents.register('my-customcontrol', Control, function (elt) {
-		var options = {};
-		WinJSContrib.UI.WebComponents.mapAttr(elt, 'text', 'text', options);
+	WinJSContrib.UI.WebComponents.register('my-customcontrol', Control, function (elt, options) {
+		WinJSContrib.UI.WebComponents.mapAttr(elt, 'text', options);
 
 		return options;
 	});
