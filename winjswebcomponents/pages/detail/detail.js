@@ -13,7 +13,7 @@
         changeValue: function(){
         	var page = this;    
         	//page.mycontrol.text = page.txtValue.value;
-        	page.mycontrol.setAttribute('text', page.txtValue.value);
+        	page.mycontrol.element.setAttribute('text', page.txtValue.value);
         }
     });
 })();
