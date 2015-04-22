@@ -15,7 +15,7 @@ var TestApp = TestApp || {};
 			},
 			set: function(val){
 				this._text = val;
-				this.element.innerHTML = 'this is content from an ES6 custom control : ' + options.text;
+				this.element.innerHTML = 'this is content from an ES6 custom control : ' + this._text;
 			}
 		}
 	});
