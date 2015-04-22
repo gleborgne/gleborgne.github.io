@@ -1,3 +1,9 @@
+/* 
+ * WinJS Contrib v2.1.0.0
+ * licensed under MIT license (see http://opensource.org/licenses/MIT)
+ * sources available at https://github.com/gleborgne/winjscontrib
+ */
+
 /**
  * @namespace WinJSContrib.UI.Animation
  */
@@ -549,4 +555,4 @@ var WinJSContrib;
     })(UI = WinJSContrib.UI || (WinJSContrib.UI = {}));
 })(WinJSContrib || (WinJSContrib = {}));
 
-//# sourceMappingURL=../../Sources/Core/winjscontrib.ui.animation.js.map
+//# sourceMappingURL=../../Sources/Common/winjscontrib.ui.animation.js.map

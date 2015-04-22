@@ -1,3 +1,9 @@
+/* 
+ * WinJS Contrib v2.1.0.0
+ * licensed under MIT license (see http://opensource.org/licenses/MIT)
+ * sources available at https://github.com/gleborgne/winjscontrib
+ */
+
 html,
 body {
   width: 100%;
@@ -42,6 +48,18 @@ body {
   cursor: pointer;
   -ms-touch-action: manipulation;
   touch-action: manipulation;
+}
+.toolbar {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.toolbar > .title,
+.toolbar > .titlearea {
+  flex-grow: 1;
+  align-self: center;
+}
+.toolbar > .actions {
+  align-self: center;
 }
 @keyframes pulseanimation {
   0% {
@@ -725,4 +743,13 @@ body {
     -o-transform: none;
     transform: none;
   }
+}
+/* webcomponents */
+win-contentdialog,
+win-flipview,
+win-flyout,
+win-hub,
+win-hubsection,
+win-listview {
+  display: block;
 }
