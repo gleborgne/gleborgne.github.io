@@ -12,7 +12,8 @@
 
         changeValue: function(){
         	var page = this;    
-        	page.mycontrol.text = page.txtValue.value;
+        	//page.mycontrol.text = page.txtValue.value;
+        	page.mycontrol.setAttribute('text', page.txtValue.value);
         }
     });
 })();
