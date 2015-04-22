@@ -165,11 +165,11 @@ WinJSContrib.UI.WebComponents = WinJSContrib.UI.WebComponents || {};
 					});
 				} else {
 					options[propertyName] = tmp;
-				}
-				return;
+				}				
 			}
-
-			options[propertyName] = val;
+			else{
+				options[propertyName] = val;
+			}
 		}
 
 		var component = element.mcnComponent;
