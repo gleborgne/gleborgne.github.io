@@ -167,6 +167,10 @@
 						</li>
 						
 						<li>
+							<a href="WinJSContrib.UI.FlipSnap.html">FlipSnap</a>
+						</li>
+						
+						<li>
 							<a href="WinJSContrib.UI.FlipViewPager.html">FlipViewPager</a>
 						</li>
 						
@@ -240,7 +244,7 @@
     <section>
         <article>
             <pre class="sunlight-highlight-javascript linenums">/* 
- * WinJS Contrib v2.0.3.0
+ * WinJS Contrib v2.1.0.0
  * licensed under MIT license (see http://opensource.org/licenses/MIT)
  * sources available at https://github.com/gleborgne/winjscontrib
  */
@@ -285,24 +289,7 @@
 
             	grid.element.className = grid.element.className + ' mcn-grid-ctrl mcn-layout-ctrl win-disposable';
             	grid.element.winControl = grid;
-            	/**
-                 * indicate if grid accept layout event from the page (if you use WinJS Contrib page events)
-                 * @field
-                 * @type boolean
-                 */
-            	grid.autolayout = options.autolayout;
-            	if (grid.autolayout) {
-            		var parent = WinJSContrib.Utils.getScopeControl(grid.element);
-            		if (parent &amp;&amp; parent.elementReady) {
-            			parent.elementReady.then(function () {
-            				if (!parent.beforeShow) parent.beforeShow = [];
-            				parent.beforeShow.push(function () {
-            					grid.layout();
-            				});
-            				return parent.renderComplete;
-            			});
-            		}
-            	}
+            	
 
             	/**
                  * multipass renderer for the grid
@@ -329,13 +316,35 @@
                  * @type WinJSContrib.UI.GridControlLayout
                  */
             	grid.defaultLayout = {
-            		layout: 'horizontal',
+            		layout: options.layout || 'none',
             		itemsPerColumn: (options.itemsPerColumn) ? options.itemsPerColumn : undefined,
             		itemsPerRow: (options.itemsPerRow) ? options.itemsPerRow : undefined,
             		cellSpace: (options.cellSpace) ? options.cellSpace : 10,
             		cellWidth: (options.cellWidth) ? options.cellWidth : undefined,
             		cellHeight: (options.cellHeight) ? options.cellHeight : undefined,
             	};
+
+            	/**
+                 * indicate if grid accept layout event from the page (if you use WinJS Contrib page events)
+                 * @field
+                 * @type boolean
+                 */
+            	grid.autolayout = options.autolayout || true;
+            	if (grid.autolayout) {
+            		var parent = WinJSContrib.Utils.getScopeControl(grid.element);
+            		if (parent &amp;&amp; parent.pageLifeCycle) {
+            			parent.pageLifeCycle.steps.layout.attach(function () {
+            				grid.layout();
+            			});
+            		}
+            		else if (parent &amp;&amp; parent.elementReady) {
+            			parent.elementReady.then(function () {
+            				parent.readyComplete.then(function () {
+            					grid.layout();
+            				});
+            			});
+            		}
+            	}
             },
             /**
              * @lends WinJSContrib.UI.GridControl.prototype
@@ -412,13 +421,6 @@
             		this.renderer.prepareItems(items, renderOptions);
             	},
 
-            	pageLayout: function () {
-            		this.renderer.pageLayout();
-            		if (this.autolayout) {
-            			this.layout();
-            		}
-            	},
-
             	/**
                  * force items content to render
                  */
@@ -426,15 +428,16 @@
             		this.renderer.renderItemsContent();
             	},
 
-            	resetElement: function (elt) {
-            		if (elt.style.position) elt.style.position = '';
-            		if (elt.style.display) elt.style.display = '';
-            		if (elt.style.width) elt.style.width = '';
-            		if (elt.style.height) elt.style.height = '';
-            		if (elt.style.minWidth) elt.style.minWidth = '';
-            		if (elt.style.minHeight) elt.style.minHeight = '';
-            		if (elt.style.left) elt.style.left = '';
-            		if (elt.style.top) elt.style.top = '';
+            	resetElement: function (elt, isItem) {
+					var style = elt.style;
+					if (isItem &amp;&amp; style.position) style.position = '';
+					if (!isItem &amp;&amp; style.display) style.display = '';
+					if (style.width) style.width = '';
+					if (style.height) style.height = '';
+					if (style.minWidth) style.minWidth = '';
+					if (style.minHeight) style.minHeight = '';
+					if (style.left) style.left = '';
+					if (style.top) style.top = '';
             	},
 
             	/**
@@ -442,10 +445,10 @@
                  */
             	clear: function () {
             		var ctrl = this;
-            		ctrl.resetElement(ctrl.element);
+            		ctrl.resetElement(ctrl.element, false);
             		if (ctrl.element.children.length) {
             			for (var i = 0, l = ctrl.element.children.length; i &lt; l; i++) {
-            				ctrl.resetElement(ctrl.element.children[i]);
+            				ctrl.resetElement(ctrl.element.children[i], true);
             			}
             		}
             	},
@@ -654,8 +657,8 @@
             			var childs = ctrl.visibleChilds();
             			childs.forEach(function (elt) {
             				elt.style.position = 'absolute';
-            				var eltW = elt.clientWidth * ratioW;
-            				var eltH = elt.clientHeight * ratioH;
+            				var eltW = elt.offsetWidth * ratioW;
+            				var eltH = elt.offsetHeight * ratioH;
             				var eltColumns = (eltW / cellW) >> 0;
             				var eltRows = (eltH / cellH) >> 0;
 
@@ -710,26 +713,26 @@
             			var gridCellsMatrix = [[]];
             			var childs = ctrl.visibleChilds();
             			childs.forEach(function (elt) {
-            					elt.style.position = 'absolute';
-            					
-            					var eltW = elt.clientWidth * ratioW;
-            					var eltH = elt.clientHeight * ratioH;
-            					var eltColumns = (eltW / cellW) >> 0;
-            					var eltRows = (eltH / cellH) >> 0;
+            				elt.style.position = 'absolute';
 
-            					var pos = ctrl.firstFit(gridCellsMatrix, eltRows, eltColumns, _itemsPerLine, ctrl.element.children.length);
-            					//if (!pos)
-            					//    return;
+            				var eltW = elt.offsetWidth * ratioW;
+            				var eltH = elt.offsetHeight * ratioH;
+            				var eltColumns = (eltW / cellW) >> 0;
+            				var eltRows = (eltH / cellH) >> 0;
 
-            					ctrl.fill(gridCellsMatrix, pos.x, pos.y, eltRows, eltColumns);
+            				var pos = ctrl.firstFit(gridCellsMatrix, eltRows, eltColumns, _itemsPerLine, ctrl.element.children.length);
+            				//if (!pos)
+            				//    return;
 
-            					var left = pos.y * (cellW + space);
-            					var top = pos.x * (cellH + space);
-            					elt.style.left = left + 'px';
-            					elt.style.top = top + 'px';
-            					elt.style.width = (eltColumns * cellW + ((eltColumns - 1) * space)) + 'px';
-            					elt.style.height = (eltRows * cellH + ((eltRows - 1) * space)) + 'px';
-            				
+            				ctrl.fill(gridCellsMatrix, pos.x, pos.y, eltRows, eltColumns);
+
+            				var left = pos.y * (cellW + space);
+            				var top = pos.x * (cellH + space);
+            				elt.style.left = left + 'px';
+            				elt.style.top = top + 'px';
+            				elt.style.width = (eltColumns * cellW + ((eltColumns - 1) * space)) + 'px';
+            				elt.style.height = (eltRows * cellH + ((eltRows - 1) * space)) + 'px';
+
             			});
 
             			var elementHeight = gridCellsMatrix.length * (cellH + space);
@@ -756,22 +759,37 @@
             			//if cell dimensions are not defined, take it from last child
             			if (!ctrl.data.cellWidth || !ctrl.data.cellHeight) {
             				if (ctrl.element.childNodes &amp;&amp; ctrl.element.children.length > 0) {
-            					var firstChild = ctrl.element.children[0];
-            					ctrl.data.cellWidth = firstChild.clientWidth;
-            					ctrl.data.cellHeight = firstChild.clientHeight;
+            					var childs = ctrl.visibleChilds();
+            					var firstChild = childs[0];
+            					var w = firstChild.clientWidth;
+            					var h = firstChild.clientHeight;
+            					var l = childs.length;
+            					if (l > 10) l = 10;
+            					for (var i = 0, l = childs.length; i &lt; l ; i++) {
+            						var item = childs[i];
+            						if (w == 0 || item.clientWidth &lt; w) {
+            							w = item.clientWidth;
+            						}
+            						if (h == 0 || item.clientHeight &lt; h) {
+            							h = item.clientHeight;
+            						}
+            					}
+            					ctrl.data.cellWidth = w;
+            					ctrl.data.cellHeight = h;
             				}
             			}
 
             			var layoutChanged = !oldlayout || ctrl.data.layout !== oldlayout.layout;
-            			var layoutfunc = ctrl.GridLayoutsImpl[ctrl.data.layout.toLowerCase()];
-            			if (layoutfunc) {
-            				if (layoutChanged)
-            					ctrl.changeLayout();
+            			if (ctrl.data.layout) {
+            				var layoutfunc = ctrl.GridLayoutsImpl[ctrl.data.layout.toLowerCase()];
+            				if (layoutfunc) {
+            					if (layoutChanged)
+            						ctrl.changeLayout();
 
-            				layoutfunc.bind(ctrl)(layoutChanged);
-            				ctrl.data.applyed = true;
+            					layoutfunc.bind(ctrl)(layoutChanged);
+            					ctrl.data.applyed = true;
+            				}
             			}
-
             			ctrl.renderer.checkRendering();
             		}
             	},
@@ -831,6 +849,16 @@
             	}
             })
 	});
+
+	if (WinJSContrib.UI.WebComponents) {
+		WinJSContrib.UI.WebComponents.register('mcn-grid', WinJSContrib.UI.GridControl, function (elt, options) {
+			WinJSContrib.UI.WebComponents.mapAttr(elt, 'multipass', options);
+			WinJSContrib.UI.WebComponents.mapAttr(elt, 'autolayout', options);
+			WinJSContrib.UI.WebComponents.mapAttr(elt, 'layouts', options);
+
+			return options;
+		});
+	}
 })();</pre>
         </article>
     </section>
@@ -855,7 +883,7 @@
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a>
-		on Tue Apr 07 2015 08:54:09 GMT+0200 (Romance Daylight Time) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+		on Wed Apr 22 2015 22:33:30 GMT+0200 (Romance Daylight Time) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>
 			</div>
