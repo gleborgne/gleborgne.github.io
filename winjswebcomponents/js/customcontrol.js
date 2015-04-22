@@ -3,7 +3,7 @@ var TestApp = TestApp || {};
 (function(){
 	'use strict';
 
-	Control=WinJS.Class.define(function(element, options) {		 
+	var Control = WinJS.Class.define(function(element, options) {		 
 			this.element = element || document.createElement('DIV');
 			this.element.winControl = this;
 			this.element.classList.add('a-custom-control');
