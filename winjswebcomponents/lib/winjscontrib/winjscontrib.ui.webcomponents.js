@@ -223,10 +223,9 @@ WinJSContrib.UI.WebComponents = WinJSContrib.UI.WebComponents || {};
 			var proto = Object.create(HTMLElement.prototype);
 			proto.createdCallback = function () {
 				var element = this;
-				var definition = element.winControl.constructor.mcnWebComponent;
 				var scope = WinJSContrib.Utils.getScopeControl(element);
 				var process = function () {
-					getControlInstance(definition.ctor, element);
+					getControlInstance(ctor, element);
 				}
 
 				if (scope && scope.pageLifeCycle) {
