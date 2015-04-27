@@ -222,8 +222,17 @@ WinJSContrib.UI.WebComponents = WinJSContrib.UI.WebComponents || {};
 			//register component with "real" webcomponent
 			var proto = Object.create(HTMLElement.prototype);
 			proto.createdCallback = function () {
-				console.log('create control ' + tagname);
-				getControlInstance(ctor, this);
+				var scope = WinJSContrib.Utils.getScopeControl(element);
+				var process = function () {
+					getControlInstance(definition.ctor, element);
+				}
+
+				if (scope && scope.pageLifeCycle) {
+					//if the component is owned by a page/fragment, we process the control according to page lifecycle
+					scope.pageLifeCycle.steps.process.attach(process);
+				} else {
+					process();
+				}				
 			};
 
 			proto.attributeChangedCallback = function (attrName, oldValue, newValue) {
