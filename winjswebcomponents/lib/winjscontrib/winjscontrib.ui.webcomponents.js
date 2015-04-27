@@ -222,6 +222,8 @@ WinJSContrib.UI.WebComponents = WinJSContrib.UI.WebComponents || {};
 			//register component with "real" webcomponent
 			var proto = Object.create(HTMLElement.prototype);
 			proto.createdCallback = function () {
+				var element = this;
+				var definition = element.winControl.constructor.mcnWebComponent;
 				var scope = WinJSContrib.Utils.getScopeControl(element);
 				var process = function () {
 					getControlInstance(definition.ctor, element);
