@@ -2,8 +2,9 @@
     "use strict";
 
     WinJS.UI.Pages.define("/winjswebcomponents/pages/detail/detail.html?v=" + AppVersion, {
-    	ready: function(element, options) {
-            var page = this;                        
+    	init: function(element, options) {
+            var page = this;  
+            page.initText = 'Hello world !!!!';
         },
 
         openHome: function(){
