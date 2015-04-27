@@ -222,6 +222,7 @@ WinJSContrib.UI.WebComponents = WinJSContrib.UI.WebComponents || {};
 			//register component with "real" webcomponent
 			var proto = Object.create(HTMLElement.prototype);
 			proto.createdCallback = function () {
+				console.log('create control ' + tagname);
 				getControlInstance(ctor, this);
 			};
 
