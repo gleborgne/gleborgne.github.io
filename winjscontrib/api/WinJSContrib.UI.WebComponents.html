@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>WinJS Contrib Namespace: Grouping</title>
+	<title>WinJS Contrib Namespace: WebComponents</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -247,14 +247,14 @@
 					
 
 
-	<h1 class="page-title">Namespace: Grouping</h1>
+	<h1 class="page-title">Namespace: WebComponents</h1>
 <section>
 
 <header>
     <h2>
-        <span class="ancestors"><a href="global.html#WinJSContrib">WinJSContrib</a><a href="WinJSContrib.UI.html">.UI</a><a href="WinJSContrib.UI.DataSources.html">.DataSources</a>.</span>
+        <span class="ancestors"><a href="global.html#WinJSContrib">WinJSContrib</a><a href="WinJSContrib.UI.html">.UI</a>.</span>
     
-    Grouping
+    WebComponents
     </h2>
     
 </header>
@@ -265,8 +265,6 @@
 
     
         
-            <div class="description"><p>Custom grouping settings for <a href="WinJSContrib.UI.DataSources.DataSourceManager.html">WinJSContrib.UI.DataSources.DataSourceManager</a></p></div>
-        
 
         
 <dl class="details">
@@ -291,7 +289,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="winjscontrib.ui.datasourcemanager.js.html">winjscontrib.ui.datasourcemanager.js</a>, <a href="winjscontrib.ui.datasourcemanager.js.html#sunlight-1-line-489">line 489</a>
+        <a href="winjscontrib.ui.webcomponents.js.html">winjscontrib.ui.webcomponents.js</a>, <a href="winjscontrib.ui.webcomponents.js.html#sunlight-1-line-19">line 19</a>
     </li></ul></dd>
     
 
@@ -301,12 +299,6 @@
 
     
 </dl>
-
-
-        
-            <h3>Example</h3>
-            
-    <pre class="sunlight-highlight-javascript">var datamgr = new WinJSContrib.UI.DataSources.DataSourceManager({   defaultGroupLimit: 12,   groupKind: WinJSContrib.UI.DataSources.Grouping.byField,   field: 'metadata.genre',   listview: page.zoomedInList,   zoomedOutListView: page.zoomedOutList});</pre>
 
 
         
@@ -324,24 +316,80 @@
     
 
     
-        <h3 class="subsection-title">Members</h3>
+
+    
+        <h3 class="subsection-title">Methods</h3>
 
         <dl>
             
 <dt>
-    <h4 class="name" id="alphabetic"><span class="type-signature">&lt;static> </span>alphabetic<span class="type-signature"></span></h4>
+    <h4 class="name" id="processAll"><span class="type-signature">&lt;static> </span>processAll<span class="signature">(element)</span><span class="type-signature"></span></h4>
     
     
 </dt>
 <dd>
     
+    
     <div class="description">
-        <p>alphabetic grouping, use &quot;options.field&quot; to define the property used for grouping</p>
+        <p>inspect current DOM element and create webcomponents found on that element and on its child.</p>
     </div>
     
-    
-    
 
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>element</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLElement</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DOM element to inspect</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
     
 <dl class="details">
     
@@ -365,7 +413,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="winjscontrib.ui.datasourcemanager.js.html">winjscontrib.ui.datasourcemanager.js</a>, <a href="winjscontrib.ui.datasourcemanager.js.html#sunlight-1-line-499">line 499</a>
+        <a href="winjscontrib.ui.webcomponents.js.html">winjscontrib.ui.webcomponents.js</a>, <a href="winjscontrib.ui.webcomponents.js.html#sunlight-1-line-72">line 72</a>
     </li></ul></dd>
     
 
@@ -376,6 +424,16 @@
     
 </dl>
 
+    
+    
+
+    
+
+    
+    
+    
+    
+    
     
     
 </dd>
@@ -383,73 +441,143 @@
         
             
 <dt>
-    <h4 class="name" id="byDay"><span class="type-signature">&lt;static> </span>byDay<span class="type-signature"></span></h4>
+    <h4 class="name" id="register"><span class="type-signature">&lt;static> </span>register<span class="signature">(tagname, ctor, mapping, override)</span><span class="type-signature"></span></h4>
     
     
 </dt>
 <dd>
     
+    
     <div class="description">
-        <p>grouping by day from a date field, use &quot;options.field&quot; to define the property used for grouping</p>
+        <p>Register a control to be used as a webcomponent. If a tagname has already been registered, 
+the function will throw an error unless you specify the override flag</p>
     </div>
     
-    
-    
-
-    
-<dl class="details">
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="winjscontrib.ui.datasourcemanager.js.html">winjscontrib.ui.datasourcemanager.js</a>, <a href="winjscontrib.ui.datasourcemanager.js.html#sunlight-1-line-676">line 676</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
 
     
     
-</dd>
-
+    
+    
+    
+        <h5>Parameters:</h5>
         
-            
-<dt>
-    <h4 class="name" id="byField"><span class="type-signature">&lt;static> </span>byField<span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>grouping by a string field on items, use &quot;options.field&quot; to define the property used for grouping</p>
-    </div>
-    
-    
-    
 
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>tagname</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>name for DOM element for the component</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ctor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>constructor for the WinJS control</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>mapping</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>definition for mapping between control and DOM element</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>override</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>indicate that you want to override an existing component definition</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
     
 <dl class="details">
     
@@ -473,7 +601,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="winjscontrib.ui.datasourcemanager.js.html">winjscontrib.ui.datasourcemanager.js</a>, <a href="winjscontrib.ui.datasourcemanager.js.html#sunlight-1-line-539">line 539</a>
+        <a href="winjscontrib.ui.webcomponents.js.html">winjscontrib.ui.webcomponents.js</a>, <a href="winjscontrib.ui.webcomponents.js.html#sunlight-1-line-249">line 249</a>
     </li></ul></dd>
     
 
@@ -486,119 +614,25 @@
 
     
     
-</dd>
 
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
         
-            
-<dt>
-    <h4 class="name" id="byMonth"><span class="type-signature">&lt;static> </span>byMonth<span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>grouping by month from a date field, use &quot;options.field&quot; to define the property used for grouping</p>
-    </div>
-    
-    
-    
+    <pre class="sunlight-highlight-javascript">WinJSContrib.UI.WebComponents.register('mcn-semanticlistviews', WinJSContrib.UI.SemanticListViews, {	properties: [],	controls: {		"listview": WinJS.UI.ListView,		"zoomedOutListview": WinJS.UI.ListView,		"semanticZoom": WinJS.UI.SemanticZoom	},	map: {		"DEFAULTGROUPLIMIT": { attribute: 'defaultGroupLimit', property: '_dataManager.defaultGroupLimit', resolve: true },		"GROUPKIND": { attribute: 'groupKind', property: '_dataManager.groupKind', resolve: true },		"FIELD": { attribute: 'field', property: '_dataManager.field', resolve: true },		"ITEMS": { attribute: 'items', property: '_dataManager.items', resolve: true },	}});</pre>
 
-    
-<dl class="details">
-    
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="winjscontrib.ui.datasourcemanager.js.html">winjscontrib.ui.datasourcemanager.js</a>, <a href="winjscontrib.ui.datasourcemanager.js.html#sunlight-1-line-630">line 630</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="byYear"><span class="type-signature">&lt;static> </span>byYear<span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>grouping by year from a date field, use &quot;options.field&quot; to define the property used for grouping</p>
-    </div>
-    
-    
-    
-
-    
-<dl class="details">
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="winjscontrib.ui.datasourcemanager.js.html">winjscontrib.ui.datasourcemanager.js</a>, <a href="winjscontrib.ui.datasourcemanager.js.html#sunlight-1-line-584">line 584</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-    
     
 </dd>
 
         </dl>
-    
-
     
 
     
