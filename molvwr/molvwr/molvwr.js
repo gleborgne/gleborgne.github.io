@@ -292,15 +292,17 @@ var Molvwr;
                 for (var i = 2, l = lines.length; i < l; i++) {
                     var lineElements = lines[i].split(" ").filter(function (s) {
                         var tmp = s.trim();
-                        if (tmp)
+                        if (tmp && tmp.length)
                             return true;
+                        else
+                            return false;
                     });
                     if (lineElements.length && lineElements.length >= 4) {
                         var symbol = lineElements[0].trim();
                         var x = getFloat(lineElements[1]);
                         var y = getFloat(lineElements[2]);
                         var z = getFloat(lineElements[3]);
-                        var atomKind = Molvwr.Elements.elementsBySymbol[lineElements[0].trim()];
+                        var atomKind = Molvwr.Elements.elementsBySymbol[symbol];
                         console.log("found atom " + atomKind.name + " " + x + "," + y + "," + z);
                         molecule.atoms.push({
                             symbol: atomKind.symbol,
