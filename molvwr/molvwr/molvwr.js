@@ -19,8 +19,13 @@
             if (atomKind) {
                 var atomMat = new BABYLON.StandardMaterial('materialFor' + atomsymbol, this.scene);
                 atomMat.diffuseColor = new BABYLON.Color3(atomKind.color[0], atomKind.color[1], atomKind.color[2]);
-                atomMat.specularColor = new BABYLON.Color3(0.2, 0.2, 0.2);
-                atomMat.diffuseTexture = new BABYLON.Texture('noise.png', this.scene);
+                atomMat.specularColor = new BABYLON.Color3(0.15, 0.15, 0.15);
+                atomMat.emissiveColor = new BABYLON.Color3(0.1, 0.1, 0.1);
+                atomMat.bumpTexture = new BABYLON.Texture('bump.png', this.scene);
+                // atomMat.bumpTexture.uScale = 1;
+                // atomMat.bumpTexture.vScale = 1;
+                // atomMat.bumpTexture.wrapU = BABYLON.Texture.MIRROR_ADDRESSMODE;
+                // atomMat.bumpTexture.wrapV = BABYLON.Texture.MIRROR_ADDRESSMODE;
                 this.atomsMaterials[atomsymbol] = atomMat;
                 return atomMat;
             }
@@ -31,13 +36,37 @@
             console.log("create babylon scene");
             var scene = new BABYLON.Scene(this.engine);
             scene.clearColor = new BABYLON.Color3(100, 100, 100);
+            scene.fogMode = BABYLON.Scene.FOGMODE_EXP2;
+            scene.fogColor = new BABYLON.Color3(0.9, 0.9, 0.85);
+            scene.fogDensity = 0.01;
             var camera = new BABYLON.ArcRotateCamera('Camera', 1, .8, 10, new BABYLON.Vector3(0, 0, 0), scene);
             camera.wheelPrecision = 10;
             camera.setTarget(BABYLON.Vector3.Zero());
             camera.attachControl(this.canvas, true);
+            this.camera = camera;
             var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 20, 0), scene);
             light.intensity = 0.8;
             this.scene = scene;
+        };
+        BabylonContext.prototype.useAmbientOcclusion = function () {
+            var ssao = new BABYLON.SSAORenderingPipeline('ssaopipeline', this.scene, 0.75);
+            this.scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline("ssaopipeline", this.camera);
+            //this.scene.postProcessRenderPipelineManager.detachCamerasFromRenderPipeline("ssaopipeline", this.camera);
+        };
+        BabylonContext.prototype.useHDR = function () {
+            var hdr = new BABYLON.HDRRenderingPipeline("hdr", this.scene, 1.0, null, [this.camera]);
+            // About gaussian blur : http://homepages.inf.ed.ac.uk/rbf/HIPR2/gsmooth.htm
+            hdr.brightThreshold = 1.2; // Minimum luminance needed to compute HDR
+            hdr.gaussCoeff = 0.3; // Gaussian coefficient = gaussCoeff * theEffectOutput;
+            hdr.gaussMean = 1; // The Gaussian blur mean
+            hdr.gaussStandDev = 0.8; // Standard Deviation of the gaussian blur.
+            hdr.exposure = 1.0; // Controls the overall intensity of the pipeline
+            hdr.minimumLuminance = 0.5; // Minimum luminance that the post-process can output. Luminance is >= 0
+            hdr.maximumLuminance = 1e20; //Maximum luminance that the post-process can output. Must be suprerior to minimumLuminance 
+            hdr.luminanceDecreaseRate = 0.5; // Decrease rate: white to dark
+            hdr.luminanceIncreaserate = 0.5; // Increase rate: dark to white
+            this.scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline("hdr", [this.camera]);
+            //this.scene.postProcessRenderPipelineManager.detachCamerasFromRenderPipeline("hdr", [this.camera]);
         };
         BabylonContext.prototype.testScene = function () {
             // Our built-in 'sphere' shape. Params: name, subdivs, size, scene
@@ -58,7 +87,7 @@ var Molvwr;
         renderer: 'Sphere',
         scale: 1.5,
         atomScaleFactor: 3,
-        sphereSegments: 12
+        sphereSegments: 16
     };
 })(Molvwr || (Molvwr = {}));
 
@@ -82,7 +111,7 @@ var Molvwr;
                 if (molecule) {
                     var rendererClass = Molvwr.Renderer[this.config.renderer];
                     if (rendererClass) {
-                        var renderer = new rendererClass(this.context, this.config);
+                        var renderer = new rendererClass(this, this.context, this.config);
                         renderer.render(molecule);
                     }
                     else {
@@ -282,7 +311,7 @@ var Molvwr;
         Parser.xyz = {
             parse: function (content) {
                 console.log("parsing xyz content");
-                console.log(content);
+                //console.log(content);
                 var molecule = {
                     atoms: [],
                     title: null
@@ -303,15 +332,17 @@ var Molvwr;
                         var y = getFloat(lineElements[2]);
                         var z = getFloat(lineElements[3]);
                         var atomKind = Molvwr.Elements.elementsBySymbol[symbol];
-                        console.log("found atom " + atomKind.name + " " + x + "," + y + "," + z);
-                        molecule.atoms.push({
-                            symbol: atomKind.symbol,
-                            number: atomKind.number,
-                            x: x,
-                            y: y,
-                            z: z,
-                            bonds: []
-                        });
+                        if (atomKind) {
+                            console.log("found atom " + atomKind.name + " " + x + "," + y + "," + z);
+                            molecule.atoms.push({
+                                symbol: atomKind.symbol,
+                                number: atomKind.number,
+                                x: x,
+                                y: y,
+                                z: z,
+                                bonds: []
+                            });
+                        }
                     }
                 }
                 console.log("found " + molecule.title + " " + molecule.atoms.length);
@@ -326,27 +357,42 @@ var Molvwr;
     var Renderer;
     (function (Renderer) {
         var Sphere = (function () {
-            function Sphere(ctx, config) {
+            function Sphere(viewer, ctx, config) {
+                this.meshes = {};
                 this.ctx = ctx;
                 this.config = config;
+                this.viewer = viewer;
             }
             Sphere.prototype.render = function (molecule) {
                 var _this = this;
                 console.log("sphere rendering");
                 if (molecule && molecule.atoms) {
+                    var meshes = [];
                     molecule.atoms.forEach(function (atom, index) {
-                        _this.renderAtom(atom, index);
+                        meshes.push(_this.renderAtom(atom, index));
                     });
+                    BABYLON.Mesh.MergeMeshes(meshes, true);
                 }
             };
             Sphere.prototype.renderAtom = function (atom, index) {
                 var cfg = this.config;
                 var atomKind = Molvwr.Elements.elementsBySymbol[atom.symbol];
-                var sphere = BABYLON.Mesh.CreateSphere("sphere" + index, cfg.sphereSegments, atomKind.radius * cfg.scale * cfg.atomScaleFactor, this.ctx.scene);
+                var mesh = this.meshes[atom.symbol];
+                var sphere = null;
+                if (mesh) {
+                    sphere = mesh.createInstance("sphere" + index);
+                }
+                else {
+                    sphere = BABYLON.Mesh.CreateSphere("sphere" + index, cfg.sphereSegments, atomKind.radius * cfg.scale * cfg.atomScaleFactor, this.ctx.scene);
+                    sphere.material = this.ctx.getMaterial(atom.symbol);
+                    this.meshes[atom.symbol] = sphere;
+                }
+                // sphere = BABYLON.Mesh.CreateSphere("sphere" + index, cfg.sphereSegments, atomKind.radius * cfg.scale * cfg.atomScaleFactor, this.ctx.scene);
+                // sphere.material = this.ctx.getMaterial(atom.symbol);
                 sphere.position.x = atom.x * cfg.scale;
                 sphere.position.y = atom.y * cfg.scale;
                 sphere.position.z = atom.z * cfg.scale;
-                sphere.material = this.ctx.getMaterial(atom.symbol);
+                return sphere;
             };
             return Sphere;
         })();
