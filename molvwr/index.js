@@ -1,33 +1,33 @@
 (function(){
 	'use strict';
 	var samples = [
-		{ name : "Water", url: "molsamples/pdb/water.txt", format: "pdb"},
-		{ name : "Methane", url: "molsamples/xyz/methane.txt", format: "xyz"},
-		{ name : "Benzene", url: "molsamples/xyz/benzene.txt", format: "xyz"},
-		{ name : "Caffeine", url: "molsamples/xyz/caffeine.txt", format: "xyz"},
-		{ name : "Testosterone", url: "molsamples/xyz/testosterone.txt", format: "xyz"},
-		{ name : "Aspirin", url: "molsamples/mol/aspirin.txt", format: "mol"},
-		{ name : "Morphine", url: "molsamples/mol/morphine.txt", format: "mol"},
-		{ name : "Creatin", url: "molsamples/mol/creatin.txt", format: "mol"},
-		{ name : "Linoleic acid (aka Omega 3)", url : "molsamples/xyz/linoleic acid.txt", format : "xyz" },
-		{ name : "Glucose", url : "molsamples/mol/glucose.txt", format : "mol" },
-		{ name : "Cellulose", url: "molsamples/pdb/cellulose.txt", format: "pdb"},
-		{ name : "Pennicilin", url : "molsamples/mol/pennicilin.txt", format : "mol" },
-		{ name : "Carbon (graphite)", url: "molsamples/xyz/graphite.txt", format: "xyz"},
-		{ name : "Carbon (diamond)", url: "molsamples/xyz/diamond.txt", format: "xyz"},
-		{ name : "Carbon Fullerene", url: "molsamples/xyz/fullerene.txt", format: "xyz"},
-		{ name : "Carbon Graphene", url: "molsamples/xyz/graphene.txt", format: "xyz"},
-		{ name : "Carbon nano tube", url: "molsamples/mol/btube.txt", format: "mol"},
-		{ name : "4E0O", url: "molsamples/xyz/4E0O.txt", format: "xyz"},
-		{ name : "4QCI", url: "molsamples/xyz/4QCI.txt", format: "xyz"},
-		{ name : "Gold structure", url: "molsamples/xyz/Au.txt", format: "xyz"},
-		{ name : "Gold thiol complex", url: "molsamples/xyz/au_thiol.txt", format: "xyz"},
-		{ name : "DNA fragment", url: "molsamples/xyz/dna.txt", format: "xyz"},		
+		{ name : "Water", id:"water", url: "molsamples/pdb/water.txt", format: "pdb"},
+		{ name : "Methane", id:"methane", url: "molsamples/xyz/methane.txt", format: "xyz"},
+		{ name : "Benzene", id:"benzene", url: "molsamples/xyz/benzene.txt", format: "xyz"},
+		{ name : "Caffeine", id:"caffeine", url: "molsamples/xyz/caffeine.txt", format: "xyz"},
+		{ name : "Testosterone", id:"testosterone", url: "molsamples/xyz/testosterone.txt", format: "xyz"},
+		{ name : "Aspirin", id:"aspirin", url: "molsamples/mol/aspirin.txt", format: "mol"},
+		{ name : "Morphine", id:"morphine", url: "molsamples/mol/morphine.txt", format: "mol"},
+		{ name : "Creatin", id:"creatin", url: "molsamples/mol/creatin.txt", format: "mol"},
+		{ name : "Linoleic acid (aka Omega 3)", id:"linoleicacid", url : "molsamples/xyz/linoleic acid.txt", format : "xyz" },
+		{ name : "Glucose", id:"glucose", url : "molsamples/mol/glucose.txt", format : "mol" },
+		{ name : "Cellulose", id:"cellulose", url: "molsamples/pdb/cellulose.txt", format: "pdb"},
+		{ name : "Pennicilin", id:"pennicilin", url : "molsamples/mol/pennicilin.txt", format : "mol" },
+		{ name : "Carbon (graphite)", id:"carbongraphite", url: "molsamples/xyz/graphite.txt", format: "xyz"},
+		{ name : "Carbon (diamond)", id:"carbondiamond", url: "molsamples/xyz/diamond.txt", format: "xyz"},
+		{ name : "Carbon Fullerene", id:"fullerene", url: "molsamples/xyz/fullerene.txt", format: "xyz"},
+		{ name : "Carbon Graphene", id:"graphene", url: "molsamples/xyz/graphene.txt", format: "xyz"},
+		{ name : "Carbon nano tube", id:"nanotube", url: "molsamples/mol/btube.txt", format: "mol"},
+		{ name : "4E0O", id:"4E0O", url: "molsamples/xyz/4E0O.txt", format: "xyz"},
+		{ name : "4QCI", id:"4QCI", url: "molsamples/xyz/4QCI.txt", format: "xyz"},
+		{ name : "Gold structure", id:"gold", url: "molsamples/xyz/Au.txt", format: "xyz"},
+		{ name : "Gold thiol complex", id:"goldthiol", url: "molsamples/xyz/au_thiol.txt", format: "xyz"},
+		{ name : "DNA fragment", id:"dna", url: "molsamples/xyz/dna.txt", format: "xyz"},		
 	];
 
 	var viewmodes = [
-		{ name : 'spheres', cfg : Molvwr.Config.spheres},
-		{ name : 'balls and sticks', cfg : Molvwr.Config.ballsAndSticks},
+		{ name : 'spheres', id:"spheres", cfg : Molvwr.Config.spheres},
+		{ name : 'balls and sticks', id:"ballsandsticks", cfg : Molvwr.Config.ballsAndSticks},
 	];
 
 	function hideAllPanels(){
@@ -37,12 +37,13 @@
 		}
 	}
 
-	function ChoicePanel(element, titleElement, viewer, samples, onselected){
+	function ChoicePanel(element, titleElement, viewer, items, onselected){
 		var ctrl = this;
 		this.viewer = viewer;
 		this.titleElement = titleElement;
 		this.element = element;
 		this.onselected = onselected;
+		this.items = items;
 
 		this.itemsElt = document.createElement("DIV");
 		this.itemsElt.className = "items"
@@ -58,24 +59,37 @@
 			}
 		}
 
-		samples.forEach(function(item){
+		this.items.forEach(function(item){
 			var sampleitem = document.createElement("DIV");
 			sampleitem.className = "choice-item";
 			sampleitem.innerHTML = item.name;
 			ctrl.itemsElt.appendChild(sampleitem);
 				sampleitem.onclick = function(){
-					ctrl.setSelected(item);
+					ctrl.setSelected(item.id);
 					ctrl.hide();
 				}
 			
 		})
 	}
 
-	ChoicePanel.prototype.setSelected = function(item){
+	ChoicePanel.prototype.getItemById = function(itemid){
+		var item = this.items.filter(function(mol){
+			if (mol.id == itemid){
+				return true;
+			}
+		})[0];
+
+		return item;
+	}
+
+	ChoicePanel.prototype.setSelected = function(itemid){
 		var ctrl = this;
-		ctrl.titleElement.innerText = item.name;
-		if (ctrl.onselected){
-			ctrl.onselected(ctrl, item)
+		var item = this.getItemById(itemid);
+		if (item){
+			ctrl.titleElement.innerText = item.name;
+			if (ctrl.onselected){
+				ctrl.onselected(ctrl, item)
+			}
 		}
 	}
 
@@ -98,12 +112,22 @@
 	var viewpanelctrl = new ChoicePanel(viewmodepanel, viewmodetitle, viewer, viewmodes, function(ctrl, item){
 		ctrl.viewer.setOptions(item.cfg());
 	});
-	viewpanelctrl.setSelected(viewmodes[1]);
+	viewpanelctrl.setSelected("ballsandsticks");
 		
 	var samplespanelctrl = new ChoicePanel(samplespanel, titleelement, viewer, samples, function(ctrl, item){
 		ctrl.viewer.loadContentFromUrl(item.url, item.format);
+		window.location.hash = item.id;
 	});
-	samplespanelctrl.setSelected(samples[5]);
+
+	var currentmolecule = "morphine";
+	if (window.location.hash){
+		var item = samplespanelctrl.getItemById(window.location.hash.substr(1));
+		if (item){
+			currentmolecule = item.id;
+		}
+	}
+
+	samplespanelctrl.setSelected(currentmolecule);
 
 	function hideAbout(){
 		overlay.classList.remove("visible");
