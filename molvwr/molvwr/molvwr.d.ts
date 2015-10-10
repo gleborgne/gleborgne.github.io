@@ -15,27 +15,36 @@
     }
 }
 
-declare module Molvwr {
+declare module Molvwr.Config {
     interface IMolvwrConfig {
-        renderer: string;
-        scale: number;
+        renderers: string[];
         atomScaleFactor: number;
+        cylinderScale: number;
         sphereSegments: number;
     }
-    var defaultConfig: IMolvwrConfig;
+    function defaultConfig(): IMolvwrConfig;
+    function spheres(): IMolvwrConfig;
+    function ballsAndSticks(): IMolvwrConfig;
 }
 
 declare module Molvwr {
     class Viewer {
         element: HTMLElement;
         canvas: HTMLCanvasElement;
-        config: IMolvwrConfig;
+        config: Molvwr.Config.IMolvwrConfig;
         context: BabylonContext;
-        constructor(element: HTMLElement, config?: IMolvwrConfig);
+        molecule: any;
+        constructor(element: HTMLElement, config?: Molvwr.Config.IMolvwrConfig);
         private _loadContentFromString(content, contentFormat);
+        renderMolecule(molecule: any): void;
+        setOptions(options: any): void;
         createContext(): void;
         loadContentFromString(content: string, contentFormat: string): void;
         loadContentFromUrl(url: string, contentFormat: string): void;
+        private _postProcessMolecule(molecule);
+        private _calculateAtomsBonds(molecule);
+        private _getCentroid(s);
+        private _center(molecule);
     }
 }
 
@@ -51,6 +60,8 @@ declare module Molvwr.Elements {
     var elements: PeriodicElement[];
     var elementsBySymbol: {};
     var elementsByNumber: {};
+    var MIN_ATOM_RADIUS: number;
+    var MAX_ATOM_RADIUS: number;
 }
 
 declare module Molvwr.Parser {
@@ -72,13 +83,51 @@ declare module Molvwr.Parser {
 }
 
 declare module Molvwr.Renderer {
-    class Sphere {
+    class BondsCylinder {
         ctx: Molvwr.BabylonContext;
-        config: Molvwr.IMolvwrConfig;
+        config: Molvwr.Config.IMolvwrConfig;
         viewer: Molvwr.Viewer;
         meshes: any;
-        constructor(viewer: Molvwr.Viewer, ctx: Molvwr.BabylonContext, config: Molvwr.IMolvwrConfig);
+        constructor(viewer: Molvwr.Viewer, ctx: Molvwr.BabylonContext, config: Molvwr.Config.IMolvwrConfig);
+        render(molecule: any): void;
+        getCylinderForBinding(diameter: any, binding: any, index: any): any;
+        alignCylinderToBinding(b: any, cylinder: any): any;
+        vectorEqualsCloseEnough(v1: any, v2: any, tolerance?: number): boolean;
+    }
+}
+
+declare module Molvwr.Renderer {
+    class BondsLines {
+        ctx: Molvwr.BabylonContext;
+        config: Molvwr.Config.IMolvwrConfig;
+        viewer: Molvwr.Viewer;
+        meshes: any;
+        constructor(viewer: Molvwr.Viewer, ctx: Molvwr.BabylonContext, config: Molvwr.Config.IMolvwrConfig);
+        render(molecule: any): void;
+    }
+}
+
+declare module Molvwr.Renderer {
+    class Sphere {
+        ctx: Molvwr.BabylonContext;
+        config: Molvwr.Config.IMolvwrConfig;
+        viewer: Molvwr.Viewer;
+        meshes: any;
+        constructor(viewer: Molvwr.Viewer, ctx: Molvwr.BabylonContext, config: Molvwr.Config.IMolvwrConfig);
         render(molecule: any): void;
         renderAtom(atom: any, index: any): any;
+    }
+}
+
+declare module Molvwr.Renderer {
+    class Sticks {
+        ctx: Molvwr.BabylonContext;
+        config: Molvwr.Config.IMolvwrConfig;
+        viewer: Molvwr.Viewer;
+        meshes: any;
+        constructor(viewer: Molvwr.Viewer, ctx: Molvwr.BabylonContext, config: Molvwr.Config.IMolvwrConfig);
+        render(molecule: any): void;
+        getCylinderForBinding(diameter: any, binding: any, index: any): any;
+        alignCylinderToBinding(b: any, cylinder: any): any;
     }
 }
