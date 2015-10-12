@@ -317,7 +317,5 @@
 		hideAllPanels();
 	}
 
-	savepic.onclick = function(){
-		viewer.exportScreenshot();
-	}
+	
 })();
