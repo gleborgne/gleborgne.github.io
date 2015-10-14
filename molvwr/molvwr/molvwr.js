@@ -419,8 +419,8 @@ var Molvwr;
                 };
                 var lines = content.split('\n');
                 molecule.title = lines[1];
-                for (var i = 4, l = lines.length; i < l; i++) {
-                    if (lines[i].indexOf("   ") == 0) {
+                for (var i = 0, l = lines.length; i < l; i++) {
+                    if (lines[i].indexOf("  ") == 0) {
                         var lineElements = lines[i].split(" ").filter(function (s) {
                             var tmp = s.trim();
                             if (tmp && tmp.length)
@@ -435,7 +435,7 @@ var Molvwr;
                             var z = getFloat(lineElements[2]);
                             var atomKind = Molvwr.Elements.elementsBySymbol[symbol];
                             if (atomKind) {
-                                //console.log("found atom " + atomKind.name + " " + x + "," + y + "," + z);
+                                console.log("found atom " + atomKind.name + " " + x + "," + y + "," + z);
                                 molecule.atoms.push({
                                     kind: atomKind,
                                     x: x,
@@ -449,11 +449,8 @@ var Molvwr;
                             }
                         }
                     }
-                    else {
-                        break;
-                    }
                 }
-                console.log("found " + molecule.title + " " + molecule.atoms.length);
+                console.log("found " + molecule.atoms.length);
                 return molecule;
             }
         };
