@@ -9,6 +9,10 @@
 		{ name : "food", id:"food", childs: [
 			{ name : "misc.", id:"food-misc", childs: [
 				{ name : "Caffeine", id:"caffeine", url: "molsamples/xyz/caffeine.txt", format: "xyz"},
+				{ name : "Limonene", id:"limonene", url: "molsamples/mol/limonene.txt", format: "mol"},
+				{ name : "Menthol", id:"menthol", url: "molsamples/mol/menthol.txt", format: "mol"},
+				{ name : "Humulone", id:"humulone", url: "molsamples/mol/humulone.txt", format: "mol"}, //beer taste
+				
 			]},
 			{ name : "lipids", id:"food-lipids", childs: [
 				{ name : "Linoleic acid (aka Omega 3)", id:"linoleicacid", url : "molsamples/xyz/linoleic acid.txt", format : "xyz" },
