@@ -1,19 +1,14 @@
 ﻿var Molvwr;
 (function (Molvwr) {
     var BabylonContext = (function () {
-        function BabylonContext(canvas, viewMode) {
+        function BabylonContext(canvas) {
             var _this = this;
             this.canvas = canvas;
             this.engine = new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true });
-            this.atomsMaterials = {};
             this.engine.runRenderLoop(function () {
                 if (_this.scene)
                     _this.scene.render();
             });
-            this.viewMode = viewMode;
-            if (!this.viewMode) {
-                this.viewMode = new Molvwr.ViewModes.Toon();
-            }
         }
         BabylonContext.prototype.exportScreenshot = function () {
             return this.canvas.toDataURL("image/png");
@@ -22,8 +17,13 @@
             this.engine.dispose();
         };
         BabylonContext.prototype.sphereMaterial = function (atomMat, useEffects) {
-            if (this.viewMode) {
-                this.viewMode.sphereMaterial(this, atomMat, useEffects);
+            if (this.viewmode) {
+                this.viewmode.sphereMaterial(this, atomMat, useEffects);
+            }
+        };
+        BabylonContext.prototype.cylinderMaterial = function (atomMat, useEffects) {
+            if (this.viewmode) {
+                this.viewmode.cylinderMaterial(this, atomMat, useEffects);
             }
         };
         BabylonContext.prototype.createScene = function () {
@@ -32,8 +32,8 @@
             console.log("create babylon scene");
             var scene = new BABYLON.Scene(this.engine);
             this.scene = scene;
-            if (this.viewMode) {
-                this.viewMode.createScene(this);
+            if (this.viewmode) {
+                this.viewmode.createScene(this);
             }
         };
         return BabylonContext;
@@ -66,6 +66,17 @@ var Molvwr;
             };
         }
         Config.spheres = spheres;
+        function sticks() {
+            return {
+                allowLOD: true,
+                renderers: ['Sticks'],
+                atomScaleFactor: 1.3,
+                cylinderScale: 1.4,
+                sphereSegments: 16,
+                cylinderSegments: 16,
+            };
+        }
+        Config.sticks = sticks;
         function ballsAndSticks() {
             return {
                 allowLOD: true,
@@ -138,7 +149,7 @@ var Molvwr;
     }
     Molvwr.process = process;
     var Viewer = (function () {
-        function Viewer(element, config) {
+        function Viewer(element, config, viewmode) {
             if (!__global.BABYLON) {
                 throw new Error("Babylon.js is not present, please add a reference to Babylon.js script");
             }
@@ -153,6 +164,10 @@ var Molvwr;
             this.canvas.style.height = "100%";
             this.element.appendChild(this.canvas);
             this.context = new Molvwr.BabylonContext(this.canvas);
+            this.viewmode = viewmode;
+            if (!this.viewmode) {
+                this.viewmode = new Molvwr.ViewModes.Standard();
+            }
         }
         Viewer.prototype.dispose = function () {
             this.context.dispose();
@@ -211,14 +226,26 @@ var Molvwr;
         };
         Viewer.prototype.setOptions = function (options, completedcallback) {
             this.config = options;
+            this.refresh(completedcallback);
+        };
+        Viewer.prototype.setViewMode = function (viewmode, completedcallback) {
+            this.viewmode = viewmode;
+            this.refresh(completedcallback);
+        };
+        Viewer.prototype.refresh = function (completedcallback) {
             if (this.molecule) {
                 this._renderMolecule(this.molecule, completedcallback);
+            }
+            else {
+                if (completedcallback)
+                    completedcallback();
             }
         };
         Viewer.prototype._createContext = function () {
             if (this.context)
                 this.context.dispose();
             this.context = new Molvwr.BabylonContext(this.canvas);
+            this.context.viewmode = this.viewmode;
             this.context.createScene();
         };
         Viewer.prototype.exportScreenshot = function () {
@@ -272,9 +299,12 @@ var Molvwr;
             }
         };
         Viewer.prototype._postProcessMolecule = function (molecule) {
+            console.time("post process");
             molecule.batchSize = Math.min(50, (molecule.atoms.length / 4) >> 0);
+            molecule.batchSize = Math.max(10, molecule.batchSize);
             this._center(molecule);
             this._calculateAtomsBonds(molecule);
+            console.timeEnd("post process");
         };
         Viewer.prototype._calculateAtomsBonds = function (molecule) {
             console.time("check bounds");
@@ -521,7 +551,7 @@ var Molvwr;
                             var z = getFloat(lineElements[2]);
                             var atomKind = Molvwr.Elements.elementsBySymbol[symbol];
                             if (atomKind) {
-                                console.log("found atom " + atomKind.name + " " + x + "," + y + "," + z);
+                                //console.log("found atom " + atomKind.name + " " + x + "," + y + "," + z);
                                 molecule.atoms.push({
                                     kind: atomKind,
                                     x: x,
@@ -669,7 +699,7 @@ var Molvwr;
                 var meshes = [];
                 var diameter = Molvwr.Elements.MIN_ATOM_RADIUS * this.config.cylinderScale * this.config.atomScaleFactor;
                 var nbbonds = molecule.bonds.length;
-                console.log("rendering " + nbbonds + " bonds as cylinder");
+                //console.log("rendering " + nbbonds + " bonds as cylinder");
                 this.prepareBonds(molecule, diameter);
                 this.runBatch(0, molecule.batchSize, molecule, diameter, completedCallback);
             };
@@ -679,9 +709,9 @@ var Molvwr;
                 }
             };
             BondsCylinder.prototype.createMesh = function (binding, diameter) {
-                console.log("create bind mesh " + binding.key);
+                //console.log("create bind mesh " + binding.key);
                 if (this.config.cylinderLOD) {
-                    console.log("cylinder LOD " + this.config.cylinderLOD.length);
+                    //console.log("cylinder LOD " + this.config.cylinderLOD.length)
                     var rootConf = this.config.cylinderLOD[0];
                     var rootMesh = this.createCylinder(binding, diameter, rootConf.segments, rootConf.texture, rootConf.color);
                     for (var i = 1, l = this.config.cylinderLOD.length; i < l; i++) {
@@ -707,16 +737,6 @@ var Molvwr;
                 atomMat.diffuseColor = new BABYLON.Color3(0.4, 0.4, 0.4);
                 atomMat.specularColor = new BABYLON.Color3(0.4, 0.4, 0.4);
                 atomMat.emissiveColor = new BABYLON.Color3(0.2, 0.2, 0.2);
-                atomMat.emissiveFresnelParameters = new BABYLON.FresnelParameters();
-                atomMat.emissiveFresnelParameters.bias = 0.6;
-                atomMat.emissiveFresnelParameters.power = 1;
-                atomMat.emissiveFresnelParameters.leftColor = BABYLON.Color3.Black();
-                atomMat.emissiveFresnelParameters.rightColor = BABYLON.Color3.White();
-                //atomMat.bumpTexture = new BABYLON.Texture('textures/bump.png', this.ctx.scene);
-                //(<any>atomMat.bumpTexture).uScale = 6;
-                //(<any>atomMat.bumpTexture).vScale = 6;
-                //atomMat.bumpTexture.wrapU = BABYLON.Texture.MIRROR_ADDRESSMODE;
-                //atomMat.bumpTexture.wrapV = BABYLON.Texture.MIRROR_ADDRESSMODE;
                 cylinder.material = atomMat;
                 cylinder.isPickable = false;
                 cylinder.setEnabled(false);
@@ -731,7 +751,7 @@ var Molvwr;
                         var key = b.atomA.kind.symbol + "#" + b.atomB.kind.symbol;
                         var mesh = _this.meshes[key];
                         var cylinder = mesh.createInstance("bond" + index);
-                        _this.alignCylinderToBinding(b, cylinder);
+                        _this.alignCylinderToBinding(b.atomA, b.atomB, b.d, cylinder);
                     });
                     if (items.length < size) {
                         console.log("batch end " + items.length);
@@ -743,29 +763,35 @@ var Molvwr;
                     }
                 }, 5);
             };
-            BondsCylinder.prototype.alignCylinderToBinding = function (b, cylinder) {
-                var pointA = new BABYLON.Vector3(b.atomA.x, b.atomA.y, b.atomA.z);
-                var pointB = new BABYLON.Vector3(b.atomB.x, b.atomB.y, b.atomB.z);
-                // First of all we have to set the pivot not in the center of the cylinder:
-                cylinder.setPivotMatrix(BABYLON.Matrix.Translation(0, -b.d / 2, 0));
-                // Then move the cylinder to red sphere
-                cylinder.position = pointB;
-                // Then find the vector between spheres
+            BondsCylinder.prototype.alignCylinderToBinding = function (atomA, atomB, distance, cylinder) {
+                var pointA = new BABYLON.Vector3(atomA.x, atomA.y, atomA.z);
+                var pointB = new BABYLON.Vector3(atomB.x, atomB.y, atomB.z);
                 var v1 = pointB.subtract(pointA);
                 v1.normalize();
                 var v2 = new BABYLON.Vector3(0, 1, 0);
-                // Using cross we will have a vector perpendicular to both vectors
-                var axis = BABYLON.Vector3.Cross(v2, v1);
-                axis.normalize();
-                // Angle between vectors
-                var angle = BABYLON.Vector3.Dot(v1, v2);
-                angle = Math.acos(angle);
-                // Then using axis rotation the result is obvious
-                cylinder.rotationQuaternion = BABYLON.Quaternion.RotationAxis(axis, angle);
                 if (this.vectorEqualsCloseEnough(v1, v2.negate())) {
-                    cylinder.position = pointA;
+                    console.log("must invert...");
+                    var v2 = new BABYLON.Vector3(1, 0, 0);
+                    var axis = BABYLON.Vector3.Cross(v2, v1);
+                    axis.normalize();
+                    var angle = BABYLON.Vector3.Dot(v1, v2);
+                    angle = Math.acos(angle) + (Math.PI / 2);
+                    cylinder.setPivotMatrix(BABYLON.Matrix.Translation(0, -distance / 2, 0));
+                    cylinder.position = pointB;
+                    var quaternion = BABYLON.Quaternion.RotationAxis(axis, angle);
+                    quaternion.w = -quaternion.w;
+                    cylinder.rotationQuaternion = quaternion;
+                    console.log(cylinder.rotationQuaternion);
                 }
-                return cylinder;
+                else {
+                    var axis = BABYLON.Vector3.Cross(v2, v1);
+                    axis.normalize();
+                    var angle = BABYLON.Vector3.Dot(v1, v2);
+                    angle = Math.acos(angle);
+                    cylinder.setPivotMatrix(BABYLON.Matrix.Translation(0, -distance / 2, 0));
+                    cylinder.position = pointB;
+                    cylinder.rotationQuaternion = BABYLON.Quaternion.RotationAxis(axis, angle);
+                }
             };
             BondsCylinder.prototype.vectorEqualsCloseEnough = function (v1, v2, tolerance) {
                 if (tolerance === void 0) { tolerance = 0.00002; }
@@ -848,7 +874,7 @@ var Molvwr;
             };
             Sphere.prototype.createMesh = function (atomkind) {
                 if (this.config.sphereLOD) {
-                    console.log("sphere " + atomkind.symbol + "use LOD " + this.config.sphereLOD.length);
+                    //console.log("sphere " + atomkind.symbol + " use LOD " + this.config.sphereLOD.length);
                     var rootConf = this.config.sphereLOD[0];
                     var rootMesh = this.createSphere(atomkind, rootConf.segments, rootConf.effects, rootConf.color);
                     for (var i = 1, l = this.config.sphereLOD.length; i < l; i++) {
@@ -866,15 +892,6 @@ var Molvwr;
                 else {
                     return this.createSphere(atomkind, this.config.sphereSegments, true, null);
                 }
-                // var knot00 = BABYLON.Mesh.CreateTorusKnot("knot0", 0.5, 0.2, 128, 64, 2, 3, scene);
-                // var knot01 = BABYLON.Mesh.CreateTorusKnot("knot1", 0.5, 0.2, 32, 16, 2, 3, scene);
-                // var knot02 = BABYLON.Mesh.CreateTorusKnot("knot2", 0.5, 0.2, 24, 12, 2, 3, scene);
-                // var knot03 = BABYLON.Mesh.CreateTorusKnot("knot3", 0.5, 0.2, 16, 8, 2, 3, scene);
-                // 
-                // knot00.addLODLevel(15, knot01);
-                // knot00.addLODLevel(30, knot02);
-                // knot00.addLODLevel(45, knot03);
-                // knot00.addLODLevel(55, null);
             };
             Sphere.prototype.createSphere = function (atomkind, segments, useEffects, overridecolor) {
                 var sphere = BABYLON.Mesh.CreateSphere("spheretemplate", segments, atomkind.radius * this.config.atomScaleFactor, this.ctx.scene);
@@ -883,9 +900,6 @@ var Molvwr;
                 var atomMat = new BABYLON.StandardMaterial('materialFor' + atomkind.symbol, this.ctx.scene);
                 var color = overridecolor || atomkind.color;
                 atomMat.diffuseColor = new BABYLON.Color3(color[0], color[1], color[2]);
-                atomMat.ambientColor = new BABYLON.Color3(0, 0, 1);
-                atomMat.specularColor = new BABYLON.Color3(0.1, 0.1, 0.1);
-                atomMat.emissiveColor = new BABYLON.Color3(0.2, 0.2, 0.2);
                 this.ctx.sphereMaterial(atomMat, useEffects);
                 sphere.material = atomMat;
                 return sphere;
@@ -941,60 +955,214 @@ var Molvwr;
                 this.viewer = viewer;
             }
             Sticks.prototype.render = function (molecule, completedCallback) {
-                var _this = this;
                 var cfg = this.config;
                 var meshes = [];
-                console.log("rendering bonds as cylinder");
                 var diameter = Molvwr.Elements.MIN_ATOM_RADIUS * this.config.cylinderScale * this.config.atomScaleFactor;
-                molecule.bonds.forEach(function (b, index) {
-                    var cylinder = _this.getCylinderForBinding(diameter, b, index);
-                    cylinder.pickable = false;
-                    _this.alignCylinderToBinding(b, cylinder);
-                });
-                if (completedCallback)
-                    completedCallback();
+                var nbbonds = molecule.bonds.length;
+                this.prepareBonds(molecule, diameter);
+                //var capsule = this.meshes["C#H"].createInstance("test");			
+                this.runBatch(0, molecule.batchSize, molecule, diameter, completedCallback);
             };
-            Sticks.prototype.getCylinderForBinding = function (diameter, binding, index) {
-                var key = binding.atomA.kind.symbol + "#" + binding.atomB.kind.symbol;
-                if (this.meshes[key])
-                    return this.meshes[key].createInstance("bond" + index);
-                var cylinder = BABYLON.Mesh.CreateCylinder("bond" + index, binding.d, diameter, diameter, this.config.sphereSegments, 1, this.ctx.scene, false);
-                this.meshes[key] = cylinder;
-                var atomMat = new BABYLON.StandardMaterial('materialFor' + key, this.ctx.scene);
-                atomMat.diffuseColor = new BABYLON.Color3(0.3, 0.3, 0.3);
-                atomMat.specularColor = new BABYLON.Color3(0.1, 0.1, 0.1);
-                atomMat.emissiveColor = new BABYLON.Color3(0.2, 0.2, 0.2);
-                atomMat.bumpTexture = new BABYLON.Texture('bump.png', this.ctx.scene);
-                atomMat.bumpTexture.uScale = 6;
-                atomMat.bumpTexture.vScale = 6;
-                atomMat.bumpTexture.wrapU = BABYLON.Texture.MIRROR_ADDRESSMODE;
-                atomMat.bumpTexture.wrapV = BABYLON.Texture.MIRROR_ADDRESSMODE;
-                cylinder.material = atomMat;
-                return cylinder;
+            Sticks.prototype.prepareBonds = function (molecule, diameter) {
+                for (var n in molecule.bondkinds) {
+                    this.meshes[n] = this.createMesh(molecule.bondkinds[n], diameter);
+                }
             };
-            Sticks.prototype.alignCylinderToBinding = function (b, cylinder) {
-                var pointA = new BABYLON.Vector3(b.atomA.x, b.atomA.y, b.atomA.z);
-                var pointB = new BABYLON.Vector3(b.atomB.x, b.atomB.y, b.atomB.z);
-                // First of all we have to set the pivot not in the center of the cylinder:
-                cylinder.setPivotMatrix(BABYLON.Matrix.Translation(0, -b.d / 2, 0));
-                // Then move the cylinder to red sphere
-                cylinder.position = pointB;
-                // Then find the vector between spheres
+            Sticks.prototype.createMesh = function (binding, diameter) {
+                var processor = this.createStickMergemesh;
+                if (this.config.sphereLOD) {
+                    var rootConf = this.config.sphereLOD[0];
+                    var rootMesh = processor.apply(this, [binding, diameter, 0, rootConf.segments, rootConf.texture, rootConf.effects, rootConf.color]);
+                    for (var i = 1, l = this.config.sphereLOD.length; i < l; i++) {
+                        var conf = this.config.sphereLOD[i];
+                        if (conf.segments) {
+                            var childCylinder = processor.apply(this, [binding, diameter, i, conf.segments, conf.texture, conf.effects, conf.color]);
+                            rootMesh.addLODLevel(conf.depth, childCylinder);
+                        }
+                        else {
+                            rootMesh.addLODLevel(conf.depth, null);
+                        }
+                    }
+                    return rootMesh;
+                }
+                else {
+                    return processor.apply(this, [binding, diameter, 0, this.config.cylinderSegments, true, true, null]);
+                }
+            };
+            Sticks.prototype.createStickCylinder = function (binding, diameter, lodIndex, segments, texture, useeffects, coloroverride) {
+                console.log("create mesh template " + binding.key + " cylinder " + lodIndex);
+                //console.log("render cyl " + segments);
+                var radius = diameter / 2;
+                var cylinderSize = binding.d; // - diameter;
+                var halfCylinderSize = cylinderSize / 2;
+                var capsule = BABYLON.Mesh.CreateCylinder("bondtemplate" + binding.key + "-" + lodIndex, cylinderSize, diameter, diameter, segments, 2, this.ctx.scene, false);
+                var atomAMat = new BABYLON.StandardMaterial('materialFor' + binding.key + binding.kindA.symbol + "-" + lodIndex, this.ctx.scene);
+                var atomAColor = coloroverride || binding.kindA.color;
+                atomAMat.diffuseColor = new BABYLON.Color3(atomAColor[0], atomAColor[1], atomAColor[2]);
+                atomAMat.specularColor = new BABYLON.Color3(0.4, 0.4, 0.4);
+                atomAMat.emissiveColor = new BABYLON.Color3(0.2, 0.2, 0.2);
+                this.ctx.cylinderMaterial(atomAMat, useeffects);
+                var atomBMat = new BABYLON.StandardMaterial('materialFor' + binding.key + binding.kindB.symbol + "-" + lodIndex, this.ctx.scene);
+                var atomBColor = coloroverride || binding.kindB.color;
+                atomBMat.diffuseColor = new BABYLON.Color3(atomBColor[0], atomBColor[1], atomBColor[2]);
+                atomBMat.specularColor = new BABYLON.Color3(0.4, 0.4, 0.4);
+                atomBMat.emissiveColor = new BABYLON.Color3(0.2, 0.2, 0.2);
+                this.ctx.cylinderMaterial(atomBMat, useeffects);
+                var rootMat = new BABYLON.MultiMaterial('materialFor' + binding.key + "-" + lodIndex, this.ctx.scene);
+                rootMat.subMaterials.push(atomAMat);
+                rootMat.subMaterials.push(atomBMat);
+                var verticesCount = capsule.getTotalVertices();
+                var indices = capsule.getIndices();
+                console.log("has submeshes ? " + capsule.subMeshes.length + " indices " + indices.length);
+                capsule.subMeshes = [];
+                var halfindices = (indices.length / 2) >> 0;
+                capsule.subMeshes.push(new BABYLON.SubMesh(0, 0, verticesCount, 0, halfindices, capsule));
+                capsule.subMeshes.push(new BABYLON.SubMesh(1, 0, verticesCount, halfindices, halfindices, capsule));
+                capsule.material = rootMat;
+                capsule.isPickable = false;
+                capsule.setEnabled(false);
+                return capsule;
+            };
+            Sticks.prototype.createStickMergemesh = function (binding, diameter, lodIndex, segments, texture, useeffects, coloroverride) {
+                console.log("create mesh template " + binding.key + " mergemesh " + lodIndex);
+                var radius = diameter / 2;
+                var cylinderSize = binding.d - (radius / 2.5);
+                var halfCylinderSize = cylinderSize / 2;
+                var cylinder = BABYLON.Mesh.CreateCylinder("bondtemplate" + binding.key + "-" + lodIndex, cylinderSize, diameter, diameter, segments, 2, this.ctx.scene, false);
+                var cylinderIndices = cylinder.getIndices();
+                var sphereA = BABYLON.Mesh.CreateSphere("sphereA" + binding.key + "-" + lodIndex, segments, diameter, this.ctx.scene, false);
+                sphereA.position.y = -halfCylinderSize;
+                var sphereB = BABYLON.Mesh.CreateSphere("sphereB" + binding.key + "-" + lodIndex, segments, diameter, this.ctx.scene, false);
+                sphereB.position.y = halfCylinderSize;
+                var capsule = BABYLON.Mesh.MergeMeshes([sphereA, cylinder, sphereB], true);
+                var atomAMat = new BABYLON.StandardMaterial('materialFor' + binding.key + binding.kindA.symbol + "-" + lodIndex, this.ctx.scene);
+                var atomAColor = coloroverride || binding.kindA.color;
+                atomAMat.diffuseColor = new BABYLON.Color3(atomAColor[0], atomAColor[1], atomAColor[2]);
+                atomAMat.specularColor = new BABYLON.Color3(0.4, 0.4, 0.4);
+                atomAMat.emissiveColor = new BABYLON.Color3(0.2, 0.2, 0.2);
+                this.ctx.cylinderMaterial(atomAMat, useeffects);
+                var atomBMat = new BABYLON.StandardMaterial('materialFor' + binding.key + binding.kindB.symbol + "-" + lodIndex, this.ctx.scene);
+                var atomBColor = coloroverride || binding.kindB.color;
+                atomBMat.diffuseColor = new BABYLON.Color3(atomBColor[0], atomBColor[1], atomBColor[2]);
+                atomBMat.specularColor = new BABYLON.Color3(0.4, 0.4, 0.4);
+                atomBMat.emissiveColor = new BABYLON.Color3(0.2, 0.2, 0.2);
+                this.ctx.cylinderMaterial(atomBMat, useeffects);
+                var rootMat = new BABYLON.MultiMaterial('materialFor' + binding.key + "-" + lodIndex, this.ctx.scene);
+                rootMat.subMaterials.push(atomAMat);
+                rootMat.subMaterials.push(atomBMat);
+                var verticesCount = capsule.getTotalVertices();
+                var indices = capsule.getIndices();
+                console.log("has submeshes ? " + capsule.subMeshes.length + " indices " + indices.length);
+                console.log(indices);
+                capsule.subMeshes = [];
+                var halfindices = ((indices.length / 2) >> 0);
+                capsule.subMeshes.push(new BABYLON.SubMesh(0, 0, verticesCount, 0, halfindices, capsule));
+                capsule.subMeshes.push(new BABYLON.SubMesh(1, 0, verticesCount, halfindices, indices.length - halfindices, capsule));
+                capsule.material = rootMat;
+                capsule.isPickable = false;
+                capsule.setEnabled(false);
+                return capsule;
+            };
+            Sticks.prototype.createStickCSG = function (binding, diameter, lodIndex, segments, texture, useeffects, coloroverride) {
+                console.log("create mesh template " + binding.key + " csg " + lodIndex);
+                var atomAMat = new BABYLON.StandardMaterial('materialFor' + binding.key + binding.kindA.symbol + "-" + lodIndex, this.ctx.scene);
+                var atomAColor = coloroverride || binding.kindA.color;
+                atomAMat.diffuseColor = new BABYLON.Color3(atomAColor[0], atomAColor[1], atomAColor[2]);
+                atomAMat.specularColor = new BABYLON.Color3(0.4, 0.4, 0.4);
+                atomAMat.emissiveColor = new BABYLON.Color3(0.2, 0.2, 0.2);
+                this.ctx.cylinderMaterial(atomAMat, useeffects);
+                var atomBMat = new BABYLON.StandardMaterial('materialFor' + binding.key + binding.kindB.symbol + "-" + lodIndex, this.ctx.scene);
+                var atomBColor = coloroverride || binding.kindB.color;
+                atomBMat.diffuseColor = new BABYLON.Color3(atomBColor[0], atomBColor[1], atomBColor[2]);
+                atomBMat.specularColor = new BABYLON.Color3(0.4, 0.4, 0.4);
+                atomBMat.emissiveColor = new BABYLON.Color3(0.2, 0.2, 0.2);
+                this.ctx.cylinderMaterial(atomBMat, useeffects);
+                var rootMat = new BABYLON.MultiMaterial('materialFor' + binding.key + "-" + lodIndex, this.ctx.scene);
+                rootMat.subMaterials.push(atomAMat);
+                rootMat.subMaterials.push(atomBMat);
+                var radius = diameter / 2;
+                var cylinderSize = binding.d;
+                var halfCylinderSize = cylinderSize / 2;
+                var cylinderA = BABYLON.Mesh.CreateCylinder("cylinderAtemplate" + binding.key + "-" + lodIndex, cylinderSize / 2, diameter, diameter, segments, 2, this.ctx.scene, false);
+                cylinderA.position.y = -cylinderSize / 4;
+                cylinderA.material = atomAMat;
+                var cylinderB = BABYLON.Mesh.CreateCylinder("cylinderAtemplate" + binding.key + "-" + lodIndex, cylinderSize / 2, diameter, diameter, segments, 2, this.ctx.scene, false);
+                cylinderB.position.y = cylinderSize / 4;
+                cylinderB.material = atomBMat;
+                var sphereA = BABYLON.Mesh.CreateSphere("sphereA" + binding.key + "-" + lodIndex, segments, diameter, this.ctx.scene, false);
+                sphereA.position.y = -halfCylinderSize;
+                sphereA.material = atomAMat;
+                var sphereB = BABYLON.Mesh.CreateSphere("sphereB" + binding.key + "-" + lodIndex, segments, diameter, this.ctx.scene, false);
+                sphereB.position.y = halfCylinderSize;
+                sphereB.material = atomBMat;
+                var sphereACSG = BABYLON.CSG.FromMesh(sphereA);
+                var cylinderACSG = BABYLON.CSG.FromMesh(cylinderA);
+                var cylinderBCSG = BABYLON.CSG.FromMesh(cylinderB);
+                var sphereBCSG = BABYLON.CSG.FromMesh(sphereB);
+                var atomACSG = sphereACSG.intersect(cylinderACSG);
+                var atomBCSG = sphereBCSG.intersect(cylinderBCSG);
+                var resCSG = atomACSG.intersect(atomBCSG);
+                var capsule = resCSG.toMesh("bondtemplate" + binding.key + "-" + lodIndex, rootMat, this.ctx.scene, false);
+                capsule.isPickable = false;
+                capsule.setEnabled(false);
+                // cylinderA.setEnabled(false);
+                // cylinderB.setEnabled(false);
+                // sphereA.setEnabled(false);
+                // sphereB.setEnabled(false);
+                return capsule;
+            };
+            Sticks.prototype.runBatch = function (offset, size, molecule, diameter, completedCallback) {
+                var _this = this;
+                setTimeout(function () {
+                    var items = molecule.bonds.slice(offset, offset + size);
+                    console.log("batch rendering bonds " + offset + "/" + molecule.bonds.length);
+                    items.forEach(function (b, index) {
+                        var key = b.atomA.kind.symbol + "#" + b.atomB.kind.symbol;
+                        var mesh = _this.meshes[key];
+                        var cylinder = mesh.createInstance("bond" + index);
+                        console.log("create bond " + index);
+                        _this.alignCylinderToBinding(b.atomA, b.atomB, b.d, cylinder);
+                    });
+                    if (items.length < size) {
+                        console.log("batch end " + items.length);
+                        if (completedCallback)
+                            completedCallback();
+                    }
+                    else {
+                        _this.runBatch(offset + size, size, molecule, diameter, completedCallback);
+                    }
+                }, 5);
+            };
+            Sticks.prototype.alignCylinderToBinding = function (atomA, atomB, distance, cylinder) {
+                console.log("position items to " + atomB.x + "/" + atomB.y + "/" + atomB.z);
+                var pointA = new BABYLON.Vector3(atomA.x, atomA.y, atomA.z);
+                var pointB = new BABYLON.Vector3(atomB.x, atomB.y, atomB.z);
                 var v1 = pointB.subtract(pointA);
                 v1.normalize();
                 var v2 = new BABYLON.Vector3(0, 1, 0);
-                // Using cross we will have a vector perpendicular to both vectors
-                var axis = BABYLON.Vector3.Cross(v2, v1);
-                axis.normalize();
-                // Angle between vectors
-                var angle = BABYLON.Vector3.Dot(v1, v2);
-                angle = Math.acos(angle);
-                // Then using axis rotation the result is obvious
-                cylinder.rotationQuaternion = BABYLON.Quaternion.RotationAxis(axis, angle);
                 if (this.vectorEqualsCloseEnough(v1, v2.negate())) {
-                    cylinder.position = pointA;
+                    console.log("must invert...");
+                    var v2 = new BABYLON.Vector3(1, 0, 0);
+                    var axis = BABYLON.Vector3.Cross(v2, v1);
+                    axis.normalize();
+                    var angle = BABYLON.Vector3.Dot(v1, v2);
+                    angle = Math.acos(angle) + (Math.PI / 2);
+                    cylinder.setPivotMatrix(BABYLON.Matrix.Translation(0, -distance / 2, 0));
+                    cylinder.position = pointB;
+                    var quaternion = BABYLON.Quaternion.RotationAxis(axis, angle);
+                    quaternion.w = -quaternion.w;
+                    cylinder.rotationQuaternion = quaternion;
+                    console.log(cylinder.rotationQuaternion);
                 }
-                return cylinder;
+                else {
+                    var axis = BABYLON.Vector3.Cross(v2, v1);
+                    axis.normalize();
+                    var angle = BABYLON.Vector3.Dot(v1, v2);
+                    angle = Math.acos(angle);
+                    cylinder.setPivotMatrix(BABYLON.Matrix.Translation(0, -distance / 2, 0));
+                    cylinder.position = pointB;
+                    cylinder.rotationQuaternion = BABYLON.Quaternion.RotationAxis(axis, angle);
+                }
             };
             Sticks.prototype.vectorEqualsCloseEnough = function (v1, v2, tolerance) {
                 if (tolerance === void 0) { tolerance = 0.00002; }
@@ -1026,39 +1194,90 @@ var Molvwr;
     var ViewModes;
     (function (ViewModes) {
         var Standard = (function () {
-            function Standard() {
+            function Standard(viewoptions) {
+                this.options = viewoptions;
+                if (!viewoptions) {
+                    console.log("default viewmode config");
+                    this.options = Molvwr.ViewModes.Standard.defaultConfig();
+                }
+                if (!this.options.sphere)
+                    this.options.sphere = {};
+                if (!this.options.cylinder)
+                    this.options.cylinder = {};
             }
+            Standard.defaultConfig = function () {
+                var res = {
+                    texture: false,
+                    emisivefresnel: new BABYLON.FresnelParameters(),
+                    cylinder: {},
+                    sphere: {}
+                };
+                res.emisivefresnel.bias = 0.3;
+                res.emisivefresnel.power = 1;
+                res.emisivefresnel.leftColor = BABYLON.Color3.Black();
+                res.emisivefresnel.rightColor = BABYLON.Color3.White();
+                return res;
+            };
+            Standard.prototype.getColor = function (config, defaultColor) {
+                if (config && config.length >= 3) {
+                    return new BABYLON.Color3(config[0], config[1], config[2]);
+                }
+                else {
+                    return new BABYLON.Color3(defaultColor[0], defaultColor[1], defaultColor[2]);
+                }
+            };
             Standard.prototype.createScene = function (context) {
-                context.scene.clearColor = new BABYLON.Color3(0.9, 0.9, 0.95);
+                context.scene.clearColor = this.getColor(this.options.clearColor, [0.9, 0.9, 0.95]);
                 context.scene.fogMode = BABYLON.Scene.FOGMODE_EXP2;
-                context.scene.fogColor = new BABYLON.Color3(0.9, 0.9, 0.85);
-                context.scene.fogDensity = 0.01;
+                context.scene.fogColor = this.getColor(this.options.fogColor, [0.9, 0.9, 0.85]);
+                context.scene.fogDensity = this.options.fogDensity || 0.01;
                 var camera = new BABYLON.ArcRotateCamera('Camera', 1, .8, 28, new BABYLON.Vector3(0, 0, 0), context.scene);
-                camera.wheelPrecision = 10;
-                camera.pinchPrecision = 7;
-                camera.panningSensibility = 70;
+                camera.wheelPrecision = this.options.wheelPrecision || 10;
+                camera.pinchPrecision = this.options.pinchPrecision || 7;
+                camera.panningSensibility = this.options.panningSensibility || 70;
                 camera.setTarget(BABYLON.Vector3.Zero());
-                camera.attachControl(context.canvas, true);
+                camera.attachControl(context.canvas, false);
                 context.camera = camera;
                 //var light = new BABYLON.Light("simplelight", scene);
                 var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 1, 0), context.scene);
                 light.intensity = 0.7;
-                light.groundColor = new BABYLON.Color3(0.4, 0.4, 0.4);
-                light.specular = new BABYLON.Color3(0.5, 0.5, 0.5);
+                light.groundColor = this.getColor(this.options.groundColor, [0.4, 0.4, 0.4]);
+                light.specular = this.getColor(this.options.specular, [0.5, 0.5, 0.5]);
+            };
+            Standard.prototype.applyTexture = function (context, material, texture) {
+                if (texture.specularTexture) {
+                    material.specularTexture = new BABYLON.Texture(texture.specularTexture, context.scene);
+                    material.specularTexture.uScale = texture.textureScale || 1;
+                    material.specularTexture.vScale = texture.textureScale || 1;
+                }
+                if (texture.bumpTexture) {
+                    material.bumpTexture = new BABYLON.Texture(texture.bumpTexture, context.scene);
+                    material.bumpTexture.uScale = texture.textureScale || 1;
+                    material.bumpTexture.vScale = texture.textureScale || 1;
+                }
             };
             Standard.prototype.sphereMaterial = function (context, material, useEffects) {
-                if (Molvwr.ViewModes.sphereSpecularTexture) {
-                    material.specularTexture = new BABYLON.Texture(Molvwr.ViewModes.sphereSpecularTexture, context.scene);
-                    material.specularTexture.uScale = Molvwr.ViewModes.sphereTextureScale || 1;
-                    material.specularTexture.vScale = Molvwr.ViewModes.sphereTextureScale || 1;
-                }
-                if (Molvwr.ViewModes.sphereBumpTexture) {
-                    material.bumpTexture = new BABYLON.Texture(Molvwr.ViewModes.sphereBumpTexture, context.scene);
-                    material.bumpTexture.uScale = Molvwr.ViewModes.sphereTextureScale || 1;
-                    material.bumpTexture.vScale = Molvwr.ViewModes.sphereTextureScale || 1;
+                material.ambientColor = new BABYLON.Color3(0, 0, 1);
+                material.specularColor = new BABYLON.Color3(0.1, 0.1, 0.1);
+                material.emissiveColor = new BABYLON.Color3(0.2, 0.2, 0.2);
+                if (useEffects) {
+                    if (this.options.emisivefresnel) {
+                        material.emissiveFresnelParameters = this.options.emisivefresnel;
+                    }
+                    if (this.options.sphere) {
+                        this.applyTexture(context, material, this.options.sphere);
+                    }
                 }
             };
             Standard.prototype.cylinderMaterial = function (context, material, useEffects) {
+                if (useEffects) {
+                    if (this.options.emisivefresnel) {
+                        material.emissiveFresnelParameters = this.options.emisivefresnel;
+                    }
+                    if (this.options.cylinder) {
+                        this.applyTexture(context, material, this.options.cylinder);
+                    }
+                }
             };
             return Standard;
         })();
@@ -1103,18 +1322,6 @@ var Molvwr;
                     material.emissiveFresnelParameters = this.emisivefresnel;
                 material.specularColor = new BABYLON.Color3(0.4, 0.4, 0.4);
                 material.emissiveColor = new BABYLON.Color3(0.3, 0.3, 0.3);
-                if (useEffects && this.options.texture) {
-                    if (Molvwr.ViewModes.sphereSpecularTexture) {
-                        material.specularTexture = new BABYLON.Texture(Molvwr.ViewModes.sphereSpecularTexture, context.scene);
-                        material.specularTexture.uScale = Molvwr.ViewModes.sphereTextureScale || 1;
-                        material.specularTexture.vScale = Molvwr.ViewModes.sphereTextureScale || 1;
-                    }
-                    if (Molvwr.ViewModes.sphereBumpTexture) {
-                        material.bumpTexture = new BABYLON.Texture(Molvwr.ViewModes.sphereBumpTexture, context.scene);
-                        material.bumpTexture.uScale = Molvwr.ViewModes.sphereTextureScale || 1;
-                        material.bumpTexture.vScale = Molvwr.ViewModes.sphereTextureScale || 1;
-                    }
-                }
             };
             Toon.prototype.cylinderMaterial = function (context, material, useEffects) {
             };
@@ -1128,9 +1335,6 @@ var Molvwr;
 (function (Molvwr) {
     var ViewModes;
     (function (ViewModes) {
-        ViewModes.sphereBumpTexture = null;
-        ViewModes.sphereSpecularTexture = null;
-        ViewModes.sphereTextureScale = 1;
         var Experiments = (function () {
             function Experiments() {
             }
@@ -1156,16 +1360,6 @@ var Molvwr;
                 //this.useLensEffect();
             };
             Experiments.prototype.sphereMaterial = function (context, material, useEffects) {
-                if (Molvwr.ViewModes.sphereSpecularTexture) {
-                    material.specularTexture = new BABYLON.Texture(Molvwr.ViewModes.sphereSpecularTexture, context.scene);
-                    material.specularTexture.uScale = Molvwr.ViewModes.sphereTextureScale || 1;
-                    material.specularTexture.vScale = Molvwr.ViewModes.sphereTextureScale || 1;
-                }
-                if (Molvwr.ViewModes.sphereBumpTexture) {
-                    material.bumpTexture = new BABYLON.Texture(Molvwr.ViewModes.sphereBumpTexture, context.scene);
-                    material.bumpTexture.uScale = Molvwr.ViewModes.sphereTextureScale || 1;
-                    material.bumpTexture.vScale = Molvwr.ViewModes.sphereTextureScale || 1;
-                }
             };
             Experiments.prototype.cylinderMaterial = function (context, material, useEffects) {
             };
