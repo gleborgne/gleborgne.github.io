@@ -9,12 +9,18 @@ var Molvwr;
                 if (_this.scene)
                     _this.scene.render();
             });
+            this.bindedResize = this.resize.bind(this);
+            window.addEventListener("resize", this.bindedResize);
         }
+        BabylonContext.prototype.resize = function () {
+            this.engine.resize();
+        };
         BabylonContext.prototype.exportScreenshot = function () {
             return this.canvas.toDataURL("image/png");
         };
         BabylonContext.prototype.dispose = function () {
             this.engine.dispose();
+            window.removeEventListener("resize", this.bindedResize);
         };
         BabylonContext.prototype.sphereMaterial = function (mesh, atomMat, useEffects) {
             if (this.viewmode) {
@@ -185,7 +191,9 @@ var Molvwr;
             return new Molvwr.Utils.Promise(function (complete, error) {
                 var parser = Molvwr.Parser[contentFormat];
                 if (parser) {
+                    console.time("parsing " + contentFormat);
                     var molecule = parser.parse(content);
+                    console.timeEnd("parsing " + contentFormat);
                     if (molecule) {
                         _this._postProcessMolecule(molecule).then(function () {
                             dataReadyCallback(molecule);
@@ -210,6 +218,7 @@ var Molvwr;
             this.molecule = molecule;
             this._createContext();
             return new Molvwr.Utils.Promise(function (complete, error) {
+                console.time("rendering...");
                 if (_this.config.renderers) {
                     var completedCount = 0;
                     var nbrenderers = _this.config.renderers.length;
@@ -221,7 +230,9 @@ var Molvwr;
                             p.push(renderer.render(_this.molecule));
                         }
                     });
-                    Molvwr.Utils.Promise.all(p).then(complete, error);
+                    Molvwr.Utils.Promise.all(p).then(function () {
+                        console.timeEnd("rendering...");
+                    }).then(complete, error);
                 }
                 else {
                     complete(molecule);
@@ -310,8 +321,8 @@ var Molvwr;
             console.time("post process");
             molecule.kinds = molecule.kinds || {};
             molecule.bondkinds = molecule.bondkinds || {};
-            molecule.batchSize = Math.min(50, (molecule.atoms.length / 4) >> 0);
-            molecule.batchSize = Math.max(20, molecule.batchSize);
+            molecule.batchSize = Math.min(120, (molecule.atoms.length / 4) >> 0);
+            molecule.batchSize = Math.max(40, molecule.batchSize);
             return this._center(molecule).then(function () {
                 return _this._calculateAtomsBondsAsync(molecule);
             }).then(function () {
@@ -521,7 +532,7 @@ var Molvwr;
         ];
         Elements.elementsBySymbol = {};
         Elements.elements.forEach(function (e) {
-            Elements.elementsBySymbol[e.symbol] = e;
+            Elements.elementsBySymbol[e.symbol.toUpperCase()] = e;
         });
         Elements.elementsByNumber = {};
         Elements.elements.forEach(function (e) {
@@ -569,7 +580,7 @@ var Molvwr;
                             var x = getFloat(lineElements[0]);
                             var y = getFloat(lineElements[1]);
                             var z = getFloat(lineElements[2]);
-                            var atomKind = Molvwr.Elements.elementsBySymbol[symbol];
+                            var atomKind = Molvwr.Elements.elementsBySymbol[symbol.toUpperCase()];
                             if (atomKind) {
                                 //console.log("found atom " + atomKind.name + " " + x + "," + y + "," + z);
                                 molecule.atoms.push({
@@ -626,7 +637,7 @@ var Molvwr;
                 if (isNaN(symbol[0]) === false) {
                     symbol = symbol.substr(1);
                 }
-                var atomKind = Molvwr.Elements.elementsBySymbol[symbol];
+                var atomKind = Molvwr.Elements.elementsBySymbol[symbol.toUpperCase()];
                 if (atomKind) {
                     var x = parseFloat(line.substr(30, 8).trim());
                     var y = parseFloat(line.substr(38, 8).trim());
@@ -680,7 +691,7 @@ var Molvwr;
                         var x = getFloat(lineElements[1]);
                         var y = getFloat(lineElements[2]);
                         var z = getFloat(lineElements[3]);
-                        var atomKind = Molvwr.Elements.elementsBySymbol[symbol];
+                        var atomKind = Molvwr.Elements.elementsBySymbol[symbol.toUpperCase()];
                         if (atomKind) {
                             //console.log("found atom " + atomKind.name + " " + x + "," + y + "," + z);
                             molecule.atoms.push({
