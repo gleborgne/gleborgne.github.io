@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>WinJS Contrib Source: winjscontrib.ui.flipviewpager.js</title>
+	<title>WinJS Contrib Source: winjscontrib.ui.aspectratio.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -255,7 +255,7 @@
 					
 
 
-		<h1 class="page-title">Source: winjscontrib.ui.flipviewpager.js</h1>
+		<h1 class="page-title">Source: winjscontrib.ui.aspectratio.js</h1>
     
     <section>
         <article>
@@ -265,151 +265,261 @@
  * sources available at https://github.com/gleborgne/winjscontrib
  */
 
+/// &lt;reference path="winjscontrib.core.js" />
 (function () {
     'use strict';
     WinJS.Namespace.define("WinJSContrib.UI", {
-        FlipViewPager: WinJS.Class.mix(WinJS.Class.define(
+        AspectRatio: WinJS.Class.mix(WinJS.Class.define(
         /**
-         * @classdesc
-         * Flipview companion to display pages markers (like carousels)
-         * @class WinJSContrib.UI.FlipViewPager
-         * @param {HTMLElement} element DOM element containing the control
-         * @param {Object} options
-         */
+             * @classdesc 
+             * resize item based on its proportions
+             * @class WinJSContrib.UI.AspectRatio
+             * @param {HTMLElement} element DOM element owning the control
+             * @param {Object} options
+             */
         function ctor(element, options) {
             this.element = element || document.createElement('DIV');
             options = options || {};
-            this.element.className = 'mcn-flipviewpager';
             this.element.winControl = this;
+            this.element.style.display = 'none';
+            this.element.classList.add('mcn-aspectratio');
             this.element.classList.add('win-disposable');
-            this.isFlipping = false;
-            this.flipviewPagerContextGroup = options.flipviewPagerContextGroupName || "flipviewPagerContextGroup";
-            this.flipviewPageVisibilityChangeBinded = this.flipviewPageVisibilityChange.bind(this);
-            this.pageSelectedBinded = this.pageSelected.bind(this);
-            this.countChangedBinded = this.countChanged.bind(this);
+            this.element.classList.add('mcn-layout-ctrl');
             WinJS.UI.setOptions(this, options);
-        },
+            this.render();
+        }, 
         /**
-         * @lends WinJSContrib.UI.FlipViewPager.prototype
+         * @lends WinJSContrib.UI.AspectRatio.prototype
          */
         {
             /**
-             * attached flipview
-             * @type {Object}
+             * base width
+             * @field
              */
-            flipView: {
+            baseWidth: {
                 get: function () {
-                    return this._flipView;
+                    return this._baseWidth;
                 },
                 set: function (val) {
-                    this.unregisterFlipViewEvents();
-                    if (val) {
-                        this._flipView = val;
-                        if (val.winControl)
-                            this._flipView = val.winControl;
-                        this.registerFlipViewEvents();
-                        this.initControl();
-                    }
-                    else {
-                        this._flipView = undefined;
+                    this._baseWidth = val;
+                }
+            },
+
+            /**
+             * base width minimum
+             * @field
+             */
+            baseWidthMin: {
+                get: function () {
+                    return this._baseWidthMin;
+                },
+                set: function (val) {
+                    this._baseWidthMin = val;
+                }
+            },
+
+            /**
+             * base width margin
+             * @field
+             */
+            baseWidthMargin: {
+                get: function () {
+                    return this._baseWidthMargin || 0;
+                },
+                set: function (val) {
+                    this._baseWidthMargin = val;
+                }
+            },
+
+            /**
+             * base height
+             * @field
+             */
+            baseHeight: {
+                get: function () {
+                    return this._baseHeight;
+                },
+                set: function (val) {
+                    this._baseHeight = val;
+                }
+            },
+
+            /**
+             * base height minimum
+             * @field
+             */
+            baseHeightMin: {
+                get: function () {
+                    return this._baseHeightMin;
+                },
+                set: function (val) {
+                    this._baseHeightMin = val;
+                }
+            },
+
+            /**
+             * base height margin
+             * @field
+             */
+            baseHeightMargin: {
+                get: function () {
+                    return this._baseHeightMargin || 0;
+                },
+                set: function (val) {
+                    this._baseHeightMargin = val;
+                }
+            },
+
+            /**
+             * aspect ratio
+             * @field
+             */
+            ratio: {
+                get: function () {
+                    return this._ratio;
+                },
+                set: function (val) {
+                    this._ratio = val;
+                }
+            },
+
+            /**
+             * based on
+             * @field
+             */
+            basedOn: {
+                get: function () {
+                    return this._basedOn;
+                },
+                set: function (val) {
+                    this._basedOn = val;
+                }
+            },
+
+            /**
+             * target
+             * @field
+             */
+            target: {
+                get: function () {
+                    return this._target;
+                },
+                set: function (val) {
+                    this._target = val;
+                }
+            },
+
+            render: function () {
+                var ctrl = this;
+                if (!ctrl.styleElt) {
+                    ctrl.styleElt = document.createElement('STYLE');
+                    ctrl.element.appendChild(ctrl.styleElt);
+                }
+                ctrl.updateLayout();
+            },
+
+            pageLayout: function () {
+                this.updateLayout();
+            },
+
+            updateLayout: function () {
+                var ctrl = this;
+
+                if (!ctrl.parentpage)
+                    ctrl.parentpage = WinJSContrib.Utils.getScopeControl(ctrl.element);
+
+                if (!ctrl.container)
+                    ctrl.container = ctrl.element.parentElement;
+
+                if (ctrl.container &amp;&amp; ctrl.target) {
+                    if (ctrl.basedOn == "height") {
+                        ctrl.updateLayoutBasedOnHeight();
+                    } else {
+                        ctrl.updateLayoutBasedOnWidth();
                     }
                 }
             },
 
-            initControl: function () {
+            updateLayoutBasedOnWidth: function () {
                 var ctrl = this;
-                this._flipView.count().done(function (count) {
-                    ctrl.initButtons(count);
-                });
-            },
 
-            buttonClicked: function (eventObject) {
-                if (!this._flipView)
-                    return;
+                var classname = ctrl.target;
+                if (ctrl.prefix) {
+                    classname = ctrl.prefix + ' ' + classname;
+                }
 
-                if (this.isFlipping) {
-                    // Need to set whats check back since we are mid flip.
-                    var currentPage = this._flipView.currentPage;
-                    this.radioButtons[currentPage].checked = true;
+                var container = ctrl.parentpage.element;
+                if (ctrl.baseWidth) {
+                    var nbitems = ((ctrl.container.clientWidth / ctrl.baseWidth) &lt;&lt; 0) + 1;
+                    var itemW = ((ctrl.container.clientWidth / nbitems) &lt;&lt; 0) - ctrl.baseWidthMargin - 0.25;
+                    if (ctrl.ratio) {
+                        var targetH = (itemW / ctrl.ratio) &lt;&lt; 0;
+                        ctrl.styleElt.innerHTML = classname + "{ width: " + itemW + "px; height:" + targetH + "px}";
+                    } else {
+                        ctrl.styleElt.innerHTML = classname + "{ width: " + itemW + "px; }";
+                    }
+                } else if (ctrl.ratio) {
+                    var elements = ctrl.container.querySelectorAll(ctrl.target);
+                    var eltW = elements[0].clientWidth;
+                    var eltH = elements[0].clientHeight;
 
+                    if (eltW > 0) {
+                        var targetH = (eltW / ctrl.ratio) &lt;&lt; 0;
+                        if (ctrl.max) {
+                            var maxH = (container.clientHeight * ctrl.max / 100) &lt;&lt; 0;
+                            if (targetH > maxH) {
+                                targetH = maxH;
+                            }
+                        }
+                        ctrl.styleElt.innerHTML = classname + "{ height:" + targetH + "px}";
+                    }
                 } else {
-                    // Set the new page since we are not already flipping.
-                    var targetPage = eventObject.srcElement.getAttribute("value");
-                    this._flipView.currentPage = parseInt(targetPage, 10);
+                    console.warn("aspect ratio control must have baseWidth and/or ratio")
                 }
             },
 
-            countChanged: function () {
-                this.initControl();
-            },
-
-            pageChange: function () {
-                var currentPage = this._flipView.currentPage;
-                var btn = this.radioButtons[currentPage];
-                if (btn) {
-                    btn.checked = true;
-                }
-                else {
-                    this.initControl();
-                }
-            },
-
-            pageSelected: function () {
-                this.isFlipping = false;
-                this.pageChange();
-            },
-
-            flipviewPageVisibilityChange: function (eventObject) {
-                if (eventObject.detail.visible === true) {
-                    this.isFlipping = true;
-                }
-                this.pageChange();
-            },
-
-            registerFlipViewEvents: function () {
-                if (!this._flipView)
-                    return;
-
-                this._flipView.addEventListener("pagevisibilitychanged", this.flipviewPageVisibilityChangeBinded, false);
-                this._flipView.addEventListener("pageselected", this.pageSelectedBinded, false);
-                this._flipView.addEventListener("datasourcecountchanged", this.countChangedBinded, false);
-            },
-
-            unregisterFlipViewEvents: function () {
-                if (!this._flipView)
-                    return;
-
-                this._flipView.removeEventListener("pagevisibilitychanged", this.flipviewPageVisibilityChangeBinded);
-                this._flipView.removeEventListener("pageselected", this.pageSelectedBinded);
-                this._flipView.removeEventListener("datasourcecountchanged", this.countChangedBinded);
-            },
-
-            initButtons: function (count) {
+            updateLayoutBasedOnHeight: function () {
                 var ctrl = this;
-                this.radioButtons = [];
-                this.element.innerHTML = '';
-                for (var i = 0; i &lt; count; ++i) {
-                    var radioButton = document.createElement("input");
-                    radioButton.setAttribute("type", "radio");
-                    radioButton.setAttribute("name", ctrl.flipviewPagerContextGroup);
-                    radioButton.setAttribute("value", i);
-                    radioButton.setAttribute("aria-label", (i + 1) + " of " + count);
-                    radioButton.onclick = this.buttonClicked.bind(this);
 
-                    this.radioButtons.push(radioButton);
-                    this.element.appendChild(radioButton);
+                var classname = ctrl.target;
+                if (ctrl.prefix) {
+                    classname = ctrl.prefix + ' ' + classname;
                 }
-                if (count > 0) {
-                    this.radioButtons[this._flipView.currentPage].checked = true;
+
+                if (ctrl.baseHeight) {
+                    var nbitems = ((ctrl.container.clientHeight / ctrl.baseHeight) &lt;&lt; 0) + 1;
+                    var itemH = ((ctrl.container.clientHeight / nbitems) &lt;&lt; 0) - ctrl.baseHeightMargin;
+                    var targetW = (itemH / ctrl.ratio) &lt;&lt; 0;
+                    ctrl.styleElt.innerHTML = classname + "{ width: " + targetW + "px; height:" + itemH + "px}";
+                } else {
+                    var elements = ctrl.container.querySelectorAll(ctrl.target);
+                    var eltW = elements[0].clientWidth;
+                    var eltH = elements[0].clientHeight;
+
+                    if (eltH > 0) {
+                        var targetW = (eltH * ctrl.ratio) &lt;&lt; 0;
+                        if (ctrl.max) {
+                            var maxW = (ctrl.container.clientWidth * ctrl.max / 100) &lt;&lt; 0;
+                            if (targetW > maxW) {
+                                targetW = maxW;
+                            }
+                        }
+                        ctrl.styleElt.innerHTML = classname + "{ width:" + targetW + "px}";
+                    }
                 }
             },
 
             dispose: function () {
-                this.unregisterFlipViewEvents();
+                var ctrl = this;
+                ctrl.parentpage = null;
+                ctrl.container = null;
+                ctrl.styleElt.parentElement.removeChild(ctrl.styleElt);
                 WinJS.Utilities.disposeSubTree(this.element);
+                this.element = null;
             }
         }),
-        WinJS.UI.DOMEventMixin)
+		WinJS.Utilities.eventMixin,
+		WinJS.Utilities.createEventProperties("myevent"))
     });
 })();</pre>
         </article>

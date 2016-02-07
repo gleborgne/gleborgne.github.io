@@ -33,10 +33,6 @@
 						</li>
 						
 						<li>
-							<a href="WinJSContrib.Alerts.html">Alerts</a>
-						</li>
-						
-						<li>
 							<a href="WinJSContrib.Bindings.html">Bindings</a>
 						</li>
 						
@@ -57,19 +53,15 @@
 						</li>
 						
 						<li>
+							<a href="WinJSContrib.Logs.html">Logs</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.Logs.Appenders.html">Appenders</a>
+						</li>
+						
+						<li>
 							<a href="WinJSContrib.Search.html">Search</a>
-						</li>
-						
-						<li>
-							<a href="WinJSContrib.Search.Stemming.html">Stemming</a>
-						</li>
-						
-						<li>
-							<a href="WinJSContrib.Search.Stemming.Op.html">Op</a>
-						</li>
-						
-						<li>
-							<a href="WinJSContrib.Search.Stemming.StopWords.html">StopWords</a>
 						</li>
 						
 						<li>
@@ -89,6 +81,10 @@
 						</li>
 						
 						<li>
+							<a href="WinJSContrib.UI.DataForm.defaultBindingOptions.html">defaultBindingOptions</a>
+						</li>
+						
+						<li>
 							<a href="WinJSContrib.UI.DataSources.html">DataSources</a>
 						</li>
 						
@@ -97,19 +93,11 @@
 						</li>
 						
 						<li>
-							<a href="WinJSContrib.UI.WebComponents.html">WebComponents</a>
-						</li>
-						
-						<li>
 							<a href="WinJSContrib.Utils.html">Utils</a>
 						</li>
 						
 						<li>
 							<a href="WinJSContrib.Utils.ValueParsers.html">ValueParsers</a>
-						</li>
-						
-						<li>
-							<a href="WinJSContrib.WinRT.html">WinRT</a>
 						</li>
 						
 
@@ -131,6 +119,18 @@
 						</li>
 						
 						<li>
+							<a href="WinJSContrib.Logs.Appenders.BufferAppender.html">BufferAppender</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.Logs.Appenders.ConsoleAppender.html">ConsoleAppender</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.Logs.Logger.html">Logger</a>
+						</li>
+						
+						<li>
 							<a href="WinJSContrib.Messenger.html">Messenger</a>
 						</li>
 						
@@ -147,11 +147,11 @@
 						</li>
 						
 						<li>
-							<a href="WinJSContrib.Search.IndexWorkerProxy.html">IndexWorkerProxy</a>
+							<a href="WinJSContrib.Search.Stemming.Pipeline.html">Pipeline</a>
 						</li>
 						
 						<li>
-							<a href="WinJSContrib.Search.Stemming.Pipeline.html">Pipeline</a>
+							<a href="WinJSContrib.UI.AspectRatio.html">AspectRatio</a>
 						</li>
 						
 						<li>
@@ -164,6 +164,10 @@
 						
 						<li>
 							<a href="WinJSContrib.UI.DataSources.DataSourceManager.html">DataSourceManager</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.UI.ElasticInput.html">ElasticInput</a>
 						</li>
 						
 						<li>
@@ -200,6 +204,10 @@
 						
 						<li>
 							<a href="WinJSContrib.UI.HubControl.html">HubControl</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.UI.ItemSwipe.html">ItemSwipe</a>
 						</li>
 						
 						<li>
@@ -251,23 +259,598 @@
     
     <section>
         <article>
-            <pre class="sunlight-highlight-javascript linenums">/* 
- * WinJS Contrib v2.1.0.0
+            <pre class="sunlight-highlight-javascript linenums">﻿/* 
+ * WinJS Contrib v2.1.0.6
  * licensed under MIT license (see http://opensource.org/licenses/MIT)
  * sources available at https://github.com/gleborgne/winjscontrib
  */
 
-//polyfill setimmediate
-if (!this.setImmediate) {
-    this.setImmediate = function (callback) {
-        var args = [];
-        for (var _i = 1; _i &lt; arguments.length; _i++) {
-            args[_i - 1] = arguments[_i];
+var WinJSContrib;
+(function (WinJSContrib) {
+    var Logs;
+    (function (Logs) {
+        var Appenders;
+        (function (Appenders) {
+            /**
+             * @namespace
+             */
+            WinJSContrib.Logs.Appenders = WinJSContrib.Logs.Appenders;
+            var ConsoleAppender = (function () {
+                /**
+                 * Appender writing to console
+                 * @class WinJSContrib.Logs.Appenders.ConsoleAppender
+                 */
+                function ConsoleAppender(config) {
+                    this.config = config || { level: Logs.Levels.inherit };
+                }
+                /**
+                 * clone appender
+                 * @function WinJSContrib.Logs.Appenders.ConsoleAppender.prototype.clone
+                 */
+                ConsoleAppender.prototype.clone = function () {
+                    return new WinJSContrib.Logs.Appenders.ConsoleAppender(this.config);
+                };
+                /**
+                 * log item
+                 * @function WinJSContrib.Logs.Appenders.ConsoleAppender.prototype.log
+                 * @param {string} message log message
+                 * @param {WinJSContrib.Logs.Levels} log level
+                 */
+                ConsoleAppender.prototype.log = function (logger, message, level) {
+                    var args = [];
+                    for (var _i = 3; _i &lt; arguments.length; _i++) {
+                        args[_i - 3] = arguments[_i];
+                    }
+                    if (this.config.level == Logs.Levels.inherit || level >= this.config.level) {
+                        var msg = [this.format(logger, message, level)];
+                        if (args.length) {
+                            args.forEach(function (a) {
+                                msg.push(a);
+                            });
+                        }
+                        switch (level) {
+                            case Logs.Levels.verbose:
+                                return console.log.apply(console, msg);
+                            case Logs.Levels.debug:
+                                return console.log.apply(console, msg);
+                            case Logs.Levels.info:
+                                return console.info.apply(console, msg);
+                            case Logs.Levels.warn:
+                                return console.warn.apply(console, msg);
+                            case Logs.Levels.error:
+                                return console.error.apply(console, msg);
+                        }
+                    }
+                };
+                /**
+                 * create log group
+                 * @function WinJSContrib.Logs.Appenders.ConsoleAppender.prototype.group
+                 */
+                ConsoleAppender.prototype.group = function (title) {
+                    console.group(title);
+                };
+                /**
+                 * create collapsed log group
+                 * @function WinJSContrib.Logs.Appenders.ConsoleAppender.prototype.groupCollapsed
+                 */
+                ConsoleAppender.prototype.groupCollapsed = function (title) {
+                    console.groupCollapsed(title);
+                };
+                /**
+                 * close log group
+                 * @function WinJSContrib.Logs.Appenders.ConsoleAppender.prototype.groupEnd
+                 */
+                ConsoleAppender.prototype.groupEnd = function () {
+                    console.groupEnd();
+                };
+                ConsoleAppender.prototype.format = function (logger, message, level) {
+                    var finalMessage = "";
+                    if (logger.Config &amp;&amp; logger.Config.prefix)
+                        finalMessage += logger.Config.prefix + " # ";
+                    if (this.config.showLoggerNameInMessage)
+                        finalMessage += logger.name + " # ";
+                    if (this.config.showLevelInMessage)
+                        finalMessage += Logs.logginLevelToString(level) + " # ";
+                    finalMessage += message;
+                    return finalMessage;
+                };
+                return ConsoleAppender;
+            })();
+            Appenders.ConsoleAppender = ConsoleAppender;
+            var BufferAppender = (function () {
+                /**
+                 * Appender writing to console
+                 * @class WinJSContrib.Logs.Appenders.BufferAppender
+                 */
+                function BufferAppender(config) {
+                    this.config = config || { level: Logs.Levels.inherit };
+                    this.buffer = [];
+                }
+                /**
+                 * clone appender
+                 * @function WinJSContrib.Logs.Appenders.BufferAppender.prototype.clone
+                 */
+                BufferAppender.prototype.clone = function () {
+                    return new WinJSContrib.Logs.Appenders.BufferAppender(this.config);
+                };
+                /**
+                 * log item
+                 * @function WinJSContrib.Logs.Appenders.BufferAppender.prototype.log
+                 * @param {string} message log message
+                 * @param {WinJSContrib.Logs.Levels} log level
+                 */
+                BufferAppender.prototype.log = function (logger, message, level) {
+                    var args = [];
+                    for (var _i = 3; _i &lt; arguments.length; _i++) {
+                        args[_i - 3] = arguments[_i];
+                    }
+                    if (this.config.level == Logs.Levels.inherit || level >= this.config.level) {
+                        var msg = [new Date().getTime() + "", Logs.Levels[level].toUpperCase(), this.format(logger, message, level)];
+                        if (args.length) {
+                            args.forEach(function (a) {
+                                if (typeof a == "object")
+                                    a = JSON.stringify(a);
+                                msg.push(a);
+                            });
+                        }
+                        this.buffer.push(msg.join(" "));
+                    }
+                };
+                /**
+                 * create log group
+                 * @function WinJSContrib.Logs.Appenders.BufferAppender.prototype.group
+                 */
+                BufferAppender.prototype.group = function (title) {
+                };
+                /**
+                 * create collapsed log group
+                 * @function WinJSContrib.Logs.Appenders.BufferAppender.prototype.groupCollapsed
+                 */
+                BufferAppender.prototype.groupCollapsed = function (title) {
+                };
+                /**
+                 * close log group
+                 * @function WinJSContrib.Logs.Appenders.BufferAppender.prototype.groupEnd
+                 */
+                BufferAppender.prototype.groupEnd = function () {
+                };
+                BufferAppender.prototype.format = function (logger, message, level) {
+                    var finalMessage = "";
+                    if (logger.Config &amp;&amp; logger.Config.prefix)
+                        finalMessage += logger.Config.prefix + " # ";
+                    if (this.config.showLoggerNameInMessage)
+                        finalMessage += logger.name + " # ";
+                    if (this.config.showLevelInMessage)
+                        finalMessage += Logs.logginLevelToString(level) + " # ";
+                    finalMessage += message;
+                    return finalMessage;
+                };
+                return BufferAppender;
+            })();
+            Appenders.BufferAppender = BufferAppender;
+        })(Appenders = Logs.Appenders || (Logs.Appenders = {}));
+    })(Logs = WinJSContrib.Logs || (WinJSContrib.Logs = {}));
+})(WinJSContrib || (WinJSContrib = {}));
+var WinJSContrib;
+(function (WinJSContrib) {
+    var Logs;
+    (function (Logs) {
+        /**
+         * @namespace WinJSContrib.Logs
+         */
+        WinJSContrib.Logs = WinJSContrib.Logs;
+        /**
+        * enumeration for log levels
+        * @enum {number} Levels
+        * @memberof WinJSContrib.Logs
+        */
+        (function (Levels) {
+            /**
+             * disabled
+             */
+            Levels[Levels["inherit"] = 512] = "inherit";
+            /**
+             * disabled
+             */
+            Levels[Levels["off"] = 256] = "off";
+            /**
+             * log error
+             */
+            Levels[Levels["error"] = 32] = "error";
+            /**
+             * log warn and error
+             */
+            Levels[Levels["warn"] = 16] = "warn";
+            /**
+             * log info, warn, error
+             */
+            Levels[Levels["info"] = 8] = "info";
+            /**
+             * log debug, info, warn, error
+             */
+            Levels[Levels["debug"] = 4] = "debug";
+            /**
+            * verbose mode
+            */
+            Levels[Levels["verbose"] = 2] = "verbose";
+        })(Logs.Levels || (Logs.Levels = {}));
+        var Levels = Logs.Levels;
+        ;
+        // Default config
+        Logs.defaultConfig = {
+            "level": Levels.off,
+            "showLevelInMessage": false,
+            "showLoggerNameInMessage": false,
+            "appenders": ["DefaultConsole"]
+        };
+        var Loggers = {};
+        Logs.RuntimeAppenders = {
+            "DefaultConsole": new Logs.Appenders.ConsoleAppender()
+        };
+        Logs.DefaultAppenders = [];
+        /**
+         * get a logger, logger is created if it does not exists
+         * @function WinJSContrib.Logs.getLogger
+         * @param {string} name name for the logger
+         * @param {Object} config logger configuration
+         * @param {...Object} appenders appenders to add to the logger
+         * @returns {WinJSContrib.Logs.Logger}
+         */
+        function getLogger(name, config) {
+            var existing = Loggers[name];
+            if (!existing) {
+                existing = new Logger(config || Logs.defaultConfig);
+                existing.name = name;
+                Loggers[name] = existing;
+            }
+            if (config || arguments.length > 2)
+                configure.apply(null, arguments);
+            return existing;
         }
-        setTimeout(callback, 0);
-        return 0;
-    };
-}
+        Logs.getLogger = getLogger;
+        function configure(name, config) {
+            var existing = Loggers[name];
+            if (existing) {
+                if (config)
+                    existing.Config = config;
+                if (arguments.length > 2) {
+                    for (var i = 2; i &lt; arguments.length; i++) {
+                        existing.addAppender(arguments[i]);
+                    }
+                }
+            }
+        }
+        Logs.configure = configure;
+        function loggingLevelStringToEnum(level) {
+            switch (level.toLowerCase()) {
+                default:
+                case "log":
+                case "debug":
+                    return Levels.debug;
+                case "info":
+                    return Levels.info;
+                case "warn":
+                    return Levels.warn;
+                case "error":
+                    return Levels.error;
+            }
+        }
+        Logs.loggingLevelStringToEnum = loggingLevelStringToEnum;
+        function logginLevelToString(level) {
+            switch (level) {
+                default:
+                case Levels.verbose:
+                    return "VERBOSE";
+                case Levels.debug:
+                    return "DEBUG";
+                case Levels.info:
+                    return "INFO";
+                case Levels.warn:
+                    return "WARN";
+                case Levels.error:
+                    return "ERROR";
+            }
+        }
+        Logs.logginLevelToString = logginLevelToString;
+        var Logger = (function () {
+            /**
+             * @class WinJSContrib.Logs.Logger
+             * @param {Object} config logger configuration
+             */
+            function Logger(config) {
+                this.appenders = [];
+                /**
+                 * Logger configuration
+                 * @field Config
+                 * @type {Object}
+                 */
+                this.Config = config || Logs.defaultConfig;
+            }
+            Object.defineProperty(Logger.prototype, "Config", {
+                get: function () {
+                    return this._config;
+                },
+                set: function (newValue) {
+                    var _this = this;
+                    this._config = newValue || { level: Logs.Levels.off, showLevelInMessage: false, showLoggerNameInMessage: false };
+                    if (typeof newValue.level === "number")
+                        this.Level = newValue.level;
+                    if (typeof newValue.showLevelInMessage === "boolean")
+                        this.Config.showLevelInMessage = newValue.showLevelInMessage;
+                    if (typeof newValue.showLoggerNameInMessage === "boolean")
+                        this.Config.showLoggerNameInMessage = newValue.showLoggerNameInMessage;
+                    if (this._config.appenders) {
+                        this._config.appenders.forEach(function (a) {
+                            _this.addAppender(a);
+                        });
+                    }
+                    else {
+                        this._config.appenders = [];
+                    }
+                },
+                enumerable: true,
+                configurable: true
+            });
+            Object.defineProperty(Logger.prototype, "Level", {
+                get: function () {
+                    return this._level;
+                },
+                set: function (val) {
+                    this._level = val;
+                    if (this._level &lt;= Logs.Levels.verbose) {
+                        this.verbose = Logger.verbose;
+                    }
+                    else {
+                        this.verbose = Logger.noop;
+                    }
+                    if (this._level &lt;= Logs.Levels.debug) {
+                        this.debug = Logger.debug;
+                    }
+                    else {
+                        this.debug = Logger.noop;
+                    }
+                    if (this._level &lt;= Logs.Levels.info) {
+                        this.info = Logger.info;
+                    }
+                    else {
+                        this.info = Logger.noop;
+                    }
+                    if (this._level &lt;= Logs.Levels.warn) {
+                        this.warn = Logger.warn;
+                    }
+                    else {
+                        this.warn = Logger.noop;
+                    }
+                    if (this._level &lt;= Logs.Levels.error) {
+                        this.error = Logger.error;
+                    }
+                    else {
+                        this.error = Logger.noop;
+                    }
+                },
+                enumerable: true,
+                configurable: true
+            });
+            /**
+             * add appender to logger
+             * @function WinJSContrib.Logs.Logger.prototype.addAppender
+             * @param {Object} appender
+             */
+            Logger.prototype.addAppender = function (appender) {
+                if (typeof appender == "string") {
+                    appender = WinJSContrib.Logs.RuntimeAppenders[appender];
+                }
+                var currentappender = appender;
+                if (!currentappender)
+                    return;
+                var exists = this.appenders.indexOf(currentappender) >= 0;
+                if (exists)
+                    return;
+                //if (!currentappender.format)
+                //    currentappender.format = this.format.bind(this);
+                this.appenders.push(currentappender);
+            };
+            /**
+             * Add log entry
+             * @function WinJSContrib.Logs.Logger.prototype.log
+             * @param {string} message log message
+             * @param {WinJSContrib.Logs.Levels} log level
+             */
+            Logger.prototype.log = function (message, level) {
+                var args = [];
+                for (var _i = 2; _i &lt; arguments.length; _i++) {
+                    args[_i - 2] = arguments[_i];
+                }
+                // If general logging level is set to 'none', returns
+                if (this._config.level === WinJSContrib.Logs.Levels.off || level &lt; this._config.level)
+                    return;
+                if (!this.appenders || !this.appenders.length)
+                    return;
+                var fnargs = [this, message, level];
+                if (args.length) {
+                    for (var i = 0; i &lt; args.length; i++) {
+                        fnargs.push(args[i]);
+                    }
+                }
+                Logs.DefaultAppenders.forEach(function (a) {
+                    a.log.apply(a, fnargs);
+                });
+                this.appenders.forEach(function (a) {
+                    a.log.apply(a, fnargs);
+                });
+            };
+            ///**
+            // * format log entry
+            // * @function WinJSContrib.Logs.Logger.prototype.format
+            // * @param {string} message log message
+            // * @param {string} group group/category for the entry
+            // * @param {WinJSContrib.Logs.Levels} log level
+            // */
+            //public format(message: string, level: Logs.Levels) {
+            //    var finalMessage = "";
+            //    if (!this.Config.hideLevelInMessage) finalMessage += logginLevelToString(level) + " - ";
+            //    finalMessage += message;
+            //    return finalMessage;
+            //}
+            /**
+             * add debug log entry
+             * @function WinJSContrib.Logs.Logger.prototype.debug
+             * @param {string} message log message
+             */
+            Logger.prototype.verbose = function (message) {
+                var args = [];
+                for (var _i = 1; _i &lt; arguments.length; _i++) {
+                    args[_i - 1] = arguments[_i];
+                }
+            };
+            /**
+             * add debug log entry
+             * @function WinJSContrib.Logs.Logger.prototype.debug
+             * @param {string} message log message
+             */
+            Logger.prototype.debug = function (message) {
+                var args = [];
+                for (var _i = 1; _i &lt; arguments.length; _i++) {
+                    args[_i - 1] = arguments[_i];
+                }
+            };
+            /**
+             * add info log entry
+             * @function WinJSContrib.Logs.Logger.prototype.info
+             * @param {string} message log message
+             * @param {string} [group] log group name
+             */
+            Logger.prototype.info = function (message) {
+                var args = [];
+                for (var _i = 1; _i &lt; arguments.length; _i++) {
+                    args[_i - 1] = arguments[_i];
+                }
+            };
+            /**
+             * add warn log entry
+             * @function WinJSContrib.Logs.Logger.prototype.warn
+             * @param {string} message log message
+             */
+            Logger.prototype.warn = function (message) {
+                var args = [];
+                for (var _i = 1; _i &lt; arguments.length; _i++) {
+                    args[_i - 1] = arguments[_i];
+                }
+            };
+            /**
+             * add error log entry
+             * @function WinJSContrib.Logs.Logger.prototype.error
+             * @param {string} message log message
+             */
+            Logger.prototype.error = function (message) {
+                var args = [];
+                for (var _i = 1; _i &lt; arguments.length; _i++) {
+                    args[_i - 1] = arguments[_i];
+                }
+            };
+            /**
+             * create a log group
+             * @function WinJSContrib.Logs.Logger.prototype.group
+             * @param {string} title group title
+             */
+            Logger.prototype.group = function (title) {
+                this.appenders.forEach(function (a) {
+                    if (a.group)
+                        a.group(title);
+                });
+            };
+            /**
+             * create a collapsed log group
+             * @function WinJSContrib.Logs.Logger.prototype.groupCollapsed
+             * @param {string} title group title
+             */
+            Logger.prototype.groupCollapsed = function (title) {
+                this.appenders.forEach(function (a) {
+                    if (a.groupCollapsed)
+                        a.groupCollapsed(title);
+                });
+            };
+            /**
+             * end current group
+             * @function WinJSContrib.Logs.Logger.prototype.groupEnd
+             */
+            Logger.prototype.groupEnd = function () {
+                this.appenders.forEach(function (a) {
+                    if (a.groupEnd)
+                        a.groupEnd();
+                });
+            };
+            /**
+             * Get a child logger
+             * @function WinJSContrib.Logs.Logger.prototype.getChildLogger
+             * @param {string} name child logger name
+             * @param {WinJSContrib.Logs.Levels} level
+             */
+            Logger.prototype.getChildLogger = function (name, level) {
+                var res = WinJSContrib.Logs.getLogger(this.name + '.' + name, JSON.parse(JSON.stringify(this.Config)));
+                res.Config.appenders = [];
+                this.appenders.forEach(function (a) {
+                    if (a.clone)
+                        res.addAppender(a.clone());
+                });
+                if (level)
+                    res.Config.level = level;
+                return res;
+            };
+            Logger.noop = function (message) {
+                var args = [];
+                for (var _i = 1; _i &lt; arguments.length; _i++) {
+                    args[_i - 1] = arguments[_i];
+                }
+            };
+            Logger.getLogFn = function (level) {
+                return function (message) {
+                    var args = null;
+                    if (arguments.length > 1) {
+                        args = [];
+                        for (var i = 1; i &lt; arguments.length; i++) {
+                            args.push(arguments[i]);
+                        }
+                        this.log(message, level, args);
+                    }
+                    else
+                        this.log(message, level);
+                };
+            };
+            Logger.verbose = Logger.getLogFn(Logs.Levels.verbose);
+            Logger.debug = Logger.getLogFn(Logs.Levels.debug);
+            Logger.info = Logger.getLogFn(Logs.Levels.info);
+            Logger.warn = Logger.getLogFn(Logs.Levels.warn);
+            Logger.error = Logger.getLogFn(Logs.Levels.error);
+            return Logger;
+        })();
+        Logs.Logger = Logger;
+    })(Logs = WinJSContrib.Logs || (WinJSContrib.Logs = {}));
+})(WinJSContrib || (WinJSContrib = {}));
+
+(function (_global) {
+    //polyfill setimmediate
+    if (!this.setImmediate) {
+        this.setImmediate = function (callback) {
+            var args = [];
+            for (var _i = 1; _i &lt; arguments.length; _i++) {
+                args[_i - 1] = arguments[_i];
+            }
+            setTimeout(callback, 0);
+            return 0;
+        };
+    }
+    //Windows 10 doesn't have it anymore, polyfill for backward compat
+    if (!this.toStaticHTML) {
+        this.toStaticHTML = function (text) {
+            return text;
+        };
+    }
+    var msapp = _global.MSApp;
+    if (msapp &amp;&amp; !msapp.execUnsafeLocalFunction) {
+        msapp.execUnsafeLocalFunction = function (c) { c(); };
+    }
+})(this);
 if (!Object.map) {
     Object.map = function (obj, mapping) {
         var mapped = {};
@@ -327,11 +910,18 @@ var WinJSContrib;
             var dataPromise = WinJS.Promise.as(dataArray);
             return dataPromise.then(function (items) {
                 var queueP = function (p, item) {
-                    return p.then(function (r) {
-                        return WinJS.Promise.as(promiseCallback(item)).then(function (r) {
-                            results.push(r);
-                        });
+                    var prComplete, prError;
+                    var result = new WinJS.Promise(function (c, e) {
+                        prComplete = c;
+                        prError = e;
                     });
+                    p.then(function (previous) {
+                        WinJS.Promise.as(promiseCallback(item, previous)).then(function (r) {
+                            results.push(r);
+                            return r;
+                        }).then(prComplete, prError);
+                    });
+                    return result;
                 };
                 for (var i = 0, l = items.length; i &lt; l; i++) {
                     var item = items[i];
@@ -396,7 +986,7 @@ var WinJSContrib;
          * @param {function} promiseCallback function applyed to each item (could return a promise for item callback completion)
          * @returns {WinJS.Promise}
          */
-        function batch(dataArray, batchSize, promiseCallback) {
+        function batch(dataArray, batchSize, promiseCallback, batchWrapCallback) {
             if (!dataArray) {
                 return WinJS.Promise.wrap([]);
             }
@@ -407,17 +997,28 @@ var WinJSContrib;
                 var results = [];
                 var hasErrors = false;
                 var queueBatch = function (p, items) {
-                    //var batchresults = [];
-                    return p.then(function (r) {
-                        return WinJS.Promise.join(items.map(function (item) {
-                            return WinJS.Promise.as(promiseCallback(item));
+                    var prComplete, prError;
+                    var result = new WinJS.Promise(function (c, e) {
+                        prComplete = c;
+                        prError = e;
+                    });
+                    p.then(function (r) {
+                        WinJS.Promise.join(items.map(function (item, index) {
+                            return WinJS.Promise.as(promiseCallback(item, index));
                         })).then(function (results) {
+                            if (batchWrapCallback)
+                                return batchWrapCallback(results);
+                            return results;
+                        }).then(function (results) {
                             results = results.concat(results);
+                            return results;
                         }, function (errors) {
                             results = results.concat(errors);
                             hasErrors = true;
-                        });
+                            return results;
+                        }).then(prComplete, prError);
                     });
+                    return result;
                 };
                 for (var i = 0, l = items.length; i &lt; l; i++) {
                     var item = items[i];
@@ -447,6 +1048,16 @@ var WinJSContrib;
 (function (WinJSContrib) {
     var Utils;
     (function (Utils) {
+        var EventDispatcher = (function () {
+            function EventDispatcher() {
+            }
+            EventDispatcher.prototype.dispatchEvent = function (type, data) { };
+            EventDispatcher.prototype.addEventListener = function (type, callback) { };
+            EventDispatcher.prototype.removeEventListener = function (type, callback) { };
+            return EventDispatcher;
+        })();
+        Utils.EventDispatcher = EventDispatcher;
+        Utils.EventDispatcher = WinJS.Class.mix(EventDispatcher, WinJS.Utilities.eventMixin);
         /**
          * extend an object with properties from subsequent objects
          * @function WinJSContrib.Utils.extend
@@ -479,6 +1090,19 @@ var WinJSContrib;
                 return WinJSContrib.Utils.startsWith(this, str);
             };
         }
+        function asyncForEach(array, callback, batchsize) {
+            if (batchsize === void 0) { batchsize = 1; }
+            var i = 0;
+            while (i &lt; array.length) {
+                setImmediate(function () {
+                    for (var j = 0; j &lt; batchsize &amp;&amp; i &lt; array.length; j++) {
+                        i++;
+                        callback(array[i]);
+                    }
+                });
+            }
+        }
+        Utils.asyncForEach = asyncForEach;
         /** indicate if string ends with featured characters
          * @function WinJSContrib.Utils.endsWith
          * @param {string} str string to search within
@@ -586,8 +1210,8 @@ var WinJSContrib;
                 if (end &lt; 0)
                     return;
                 var val = prop.substr(idx + 1, end - idx);
-                val = parseInt(val);
-                obj[val] = data;
+                var intval = parseInt(val);
+                obj[intval] = data;
             }
         }
         /** Read property value on an object based on expression
@@ -598,6 +1222,8 @@ var WinJSContrib;
         * @returns {Object} property value
         */
         function readProperty(source, properties) {
+            if (!source)
+                return null;
             if (typeof properties == 'string' &amp;&amp; source[properties])
                 return source[properties];
             if (!properties || !properties.length)
@@ -882,9 +1508,11 @@ var WinJSContrib;
          * @param {HTMLElement} target target node for moved elements
          */
         function moveChilds(source, target) {
+            if (!source || !target)
+                return;
             var childs = [];
-            for (var i = 0; i &lt; source.children.length; i++) {
-                childs.push(source.children[i]);
+            for (var i = 0; i &lt; source.childNodes.length; i++) {
+                childs.push(source.childNodes[i]);
             }
             childs.forEach(function (elt) {
                 target.appendChild(elt);
@@ -899,6 +1527,8 @@ var WinJSContrib;
          * @returns {Object} WinJS control
          */
         function getParent(property, element) {
+            if (!element)
+                return;
             var current = element.parentNode;
             while (current) {
                 if (current[property] &amp;&amp; current.winControl) {
@@ -916,6 +1546,8 @@ var WinJSContrib;
          * @returns {Object} WinJS control
          */
         function getParentControlByClass(className, element) {
+            if (!element)
+                return;
             var current = element.parentNode;
             while (current) {
                 if (current.classList &amp;&amp; current.classList.contains(className) &amp;&amp; current.winControl) {
@@ -1636,28 +2268,36 @@ var WinJSContrib;
             });
         }
         UI.removeElementAnimation = removeElementAnimation;
-        function bindAction(el, element, control) {
+        function bindAction(el, element, control, item) {
+            if (!el)
+                return;
             el.classList.add('page-action');
             var actionName = el.dataset.pageAction || el.getAttribute('tap');
             var action = control[actionName];
             if (action &amp;&amp; typeof action === 'function') {
                 WinJSContrib.UI.tap(el, function (eltarg) {
+                    var p = WinJS.Promise.wrap(actionArgs);
                     var actionArgs = eltarg.dataset.pageActionArgs || el.getAttribute('tap-args');
                     if (actionArgs &amp;&amp; typeof actionArgs == 'string') {
-                        try {
-                            var tmp = WinJSContrib.Utils.readValue(eltarg, actionArgs);
-                            if (tmp) {
-                                actionArgs = tmp;
+                        var tmp = WinJSContrib.Utils.readValue(eltarg, actionArgs);
+                        p = WinJS.Promise.as(tmp).then(function (val) {
+                            if (typeof val === 'string') {
+                                try {
+                                    val = WinJS.UI.optionsParser(val, window);
+                                }
+                                catch (exception) {
+                                    return;
+                                }
                             }
-                            else {
-                                actionArgs = JSON.parse(actionArgs);
-                            }
-                        }
-                        catch (exception) {
-                            return;
+                            return val;
+                        });
+                        if (tmp) {
+                            actionArgs = tmp;
                         }
                     }
-                    control[actionName].bind(control)({ elt: eltarg, args: actionArgs });
+                    return p.then(function (arg) {
+                        return control[actionName].bind(control)({ elt: eltarg, args: arg, item: item });
+                    });
                 });
             }
         }
@@ -1668,19 +2308,23 @@ var WinJSContrib;
          * @function WinJSContrib.UI.bindPageActions
          * @param {HTMLElement} element root node crawled for page actions
          * @param {Object} control control owning functions to call
+         * @param {item} optionnal argument for adding an item to call
          */
-        function bindPageActions(element, control) {
+        function bindPageActions(element, control, item) {
             var elements = element.querySelectorAll('*[data-page-action], *[tap]');
             if (elements &amp;&amp; elements.length) {
                 for (var i = 0, l = elements.length; i &lt; l; i++) {
                     var el = elements[i];
-                    bindAction(el, element, control);
+                    bindAction(el, element, control, item);
                 }
             }
         }
         UI.bindPageActions = bindPageActions;
-        function bindLink(el, element) {
+        function bindLink(el, element, item) {
+            if (!el)
+                return;
             el.classList.add('page-link');
+            var applink = el.getAttribute('applink');
             var target = el.dataset.pageLink || el.getAttribute('linkto');
             if (target &amp;&amp; target.indexOf('/') &lt; 0) {
                 var tmp = WinJSContrib.Utils.readProperty(window, target);
@@ -1689,29 +2333,43 @@ var WinJSContrib;
                 }
             }
             if (target) {
+                var options = el.dataset.pageActionOptions || el.getAttribute('tap-options');
+                if (options) {
+                    try {
+                        options = WinJS.UI.optionsParser(options, window);
+                    }
+                    catch (exception) {
+                        return;
+                    }
+                }
                 WinJSContrib.UI.tap(el, function (eltarg) {
+                    var p = WinJS.Promise.wrap();
                     var actionArgs = eltarg.dataset.pageActionArgs || el.getAttribute('linkto-args');
                     if (actionArgs &amp;&amp; typeof actionArgs == 'string') {
-                        try {
-                            var tmp = WinJSContrib.Utils.readValue(eltarg, actionArgs);
-                            if (tmp) {
-                                actionArgs = tmp;
+                        var tmp = WinJSContrib.Utils.readValue(eltarg, actionArgs);
+                        p = WinJS.Promise.as(tmp).then(function (val) {
+                            if (typeof val === 'string') {
+                                try {
+                                    val = WinJS.UI.optionsParser(val, window);
+                                }
+                                catch (exception) {
+                                }
                             }
-                            else {
-                                actionArgs = JSON.parse(actionArgs);
-                            }
+                            return val;
+                        });
+                    }
+                    if (!actionArgs &amp;&amp; item)
+                        actionArgs = { item: item };
+                    return p.then(function (actionArgs) {
+                        if (!applink &amp;&amp; WinJSContrib.UI.parentNavigator &amp;&amp; WinJSContrib.UI.parentNavigator(eltarg)) {
+                            var nav = WinJSContrib.UI.parentNavigator(eltarg);
+                            return nav.navigate(target, actionArgs);
                         }
-                        catch (exception) {
+                        else {
+                            return WinJS.Navigation.navigate(target, actionArgs);
                         }
-                    }
-                    if (WinJSContrib.UI.parentNavigator &amp;&amp; WinJSContrib.UI.parentNavigator(eltarg)) {
-                        var nav = WinJSContrib.UI.parentNavigator(eltarg);
-                        nav.navigate(target, actionArgs);
-                    }
-                    else {
-                        WinJS.Navigation.navigate(target, actionArgs);
-                    }
-                });
+                    });
+                }, options);
             }
         }
         /**
@@ -1721,12 +2379,12 @@ var WinJSContrib;
          * @function WinJSContrib.UI.bindPageLinks
          * @param {HTMLElement} element root node crawled for page actions
          */
-        function bindPageLinks(element) {
+        function bindPageLinks(element, item) {
             var elements = element.querySelectorAll('*[data-page-link], *[linkto]');
             if (elements &amp;&amp; elements.length) {
                 for (var i = 0, l = elements.length; i &lt; l; i++) {
                     var el = elements[i];
-                    bindLink(el, element);
+                    bindLink(el, element, item);
                 }
             }
         }
@@ -1742,6 +2400,8 @@ var WinJSContrib;
         }
         UI.parentNavigator = parentNavigator;
         function bindMember(el, element, control) {
+            if (!el)
+                return;
             el.classList.add('page-member');
             var memberName = el.dataset.pageMember || el.getAttribute('member');
             if (!memberName)
@@ -1775,9 +2435,9 @@ var WinJSContrib;
          * @param {HTMLElement} element root node crawled for page actions
          * @param {Object} control control owning functions to call
          */
-        function bindActions(element, control) {
-            WinJSContrib.UI.bindPageActions(element, control);
-            WinJSContrib.UI.bindPageLinks(element);
+        function bindActions(element, control, item) {
+            WinJSContrib.UI.bindPageActions(element, control, item);
+            WinJSContrib.UI.bindPageLinks(element, item);
         }
         UI.bindActions = bindActions;
         /**
@@ -1883,8 +2543,7 @@ var WinJSContrib;
              * @param listener The listener to remove.
              * @param useCapture true if capture is to be initiated, otherwise false.
             **/
-            MediaTrigger.prototype.removeEventListener = function (type, listener, useCapture) {
-            };
+            MediaTrigger.prototype.removeEventListener = function (type, listener, useCapture) { };
             return MediaTrigger;
         })();
         UI.MediaTrigger = MediaTrigger;
@@ -1932,8 +2591,7 @@ var WinJSContrib;
             //}
             function cancelNavigation(args) {
                 //this.eventTracker.addEvent(nav, 'beforenavigate', this._beforeNavigate.bind(this));
-                var p = new WinJS.Promise(function (c) {
-                });
+                var p = new WinJS.Promise(function (c) { });
                 args.detail.setPromise(p);
                 //setImmediate(function () {
                 p.cancel();
@@ -1942,8 +2600,14 @@ var WinJSContrib;
             WinJS.Navigation.addEventListener('beforenavigate', cancelNavigation);
             if (window.Windows &amp;&amp; window.Windows.Phone)
                 window.Windows.Phone.UI.Input.HardwareButtons.addEventListener("backpressed", backhandler);
-            else
+            else {
                 document.addEventListener("backbutton", backhandler);
+                var systemNavigationManager = null;
+                if (WinJSContrib.UI &amp;&amp; WinJSContrib.UI.enableSystemBackButtonVisibility &amp;&amp; window.Windows &amp;&amp; window.Windows.UI &amp;&amp; window.Windows.UI.Core &amp;&amp; window.Windows.UI.Core.SystemNavigationManager) {
+                    systemNavigationManager = window.Windows.UI.Core.SystemNavigationManager.getForCurrentView();
+                    systemNavigationManager.addEventListener('backrequested', backhandler);
+                }
+            }
             var keypress = function (args) {
                 if (args.key === "Esc" || args.key === "Backspace") {
                     backhandler(args);
@@ -1967,8 +2631,14 @@ var WinJSContrib;
                 WinJS.Navigation.removeEventListener('beforenavigate', cancelNavigation);
                 if (window.Windows &amp;&amp; window.Windows.Phone)
                     window.Windows.Phone.UI.Input.HardwareButtons.removeEventListener("backpressed", backhandler);
-                else
+                else {
                     document.removeEventListener("backbutton", backhandler);
+                    var systemNavigationManager = null;
+                    if (WinJSContrib.UI &amp;&amp; WinJSContrib.UI.enableSystemBackButtonVisibility &amp;&amp; window.Windows &amp;&amp; window.Windows.UI &amp;&amp; window.Windows.UI.Core &amp;&amp; window.Windows.UI.Core.SystemNavigationManager) {
+                        systemNavigationManager = window.Windows.UI.Core.SystemNavigationManager.getForCurrentView();
+                        systemNavigationManager.removeEventListener('backrequested', backhandler);
+                    }
+                }
             };
         }
         UI.registerNavigationEvents = registerNavigationEvents;
@@ -2000,6 +2670,19 @@ var WinJSContrib;
             }
         }
         UI.untapAll = untapAll;
+        UI.defaultTapBehavior = {
+            animDown: null,
+            animUp: null,
+            disableAnimation: false,
+            disableAria: false,
+            awaitAnim: false,
+            errorDelay: 3000,
+            mapClickEvents: 0
+        };
+        if (WinJS &amp;&amp; WinJS.UI &amp;&amp; WinJS.UI.Animation) {
+            UI.defaultTapBehavior.animDown = WinJS.UI.Animation.pointerDown;
+            UI.defaultTapBehavior.animUp = WinJS.UI.Animation.pointerUp;
+        }
         /**
          * add tap behavior to an element, tap manages quirks like click delay, visual feedback, etc
          * @function WinJSContrib.UI.tap
@@ -2013,7 +2696,7 @@ var WinJSContrib;
             var ptDown = function (event) {
                 var elt = event.currentTarget || event.target;
                 var tracking = elt.mcnTapTracking;
-                if (tracking &amp;&amp; (event.button === undefined || event.button === 0 || (tracking.allowRickClickTap &amp;&amp; event.button === 2))) {
+                if (!elt.disabled &amp;&amp; tracking &amp;&amp; (event.button === undefined || event.button === 0 || (tracking.allowRickClickTap &amp;&amp; event.button === 2))) {
                     if (tracking.lock) {
                         if (event.pointerId &amp;&amp; event.currentTarget.setPointerCapture)
                             event.currentTarget.setPointerCapture(event.pointerId);
@@ -2021,6 +2704,8 @@ var WinJSContrib;
                         event.preventDefault();
                     }
                     WinJS.Utilities.addClass(elt, 'tapped');
+                    WinJS.Utilities.removeClass(elt, 'tap-error');
+                    clearTimeout(tracking.pendingErrorTimeout);
                     if (event.changedTouches) {
                         tracking.pointerdown = { x: event.changedTouches[0].clientX, y: event.changedTouches[0].clientY };
                     }
@@ -2029,7 +2714,7 @@ var WinJSContrib;
                     }
                     tracking.animDown(event.currentTarget);
                     if (tracking.tapOnDown) {
-                        tracking.callback(elt);
+                        tracking.invoke(elt, event);
                     }
                 }
             };
@@ -2038,8 +2723,14 @@ var WinJSContrib;
                 var tracking = elt.mcnTapTracking;
                 if (tracking &amp;&amp; tracking.pointerdown) {
                     WinJS.Utilities.removeClass(elt, 'tapped');
-                    if (event.pointerId &amp;&amp; elt.releasePointerCapture)
-                        elt.releasePointerCapture(event.pointerId);
+                    if (event.pointerId &amp;&amp; elt.releasePointerCapture) {
+                        try {
+                            elt.releasePointerCapture(event.pointerId);
+                        }
+                        catch (exception) {
+                            console.error(exception);
+                        }
+                    }
                     if (!tracking.disableAnimation)
                         tracking.animUp(event.currentTarget);
                 }
@@ -2048,8 +2739,14 @@ var WinJSContrib;
                 var elt = event.currentTarget || event.target;
                 var tracking = elt.mcnTapTracking;
                 if (tracking &amp;&amp; (event.button === undefined || event.button === 0 || (tracking.allowRickClickTap &amp;&amp; event.button === 2))) {
-                    if (elt.releasePointerCapture)
-                        elt.releasePointerCapture(event.pointerId);
+                    if (elt.releasePointerCapture) {
+                        try {
+                            elt.releasePointerCapture(event.pointerId);
+                        }
+                        catch (exception) {
+                            console.error(exception);
+                        }
+                    }
                     if (tracking &amp;&amp; !tracking.tapOnDown) {
                         event.stopPropagation();
                         var resolveTap = function () {
@@ -2066,7 +2763,7 @@ var WinJSContrib;
                                     event.stopImmediatePropagation();
                                     event.stopPropagation();
                                     event.preventDefault();
-                                    tracking.callback(elt);
+                                    tracking.invoke();
                                 }
                                 if (tracking &amp;&amp; tracking.pointerdown)
                                     tracking.pointerdown = undefined;
@@ -2083,33 +2780,97 @@ var WinJSContrib;
                     WinJS.Utilities.removeClass(elt, 'tapped');
                 }
             };
+            if (!options) {
+                var attroptions = element.getAttribute('tap-options');
+                if (attroptions) {
+                    try {
+                        options = WinJS.UI.optionsParser(attroptions, window);
+                    }
+                    catch (exception) {
+                        return;
+                    }
+                }
+            }
             var opt = options || {};
             if (element.mcnTapTracking) {
                 element.mcnTapTracking.dispose();
             }
             WinJS.Utilities.addClass(element, 'tap');
             element.mcnTapTracking = element.mcnTapTracking || {};
+            element.mcnTapTracking.disableAria = opt.disableAria || UI.defaultTapBehavior.disableAria;
+            if (!element.mcnTapTracking.disableAria) {
+                if (!element.hasAttribute("tabindex"))
+                    element.setAttribute("tabindex", "0");
+                if (!element.hasAttribute("role"))
+                    element.setAttribute("role", "button");
+            }
             element.mcnTapTracking.eventTracker = new WinJSContrib.UI.EventTracker();
-            element.mcnTapTracking.disableAnimation = opt.disableAnimation;
+            element.mcnTapTracking.disableAnimation = opt.disableAnimation || UI.defaultTapBehavior.disableAnimation;
             if (element.mcnTapTracking.disableAnimation) {
-                element.mcnTapTracking.animDown = function () {
-                    return WinJS.Promise.wrap();
-                };
-                element.mcnTapTracking.animUp = function () {
-                    return WinJS.Promise.wrap();
-                };
+                if (opt.disableAnimation)
+                    WinJS.Utilities.addClass(element, 'tap-disableanimation');
+                element.mcnTapTracking.animDown = function () { return WinJS.Promise.wrap(); };
+                element.mcnTapTracking.animUp = function () { return WinJS.Promise.wrap(); };
             }
             else {
-                element.mcnTapTracking.animDown = opt.animDown || WinJS.UI.Animation.pointerDown;
-                element.mcnTapTracking.animUp = opt.animUp || WinJS.UI.Animation.pointerUp;
+                element.mcnTapTracking.animDown = opt.animDown || UI.defaultTapBehavior.animDown;
+                element.mcnTapTracking.animUp = opt.animUp || UI.defaultTapBehavior.animUp;
             }
             element.mcnTapTracking.element = element;
             element.mcnTapTracking.callback = callback;
             element.mcnTapTracking.lock = opt.lock;
-            element.mcnTapTracking.awaitAnim = opt.awaitAnim || false;
-            element.mcnTapTracking.disableAnimation = opt.disableAnimation;
+            element.mcnTapTracking.awaitAnim = opt.awaitAnim || UI.defaultTapBehavior.awaitAnim;
+            element.mcnTapTracking.errorDelay = opt.errorDelay || UI.defaultTapBehavior.errorDelay;
+            element.mcnTapTracking.mapClickEvents = opt.mapClickEvents || UI.defaultTapBehavior.mapClickEvents;
             element.mcnTapTracking.tapOnDown = opt.tapOnDown;
             element.mcnTapTracking.pointerModel = 'none';
+            element.mcnTapTracking.invoke = function (arg) {
+                var elt = element;
+                if (elt &amp;&amp; elt.mcnTapTracking) {
+                    var tracking = elt.mcnTapTracking;
+                    if (tracking) {
+                        var now = (new Date());
+                        var dif = 9000;
+                        if (tracking.lastinvoke) {
+                            dif = now - tracking.lastinvoke;
+                        }
+                        if (dif &lt; tracking.mapClickEvents) {
+                            arg.preventDefault();
+                            arg.stopPropagation();
+                            return;
+                        }
+                        var res = tracking.callback(elt, arg);
+                        tracking.lastinvoke = new Date();
+                        if (res &amp;&amp; WinJS.Promise.is(res)) {
+                            elt.disabled = true;
+                            WinJS.Utilities.addClass(elt, 'tap-working');
+                            res.then(function () {
+                                elt.disabled = false;
+                                WinJS.Utilities.removeClass(elt, 'tap-working');
+                            }, function (err) {
+                                elt.disabled = false;
+                                WinJS.Utilities.removeClass(elt, 'tap-working');
+                                console.error(err);
+                                WinJS.Application.queueEvent({ type: "mcn-taperror", error: err });
+                                WinJS.Utilities.addClass(elt, 'tap-error');
+                                if (tracking.errorDelay) {
+                                    tracking.pendingErrorTimeout = setTimeout(function () {
+                                        tracking.pendingErrorTimeout = null;
+                                        WinJS.Utilities.removeClass(elt, 'tap-error');
+                                    }, tracking.errorDelay);
+                                }
+                            });
+                        }
+                    }
+                }
+            };
+            if (element.mcnTapTracking.mapClickEvents > 0) {
+                element.onclick = function (arg) {
+                    if (element &amp;&amp; arg.target == element &amp;&amp; element.mcnTapTracking) {
+                        element.mcnTapTracking.invoke(arg);
+                    }
+                };
+            }
             element.mcnTapTracking.dispose = function () {
                 WinJS.Utilities.removeClass(element, 'tap');
                 this.eventTracker.dispose();
@@ -2130,13 +2891,15 @@ var WinJSContrib;
                 });
                 element.mcnTapTracking.eventTracker.addEvent(element, 'touchcancel', function (arg) {
                     setTimeout(function () {
-                        element.mcnTapTracking.cancelMouse = false;
+                        if (element &amp;&amp; element.mcnTapTracking)
+                            element.mcnTapTracking.cancelMouse = false;
                     }, 1000);
                     ptOut(arg);
                 });
                 element.mcnTapTracking.eventTracker.addEvent(element, 'touchend', function (arg) {
                     setTimeout(function () {
-                        element.mcnTapTracking.cancelMouse = false;
+                        if (element &amp;&amp; element.mcnTapTracking)
+                            element.mcnTapTracking.cancelMouse = false;
                     }, 1000);
                     ptUp(arg);
                 });
@@ -2194,8 +2957,10 @@ var WinJSContrib;
          * @param parentElt parent DOM element
          * @param {WinJSContrib.UI.FluentDOM} parent parent FluentDOM
          * @example
-         * {@lang javascript}
-         * var elt = new WinJSContrib.UI.FluentDOM('DIV', 'item-content').text(item.title).display('none').element;
+         * var elt = new WinJSContrib.UI.FluentDOM('DIV', 'item-content')
+         *    .text(item.title)
+         *    .display('none')
+         *    .element;
          */
         var FluentDOM = (function () {
             function FluentDOM(nodeType, className, parentElt, parent) {
@@ -2210,6 +2975,16 @@ var WinJSContrib;
                     parent.childs.push(this);
                 }
             }
+            FluentDOM.for = function (element) {
+                var res = new FluentDOM(null);
+                res.element = element;
+                return res;
+            };
+            FluentDOM.fragment = function () {
+                var res = new FluentDOM(null);
+                res.element = document.createDocumentFragment();
+                return res;
+            };
             Object.defineProperty(FluentDOM.prototype, "control", {
                 get: function () {
                     return this.element.winControl;
@@ -2224,7 +2999,8 @@ var WinJSContrib;
              * @returns {WinJSContrib.UI.FluentDOM}
              */
             FluentDOM.prototype.addClass = function (classname) {
-                this.element.classList.add(classname);
+                if (this.element)
+                    this.element.classList.add(classname);
                 return this;
             };
             /**
@@ -2234,7 +3010,8 @@ var WinJSContrib;
              * @returns {WinJSContrib.UI.FluentDOM}
              */
             FluentDOM.prototype.className = function (classname) {
-                this.element.className = classname;
+                if (this.element)
+                    this.element.className = classname;
                 return this;
             };
             /**
@@ -2244,7 +3021,8 @@ var WinJSContrib;
              * @returns {WinJSContrib.UI.FluentDOM}
              */
             FluentDOM.prototype.opacity = function (opacity) {
-                this.element.style.opacity = opacity;
+                if (this.element)
+                    this.element.style.opacity = opacity;
                 return this;
             };
             /**
@@ -2254,7 +3032,8 @@ var WinJSContrib;
              * @returns {WinJSContrib.UI.FluentDOM}
              */
             FluentDOM.prototype.display = function (display) {
-                this.element.style.display = display;
+                if (this.element)
+                    this.element.style.display = display;
                 return this;
             };
             /**
@@ -2263,7 +3042,8 @@ var WinJSContrib;
              * @returns {WinJSContrib.UI.FluentDOM}
              */
             FluentDOM.prototype.hide = function () {
-                this.element.style.display = 'none';
+                if (this.element)
+                    this.element.style.display = 'none';
                 return this;
             };
             /**
@@ -2273,17 +3053,19 @@ var WinJSContrib;
              * @returns {WinJSContrib.UI.FluentDOM}
              */
             FluentDOM.prototype.visibility = function (visibility) {
-                this.element.style.visibility = visibility;
+                if (this.element)
+                    this.element.style.visibility = visibility;
                 return this;
             };
             /**
-             * set innerText
+             * set textContent
              * @function WinJSContrib.UI.FluentDOM.prototype.text
              * @param text text
              * @returns {WinJSContrib.UI.FluentDOM}
              */
             FluentDOM.prototype.text = function (text) {
-                this.element.innerText = text;
+                if (this.element)
+                    this.element.textContent = text;
                 return this;
             };
             /**
@@ -2293,7 +3075,8 @@ var WinJSContrib;
              * @returns {WinJSContrib.UI.FluentDOM}
              */
             FluentDOM.prototype.html = function (text) {
-                this.element.innerHTML = text;
+                if (this.element)
+                    this.element.innerHTML = text;
                 return this;
             };
             /**
@@ -2304,7 +3087,8 @@ var WinJSContrib;
              * @returns {WinJSContrib.UI.FluentDOM}
              */
             FluentDOM.prototype.attr = function (name, val) {
-                this.element.setAttribute(name, val);
+                if (this.element)
+                    this.element.setAttribute(name, val);
                 return this;
             };
             /**
@@ -2315,7 +3099,23 @@ var WinJSContrib;
              * @returns {WinJSContrib.UI.FluentDOM}
              */
             FluentDOM.prototype.style = function (name, val) {
-                this.element.style[name] = val;
+                if (this.element)
+                    this.element.style[name] = val;
+                return this;
+            };
+            /**
+             * set style property
+             * @function WinJSContrib.UI.FluentDOM.prototype.style
+             * @param name attribute name
+             * @param val attribute value
+             * @returns {WinJSContrib.UI.FluentDOM}
+             */
+            FluentDOM.prototype.styles = function (obj) {
+                var st = this.element.style;
+                var keys = Object.keys(obj);
+                keys.forEach(function (k) {
+                    st[k] = obj[k];
+                });
                 return this;
             };
             /**
@@ -2325,7 +3125,8 @@ var WinJSContrib;
              * @returns {WinJSContrib.UI.FluentDOM}
              */
             FluentDOM.prototype.appendTo = function (elt) {
-                elt.appendChild(this.element);
+                if (this.element &amp;&amp; elt)
+                    elt.appendChild(this.element);
                 return this;
             };
             /**
@@ -2336,7 +3137,8 @@ var WinJSContrib;
              * @returns {WinJSContrib.UI.FluentDOM}
              */
             FluentDOM.prototype.tap = function (callback, options) {
-                WinJSContrib.UI.tap(this.element, callback, options);
+                if (this.element)
+                    WinJSContrib.UI.tap(this.element, callback, options);
                 return this;
             };
             /**
@@ -2345,7 +3147,7 @@ var WinJSContrib;
              * @param nodeType child node type
              * @param className css classes
              * @param callback callback receiving the new FluentDOM as an argument
-             * @returns {WinJSContrib.UI.FluentDOM}
+             * @returns {WinJSContrib.UI.FluentDOM} current instance (for method chaining)
              */
             FluentDOM.prototype.append = function (nodeType, className, callback) {
                 var child = new FluentDOM(nodeType, className, this.element, this);
@@ -2353,6 +3155,17 @@ var WinJSContrib;
                     callback(child);
                 }
                 return this;
+            };
+            /**
+             * create a child FluentDOM and append it to current
+             * @function WinJSContrib.UI.FluentDOM.prototype.createChild
+             * @param nodeType child node type
+             * @param className css classes
+             * @returns {WinJSContrib.UI.FluentDOM} child FluentDOM
+             */
+            FluentDOM.prototype.createChild = function (nodeType, className) {
+                var child = new FluentDOM(nodeType, className, this.element, this);
+                return child;
             };
             /**
              * create a WinJS control
@@ -2373,87 +3186,165 @@ var WinJSContrib;
             return FluentDOM;
         })();
         UI.FluentDOM = FluentDOM;
+        function dismissableShow(targetElement, classPrefix, animationTarget) {
+            animationTarget = animationTarget || targetElement;
+            targetElement.classList.add(classPrefix + "-enter");
+            targetElement.getBoundingClientRect();
+            targetElement.classList.remove(classPrefix + "-leave");
+            targetElement.classList.remove(classPrefix + "-leave-active");
+            //setImmediate(() => {
+            WinJSContrib.UI.afterTransition(animationTarget).then(function () {
+                //if (targetElement.classList.contains(classPrefix + "-lea")) {
+                //    targetElement.classList.remove(classPrefix + "-enter");
+                //    targetElement.classList.remove(classPrefix + "-enter-active");
+                //}
+            });
+            targetElement.classList.add(classPrefix + "-enter-active");
+            //});
+        }
+        UI.dismissableShow = dismissableShow;
+        function dismissableHide(targetElement, classPrefix, animationTarget) {
+            animationTarget = animationTarget || targetElement;
+            targetElement.classList.add(classPrefix + "-leave");
+            targetElement.classList.remove(classPrefix + "-enter");
+            targetElement.classList.remove(classPrefix + "-enter-active");
+            setImmediate(function () {
+                WinJSContrib.UI.afterTransition(animationTarget).then(function () {
+                    targetElement.classList.remove(classPrefix + "-leave");
+                    targetElement.classList.remove(classPrefix + "-leave-active");
+                });
+                targetElement.classList.add(classPrefix + "-leave-active");
+            });
+        }
+        UI.dismissableHide = dismissableHide;
+        function forwardFocus(container, focusTarget, allowed) {
+            var isInContainer = function (elt) {
+                while (elt.parentElement &amp;&amp; elt.parentElement != container) {
+                    elt = elt.parentElement;
+                }
+                if (elt.parentElement == container)
+                    return true;
+                return false;
+            };
+            var focusManager = function (arg) {
+                if (!isInContainer(arg.target) &amp;&amp; (!allowed || !(allowed.indexOf(arg.target) >= 0))) {
+                    focusTarget.focus();
+                }
+            };
+            document.addEventListener("focus", focusManager, true);
+            return function () {
+                document.removeEventListener("focus", focusManager);
+            };
+        }
+        UI.forwardFocus = forwardFocus;
     })(UI = WinJSContrib.UI || (WinJSContrib.UI = {}));
 })(WinJSContrib || (WinJSContrib = {}));
 
 var __global = this;
-var profiler = __global.msWriteProfilerMark || function () {
-};
+var profiler = __global.msWriteProfilerMark || function () { };
 var WinJSContrib;
 (function (WinJSContrib) {
     var UI;
     (function (UI) {
         var Pages;
         (function (Pages) {
+            function abs(uri) {
+                var a = window.document.createElement("a");
+                a.href = uri;
+                return a.href;
+            }
+            var logger = WinJSContrib.Logs.getLogger("WinJSContrib.UI.Pages");
+            Pages.verboseTraces = false;
+            Pages.preloadDelay = 500;
+            var loadedPages = {};
+            function preload() {
+                var pathes = [];
+                for (var _i = 0; _i &lt; arguments.length; _i++) {
+                    pathes[_i - 0] = arguments[_i];
+                }
+                return WinJSContrib.Promise.waterfall(pathes, function (path) {
+                    return preloadPath(path);
+                });
+            }
+            Pages.preload = preload;
+            function preloadPath(path) {
+                var absuri = abs(path);
+                if (!loadedPages[absuri]) {
+                    logger.verbose("preload " + absuri);
+                    loadedPages[absuri] = true;
+                    return WinJS.Promise.timeout(Pages.preloadDelay).then(function () {
+                        return WinJS.Utilities.Scheduler.schedule(function () {
+                            var wrapper = document.createDocumentFragment();
+                            var elt = document.createElement("DIV");
+                            wrapper.appendChild(elt);
+                            WinJS.UI.Fragments.render(absuri, elt);
+                        }, WinJS.Utilities.Scheduler.Priority.idle, {}, "preload|" + absuri);
+                    });
+                }
+                return WinJS.Promise.wrap();
+            }
+            Pages.preloadPath = preloadPath;
             /**
              * List of mixins to apply to each fragment managed by WinJS Contrib (through navigator or by calling explicitely {@link WinJSContrib.UI.Pages.fragmentMixin}).
              * @field WinJSContrib.UI.Pages.defaultFragmentMixins
              * @type {Array}
              */
             Pages.defaultFragmentMixins = [{
-                $: function (selector) {
-                    return $(selector, this.element || this._element);
-                },
-                q: function (selector) {
-                    if (!this.element)
-                        return;
-                    return this.element.querySelector(selector);
-                },
-                qAll: function (selector) {
-                    if (!this.element)
-                        return;
-                    var res = this.element.querySelectorAll(selector);
-                    if (res &amp;&amp; !res.forEach) {
-                        res = [].slice.call(res);
-                    }
-                    return res;
-                },
-            }, {
-                dispose: function () {
-                    if (this._promises) {
-                        this.cancelPromises();
-                        this._promises = null;
-                    }
-                },
-                promises: {
-                    configurable: true,
-                    get: function () {
-                        if (!this._promises)
-                            this._promises = [];
-                        return this._promises;
-                    }
-                },
-                addPromise: function (prom) {
-                    this.promises.push(prom);
-                    return prom;
-                },
-                cancelPromises: function () {
-                    var page = this;
-                    if (page.promises) {
-                        for (var i = 0; i &lt; page.promises.length; i++) {
-                            if (page.promises[i]) {
-                                page.promises[i].cancel();
-                            }
+                    $: function (selector) {
+                        return $(selector, this.element || this._element);
+                    },
+                    q: function (selector) {
+                        if (!this.element)
+                            return;
+                        return this.element.querySelector(selector);
+                    },
+                    qAll: function (selector) {
+                        if (!this.element)
+                            return;
+                        var res = this.element.querySelectorAll(selector);
+                        if (res &amp;&amp; !res.forEach) {
+                            res = [].slice.call(res);
                         }
-                        page.promises = [];
-                    }
-                }
-            }, {
-                dispose: function () {
-                    if (this._eventTracker) {
-                        this._eventTracker.dispose();
-                        this._eventTracker = null;
+                        return res;
+                    },
+                },
+                {
+                    initPageMixin: function () {
+                        this.promises = [];
+                    },
+                    disposePageMixin: function () {
+                        if (this.promises) {
+                            this.cancelPromises();
+                            this.promises = null;
+                        }
+                    },
+                    addPromise: function (prom) {
+                        this.promises.push(prom);
+                        return prom;
+                    },
+                    cancelPromises: function () {
+                        var page = this;
+                        if (page.promises) {
+                            for (var i = 0; i &lt; page.promises.length; i++) {
+                                if (page.promises[i]) {
+                                    page.promises[i].cancel();
+                                }
+                            }
+                            page.promises = [];
+                        }
                     }
                 },
-                eventTracker: {
-                    configurable: true,
-                    get: function () {
-                        if (!this._eventTracker)
-                            this._eventTracker = new WinJSContrib.UI.EventTracker();
-                        return this._eventTracker;
-                    }
-                }
-            }];
+                {
+                    initPageMixin: function () {
+                        this.eventTracker = new WinJSContrib.UI.EventTracker();
+                    },
+                    disposePageMixin: function () {
+                        if (this.eventTracker) {
+                            this.eventTracker.dispose();
+                            this.eventTracker = null;
+                        }
+                    },
+                }];
             function broadcast(ctrl, element, eventName, args, before, after) {
                 var promises = [];
                 if (before)
@@ -2467,18 +3358,33 @@ var WinJSContrib;
                         if (childctrl) {
                             var event = childctrl.winControl[eventName];
                             if (event) {
-                                promises.push(WinJS.Promise.as(event.apply(childctrl.winControl, args)));
+                                if (childctrl.winControl.pageLifeCycle) {
+                                    promises.push(childctrl.winControl.pageLifeCycle.steps.layout.promise);
+                                }
+                                else {
+                                    promises.push(WinJS.Promise.as(event.apply(childctrl.winControl, args)));
+                                }
                             }
                         }
                         // Skip descendants
-                        //index += childctrl.querySelectorAll(".mcn-fragment, .mcn-layout-ctrl").length + 1;
-                        index += 1;
+                        if (childctrl &amp;&amp; childctrl.winControl &amp;&amp; childctrl.winControl.pageLifeCycle) {
+                            index += childctrl.querySelectorAll(".mcn-fragment, .mcn-layout-ctrl").length + 1;
+                            childctrl.winControl.__checkLayout();
+                        }
+                        else {
+                            index += 1;
+                        }
                     }
-                    if (after)
-                        promises.push(WinJS.Promise.as(after.apply(ctrl, args)));
-                    return WinJS.Promise.join(promises);
+                    //if (after)
+                    //    promises.push(WinJS.Promise.as(after.apply(ctrl, args)));
+                    return WinJS.Promise.join(promises).then(function () {
+                        if (after)
+                            return WinJS.Promise.as(after.apply(ctrl, args));
+                    });
                 }
                 else {
+                    if (after)
+                        return WinJS.Promise.as(after.apply(ctrl, args));
                     return WinJS.Promise.wrap();
                 }
             }
@@ -2498,14 +3404,14 @@ var WinJSContrib;
                 element.setAttribute("dir", __global.getComputedStyle(element, null).direction);
                 element.style.opacity = '0';
                 container.appendChild(element);
-                var fragmentPromise = new WinJS.Promise(function (c, e) {
-                    fragmentCompleted = c;
-                    fragmentError = e;
-                });
+                var fragmentPromise = new WinJS.Promise(function (c, e) { fragmentCompleted = c; fragmentError = e; });
                 var parented = options.parented ? WinJS.Promise.as(options.parented) : null;
                 var layoutCtrls = [];
                 var pageConstructor = WinJS.UI.Pages.get(location);
                 function preparePageControl(elementCtrl) {
+                    if (options.getFragmentElement) {
+                        options.getFragmentElement(elementCtrl);
+                    }
                     if (args &amp;&amp; args.injectToPage) {
                         WinJSContrib.Utils.inject(elementCtrl, args.injectToPage);
                     }
@@ -2552,9 +3458,13 @@ var WinJSContrib;
                             return options.closeOldPagePromise;
                         });
                     }
-                    elementCtrl.pageLifeCycle.steps.ready.attach(function () {
-                        if (options.onready)
-                            options.onready(elementCtrl.element, args);
+                    if (options.onready) {
+                        elementCtrl.pageLifeCycle.steps.ready.attach(function () {
+                            if (options.onready)
+                                options.onready(elementCtrl.element, args);
+                        });
+                    }
+                    elementCtrl.pageLifeCycle.steps.enter.attach(function () {
                         if (elementCtrl.enterPageAnimation) {
                             return WinJS.Promise.as(elementCtrl.enterPageAnimation(element, options));
                         }
@@ -2568,20 +3478,65 @@ var WinJSContrib;
                 return fragmentPromise;
             }
             Pages.renderFragment = renderFragment;
+            var DefferedLoadings = (function () {
+                function DefferedLoadings(page) {
+                    var _this = this;
+                    this.items = [];
+                    this.page = page;
+                    this.resolved = false;
+                    page.promises.push(page.pageLifeCycle.steps.ready.promise.then(function () {
+                        return _this.resolve();
+                    }));
+                }
+                DefferedLoadings.prototype.push = function (delegate) {
+                    var _this = this;
+                    if (!this.resolved) {
+                        this.items.push(delegate);
+                    }
+                    else {
+                        setImmediate(function () {
+                            _this.page.promises.push(WinJS.Promise.as(delegate()));
+                        });
+                    }
+                };
+                DefferedLoadings.prototype.resolve = function () {
+                    this.resolved = true;
+                    if (!this.items.length) {
+                        return WinJS.Promise.wrap();
+                    }
+                    logger.verbose("resolve deffered loads");
+                    return WinJSContrib.Promise.waterfall(this.items, function (job) {
+                        return WinJS.Promise.as(job()).then(function () {
+                            return WinJS.Promise.timeout();
+                        });
+                    });
+                };
+                return DefferedLoadings;
+            })();
+            Pages.DefferedLoadings = DefferedLoadings;
+            var PageBase = (function () {
+                function PageBase() {
+                }
+                return PageBase;
+            })();
+            Pages.PageBase = PageBase;
             var PageLifeCycleStep = (function () {
                 function PageLifeCycleStep(page, stepName, parent) {
                     var _this = this;
+                    this.page = page;
                     this.queue = [];
                     this.isDone = false;
                     this.stepName = stepName;
-                    //this.created = new Date();
+                    if (Pages.verboseTraces) {
+                        this.created = new Date();
+                    }
                     this.promise = new WinJS.Promise(function (c, e) {
                         _this._resolvePromise = c;
                         _this._rejectPromise = e;
                     });
                     page.promises.push(this.promise);
                     //if their is a parent page fragment, we attach step to synchronize page construction
-                    if (parent) {
+                    if (parent &amp;&amp; parent.pageLifeCycle) {
                         parent.pageLifeCycle.steps[stepName].attach(function () {
                             return _this.promise;
                         });
@@ -2600,9 +3555,13 @@ var WinJSContrib;
                     var step = this;
                     this.isDone = true;
                     function closeStep() {
-                        //step.resolved = new Date();
+                        step.resolved = new Date();
                         step._resolvePromise(arg);
-                        //console.log('resolved ' + step.stepName + '(' + (&lt;any>step.resolved - &lt;any>step.created) + 'ms)');
+                        if (Pages.verboseTraces) {
+                            step.resolved = new Date();
+                            logger.verbose((step.resolved - step.created) + 'ms ' + step.stepName.toUpperCase() + ' ' + step.page.pageLifeCycle.profilerMarkIdentifier);
+                            profiler("WinJS.UI.Pages:" + step.stepName.toUpperCase() + step.page.pageLifeCycle.profilerMarkIdentifier + ",StartTM");
+                        }
                         return step.promise;
                     }
                     if (this.queue &amp;&amp; this.queue.length) {
@@ -2662,6 +3621,9 @@ var WinJSContrib;
                         if (this._disposed) {
                             return;
                         }
+                        if (this.disposePageMixin) {
+                            this.disposePageMixin();
+                        }
                         this.pageLifeCycle.stop();
                         this.pageLifeCycle = null;
                         this._disposed = true;
@@ -2706,8 +3668,7 @@ var WinJSContrib;
                         /// &lt;/signature>
                         return ControlProcessor.processAll(element);
                     },
-                    processed: function (element, options) {
-                    },
+                    processed: function (element, options) { },
                     render: function (element, options, loadResult) {
                         /// &lt;signature helpKeyword="WinJS.UI.Pages._mixin.render">
                         /// &lt;summary locid="WinJS.UI.Pages._mixin.render">
@@ -2731,19 +3692,34 @@ var WinJSContrib;
                         }
                         return element;
                     },
-                    rendered: function (element, options) {
-                    },
-                    ready: function () {
-                    }
+                    rendered: function (element, options) { },
+                    ready: function () { }
                 };
                 function injectMixin(base, mixin) {
                     var d = base.prototype.dispose;
+                    var dM = base.prototype.disposePageMixin;
+                    var iM = base.prototype.initPageMixin;
                     base = _Base.Class.mix(base, mixin);
-                    //we want to allow this mixins to provide their own addition to "dispose"
+                    //we want to allow this mixins to provide their own addition to "dispose" and initialize custom properties
                     if (d &amp;&amp; mixin.hasOwnProperty('dispose')) {
                         base.prototype.dispose = function () {
                             mixin.dispose.apply(this);
-                            d.apply(this);
+                            if (d)
+                                d.apply(this);
+                        };
+                    }
+                    if (d &amp;&amp; mixin.hasOwnProperty('disposePageMixin')) {
+                        base.prototype.disposePageMixin = function () {
+                            mixin.disposePageMixin.apply(this);
+                            if (dM)
+                                dM.apply(this);
+                        };
+                    }
+                    if (d &amp;&amp; mixin.hasOwnProperty('initPageMixin')) {
+                        base.prototype.initPageMixin = function () {
+                            mixin.initPageMixin.apply(this);
+                            if (iM)
+                                iM.apply(this);
                         };
                     }
                     return base;
@@ -2774,13 +3750,16 @@ var WinJSContrib;
                         that.pageLifeCycle.initialDisplay = element.style.display;
                     element.style.display = 'none';
                     var profilerMarkIdentifier = " uri='" + uri + "'" + _BaseUtils._getProfilerMarkIdentifier(that.element);
+                    that.pageLifeCycle.profilerMarkIdentifier = profilerMarkIdentifier;
                     _WriteProfilerMark("WinJS.UI.Pages:createPage" + profilerMarkIdentifier + ",StartTM");
                     if (WinJSContrib.UI.WebComponents) {
                         that.pageLifeCycle.observer = WinJSContrib.UI.WebComponents.watch(that.element);
                     }
                     var load = Promise.timeout().then(function Pages_load() {
+                        that.pageLifeCycle.log(function () { return "URI loading " + that.pageLifeCycle.profilerMarkIdentifier; });
                         return that.load(uri);
                     }).then(function (loadResult) {
+                        that.pageLifeCycle.log(function () { return "URI loaded " + that.pageLifeCycle.profilerMarkIdentifier; });
                         //if page is defined by Js classes, call class constructors 
                         if (that._attachedConstructor) {
                             var realControl = new that._attachedConstructor(element, options);
@@ -2811,17 +3790,17 @@ var WinJSContrib;
                         return that.rendered(element, options);
                     }).then(function (result) {
                         return that.pageLifeCycle.steps.render.resolve();
+                    }).then(function Pages_processed() {
+                        if (WinJSContrib.UI.WebComponents) {
+                            //add delay to enable webcomponent processing
+                            return WinJS.Promise.timeout();
+                        }
                     });
                     that.elementReady = renderCalled.then(function () {
                         return element;
                     });
                     that.renderComplete = renderCalled.then(function Pages_process() {
                         return that.process(element, options);
-                    }).then(function Pages_processed() {
-                        if (WinJSContrib.UI.WebComponents) {
-                            //add delay to enable webcomponent processing
-                            return WinJS.Promise.timeout();
-                        }
                     }).then(function (result) {
                         return that.pageLifeCycle.steps.process.resolve();
                     }).then(function Pages_processed() {
@@ -2854,15 +3833,19 @@ var WinJSContrib;
                         that.ready(element, options);
                         that.pageLifeCycle.ended = new Date();
                         that.pageLifeCycle.delta = that.pageLifeCycle.ended - that.pageLifeCycle.created;
-                        console.log('navigation to ' + uri + ' took ' + that.pageLifeCycle.delta + 'ms');
-                        broadcast(that, element, 'pageReady', [element, options]);
+                        //broadcast(that, element, 'pageReady', [element, options]);
                     }).then(function (result) {
                         return that.pageLifeCycle.steps.ready.resolve();
+                    }).then(function (result) {
+                        return that.pageLifeCycle.steps.enter.resolve();
                     }).then(function () {
                         return that;
                     }).then(null, function Pages_error(err) {
                         if (that.error)
                             return that.error(err);
+                        if (err &amp;&amp; err._value &amp;&amp; err._value.name === "Canceled")
+                            return;
+                        return WinJS.Promise.wrapError(err);
                     });
                     that.__checkLayout = function () {
                         var page = this;
@@ -2904,15 +3887,39 @@ var WinJSContrib;
                         // This needs to follow the WinJS.UI.processAll "async constructor"
                         // pattern to interop nicely in the "Views.Control" use case.
                         //
+                        // This needs to follow the WinJS.UI.processAll "async constructor"
+                        // pattern to interop nicely in the "Views.Control" use case.
+                        //
                         function PageControl_ctor(element, options, complete, parentedPromise) {
                             var that = this;
+                            if (that._attachedConstructor) {
+                                var realControl = new this._attachedConstructor(element, options);
+                                element.winControl = realControl;
+                                var keys = Object.keys(that);
+                                keys.forEach(function (k) {
+                                    if (k !== "_attachedConstructor") {
+                                        realControl[k] = that[k];
+                                    }
+                                });
+                                that = realControl;
+                            }
                             var parent = WinJSContrib.Utils.getScopeControl(element);
                             _ElementUtilities.addClass(element, "win-disposable");
                             _ElementUtilities.addClass(element, "pagecontrol");
                             _ElementUtilities.addClass(element, "mcn-layout-ctrl");
+                            if (that.initPageMixin)
+                                that.initPageMixin();
+                            //that._eventTracker = new WinJSContrib.UI.EventTracker();
+                            //that._promises = [];
                             that.pageLifeCycle = {
                                 created: new Date(),
                                 location: uri,
+                                log: function (callback) {
+                                    if (Pages.verboseTraces) {
+                                        var delta = new Date() - this.created;
+                                        logger.verbose(delta + "ms " + callback());
+                                    }
+                                },
                                 stop: function () {
                                     that.readyComplete.cancel();
                                     that.cancelPromises();
@@ -2926,18 +3933,21 @@ var WinJSContrib;
                                     render: new PageLifeCycleStep(that, 'render', null),
                                     process: new PageLifeCycleStep(that, 'process', parent),
                                     layout: new PageLifeCycleStep(that, 'layout', parent),
-                                    ready: new PageLifeCycleStep(that, 'ready', parent)
+                                    ready: new PageLifeCycleStep(that, 'ready', parent),
+                                    enter: new PageLifeCycleStep(that, 'enter', parent),
                                 },
                                 initialDisplay: null
                             };
-                            this._disposed = false;
-                            this.element = element = element || _Global.document.createElement("div");
+                            that.defferedLoading = new DefferedLoadings(that);
+                            that._disposed = false;
+                            that.element = element = element || _Global.document.createElement("div");
                             element.msSourceLocation = uri;
-                            this.uri = uri;
-                            this.selfhost = selfhost(uri);
-                            element.winControl = this;
+                            that.uri = uri;
+                            that.selfhost = selfhost(uri);
+                            element.winControl = that;
                             that.parentedComplete = parentedPromise;
-                            pageLifeCycle(this, uri, element, options, complete, parentedPromise);
+                            pageLifeCycle(that, uri, element, options, complete, parentedPromise);
+                            return that;
                         }, _mixinBase);
                         base = _Base.Class.mix(base, WinJS.UI.DOMEventMixin);
                         //inject default behaviors to page constructor
@@ -2987,6 +3997,7 @@ var WinJSContrib;
                 }
                 function render(uri, element, options, parentedPromise) {
                     var Ctor = _CorePages.get(uri);
+                    loadedPages[abs(uri)] = true;
                     var control = new Ctor(element, options, null, parentedPromise);
                     return control.renderComplete.then(null, function (err) {
                         return Promise.wrapError({
@@ -3040,9 +4051,8 @@ var WinJSContrib;
                     /// document for the content of the page.
                     /// &lt;/param>
                     /// &lt;/signature>
-                    WinJS.UI.Pages.render(options.uri, element, options).then(complete, function () {
-                        complete();
-                    });
+                    WinJS.UI.Pages.render(options.uri, element, options).
+                        then(complete, function () { complete(); });
                 });
             })(WinJSContrib.UI.Pages, __global, WinJS, WinJS.UI.Pages, WinJS.Utilities, WinJS.Utilities, profiler, WinJS.Promise, WinJS.UI.Fragments, WinJS.UI);
         })(Pages = UI.Pages || (UI.Pages = {}));
@@ -3073,7 +4083,7 @@ var WinJSContrib;
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a>
-		on Tue Apr 28 2015 19:20:03 GMT+0200 (Romance Daylight Time) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+		on Mon Feb 01 2016 12:46:12 GMT+0100 (Paris, Madrid) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>
 			</div>

@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>WinJS Contrib Source: winjscontrib.ui.flipviewpager.js</title>
+	<title>WinJS Contrib Source: winjscontrib.ui.itemswipe.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -255,7 +255,7 @@
 					
 
 
-		<h1 class="page-title">Source: winjscontrib.ui.flipviewpager.js</h1>
+		<h1 class="page-title">Source: winjscontrib.ui.itemswipe.js</h1>
     
     <section>
         <article>
@@ -266,152 +266,223 @@
  */
 
 (function () {
-    'use strict';
-    WinJS.Namespace.define("WinJSContrib.UI", {
-        FlipViewPager: WinJS.Class.mix(WinJS.Class.define(
-        /**
-         * @classdesc
-         * Flipview companion to display pages markers (like carousels)
-         * @class WinJSContrib.UI.FlipViewPager
-         * @param {HTMLElement} element DOM element containing the control
-         * @param {Object} options
-         */
-        function ctor(element, options) {
-            this.element = element || document.createElement('DIV');
-            options = options || {};
-            this.element.className = 'mcn-flipviewpager';
-            this.element.winControl = this;
-            this.element.classList.add('win-disposable');
-            this.isFlipping = false;
-            this.flipviewPagerContextGroup = options.flipviewPagerContextGroupName || "flipviewPagerContextGroup";
-            this.flipviewPageVisibilityChangeBinded = this.flipviewPageVisibilityChange.bind(this);
-            this.pageSelectedBinded = this.pageSelected.bind(this);
-            this.countChangedBinded = this.countChanged.bind(this);
-            WinJS.UI.setOptions(this, options);
+	'use strict';
+	WinJS.Namespace.define("WinJSContrib.UI", {	
+	    ItemSwipe: WinJS.Class.mix(WinJS.Class.define(
+            /**
+             * @classdesc 
+             * enable cross swipe on list items to trigger actions by swiping item
+             * @class WinJSContrib.UI.ItemSwipe
+             * @param {HTMLElement} element DOM element containing the control
+             * @param {Object} options
+             */
+            function ctor(element, options) {
+	        var ctrl = this;
+			this.element = element || document.createElement('DIV');
+			options = options || {};
+			this.element.winControl = this;
+			this.element.classList.add('mcn-itemswipe');
+			this.element.classList.add('win-disposable');
+			this.minSwipe = 100;
+			this.thresholdFactor = 3;
+			this.hoverDelay = 600;
+			this.faceCard = this.element.querySelector(".face");
+			this.swipeToLeftCard = this.element.querySelector(".swipe-to-left");
+			this.swipeToRightCard = this.element.querySelector(".swipe-to-right");
+
+			WinJS.UI.setOptions(this, options);
+
+			this.eventTracker = new WinJSContrib.UI.EventTracker();
+			if (this.faceCard) {
+			    this.swipeslide = new WinJSContrib.UI.SwipeSlide(this.faceCard, {
+			        capturePointerOnDown: true,
+                    touchOnly : true,
+			        minSwipeDistance : ctrl.minSwipe
+			    });
+
+			    if (!ctrl.swipeToLeftCard) {
+			        this.swipeslide.allowed.left = false;
+			    }
+
+			    if (!ctrl.swipeToRightCard) {
+			        this.swipeslide.allowed.right = false;
+			    }
+
+			    this.eventTracker.addEvent(ctrl.element, "pointerenter", function (arg) {
+			        if (arg.pointerType == "mouse") {
+			            ctrl.faceCard.classList.add("mousehover");
+			        }
+			    }, false);
+
+			    this.eventTracker.addEvent(ctrl.element, "pointerleave", function (arg) {
+			        if (arg.pointerType == "mouse") {
+			            setTimeout(function () {
+			                ctrl.faceCard.classList.remove("mousehover");
+			            }, 100);
+			        } else {
+			            ctrl.faceCard.classList.remove("mousehover");
+			        }
+			    }, false);
+
+			    this.eventTracker.addEvent(this.swipeslide, "swipestart", function (arg) {
+			        ctrl._processSwipeStart(arg);
+			    });
+
+			    this.eventTracker.addEvent(this.swipeslide, "swipeend", function (arg) {
+			        ctrl._cleanState(arg);
+			    });
+
+			    this.eventTracker.addEvent(this.swipeslide, "swipe", function (arg) {
+			        ctrl._processSwipe(arg);
+			    });
+
+			    this.eventTracker.addEvent(this.swipeslide, "swipeprogress", function (arg) {
+			        ctrl._processSwipeProgress(arg);
+			    });
+
+			    this.eventTracker.addEvent(this.swipeslide, "invoked", function (arg) {
+			        ctrl._processInvoked(arg);
+			    });
+			}
+
+			
+			
         },
         /**
-         * @lends WinJSContrib.UI.FlipViewPager.prototype
+         * @lends WinJSContrib.UI.ItemSwipe.prototype
          */
         {
-            /**
-             * attached flipview
-             * @type {Object}
+		    /**
+             * data item
+             * @field
              */
-            flipView: {
-                get: function () {
-                    return this._flipView;
-                },
-                set: function (val) {
-                    this.unregisterFlipViewEvents();
-                    if (val) {
-                        this._flipView = val;
-                        if (val.winControl)
-                            this._flipView = val.winControl;
-                        this.registerFlipViewEvents();
-                        this.initControl();
-                    }
-                    else {
-                        this._flipView = undefined;
-                    }
-                }
-            },
+			item: {
+				get: function(){
+				    return this._item;
+				},
+				set: function(val){
+				    this._item = val;
+				}
+			},
 
-            initControl: function () {
-                var ctrl = this;
-                this._flipView.count().done(function (count) {
-                    ctrl.initButtons(count);
-                });
-            },
+		    /**
+             * minimum swipe distance for accepting action
+             * @field
+             * @type string
+             */
+			minSwipe : {
+			    get: function(){
+			        return this._minSwipe;
+			    },
+			    set: function(val){
+			        this._minSwipe = val;
+			        if (this.swipeslide) {
+			            this.swipeslide.minSwipeDistance = val;
+			        }
+			    }
+			},
 
-            buttonClicked: function (eventObject) {
-                if (!this._flipView)
-                    return;
+		    /**
+             * minimum swipe distance (expressed as a proportion like 2 for 50%) to element size for accepting action
+             * @field
+             * @type string
+             */
+			thresholdFactor: {
+			    get: function () {
+			        return this._thresholdFactor;
+			    },
+			    set: function (val) {
+			        this._thresholdFactor = val;
+			        if (this.swipeslide) {
+			            this.swipeslide.thresholdFactor = val;
+			        }
+			    }
+			},
 
-                if (this.isFlipping) {
-                    // Need to set whats check back since we are mid flip.
-                    var currentPage = this._flipView.currentPage;
-                    this.radioButtons[currentPage].checked = true;
+			_processSwipeProgress: function (arg) {
+			    var ctrl = this;
+			    if (arg.direction == "left") {
+			        if (ctrl.swipeToRightCard) {
+			            ctrl.swipeToRightCard.classList.remove("swiping");
+			        }
 
-                } else {
-                    // Set the new page since we are not already flipping.
-                    var targetPage = eventObject.srcElement.getAttribute("value");
-                    this._flipView.currentPage = parseInt(targetPage, 10);
-                }
-            },
+			        if (ctrl.swipeToLeftCard) {
+			            ctrl.swipeToLeftCard.classList.add("swiping");
+			            if (arg.accept) {
+			                ctrl.swipeToLeftCard.classList.add("accepted");
+			            } else {
+			                ctrl.swipeToLeftCard.classList.remove("accepted");
+			            }
+			        }
+			    } else if (arg.direction == "right") {
+			        if (ctrl.swipeToLeftCard) {
+			            ctrl.swipeToLeftCard.classList.remove("swiping");
+			        }
 
-            countChanged: function () {
-                this.initControl();
-            },
+			        if (ctrl.swipeToRightCard) {
+			            ctrl.swipeToRightCard.classList.add("swiping");
+			            if (arg.accept) {
+			                ctrl.swipeToRightCard.classList.add("accepted");
+			            } else {
+			                ctrl.swipeToRightCard.classList.remove("accepted");
+			            }
+			        }
+			    }			    
+			},
 
-            pageChange: function () {
-                var currentPage = this._flipView.currentPage;
-                var btn = this.radioButtons[currentPage];
-                if (btn) {
-                    btn.checked = true;
-                }
-                else {
-                    this.initControl();
-                }
-            },
+			_processSwipe: function (arg) {
+			    var ctrl = this;
+			    
+			    ctrl._cleanState();
+			    if (arg.direction == "left") {
+			        WinJSContrib.Utils.triggerCustomEvent(ctrl.element, "itemswipeleft", true, false, { element: ctrl.element, item: ctrl.item });
+			    } else if (arg.direction == "right") {
+			        WinJSContrib.Utils.triggerCustomEvent(ctrl.element, "itemswiperight", true, false, { element: ctrl.element, item: ctrl.item });			        
+			    }
+			},
 
-            pageSelected: function () {
-                this.isFlipping = false;
-                this.pageChange();
-            },
+			_processSwipeStart: function (arg) {
+			    var ctrl = this;
+			    
+			    ctrl._cleanState();
+			},
 
-            flipviewPageVisibilityChange: function (eventObject) {
-                if (eventObject.detail.visible === true) {
-                    this.isFlipping = true;
-                }
-                this.pageChange();
-            },
+			_cleanState : function(){
+			    var ctrl = this;
+			    
+			    if (ctrl.swipeToLeftCard) {
+			        ctrl.swipeToLeftCard.classList.remove("swiping");
+			        ctrl.swipeToLeftCard.classList.remove("accepted");
+			    }
+			    if (ctrl.swipeToRightCard) {
+			        ctrl.swipeToRightCard.classList.remove("swiping");
+			        ctrl.swipeToRightCard.classList.remove("accepted");
+			    }
+			},
 
-            registerFlipViewEvents: function () {
-                if (!this._flipView)
-                    return;
+			_processInvoked: function (arg) {
+			    var ctrl = this;
+			    console.log("invoked");
+			    WinJSContrib.Utils.triggerEvent(ctrl.element, "click", true, false);
+			    WinJSContrib.Utils.triggerCustomEvent(ctrl.element, "itemswipeinvoked", true, false, { element: ctrl.element, item: ctrl.item });
+			},
 
-                this._flipView.addEventListener("pagevisibilitychanged", this.flipviewPageVisibilityChangeBinded, false);
-                this._flipView.addEventListener("pageselected", this.pageSelectedBinded, false);
-                this._flipView.addEventListener("datasourcecountchanged", this.countChangedBinded, false);
-            },
-
-            unregisterFlipViewEvents: function () {
-                if (!this._flipView)
-                    return;
-
-                this._flipView.removeEventListener("pagevisibilitychanged", this.flipviewPageVisibilityChangeBinded);
-                this._flipView.removeEventListener("pageselected", this.pageSelectedBinded);
-                this._flipView.removeEventListener("datasourcecountchanged", this.countChangedBinded);
-            },
-
-            initButtons: function (count) {
-                var ctrl = this;
-                this.radioButtons = [];
-                this.element.innerHTML = '';
-                for (var i = 0; i &lt; count; ++i) {
-                    var radioButton = document.createElement("input");
-                    radioButton.setAttribute("type", "radio");
-                    radioButton.setAttribute("name", ctrl.flipviewPagerContextGroup);
-                    radioButton.setAttribute("value", i);
-                    radioButton.setAttribute("aria-label", (i + 1) + " of " + count);
-                    radioButton.onclick = this.buttonClicked.bind(this);
-
-                    this.radioButtons.push(radioButton);
-                    this.element.appendChild(radioButton);
-                }
-                if (count > 0) {
-                    this.radioButtons[this._flipView.currentPage].checked = true;
-                }
-            },
-
-            dispose: function () {
-                this.unregisterFlipViewEvents();
-                WinJS.Utilities.disposeSubTree(this.element);
-            }
-        }),
-        WinJS.UI.DOMEventMixin)
-    });
-})();</pre>
+			dispose: function () {
+			    if (this.eventTracker) {
+			        this.eventTracker.dispose();
+			    }
+			    if (this.swipeslide) {
+			        this.swipeslide.dispose();
+			    }
+			    WinJS.Utilities.disposeSubTree(this.element);
+			    this.element = null;
+			}
+		}),
+		WinJS.UI.DOMEventMixin,
+		WinJS.Utilities.createEventProperties("itemswipeleft", "itemswiperight", "itemswipeinvoked"))
+	});
+})();
+</pre>
         </article>
     </section>
 

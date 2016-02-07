@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>WinJS Contrib Class: FlyoutPage</title>
+	<title>WinJS Contrib Source: winjscontrib.ui.elasticinput.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -249,378 +249,115 @@
 	<div class="row-fluid">
 
 		
-		<div class="span8">
-			
+			<div class="span12">
+				
 				<div id="main">
 					
 
 
-	<h1 class="page-title">Class: FlyoutPage</h1>
-<section>
+		<h1 class="page-title">Source: winjscontrib.ui.elasticinput.js</h1>
+    
+    <section>
+        <article>
+            <pre class="sunlight-highlight-javascript linenums">﻿/* 
+ * WinJS Contrib v2.1.0.6
+ * licensed under MIT license (see http://opensource.org/licenses/MIT)
+ * sources available at https://github.com/gleborgne/winjscontrib
+ */
+
+(function () {
+	'use strict';
+	WinJS.Namespace.define("WinJSContrib.UI", {
+		ElasticInput: WinJS.Class.define(
+			 /**
+             * @class WinJSContrib.UI.ElasticInput
+             * @classdesc
+             * This control provide an elastic input.
+             * @param {HTMLElement} element DOM element containing the control
+             * @param {Object} options
+			 * @example
+			 * &lt;div data-win-control="WinJSContrib.UI.ElasticInput" data-page-member="loginctrl" id="login" data-win-options="{type:'text',label:'login'}">&lt;/div>
+			 * &lt;div data-win-control="WinJSContrib.UI.ElasticInput" data-page-member="pwdctrl" id="pwd" data-win-options="{type:'password',label:'login.password'}">&lt;/div>
+             */
+            function ElasticInput(element, options) {
+            	var ctrl = this;
+            	options = options || {};
+            	ctrl.element = element || document.createElement('div');
+            	ctrl.element.classList.add('input__elasticinput');
+            	ctrl.element.classList.add('input');
+            	ctrl.element.classList.add('win-disposable');
+            	ctrl.input = document.createElement('input');
+            	ctrl.input.classList.add("input__field");
+            	ctrl.input.classList.add("input__field__elasticinput");
+            	ctrl.label = document.createElement('label');
+            	ctrl.label.setAttribute('tabindex', '-1');
+            	if (options.type) {
+            		ctrl.input.type = options.type;
+            	}
+            	if (options.label) {
+            		var r = WinJS.Resources.getString(options.label);
+            		ctrl.label.innerHTML = r.value;
+            	}
+            	ctrl.onfocusBinded = ctrl.onfocus.bind(ctrl);
+            	ctrl.label.className = 'input__label__elasticinput';
+            	ctrl.svg = document.createElement('div');
+            	ctrl.element.appendChild(ctrl.label);
+            	if (window.MSApp &amp;&amp; window.MSApp.execUnsafeLocalFunction) {
+            	    MSApp.execUnsafeLocalFunction(function () {
+            	        ctrl.element.innerHTML += '&lt;svg focusable="false" class="graphic graphic__elasticinput" preserveAspectRatio="none" viewBox="0 0 1200 60" height="100%" width="300%" class="graphic graphic__elasticinput">&lt;path d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"/>&lt;/svg>';
+            	    });
+            	} else {
+            	    ctrl.element.innerHTML += '&lt;svg focusable="false" class="graphic graphic__elasticinput" preserveAspectRatio="none" viewBox="0 0 1200 60" height="100%" width="300%" class="graphic graphic__elasticinput">&lt;path d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"/>&lt;/svg>';
+            	}
+            	ctrl.element.appendChild(ctrl.input);
+            	ctrl.input = ctrl.element.querySelector('.input__field');
+            	ctrl.input.addEventListener('focus', ctrl.onfocusBinded)
+            	ctrl.onblurBinded = ctrl.onblur.bind(ctrl);
+            	ctrl.input.addEventListener('blur', ctrl.onblurBinded)
+            	ctrl.input.onfocus = function () {
+
+            	}
+            }, {
+            	onfocus: function () {
+            		var ctrl = this;
+            		ctrl.input.classList.add('input--filled');
+            		ctrl.element.classList.add('forceshow');
+            	},
+            	onblur: function () {
+            		var ctrl = this;
+            		var ctrl = this;
+            		if (!ctrl.input.value) {
+            			ctrl.input.classList.remove('input--filled');
+            			ctrl.element.classList.remove('forceshow');
+            		}
+            	},
+            	innerText: {
+            		get: function () {
+            			return this.input.innerText;
+            		},
+            		set: function (value) {
+            			this.input.innerText = value;
+            		}
+            	},
+            	value: {
+            		get: function () {
+            			return this.input.value;
+            		},
+            		set: function (value) {
+            			this.input.value = value;
+            		}
+            	},
+            	dispose: function () {
+            		var ctrl = this;
+            		ctrl.input.removeEventListener('focus', ctrl.onblurBinded)
+            		ctrl.input.removeEventListener('focus', ctrl.onfocusBinded)
+            	}
+            })
+	});
+})();</pre>
+        </article>
+    </section>
 
-<header>
-    <h2>
-        <span class="ancestors"><a href="global.html#WinJSContrib">WinJSContrib</a><a href="WinJSContrib.UI.html">.UI</a>.</span>
-    
-    FlyoutPage
-    </h2>
-    
-        <div class="class-description"><p>display html content or target html fragment as a sidebar flyout page</p></div>
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-
-    
-        
-<dt>
-    <h4 class="name" id="FlyoutPage"><span class="type-signature"></span>new FlyoutPage<span class="signature">(element, options)</span><span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>element</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">HTMLElement</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>DOM element containing the control</p></td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="winjscontrib.ui.flyoutpage.js.html">winjscontrib.ui.flyoutpage.js</a>, <a href="winjscontrib.ui.flyoutpage.js.html#sunlight-1-line-47">line 47</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Members</h3>
-
-        <dl>
-            
-<dt>
-    <h4 class="name" id="content"><span class="type-signature"></span>content<span class="type-signature"> :HTMLElement</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">HTMLElement</span>
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="winjscontrib.ui.flyoutpage.js.html">winjscontrib.ui.flyoutpage.js</a>, <a href="winjscontrib.ui.flyoutpage.js.html#sunlight-1-line-150">line 150</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="display"><span class="type-signature"></span>display<span class="type-signature"> :HTMLElement</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">HTMLElement</span>
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="winjscontrib.ui.flyoutpage.js.html">winjscontrib.ui.flyoutpage.js</a>, <a href="winjscontrib.ui.flyoutpage.js.html#sunlight-1-line-160">line 160</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="placement"><span class="type-signature"></span>placement<span class="type-signature"> :string</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>left | right | top | bottom</p>
-    </div>
-    
-    
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="winjscontrib.ui.flyoutpage.js.html">winjscontrib.ui.flyoutpage.js</a>, <a href="winjscontrib.ui.flyoutpage.js.html#sunlight-1-line-182">line 182</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-    
-    
-</dd>
-
-        </dl>
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
 
 
 
@@ -641,15 +378,11 @@
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a>
-		on Mon Feb 01 2016 12:46:14 GMT+0100 (Paris, Madrid) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+		on Mon Feb 01 2016 12:46:12 GMT+0100 (Paris, Madrid) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>
 			</div>
 
-			
-			<div class="span3">
-				<div id="toc"></div>
-			</div>
 			
 			<br clear="both">
 		</div>

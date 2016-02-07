@@ -33,10 +33,6 @@
 						</li>
 						
 						<li>
-							<a href="WinJSContrib.Alerts.html">Alerts</a>
-						</li>
-						
-						<li>
 							<a href="WinJSContrib.Bindings.html">Bindings</a>
 						</li>
 						
@@ -57,19 +53,15 @@
 						</li>
 						
 						<li>
+							<a href="WinJSContrib.Logs.html">Logs</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.Logs.Appenders.html">Appenders</a>
+						</li>
+						
+						<li>
 							<a href="WinJSContrib.Search.html">Search</a>
-						</li>
-						
-						<li>
-							<a href="WinJSContrib.Search.Stemming.html">Stemming</a>
-						</li>
-						
-						<li>
-							<a href="WinJSContrib.Search.Stemming.Op.html">Op</a>
-						</li>
-						
-						<li>
-							<a href="WinJSContrib.Search.Stemming.StopWords.html">StopWords</a>
 						</li>
 						
 						<li>
@@ -89,6 +81,10 @@
 						</li>
 						
 						<li>
+							<a href="WinJSContrib.UI.DataForm.defaultBindingOptions.html">defaultBindingOptions</a>
+						</li>
+						
+						<li>
 							<a href="WinJSContrib.UI.DataSources.html">DataSources</a>
 						</li>
 						
@@ -97,19 +93,11 @@
 						</li>
 						
 						<li>
-							<a href="WinJSContrib.UI.WebComponents.html">WebComponents</a>
-						</li>
-						
-						<li>
 							<a href="WinJSContrib.Utils.html">Utils</a>
 						</li>
 						
 						<li>
 							<a href="WinJSContrib.Utils.ValueParsers.html">ValueParsers</a>
-						</li>
-						
-						<li>
-							<a href="WinJSContrib.WinRT.html">WinRT</a>
 						</li>
 						
 
@@ -131,6 +119,18 @@
 						</li>
 						
 						<li>
+							<a href="WinJSContrib.Logs.Appenders.BufferAppender.html">BufferAppender</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.Logs.Appenders.ConsoleAppender.html">ConsoleAppender</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.Logs.Logger.html">Logger</a>
+						</li>
+						
+						<li>
 							<a href="WinJSContrib.Messenger.html">Messenger</a>
 						</li>
 						
@@ -147,11 +147,11 @@
 						</li>
 						
 						<li>
-							<a href="WinJSContrib.Search.IndexWorkerProxy.html">IndexWorkerProxy</a>
+							<a href="WinJSContrib.Search.Stemming.Pipeline.html">Pipeline</a>
 						</li>
 						
 						<li>
-							<a href="WinJSContrib.Search.Stemming.Pipeline.html">Pipeline</a>
+							<a href="WinJSContrib.UI.AspectRatio.html">AspectRatio</a>
 						</li>
 						
 						<li>
@@ -164,6 +164,10 @@
 						
 						<li>
 							<a href="WinJSContrib.UI.DataSources.DataSourceManager.html">DataSourceManager</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.UI.ElasticInput.html">ElasticInput</a>
 						</li>
 						
 						<li>
@@ -200,6 +204,10 @@
 						
 						<li>
 							<a href="WinJSContrib.UI.HubControl.html">HubControl</a>
+						</li>
+						
+						<li>
+							<a href="WinJSContrib.UI.ItemSwipe.html">ItemSwipe</a>
 						</li>
 						
 						<li>
@@ -251,8 +259,8 @@
     
     <section>
         <article>
-            <pre class="sunlight-highlight-javascript linenums">/* 
- * WinJS Contrib v2.1.0.0
+            <pre class="sunlight-highlight-javascript linenums">﻿/* 
+ * WinJS Contrib v2.1.0.6
  * licensed under MIT license (see http://opensource.org/licenses/MIT)
  * sources available at https://github.com/gleborgne/winjscontrib
  */
@@ -368,7 +376,7 @@
                         dataform.state.item = val;
                     }
 
-                    dataform.state.updated = false;
+                    
                     dataform.validator.resetForm();
 
                     dataform.autobindFields();
@@ -379,6 +387,7 @@
                         dataform.allowTooltip = tooltips;
                         dataform.checkState();
                         dataform.initValidator();
+                        dataform.state.updated = false;
                     });
                     dataform.dispatchEvent("itemchanged", { dataform: this, item: val });
                 }
@@ -518,6 +527,14 @@
          */
         {
             /**
+             * @namespace WinJSContrib.UI.DataForm.defaultBindingOptions
+             */
+            DefaultBindingOptions: {
+                trimText: true,
+                convertEmptyToNull: true,
+            },
+
+            /**
              * @namespace WinJSContrib.UI.DataForm.Converters
              */
             Converters: {
@@ -525,10 +542,10 @@
                  * @member
                  */
                 "none": {
-                    fromObject: function (val) {
+                    fromObject: function (val, options) {
                         return val.toString();
                     },
-                    fromInput: function (val) {
+                    fromInput: function (val, options) {
                         return val;
                     }
                 },
@@ -536,29 +553,39 @@
                  * @member
                  */
                 "text": {
-                    fromObject: function (val) {
+                    fromObject: function (val, options) {
                         if (typeof val === "undefined" || val === null)
                             return '';
 
-                        return val.toString();
+                        var res = val.toString();
+                        
+                        return res;
                     },
-                    fromInput: function (val) {
-                        return val;
+                    fromInput: function (val, options) {
+                        var res = val;
+                        if (res &amp;&amp; options &amp;&amp; options.trimText) {
+                            res = res.trim();
+                        }
+                        if (options &amp;&amp; options.convertEmptyToNull) {
+                            res = (res === '') ? null : res;
+                        }
+                        return res;
                     }
                 },
                 /**
                  * @member
                  */
                 "number": {
-                    fromObject: function (val) {
+                    fromObject: function (val, options) {
                         if (typeof val !== "number")
                             return '';
 
                         return val.toString();
                     },
-                    fromInput: function (val) {
+                    fromInput: function (val, options) {
                         if (typeof val !== "undefined" &amp;&amp; val !== null)
-                            return parseFloat(val);
+                          //return parseFloat(val);
+                          return parseFloat(val.toString().replace(',', '.').replace(' ', ''));
 
                         return null;
                     }
@@ -567,13 +594,13 @@
                  * @member
                  */
                 "boolean": {
-                    fromObject: function (val) {
+                    fromObject: function (val, options) {
                         if (typeof val === "undefined" || val === null)
                             return '';
 
                         return val.toString();
                     },
-                    fromInput: function (val) {
+                    fromInput: function (val, options) {
                         if (val === 'true')
                             return true;
                         if (val === 'false')
@@ -586,10 +613,10 @@
                  * @member
                  */
                 "object": {
-                    fromObject: function (val) {
+                    fromObject: function (val, options) {
                         return val;
                     },
-                    fromInput: function (val) {
+                    fromInput: function (val, options) {
                         return val;
                     }
                 },
@@ -597,10 +624,10 @@
                  * @member
                  */
                 "stringifiedObject": {
-                    fromObject: function (val) {
+                    fromObject: function (val, options) {
                         return JSON.stringify(val);
                     },
-                    fromInput: function (val) {
+                    fromInput: function (val, options) {
                         return JSON.parse(val);
                     }
                 }
@@ -620,6 +647,8 @@
             }
         },
 
+        
+
         /**
          * bi-directional binding for working with input fields and custom input controls. This binding expect a {@link WinJSContrib.UI.DataForm} to be found on the parent form
          * @function WinJSContrib.UI.DataFormBinding
@@ -629,7 +658,21 @@
          * @param {string[]} destProperty path to DOM element property targeted by binding
          */
         DataFormBinding: WinJS.Binding.initializer(function (source, sourceProperty, dest, destProperty) {
+            //if (dest.binded &amp;&amp; dest.winControl)
+            //    dest.winControl.dispose();
+
             var dataform = WinJSContrib.UI.parentDataForm(dest);
+            var options = WinJSContrib.UI.DataForm.DefaultBindingOptions;
+            var optionsText = dest.getAttribute("data-formfield-options");
+            if (optionsText) {
+                options = WinJS.UI.optionsParser(optionsText, window);
+            }
+            var inputType = "";
+            var inputOption = dest.getAttribute("data-forminput");
+            if (inputOption) {
+                inputType = inputOption;
+            }
+
             var fieldUpdated = false;
             dest.classList.add('mcn-dataform-field');
 
@@ -652,43 +695,73 @@
                 if (typeof data === "undefined")
                     data = null;
 
-                data = converter.fromObject(data);
-
-                WinJSContrib.Utils.writeProperty(dest, destProperty, data);
+                if (dest.nodeName == "INPUT" &amp;&amp; dest.type == "radio") {
+                    var fieldname = dest.name;
+                    if (dest.value == data) {
+                        dest.checked = true;
+                    }
+                } else {
+                    data = converter.fromObject(data, options);
+                    WinJSContrib.Utils.writeProperty(dest, destProperty, data);
+                }
             }
 
             function updateObjectFromInput() {
                 dataform.checkState();
-                dataform.updated = true;
-                fieldUpdated = true;
-
                 if (!dest.id || dataform.validator.element(dest)) {
-                    var val = WinJSContrib.Utils.getProperty(dest, destProperty).propValue;
+                    var val = null;
+                    if (dest.nodeName == "INPUT" &amp;&amp; dest.type == "radio") {
+                        var fieldname = dest.name;
+                        if (dest.form &amp;&amp; dest.form[fieldname] &amp;&amp; dest.form[fieldname].length) {
+                            for (var i = 0, l = dest.form[fieldname].length; i &lt; l ; i++) {
+                                var field = dest.form[fieldname][i];
+                                if (field.checked){
+                                    val = field.value;
+                                    break;
+                                }
+                            }
+                        }
+                    } else {
+                        val = WinJSContrib.Utils.getProperty(dest, destProperty).propValue;
+                    }
+
                     if (val !== undefined)
-                        val = converter.fromInput(val);
+                        val = converter.fromInput(val, options);
 
                     WinJSContrib.Utils.writeProperty(source, sourceProperty, val);
                 }
+                dataform.updated = true;
             }
 
             function validateObjectOnBlur() {
                 if (fieldUpdated)
                     dataform.validator.element(dest);
             }
+            if (!dest.binded)
+                dest.binded = true;
 
-            dest.addEventListener("change", updateObjectFromInput);
-            if (dest.id) {
-                dest.addEventListener("blur", validateObjectOnBlur);
-            }
 
             if (!dest.winControl) {
                 dest.classList.add('win-disposable');
                 dest.winControl = {
                     dispose: function () {
-                        dest.removeEventListener("change", updateObjectFromInput);
-                        dest.removeEventListener("blur", validateObjectOnBlur);
+                        dest.removeEventListener("change", dest.winControl.updateObjectFromInput);
+                        dest.removeEventListener("blur", dest.winControl.validateObjectOnBlur);
+                        if (inputType) {
+                            dest.removeEventListener(inputType, dest.winControl.updateObjectFromInput);
+                        }
                     }
                 }
+            }
+            dest.winControl.updateObjectFromInput = updateObjectFromInput;
+            dest.winControl.validateObjectOnBlur = validateObjectOnBlur;
+
+            if (inputType) {
+                dest.addEventListener(inputType, dest.winControl.updateObjectFromInput);
+            }
+            dest.addEventListener("change", dest.winControl.updateObjectFromInput);
+            if (dest.id) {
+                dest.addEventListener("blur", validateObjectOnBlur);
             }
 
             var bindingDesc = {
@@ -723,7 +796,7 @@
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a>
-		on Tue Apr 28 2015 19:20:03 GMT+0200 (Romance Daylight Time) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+		on Mon Feb 01 2016 12:46:12 GMT+0100 (Paris, Madrid) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>
 			</div>
