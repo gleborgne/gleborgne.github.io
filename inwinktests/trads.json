@@ -1,0 +1,46 @@
+{
+    "fr": {
+        "menu.home": "Dashboard",
+        "menu.attendees": "Participants",
+        "menu.attendees.manage": "Gérer",
+        "menu.attendees.statistics": "Statistiques",
+        "menu.attendees.mailing": "Envoi de mails",
+        "menu.sessions": "Sessions",
+        "menu.sessions.managesessions": "Gérer les sessions",
+        "menu.sessions.managespeakers": "Gérer les orateurs",
+        "menu.sessions.manageexhibitings": "Gérer les exposants",
+        "menu.sessions.managerooms": "Gérer les salles",
+
+        "menu.settings": "Paramètres",
+        "menu.settings.permissions": "Permissions",
+
+        "homepage.title" : "Dashboard",
+
+        "loginpage.title" : "Bienvenue",
+        "loginpage.login" : "Identifiant",
+        "loginpage.password" : "Mot de passe",
+        "loginpage.loginbtn" : "Me connecter"
+    },
+    
+    "en": {
+        "menu.home": "Dashboard",
+        "menu.attendees": "Attendees",
+        "menu.attendees.manage": "Manage",
+        "menu.attendees.statistics": "Statistics",
+        "menu.attendees.mailing": "Send mails",
+        "menu.sessions.managesessions": "Manage sessions",
+        "menu.sessions.managespeakers": "Manage speakers",
+        "menu.sessions.manageexhibitings": "Manage exhibitings",
+        "menu.sessions.managerooms": "Manage rooms",
+
+        "menu.settings": "Settings",
+        "menu.settings.permissions": "Permissions",
+
+        "homepage.title" : "Dashboard",
+
+        "loginpage.title" : "Welcome",
+        "loginpage.login" : "Login",
+        "loginpage.password" : "Password",
+        "loginpage.loginbtn" : "Log in"
+    }
+}
