@@ -28,6 +28,7 @@
         "menu.attendees.manage": "Manage",
         "menu.attendees.statistics": "Statistics",
         "menu.attendees.mailing": "Send mails",
+        "menu.sessions": "Sessions",
         "menu.sessions.managesessions": "Manage sessions",
         "menu.sessions.managespeakers": "Manage speakers",
         "menu.sessions.manageexhibitings": "Manage exhibitings",

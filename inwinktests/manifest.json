@@ -1,0 +1,13 @@
+{
+  "short_name": "InWink",
+  "name": "InWink",
+  "icons": [
+    {
+      "src": "assets/logo-app.png",
+      "sizes": "300x300",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "",
+  "display": "standalone"
+}
