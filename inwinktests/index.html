@@ -49,6 +49,53 @@
             overflow: hidden;
             position: relative;
         }
+
+        .loaderindicator{
+            display: flex;
+            align-items: center;
+        }
+
+        .loaderindicator .spinner{
+            margin-left: 8px;
+            display: block;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            min-height: 20px;
+            border: 4px solid rgba(255, 116, 48, 0.4);
+            border-top-color: rgba(255, 116, 48, 0.8);
+            animation: loaderspin 1s infinite linear;    
+            flex-shrink: 0;    
+        }
+
+        .loaderindicator.big .spinner{
+            border-width: 6px;
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            min-height: 40px;
+        }
+
+        @-webkit-keyframes loaderspin {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes loaderspin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
     </style>
     <link rel="stylesheet" href="assets/dripicons/webfont.css"></link>
     <link rel="stylesheet" href="dist/appstyles.css"></link>
@@ -69,8 +116,8 @@
     </div>
 
     <!-- Dependencies -->
-    <script src="dist/vendor.bundle.js"></script>
-    <script src="dist/appbundle.js"></script>
+    <script src="dist/vendor.bundle.js" defer></script>
+    <script src="dist/appbundle.js" defer></script>
     <script type="text/javascript">
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('serviceworker.js');
