@@ -31,7 +31,7 @@
     toolbox.router.get('', toolbox.cacheFirst);
     toolbox.router.get('trads.json', toolbox.networkFirst);
 
-    toolbox.router.get('dist/appstyles.css', toolbox.networkFirst);
-    toolbox.router.get('dist/vendor.bundle.js', toolbox.networkFirst);
-    toolbox.router.get('dist/appbundle.js', toolbox.networkFirst);
+    toolbox.router.get('dist/appstyles.css', toolbox.cacheFirst);
+    toolbox.router.get('dist/vendor.bundle.js', toolbox.cacheFirst);
+    toolbox.router.get('dist/appbundle.js', toolbox.cacheFirst);
 })();
