@@ -6,6 +6,7 @@
 
     toolbox.precache([
         '',
+        'index.html',
         'trads.json',
         'dist/appstyles.css',
         'https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic',
@@ -29,6 +30,7 @@
     toolbox.router.get('assets/dripicons/fonts/dripicons-v2.ttf', toolbox.cacheFirst);
     toolbox.router.get('assets/dripicons/fonts/dripicons-v2.woff', toolbox.cacheFirst);
     toolbox.router.get('', toolbox.cacheFirst);
+    toolbox.router.get('index.html', toolbox.cacheFirst);
     toolbox.router.get('trads.json', toolbox.networkFirst);
 
     toolbox.router.get('dist/appstyles.css', toolbox.cacheFirst);
