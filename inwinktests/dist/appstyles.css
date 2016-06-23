@@ -271,7 +271,7 @@
 }
 .menu-collapsed .app-menu {
   pointer-events: none;
-  transform: translate(-102%, 0);
+  display: none;
 }
 .menu-collapsed .app-menu .menu-overlay {
   opacity: 0;
