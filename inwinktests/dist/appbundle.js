@@ -27870,7 +27870,8 @@ webpackJsonp([0],[
 	}(React.Component));
 	function mapStateToProps(state) {
 	    return {
-	        speakers: state.event.speakers
+	        speakers: state.event.speakers,
+	        visualState: state.visualstate
 	    };
 	}
 	exports.BlocSpeakers = react_redux_1.connect(mapStateToProps)(BlocSpeakersComponent);
@@ -27910,6 +27911,18 @@ webpackJsonp([0],[
 	            slidesToShow: Math.min(this.props.template.properties.maxItems, 5),
 	            slidesToScroll: Math.min(this.props.template.properties.maxItems, 5)
 	        };
+	        if (!(this.props.visualState.states.indexOf("S") >= 0)) {
+	            settings.slidesToShow = 2;
+	            settings.slidesToScroll = 2;
+	        }
+	        else if (!(this.props.visualState.states.indexOf("M") >= 0)) {
+	            settings.slidesToShow = 3;
+	            settings.slidesToScroll = 3;
+	        }
+	        else if (!(this.props.visualState.states.indexOf("L") >= 0)) {
+	            settings.slidesToShow = 4;
+	            settings.slidesToScroll = 4;
+	        }
 	        var speakers;
 	        if (this.props.event && this.props.speakers) {
 	            var list = this.props.speakers.speakers;
@@ -27989,7 +28002,7 @@ webpackJsonp([0],[
 	
 	
 	// module
-	exports.push([module.id, ".dynamiccontentbloc.bloc-speakers .slick-list {\n  height: 180px;\n}\n.dynamiccontentbloc.bloc-speakers .speaker {\n  text-align: center;\n}\n.dynamiccontentbloc.bloc-speakers .speaker-pic {\n  background-color: rgba(255, 255, 255, 0.5);\n  width: 160px;\n  height: 160px;\n  border-radius: 50%;\n  margin: auto;\n  margin-bottom: 1rem;\n  background-size: cover;\n  background-position: center;\n}\n.dynamiccontentbloc.bloc-speakers.list .bloc-speakers-items {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-around;\n}\n.dynamiccontentbloc.bloc-speakers.list .bloc-speakers-items .speaker {\n  width: 180px;\n  height: 220px;\n  margin: 10px;\n}\n", ""]);
+	exports.push([module.id, ".dynamiccontentbloc.bloc-speakers .slick-list {\n  height: 180px;\n}\n.dynamiccontentbloc.bloc-speakers .speaker {\n  text-align: center;\n}\n.dynamiccontentbloc.bloc-speakers .speaker-pic {\n  background-color: rgba(255, 255, 255, 0.5);\n  width: 160px;\n  height: 160px;\n  border-radius: 50%;\n  margin: auto;\n  margin-bottom: 1rem;\n  background-size: cover;\n  background-position: center;\n}\n.dynamiccontentbloc.bloc-speakers.list .bloc-speakers-items {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-around;\n}\n.dynamiccontentbloc.bloc-speakers.list .bloc-speakers-items .speaker {\n  width: 180px;\n  height: 220px;\n  margin: 10px;\n}\n@media screen and (max-width: 800px) {\n  .dynamiccontentbloc.bloc-speakers .speaker-pic {\n    width: 120px;\n    height: 120px;\n  }\n  .dynamiccontentbloc.bloc-speakers.list .bloc-speakers-items {\n    display: flex;\n    flex-flow: row wrap;\n    justify-content: space-around;\n  }\n  .dynamiccontentbloc.bloc-speakers.list .bloc-speakers-items .speaker {\n    width: 160px;\n    height: 180px;\n    margin: 10px;\n  }\n}\n", ""]);
 	
 	// exports
 
@@ -28219,7 +28232,7 @@ webpackJsonp([0],[
 	
 	
 	// module
-	exports.push([module.id, ".bloc-socialnetworking .bloc-content-panel.optin .optindesc {\n  font-size: 1.3rem;\n  margin-bottom: 0.5em;\n}\n.bloc-socialnetworking .bloc-content-panel.optin .optinremark {\n  opacity: 0.6;\n  font-size: 0.9rem;\n  font-style: italic;\n}\n.bloc-socialnetworking .bloc-content-panel.optin .optinactions {\n  text-align: right;\n  margin-top: 0.5em;\n}\n.bloc-socialnetworking .bloc-content-panel.optin .optinactions button {\n  margin-left: 10px;\n}\n.bloc-socialnetworking .userthematiques {\n  display: flex;\n  flex-flow: row wrap;\n}\n.bloc-socialnetworking .userthematiques .themesummary {\n  background-color: #333;\n  padding: 8px 16px;\n  margin: 0 4px 4px 0;\n}\n.bloc-socialnetworking .contacts {\n  display: flex;\n  flex-flow: row wrap;\n}\n.bloc-socialnetworking .contacts .contact {\n  width: 180px;\n  height: 200px;\n  margin: 10px;\n  text-align: center;\n  font-size: 1.1rem;\n}\n.bloc-socialnetworking .contacts .contact .contact-pic {\n  background-color: rgba(255, 255, 255, 0.5);\n  width: 80px;\n  height: 80px;\n  border-radius: 50%;\n  margin: auto;\n  margin-bottom: 1rem;\n  background-size: cover;\n  background-position: center;\n}\n.bloc-socialnetworking .contacts .contact .contact-company,\n.bloc-socialnetworking .contacts .contact .contact-title {\n  opacity: 0.4;\n  font-style: italic;\n  font-size: 0.9rem;\n}\n.bloc-socialnetworking .contacts .contact .contact-company {\n  opacity: 0.6;\n  text-transform: uppercase;\n}\n", ""]);
+	exports.push([module.id, ".bloc-socialnetworking .bloc-content-panel.optin .optindesc {\n  font-size: 1.3rem;\n  margin-bottom: 0.5em;\n}\n.bloc-socialnetworking .bloc-content-panel.optin .optinremark {\n  opacity: 0.6;\n  font-size: 0.9rem;\n  font-style: italic;\n}\n.bloc-socialnetworking .bloc-content-panel.optin .optinactions {\n  text-align: right;\n  margin-top: 0.5em;\n}\n.bloc-socialnetworking .bloc-content-panel.optin .optinactions button {\n  margin-left: 10px;\n}\n.bloc-socialnetworking .userthematiques {\n  display: flex;\n  flex-flow: row wrap;\n}\n.bloc-socialnetworking .userthematiques .themesummary {\n  background-color: #333;\n  padding: 8px 16px;\n  margin: 0 4px 4px 0;\n}\n.bloc-socialnetworking .contacts {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-around;\n}\n.bloc-socialnetworking .contacts .contact {\n  width: 180px;\n  height: 200px;\n  margin: 10px;\n  text-align: center;\n  font-size: 1.1rem;\n}\n.bloc-socialnetworking .contacts .contact .contact-pic {\n  background-color: rgba(255, 255, 255, 0.5);\n  width: 80px;\n  height: 80px;\n  border-radius: 50%;\n  margin: auto;\n  margin-bottom: 1rem;\n  background-size: cover;\n  background-position: center;\n}\n.bloc-socialnetworking .contacts .contact .contact-company,\n.bloc-socialnetworking .contacts .contact .contact-title {\n  opacity: 0.4;\n  font-style: italic;\n  font-size: 0.9rem;\n}\n.bloc-socialnetworking .contacts .contact .contact-company {\n  opacity: 0.6;\n  text-transform: uppercase;\n}\n@media screen and (max-width: 800px) {\n  .bloc-socialnetworking .contacts {\n    justify-content: space-around;\n  }\n  .bloc-socialnetworking .contacts .contact {\n    width: 160px;\n  }\n}\n", ""]);
 	
 	// exports
 
@@ -28463,7 +28476,7 @@ webpackJsonp([0],[
 	
 	
 	// module
-	exports.push([module.id, ".dynamic-bloc-thematiquewall h4 {\n  font-size: 16pt;\n  font-weight: 300;\n  margin-top: 0;\n  margin-bottom: 1em;\n}\n.dynamic-bloc-thematiquewall .contacts {\n  display: flex;\n  flex-flow: row wrap;\n}\n.dynamic-bloc-thematiquewall .contact {\n  display: flex;\n  flex-flow: column nowrap;\n  align-items: center;\n  justify-content: center;\n  width: 160px;\n  margin-right: 16px;\n  margin-bottom: 16px;\n  text-align: center;\n}\n.dynamic-bloc-thematiquewall .contact .contact-pic {\n  width: 48px;\n  height: 48px;\n  border-radius: 50%;\n  background-color: #DDD;\n  background-size: cover;\n  background-position: center;\n  margin-right: 10px;\n  margin-bottom: 8px;\n}\n.dynamic-bloc-thematiquewall .contact .contact-company,\n.dynamic-bloc-thematiquewall .contact .contact-title {\n  opacity: 0.4;\n  font-style: italic;\n  font-size: 0.9rem;\n}\n.dynamic-bloc-thematiquewall .contact .contact-company {\n  opacity: 0.6;\n  text-transform: uppercase;\n}\n.dynamic-bloc-thematiquewall .messages .message {\n  border: 1px solid #555;\n  margin-bottom: 8px;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-body {\n  padding: 16px;\n  background-color: white;\n  color: black;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-body .message-sender {\n  font-size: 0.8rem;\n  margin-top: 3px;\n  color: #AAA;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer {\n  background-color: #444;\n  padding: 4px 16px;\n  display: flex;\n  color: #AAA;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer .social {\n  flex: 1;\n  display: flex;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer .social .field {\n  margin-right: 10px;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer .social .field i {\n  margin-right: 4px;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer .actions {\n  display: flex;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer .actions button {\n  margin: 0;\n  padding: 0;\n  background-color: transparent;\n  border: none;\n  color: inherit;\n}\n", ""]);
+	exports.push([module.id, ".dynamic-bloc-thematiquewall h4 {\n  font-size: 16pt;\n  font-weight: 300;\n  margin-top: 0;\n  margin-bottom: 1em;\n}\n.dynamic-bloc-thematiquewall .contacts {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-around;\n}\n.dynamic-bloc-thematiquewall .contact {\n  display: flex;\n  flex-flow: column nowrap;\n  align-items: center;\n  justify-content: center;\n  width: 160px;\n  margin-right: 16px;\n  margin-bottom: 16px;\n  text-align: center;\n}\n.dynamic-bloc-thematiquewall .contact .contact-pic {\n  width: 48px;\n  height: 48px;\n  border-radius: 50%;\n  background-color: #DDD;\n  background-size: cover;\n  background-position: center;\n  margin-right: 10px;\n  margin-bottom: 8px;\n}\n.dynamic-bloc-thematiquewall .contact .contact-company,\n.dynamic-bloc-thematiquewall .contact .contact-title {\n  opacity: 0.4;\n  font-style: italic;\n  font-size: 0.9rem;\n}\n.dynamic-bloc-thematiquewall .contact .contact-company {\n  opacity: 0.6;\n  text-transform: uppercase;\n}\n.dynamic-bloc-thematiquewall .messages .message {\n  border: 1px solid #555;\n  margin-bottom: 8px;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-body {\n  padding: 16px;\n  background-color: white;\n  color: black;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-body .message-sender {\n  font-size: 0.8rem;\n  margin-top: 3px;\n  color: #AAA;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer {\n  background-color: #444;\n  padding: 4px 16px;\n  display: flex;\n  color: #AAA;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer .social {\n  flex: 1;\n  display: flex;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer .social .field {\n  margin-right: 10px;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer .social .field i {\n  margin-right: 4px;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer .actions {\n  display: flex;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer .actions button {\n  margin: 0;\n  padding: 0;\n  background-color: transparent;\n  border: none;\n  color: inherit;\n}\n@media screen and (max-width: 800px) {\n  .dynamic-bloc-thematiquewall {\n    justify-content: space-around;\n  }\n}\n", ""]);
 	
 	// exports
 
@@ -29648,7 +29661,7 @@ webpackJsonp([0],[
 	    };
 	    ProfilePageComponent.prototype.render = function () {
 	        var content = this.getCurrentContent();
-	        return React.createElement(page_1.AppPage, {className: "profilepage"}, React.createElement("header", {className: "tabheaders"}, this.renderTabHeader("profile", "Profile"), this.renderTabHeader("networking", "Networking"), this.renderTabHeader("notifs", "Notifications")), React.createElement(ReactCSSTransitionGroup, {component: "section", className: "tab-container", transitionName: "fadetransition", transitionEnterTimeout: 300, transitionLeave: false}, content));
+	        return React.createElement(page_1.AppPage, {className: "profilepage", defaultPadding: false}, React.createElement("header", {className: "tabheaders"}, this.renderTabHeader("profile", "Profile"), this.renderTabHeader("networking", "Networking"), this.renderTabHeader("notifs", "Notifications")), React.createElement(ReactCSSTransitionGroup, {component: "section", className: "tab-container", transitionName: "fadetransition", transitionEnterTimeout: 300, transitionLeave: false}, content));
 	    };
 	    return ProfilePageComponent;
 	}(React.Component));
@@ -29670,7 +29683,7 @@ webpackJsonp([0],[
 	        _super.apply(this, arguments);
 	    }
 	    UserDescription.prototype.render = function () {
-	        return React.createElement("div", {className: "panel userdescription"}, React.createElement("h3", null, this.props.user.fullname));
+	        return React.createElement("div", {className: "panel userdescription"}, React.createElement("div", {className: "dynamiccontentblocwrapper"}, React.createElement("div", {className: "dynamiccontentbloc"}, React.createElement("h3", null, this.props.user.fullname))));
 	    };
 	    return UserDescription;
 	}(React.Component));
@@ -29697,7 +29710,7 @@ webpackJsonp([0],[
 	        else {
 	            details = React.createElement("div", {className: "details message"}, "Cette fonctionnalité vous permet de prendre contact avec" + ' ' + "tous les participants pour trouver ou proposer de l'aide. Vos informations personnelles" + ' ' + "ne sont pas transmises aux personnes avec lesquelles vous rentrer en contact." + ' ' + "Les échanges se font intégralement à travers cette application, à moins que vous n'en décidiez" + ' ' + "autrement.");
 	        }
-	        return React.createElement("div", {className: "panel socialnetwork"}, React.createElement("div", {className: "field"}, React.createElement(toggle_1.Toggle, {checked: this.props.preferences.socialNetworking.acceptSocialNetworking, onChange: this.handleAllowChange.bind(this)}), React.createElement("label", null, "Autoriser les interactions avec les autres participants, partenaires et speakers")), details);
+	        return React.createElement("div", {className: "panel socialnetwork"}, React.createElement("div", {className: "dynamiccontentblocwrapper"}, React.createElement("div", {className: "dynamiccontentbloc"}, React.createElement("div", {className: "field"}, React.createElement(toggle_1.Toggle, {checked: this.props.preferences.socialNetworking.acceptSocialNetworking, onChange: this.handleAllowChange.bind(this)}), React.createElement("label", null, "Autoriser les interactions avec les autres participants, partenaires et speakers")), details)));
 	    };
 	    return SocialNetworking;
 	}(React.Component));
@@ -30020,7 +30033,7 @@ webpackJsonp([0],[
 	
 	
 	// module
-	exports.push([module.id, ".profilepage.app-page {\n  background-color: #FFF;\n}\n.profilepage.app-page > header .tabheader {\n  margin-right: 20px;\n  text-transform: uppercase;\n  font-size: 0.8rem;\n}\n.profilepage.app-page .field {\n  display: flex;\n  align-items: center;\n}\n.profilepage.app-page .field .toggleswitch {\n  margin-right: 10px;\n}\n.profilepage.app-page .message {\n  font-size: 0.9rem;\n  font-style: italic;\n  opacity: 0.7;\n  margin: 0.5em 0;\n}\n.profilepage.app-page .thematiques-list {\n  margin: 0.5em 0;\n}\n.profilepage.app-page .thematiques-list .thematique {\n  border: 1px solid #DDD;\n  margin-bottom: 4px;\n}\n.profilepage.app-page .thematiques-list .thematique .description {\n  text-transform: uppercase;\n  padding: 16px;\n  display: flex;\n  align-items: center;\n}\n.profilepage.app-page .thematiques-list .thematique .description .title {\n  flex: 1;\n  font-size: 1.2rem;\n}\n.profilepage.app-page .thematiques-list .thematique-content {\n  padding: 0 16px 16px 16px;\n}\n.profilepage.app-page .thematiques-list .thematique-content h4 {\n  margin: 0.3em 0;\n}\n.profilepage.app-page .action-list {\n  display: flex;\n  flex-flow: row wrap;\n}\n.profilepage.app-page .action-list .action {\n  background-color: #EEE;\n  padding: 8px 16px;\n  margin: 0 4px 4px 0;\n}\n.profilepage.app-page .action-list .action.selected {\n  background-color: seagreen;\n  color: white;\n}\n", ""]);
+	exports.push([module.id, ".profilepage.app-page {\n  background-color: #FFF;\n}\n.profilepage.app-page > header .tabheader {\n  margin-right: 20px;\n  text-transform: uppercase;\n  font-size: 0.8rem;\n}\n.profilepage.app-page .field {\n  display: flex;\n  align-items: center;\n}\n.profilepage.app-page .field .toggleswitch {\n  margin-right: 10px;\n}\n.profilepage.app-page .message {\n  font-size: 0.9rem;\n  font-style: italic;\n  opacity: 0.7;\n  margin: 0.5em 0;\n}\n.profilepage.app-page .thematiques-list {\n  margin: 0.5em 0;\n}\n.profilepage.app-page .thematiques-list .thematique {\n  border: 1px solid #DDD;\n  margin-bottom: 4px;\n}\n.profilepage.app-page .thematiques-list .thematique .description {\n  text-transform: uppercase;\n  padding: 16px;\n  display: flex;\n  align-items: center;\n}\n.profilepage.app-page .thematiques-list .thematique .description .title {\n  flex: 1;\n  font-size: 1.2rem;\n}\n.profilepage.app-page .thematiques-list .thematique-content {\n  padding: 0 16px 16px 16px;\n}\n.profilepage.app-page .thematiques-list .thematique-content h4 {\n  margin: 0.3em 0;\n}\n.profilepage.app-page .action-list {\n  display: flex;\n  flex-flow: row wrap;\n}\n.profilepage.app-page .action-list .action {\n  background-color: #EEE;\n  padding: 8px 16px;\n  margin: 0 4px 4px 0;\n}\n.profilepage.app-page .action-list .action.selected {\n  background-color: seagreen;\n  color: white;\n}\n@media screen and (max-width: 800px) {\n  .profilepage.app-page .action-list {\n    display: block;\n  }\n  .profilepage.app-page .action-list .action {\n    margin: 0 0 4px 0;\n  }\n}\n", ""]);
 	
 	// exports
 
