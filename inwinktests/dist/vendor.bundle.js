@@ -88,7 +88,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "b9f7e2dc550add0b98ff"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "fa070424128a0b1f21ee"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -637,17 +637,17 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(305);
-	__webpack_require__(472);
+	__webpack_require__(543);
 	__webpack_require__(91);
 	__webpack_require__(263);
-	__webpack_require__(725);
+	__webpack_require__(805);
 	__webpack_require__(262);
-	__webpack_require__(732);
-	__webpack_require__(734);
+	__webpack_require__(812);
+	__webpack_require__(814);
 	__webpack_require__(107);
 	__webpack_require__(197);
-	__webpack_require__(480);
-	__webpack_require__(535);
+	__webpack_require__(551);
+	__webpack_require__(610);
 	module.exports = __webpack_require__(285);
 
 
@@ -55259,7 +55259,78 @@
 /* 469 */,
 /* 470 */,
 /* 471 */,
-/* 472 */
+/* 472 */,
+/* 473 */,
+/* 474 */,
+/* 475 */,
+/* 476 */,
+/* 477 */,
+/* 478 */,
+/* 479 */,
+/* 480 */,
+/* 481 */,
+/* 482 */,
+/* 483 */,
+/* 484 */,
+/* 485 */,
+/* 486 */,
+/* 487 */,
+/* 488 */,
+/* 489 */,
+/* 490 */,
+/* 491 */,
+/* 492 */,
+/* 493 */,
+/* 494 */,
+/* 495 */,
+/* 496 */,
+/* 497 */,
+/* 498 */,
+/* 499 */,
+/* 500 */,
+/* 501 */,
+/* 502 */,
+/* 503 */,
+/* 504 */,
+/* 505 */,
+/* 506 */,
+/* 507 */,
+/* 508 */,
+/* 509 */,
+/* 510 */,
+/* 511 */,
+/* 512 */,
+/* 513 */,
+/* 514 */,
+/* 515 */,
+/* 516 */,
+/* 517 */,
+/* 518 */,
+/* 519 */,
+/* 520 */,
+/* 521 */,
+/* 522 */,
+/* 523 */,
+/* 524 */,
+/* 525 */,
+/* 526 */,
+/* 527 */,
+/* 528 */,
+/* 529 */,
+/* 530 */,
+/* 531 */,
+/* 532 */,
+/* 533 */,
+/* 534 */,
+/* 535 */,
+/* 536 */,
+/* 537 */,
+/* 538 */,
+/* 539 */,
+/* 540 */,
+/* 541 */,
+/* 542 */,
+/* 543 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process, global, setImmediate) {/* @preserve
@@ -60738,10 +60809,10 @@
 	
 	},{"./es5":13}]},{},[4])(4)
 	});                    ;if (typeof window !== 'undefined' && window !== null) {                               window.P = window.Promise;                                                     } else if (typeof self !== 'undefined' && self !== null) {                             self.P = self.Promise;                                                         }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(473), (function() { return this; }()), __webpack_require__(474).setImmediate))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(544), (function() { return this; }()), __webpack_require__(545).setImmediate))
 
 /***/ },
-/* 473 */
+/* 544 */
 /***/ function(module, exports) {
 
 	// shim for using process in browser
@@ -60866,10 +60937,10 @@
 
 
 /***/ },
-/* 474 */
+/* 545 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(setImmediate, clearImmediate) {var nextTick = __webpack_require__(473).nextTick;
+	/* WEBPACK VAR INJECTION */(function(setImmediate, clearImmediate) {var nextTick = __webpack_require__(544).nextTick;
 	var apply = Function.prototype.apply;
 	var slice = Array.prototype.slice;
 	var immediateIds = {};
@@ -60945,15 +61016,15 @@
 	exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate : function(id) {
 	  delete immediateIds[id];
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(474).setImmediate, __webpack_require__(474).clearImmediate))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(545).setImmediate, __webpack_require__(545).clearImmediate))
 
 /***/ },
-/* 475 */,
-/* 476 */,
-/* 477 */,
-/* 478 */,
-/* 479 */,
-/* 480 */
+/* 546 */,
+/* 547 */,
+/* 548 */,
+/* 549 */,
+/* 550 */,
+/* 551 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -60963,7 +61034,7 @@
 	});
 	exports.routerMiddleware = exports.routerActions = exports.goForward = exports.goBack = exports.go = exports.replace = exports.push = exports.CALL_HISTORY_METHOD = exports.routerReducer = exports.LOCATION_CHANGE = exports.syncHistoryWithStore = undefined;
 	
-	var _reducer = __webpack_require__(481);
+	var _reducer = __webpack_require__(552);
 	
 	Object.defineProperty(exports, 'LOCATION_CHANGE', {
 	  enumerable: true,
@@ -60978,7 +61049,7 @@
 	  }
 	});
 	
-	var _actions = __webpack_require__(482);
+	var _actions = __webpack_require__(553);
 	
 	Object.defineProperty(exports, 'CALL_HISTORY_METHOD', {
 	  enumerable: true,
@@ -61023,11 +61094,11 @@
 	  }
 	});
 	
-	var _sync = __webpack_require__(483);
+	var _sync = __webpack_require__(554);
 	
 	var _sync2 = _interopRequireDefault(_sync);
 	
-	var _middleware = __webpack_require__(484);
+	var _middleware = __webpack_require__(555);
 	
 	var _middleware2 = _interopRequireDefault(_middleware);
 	
@@ -61037,7 +61108,7 @@
 	exports.routerMiddleware = _middleware2['default'];
 
 /***/ },
-/* 481 */
+/* 552 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -61081,7 +61152,7 @@
 	}
 
 /***/ },
-/* 482 */
+/* 553 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -61123,7 +61194,7 @@
 	var routerActions = exports.routerActions = { push: push, replace: replace, go: go, goBack: goBack, goForward: goForward };
 
 /***/ },
-/* 483 */
+/* 554 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61136,7 +61207,7 @@
 	
 	exports['default'] = syncHistoryWithStore;
 	
-	var _reducer = __webpack_require__(481);
+	var _reducer = __webpack_require__(552);
 	
 	var defaultSelectLocationState = function defaultSelectLocationState(state) {
 	  return state.routing;
@@ -61277,7 +61348,7 @@
 	}
 
 /***/ },
-/* 484 */
+/* 555 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61287,7 +61358,7 @@
 	});
 	exports['default'] = routerMiddleware;
 	
-	var _actions = __webpack_require__(482);
+	var _actions = __webpack_require__(553);
 	
 	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 	
@@ -61315,66 +61386,70 @@
 	}
 
 /***/ },
-/* 485 */,
-/* 486 */,
-/* 487 */,
-/* 488 */,
-/* 489 */,
-/* 490 */,
-/* 491 */,
-/* 492 */,
-/* 493 */,
-/* 494 */,
-/* 495 */,
-/* 496 */,
-/* 497 */,
-/* 498 */,
-/* 499 */,
-/* 500 */,
-/* 501 */,
-/* 502 */,
-/* 503 */,
-/* 504 */,
-/* 505 */,
-/* 506 */,
-/* 507 */,
-/* 508 */,
-/* 509 */,
-/* 510 */,
-/* 511 */,
-/* 512 */,
-/* 513 */,
-/* 514 */,
-/* 515 */,
-/* 516 */,
-/* 517 */,
-/* 518 */,
-/* 519 */,
-/* 520 */,
-/* 521 */,
-/* 522 */,
-/* 523 */,
-/* 524 */,
-/* 525 */,
-/* 526 */,
-/* 527 */,
-/* 528 */,
-/* 529 */,
-/* 530 */,
-/* 531 */,
-/* 532 */,
-/* 533 */,
-/* 534 */,
-/* 535 */
+/* 556 */,
+/* 557 */,
+/* 558 */,
+/* 559 */,
+/* 560 */,
+/* 561 */,
+/* 562 */,
+/* 563 */,
+/* 564 */,
+/* 565 */,
+/* 566 */,
+/* 567 */,
+/* 568 */,
+/* 569 */,
+/* 570 */,
+/* 571 */,
+/* 572 */,
+/* 573 */,
+/* 574 */,
+/* 575 */,
+/* 576 */,
+/* 577 */,
+/* 578 */,
+/* 579 */,
+/* 580 */,
+/* 581 */,
+/* 582 */,
+/* 583 */,
+/* 584 */,
+/* 585 */,
+/* 586 */,
+/* 587 */,
+/* 588 */,
+/* 589 */,
+/* 590 */,
+/* 591 */,
+/* 592 */,
+/* 593 */,
+/* 594 */,
+/* 595 */,
+/* 596 */,
+/* 597 */,
+/* 598 */,
+/* 599 */,
+/* 600 */,
+/* 601 */,
+/* 602 */,
+/* 603 */,
+/* 604 */,
+/* 605 */,
+/* 606 */,
+/* 607 */,
+/* 608 */,
+/* 609 */,
+/* 610 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	module.exports = __webpack_require__(536);
-	module.exports.Panel = __webpack_require__(570);
+	module.exports = __webpack_require__(611);
+	module.exports.Panel = __webpack_require__(645);
 
 /***/ },
-/* 536 */
+/* 611 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61401,15 +61476,15 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _rcTrigger = __webpack_require__(537);
+	var _rcTrigger = __webpack_require__(612);
 	
 	var _rcTrigger2 = _interopRequireDefault(_rcTrigger);
 	
-	var _Panel = __webpack_require__(570);
+	var _Panel = __webpack_require__(645);
 	
 	var _Panel2 = _interopRequireDefault(_Panel);
 	
-	var _placements = __webpack_require__(596);
+	var _placements = __webpack_require__(671);
 	
 	var _placements2 = _interopRequireDefault(_placements);
 	
@@ -61651,15 +61726,15 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 537 */
+/* 612 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	module.exports = __webpack_require__(538);
+	module.exports = __webpack_require__(613);
 
 /***/ },
-/* 538 */
+/* 613 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61680,23 +61755,23 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _createChainedFunction = __webpack_require__(539);
+	var _createChainedFunction = __webpack_require__(614);
 	
 	var _createChainedFunction2 = _interopRequireDefault(_createChainedFunction);
 	
-	var _contains = __webpack_require__(540);
+	var _contains = __webpack_require__(615);
 	
 	var _contains2 = _interopRequireDefault(_contains);
 	
-	var _addEventListener = __webpack_require__(541);
+	var _addEventListener = __webpack_require__(616);
 	
 	var _addEventListener2 = _interopRequireDefault(_addEventListener);
 	
-	var _Popup = __webpack_require__(546);
+	var _Popup = __webpack_require__(621);
 	
 	var _Popup2 = _interopRequireDefault(_Popup);
 	
-	var _utils = __webpack_require__(569);
+	var _utils = __webpack_require__(644);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 	
@@ -61795,13 +61870,8 @@
 	    if (this.popupRendered) {
 	      var _ret = function () {
 	        var self = _this;
-	        self.popupInstance = _reactDom2["default"].unstable_renderSubtreeIntoContainer(_this, _this.getPopupElement(), _this.getPopupContainer(), function renderPopup() {
-	          /* eslint react/no-is-mounted:0 */
-	          if (this.isMounted()) {
-	            self.popupDomNode = this.getPopupDomNode();
-	          } else {
-	            self.popupDomNode = null;
-	          }
+	        _reactDom2["default"].unstable_renderSubtreeIntoContainer(_this, _this.getPopupElement(), _this.getPopupContainer(), function mounted() {
+	          self.popupInstance = this;
 	          if (prevState.popupVisible !== state.popupVisible) {
 	            props.afterPopupVisibleChange(state.popupVisible);
 	          }
@@ -61908,7 +61978,10 @@
 	  },
 	  getPopupDomNode: function getPopupDomNode() {
 	    // for test
-	    return this.popupDomNode;
+	    if (this.popupInstance) {
+	      return this.popupInstance.isMounted() ? this.popupInstance.getPopupDomNode() : null;
+	    }
+	    return null;
 	  },
 	  getRootDomNode: function getRootDomNode() {
 	    return _reactDom2["default"].findDOMNode(this);
@@ -62104,7 +62177,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 539 */
+/* 614 */
 /***/ function(module, exports) {
 
 	/**
@@ -62131,7 +62204,7 @@
 	module.exports = createChainedFunction;
 
 /***/ },
-/* 540 */
+/* 615 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -62149,7 +62222,7 @@
 	};
 
 /***/ },
-/* 541 */
+/* 616 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -62161,7 +62234,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _addDomEventListener = __webpack_require__(542);
+	var _addDomEventListener = __webpack_require__(617);
 	
 	var _addDomEventListener2 = _interopRequireDefault(_addDomEventListener);
 	
@@ -62180,7 +62253,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 542 */
+/* 617 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -62192,7 +62265,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _EventObject = __webpack_require__(543);
+	var _EventObject = __webpack_require__(618);
 	
 	var _EventObject2 = _interopRequireDefault(_EventObject);
 	
@@ -62222,7 +62295,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 543 */
+/* 618 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -62239,11 +62312,11 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _EventBaseObject = __webpack_require__(544);
+	var _EventBaseObject = __webpack_require__(619);
 	
 	var _EventBaseObject2 = _interopRequireDefault(_EventBaseObject);
 	
-	var _objectAssign = __webpack_require__(545);
+	var _objectAssign = __webpack_require__(620);
 	
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
 	
@@ -62505,7 +62578,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 544 */
+/* 619 */
 /***/ function(module, exports) {
 
 	/**
@@ -62573,7 +62646,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 545 */
+/* 620 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -62662,7 +62735,7 @@
 
 
 /***/ },
-/* 546 */
+/* 621 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -62681,19 +62754,19 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _rcAlign = __webpack_require__(547);
+	var _rcAlign = __webpack_require__(622);
 	
 	var _rcAlign2 = _interopRequireDefault(_rcAlign);
 	
-	var _rcAnimate = __webpack_require__(558);
+	var _rcAnimate = __webpack_require__(633);
 	
 	var _rcAnimate2 = _interopRequireDefault(_rcAnimate);
 	
-	var _PopupInner = __webpack_require__(567);
+	var _PopupInner = __webpack_require__(642);
 	
 	var _PopupInner2 = _interopRequireDefault(_PopupInner);
 	
-	var _LazyRenderBox = __webpack_require__(568);
+	var _LazyRenderBox = __webpack_require__(643);
 	
 	var _LazyRenderBox2 = _interopRequireDefault(_LazyRenderBox);
 	
@@ -62891,7 +62964,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 547 */
+/* 622 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -62900,7 +62973,7 @@
 	  value: true
 	});
 	
-	var _Align = __webpack_require__(548);
+	var _Align = __webpack_require__(623);
 	
 	var _Align2 = _interopRequireDefault(_Align);
 	
@@ -62911,7 +62984,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 548 */
+/* 623 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -62928,15 +63001,15 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _domAlign = __webpack_require__(549);
+	var _domAlign = __webpack_require__(624);
 	
 	var _domAlign2 = _interopRequireDefault(_domAlign);
 	
-	var _addEventListener = __webpack_require__(541);
+	var _addEventListener = __webpack_require__(616);
 	
 	var _addEventListener2 = _interopRequireDefault(_addEventListener);
 	
-	var _isWindow = __webpack_require__(557);
+	var _isWindow = __webpack_require__(632);
 	
 	var _isWindow2 = _interopRequireDefault(_isWindow);
 	
@@ -63058,7 +63131,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 549 */
+/* 624 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -63074,27 +63147,27 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utils = __webpack_require__(550);
+	var _utils = __webpack_require__(625);
 	
 	var _utils2 = _interopRequireDefault(_utils);
 	
-	var _getOffsetParent = __webpack_require__(551);
+	var _getOffsetParent = __webpack_require__(626);
 	
 	var _getOffsetParent2 = _interopRequireDefault(_getOffsetParent);
 	
-	var _getVisibleRectForElement = __webpack_require__(552);
+	var _getVisibleRectForElement = __webpack_require__(627);
 	
 	var _getVisibleRectForElement2 = _interopRequireDefault(_getVisibleRectForElement);
 	
-	var _adjustForViewport = __webpack_require__(553);
+	var _adjustForViewport = __webpack_require__(628);
 	
 	var _adjustForViewport2 = _interopRequireDefault(_adjustForViewport);
 	
-	var _getRegion = __webpack_require__(554);
+	var _getRegion = __webpack_require__(629);
 	
 	var _getRegion2 = _interopRequireDefault(_getRegion);
 	
-	var _getElFuturePos = __webpack_require__(555);
+	var _getElFuturePos = __webpack_require__(630);
 	
 	var _getElFuturePos2 = _interopRequireDefault(_getElFuturePos);
 	
@@ -63281,7 +63354,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 550 */
+/* 625 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -63779,7 +63852,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 551 */
+/* 626 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -63790,7 +63863,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utils = __webpack_require__(550);
+	var _utils = __webpack_require__(625);
 	
 	var _utils2 = _interopRequireDefault(_utils);
 	
@@ -63837,7 +63910,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 552 */
+/* 627 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -63848,11 +63921,11 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utils = __webpack_require__(550);
+	var _utils = __webpack_require__(625);
 	
 	var _utils2 = _interopRequireDefault(_utils);
 	
-	var _getOffsetParent = __webpack_require__(551);
+	var _getOffsetParent = __webpack_require__(626);
 	
 	var _getOffsetParent2 = _interopRequireDefault(_getOffsetParent);
 	
@@ -63918,7 +63991,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 553 */
+/* 628 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -63929,7 +64002,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utils = __webpack_require__(550);
+	var _utils = __webpack_require__(625);
 	
 	var _utils2 = _interopRequireDefault(_utils);
 	
@@ -63978,7 +64051,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 554 */
+/* 629 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -63989,7 +64062,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utils = __webpack_require__(550);
+	var _utils = __webpack_require__(625);
 	
 	var _utils2 = _interopRequireDefault(_utils);
 	
@@ -64019,7 +64092,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 555 */
+/* 630 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -64030,7 +64103,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _getAlignOffset = __webpack_require__(556);
+	var _getAlignOffset = __webpack_require__(631);
 	
 	var _getAlignOffset2 = _interopRequireDefault(_getAlignOffset);
 	
@@ -64060,7 +64133,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 556 */
+/* 631 */
 /***/ function(module, exports) {
 
 	/**
@@ -64105,7 +64178,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 557 */
+/* 632 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -64122,16 +64195,16 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 558 */
+/* 633 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	// export this package's api
-	module.exports = __webpack_require__(559);
+	module.exports = __webpack_require__(634);
 
 /***/ },
-/* 559 */
+/* 634 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -64144,13 +64217,13 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _ChildrenUtils = __webpack_require__(560);
+	var _ChildrenUtils = __webpack_require__(635);
 	
-	var _AnimateChild = __webpack_require__(561);
+	var _AnimateChild = __webpack_require__(636);
 	
 	var _AnimateChild2 = _interopRequireDefault(_AnimateChild);
 	
-	var _util = __webpack_require__(566);
+	var _util = __webpack_require__(641);
 	
 	var _util2 = _interopRequireDefault(_util);
 	
@@ -64463,7 +64536,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 560 */
+/* 635 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -64585,7 +64658,7 @@
 	}
 
 /***/ },
-/* 561 */
+/* 636 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -64604,11 +64677,11 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _cssAnimation = __webpack_require__(562);
+	var _cssAnimation = __webpack_require__(637);
 	
 	var _cssAnimation2 = _interopRequireDefault(_cssAnimation);
 	
-	var _util = __webpack_require__(566);
+	var _util = __webpack_require__(641);
 	
 	var _util2 = _interopRequireDefault(_util);
 	
@@ -64689,7 +64762,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 562 */
+/* 637 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -64698,11 +64771,11 @@
 	  value: true
 	});
 	
-	var _Event = __webpack_require__(563);
+	var _Event = __webpack_require__(638);
 	
 	var _Event2 = _interopRequireDefault(_Event);
 	
-	var _componentClasses = __webpack_require__(564);
+	var _componentClasses = __webpack_require__(639);
 	
 	var _componentClasses2 = _interopRequireDefault(_componentClasses);
 	
@@ -64879,7 +64952,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 563 */
+/* 638 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -64972,7 +65045,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 564 */
+/* 639 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -64980,9 +65053,9 @@
 	 */
 	
 	try {
-	  var index = __webpack_require__(565);
+	  var index = __webpack_require__(640);
 	} catch (err) {
-	  var index = __webpack_require__(565);
+	  var index = __webpack_require__(640);
 	}
 	
 	/**
@@ -65169,7 +65242,7 @@
 
 
 /***/ },
-/* 565 */
+/* 640 */
 /***/ function(module, exports) {
 
 	module.exports = function(arr, obj){
@@ -65181,7 +65254,7 @@
 	};
 
 /***/ },
-/* 566 */
+/* 641 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -65213,7 +65286,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 567 */
+/* 642 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -65226,7 +65299,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _LazyRenderBox = __webpack_require__(568);
+	var _LazyRenderBox = __webpack_require__(643);
 	
 	var _LazyRenderBox2 = _interopRequireDefault(_LazyRenderBox);
 	
@@ -65270,7 +65343,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 568 */
+/* 643 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -65279,13 +65352,13 @@
 	  value: true
 	});
 	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
 	var _react = __webpack_require__(91);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 	
 	var LazyRenderBox = _react2["default"].createClass({
 	  displayName: 'LazyRenderBox',
@@ -65300,21 +65373,20 @@
 	    return nextProps.hiddenClassName || nextProps.visible;
 	  },
 	  render: function render() {
-	    if (this.props.hiddenClassName) {
-	      var props = _extends({}, this.props);
-	      var className = props.className;
-	      if (!props.visible) {
-	        className += ' ' + props.hiddenClassName;
+	    var _props = this.props;
+	    var hiddenClassName = _props.hiddenClassName;
+	    var visible = _props.visible;
+	
+	    var props = _objectWithoutProperties(_props, ['hiddenClassName', 'visible']);
+	
+	    if (hiddenClassName || _react2["default"].Children.count(props.children) > 1) {
+	      if (!visible && hiddenClassName) {
+	        props.className += ' ' + hiddenClassName;
 	      }
-	      props.className = className;
-	      delete props.hiddenClassName;
-	      delete props.visible;
 	      return _react2["default"].createElement('div', props);
 	    }
-	    if (_react2["default"].Children.count(this.props.children) > 1) {
-	      return _react2["default"].createElement('div', this.props);
-	    }
-	    return _react2["default"].Children.only(this.props.children);
+	
+	    return _react2["default"].Children.only(props.children);
 	  }
 	});
 	
@@ -65322,7 +65394,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 569 */
+/* 644 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -65357,7 +65429,7 @@
 	}
 
 /***/ },
-/* 570 */
+/* 645 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -65380,31 +65452,31 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _colr = __webpack_require__(571);
+	var _colr = __webpack_require__(646);
 	
 	var _colr2 = _interopRequireDefault(_colr);
 	
-	var _Board = __webpack_require__(573);
+	var _Board = __webpack_require__(648);
 	
 	var _Board2 = _interopRequireDefault(_Board);
 	
-	var _Preview = __webpack_require__(591);
+	var _Preview = __webpack_require__(666);
 	
 	var _Preview2 = _interopRequireDefault(_Preview);
 	
-	var _Ribbon = __webpack_require__(592);
+	var _Ribbon = __webpack_require__(667);
 	
 	var _Ribbon2 = _interopRequireDefault(_Ribbon);
 	
-	var _Alpha = __webpack_require__(593);
+	var _Alpha = __webpack_require__(668);
 	
 	var _Alpha2 = _interopRequireDefault(_Alpha);
 	
-	var _Params = __webpack_require__(594);
+	var _Params = __webpack_require__(669);
 	
 	var _Params2 = _interopRequireDefault(_Params);
 	
-	var _utilsValidationColor = __webpack_require__(595);
+	var _utilsValidationColor = __webpack_require__(670);
 	
 	var _utilsValidationColor2 = _interopRequireDefault(_utilsValidationColor);
 	
@@ -65635,7 +65707,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 571 */
+/* 646 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -65645,7 +65717,7 @@
 	 * DEPENDENCIES
 	 */
 	
-	var convert = __webpack_require__(572);
+	var convert = __webpack_require__(647);
 	
 	
 	/*
@@ -66005,7 +66077,7 @@
 
 
 /***/ },
-/* 572 */
+/* 647 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -66286,7 +66358,7 @@
 
 
 /***/ },
-/* 573 */
+/* 648 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -66305,7 +66377,7 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var _colr = __webpack_require__(571);
+	var _colr = __webpack_require__(646);
 	
 	var _colr2 = _interopRequireDefault(_colr);
 	
@@ -66317,7 +66389,7 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _rcUtil = __webpack_require__(574);
+	var _rcUtil = __webpack_require__(649);
 	
 	var _rcUtil2 = _interopRequireDefault(_rcUtil);
 	
@@ -66342,6 +66414,11 @@
 	  }
 	
 	  _createClass(Board, [{
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      this.removeListeners();
+	    }
+	  }, {
 	    key: 'onBoardMouseDown',
 	    value: function onBoardMouseDown(e) {
 	      var x = e.clientX;
@@ -66372,6 +66449,16 @@
 	        x: x,
 	        y: y
 	      });
+	      this.removeListeners();
+	    }
+	  }, {
+	    key: 'getPrefixCls',
+	    value: function getPrefixCls() {
+	      return this.props.rootPrefixCls + '-board';
+	    }
+	  }, {
+	    key: 'removeListeners',
+	    value: function removeListeners() {
 	      if (this.dragListener) {
 	        this.dragListener.remove();
 	        this.dragListener = null;
@@ -66380,11 +66467,6 @@
 	        this.dragUpListener.remove();
 	        this.dragUpListener = null;
 	      }
-	    }
-	  }, {
-	    key: 'getPrefixCls',
-	    value: function getPrefixCls() {
-	      return this.props.rootPrefixCls + '-board';
 	    }
 	
 	    /**
@@ -66451,30 +66533,30 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 574 */
+/* 649 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = {
-	  guid: __webpack_require__(575),
-	  classSet: __webpack_require__(576),
-	  joinClasses: __webpack_require__(578),
-	  KeyCode: __webpack_require__(579),
-	  PureRenderMixin: __webpack_require__(580),
-	  shallowEqual: __webpack_require__(581),
-	  createChainedFunction: __webpack_require__(582),
+	  guid: __webpack_require__(650),
+	  classSet: __webpack_require__(651),
+	  joinClasses: __webpack_require__(653),
+	  KeyCode: __webpack_require__(654),
+	  PureRenderMixin: __webpack_require__(655),
+	  shallowEqual: __webpack_require__(656),
+	  createChainedFunction: __webpack_require__(657),
 	  Dom: {
-	    addEventListener: __webpack_require__(583),
-	    contains: __webpack_require__(588)
+	    addEventListener: __webpack_require__(658),
+	    contains: __webpack_require__(663)
 	  },
 	  Children: {
-	    toArray: __webpack_require__(589),
-	    mapSelf: __webpack_require__(590)
+	    toArray: __webpack_require__(664),
+	    mapSelf: __webpack_require__(665)
 	  }
 	};
 
 
 /***/ },
-/* 575 */
+/* 650 */
 /***/ function(module, exports) {
 
 	var seed = 0;
@@ -66484,14 +66566,14 @@
 
 
 /***/ },
-/* 576 */
+/* 651 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(577);
+	module.exports = __webpack_require__(652);
 
 
 /***/ },
-/* 577 */
+/* 652 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -66545,7 +66627,7 @@
 
 
 /***/ },
-/* 578 */
+/* 653 */
 /***/ function(module, exports) {
 
 	/**
@@ -66592,7 +66674,7 @@
 
 
 /***/ },
-/* 579 */
+/* 654 */
 /***/ function(module, exports) {
 
 	/**
@@ -67119,7 +67201,7 @@
 
 
 /***/ },
-/* 580 */
+/* 655 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -67135,7 +67217,7 @@
 	
 	"use strict";
 	
-	var shallowEqual = __webpack_require__(581);
+	var shallowEqual = __webpack_require__(656);
 	
 	/**
 	 * If your React component's render function is "pure", e.g. it will render the
@@ -67172,7 +67254,7 @@
 
 
 /***/ },
-/* 581 */
+/* 656 */
 /***/ function(module, exports) {
 
 	/**
@@ -67220,7 +67302,7 @@
 
 
 /***/ },
-/* 582 */
+/* 657 */
 /***/ function(module, exports) {
 
 	/**
@@ -67247,16 +67329,16 @@
 
 
 /***/ },
-/* 583 */
+/* 658 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var addDOMEventListener = __webpack_require__(584);
+	var addDOMEventListener = __webpack_require__(659);
 	
 	module.exports = addDOMEventListener['default'] || addDOMEventListener;
 
 
 /***/ },
-/* 584 */
+/* 659 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -67268,7 +67350,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _EventObject = __webpack_require__(585);
+	var _EventObject = __webpack_require__(660);
 	
 	var _EventObject2 = _interopRequireDefault(_EventObject);
 	
@@ -67298,7 +67380,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 585 */
+/* 660 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -67315,11 +67397,11 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _EventBaseObject = __webpack_require__(586);
+	var _EventBaseObject = __webpack_require__(661);
 	
 	var _EventBaseObject2 = _interopRequireDefault(_EventBaseObject);
 	
-	var _objectAssign = __webpack_require__(587);
+	var _objectAssign = __webpack_require__(662);
 	
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
 	
@@ -67581,7 +67663,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 586 */
+/* 661 */
 /***/ function(module, exports) {
 
 	/**
@@ -67649,7 +67731,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 587 */
+/* 662 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -67738,7 +67820,7 @@
 
 
 /***/ },
-/* 588 */
+/* 663 */
 /***/ function(module, exports) {
 
 	module.exports = function (root, node) {
@@ -67754,7 +67836,7 @@
 
 
 /***/ },
-/* 589 */
+/* 664 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(91);
@@ -67769,7 +67851,7 @@
 
 
 /***/ },
-/* 590 */
+/* 665 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(91);
@@ -67785,7 +67867,7 @@
 
 
 /***/ },
-/* 591 */
+/* 666 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -67808,7 +67890,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _colr = __webpack_require__(571);
+	var _colr = __webpack_require__(646);
 	
 	var _colr2 = _interopRequireDefault(_colr);
 	
@@ -67870,7 +67952,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 592 */
+/* 667 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -67899,7 +67981,7 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _rcUtil = __webpack_require__(574);
+	var _rcUtil = __webpack_require__(649);
 	
 	var _rcUtil2 = _interopRequireDefault(_rcUtil);
 	
@@ -67922,6 +68004,11 @@
 	  }
 	
 	  _createClass(Ribbon, [{
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      this.removeListeners();
+	    }
+	  }, {
 	    key: 'onMouseDown',
 	    value: function onMouseDown(e) {
 	      var x = e.clientX;
@@ -67951,14 +68038,7 @@
 	      this.pointMoveTo({
 	        x: x, y: y
 	      });
-	      if (this.dragListener) {
-	        this.dragListener.remove();
-	        this.dragListener = null;
-	      }
-	      if (this.dragUpListener) {
-	        this.dragUpListener.remove();
-	        this.dragUpListener = null;
-	      }
+	      this.removeListeners();
 	    }
 	  }, {
 	    key: 'getPrefixCls',
@@ -67980,6 +68060,18 @@
 	        h: hue
 	      });
 	      this.props.onChange(hsv);
+	    }
+	  }, {
+	    key: 'removeListeners',
+	    value: function removeListeners() {
+	      if (this.dragListener) {
+	        this.dragListener.remove();
+	        this.dragListener = null;
+	      }
+	      if (this.dragUpListener) {
+	        this.dragUpListener.remove();
+	        this.dragUpListener = null;
+	      }
 	    }
 	  }, {
 	    key: 'render',
@@ -68013,7 +68105,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 593 */
+/* 668 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -68040,11 +68132,11 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _colr = __webpack_require__(571);
+	var _colr = __webpack_require__(646);
 	
 	var _colr2 = _interopRequireDefault(_colr);
 	
-	var _rcUtil = __webpack_require__(574);
+	var _rcUtil = __webpack_require__(649);
 	
 	var _rcUtil2 = _interopRequireDefault(_rcUtil);
 	
@@ -68070,6 +68162,11 @@
 	  }
 	
 	  _createClass(Alpha, [{
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      this.removeListeners();
+	    }
+	  }, {
 	    key: 'onMouseDown',
 	    value: function onMouseDown(e) {
 	      var x = e.clientX;
@@ -68099,14 +68196,7 @@
 	      this.pointMoveTo({
 	        x: x, y: y
 	      });
-	      if (this.dragListener) {
-	        this.dragListener.remove();
-	        this.dragListener = null;
-	      }
-	      if (this.dragUpListener) {
-	        this.dragUpListener.remove();
-	        this.dragUpListener = null;
-	      }
+	      this.removeListeners();
 	    }
 	  }, {
 	    key: 'getBackground',
@@ -68138,6 +68228,18 @@
 	      var alpha = Math.floor(left / width * 100);
 	
 	      this.props.onChange(alpha);
+	    }
+	  }, {
+	    key: 'removeListeners',
+	    value: function removeListeners() {
+	      if (this.dragListener) {
+	        this.dragListener.remove();
+	        this.dragListener = null;
+	      }
+	      if (this.dragUpListener) {
+	        this.dragUpListener.remove();
+	        this.dragUpListener = null;
+	      }
 	    }
 	  }, {
 	    key: 'render',
@@ -68174,7 +68276,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 594 */
+/* 669 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -68197,7 +68299,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _colr = __webpack_require__(571);
+	var _colr = __webpack_require__(646);
 	
 	var _colr2 = _interopRequireDefault(_colr);
 	
@@ -68466,7 +68568,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 595 */
+/* 670 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -68478,7 +68580,7 @@
 	};
 
 /***/ },
-/* 596 */
+/* 671 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -68524,81 +68626,6 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 597 */,
-/* 598 */,
-/* 599 */,
-/* 600 */,
-/* 601 */,
-/* 602 */,
-/* 603 */,
-/* 604 */,
-/* 605 */,
-/* 606 */,
-/* 607 */,
-/* 608 */,
-/* 609 */,
-/* 610 */,
-/* 611 */,
-/* 612 */,
-/* 613 */,
-/* 614 */,
-/* 615 */,
-/* 616 */,
-/* 617 */,
-/* 618 */,
-/* 619 */,
-/* 620 */,
-/* 621 */,
-/* 622 */,
-/* 623 */,
-/* 624 */,
-/* 625 */,
-/* 626 */,
-/* 627 */,
-/* 628 */,
-/* 629 */,
-/* 630 */,
-/* 631 */,
-/* 632 */,
-/* 633 */,
-/* 634 */,
-/* 635 */,
-/* 636 */,
-/* 637 */,
-/* 638 */,
-/* 639 */,
-/* 640 */,
-/* 641 */,
-/* 642 */,
-/* 643 */,
-/* 644 */,
-/* 645 */,
-/* 646 */,
-/* 647 */,
-/* 648 */,
-/* 649 */,
-/* 650 */,
-/* 651 */,
-/* 652 */,
-/* 653 */,
-/* 654 */,
-/* 655 */,
-/* 656 */,
-/* 657 */,
-/* 658 */,
-/* 659 */,
-/* 660 */,
-/* 661 */,
-/* 662 */,
-/* 663 */,
-/* 664 */,
-/* 665 */,
-/* 666 */,
-/* 667 */,
-/* 668 */,
-/* 669 */,
-/* 670 */,
-/* 671 */,
 /* 672 */,
 /* 673 */,
 /* 674 */,
@@ -68652,7 +68679,87 @@
 /* 722 */,
 /* 723 */,
 /* 724 */,
-/* 725 */
+/* 725 */,
+/* 726 */,
+/* 727 */,
+/* 728 */,
+/* 729 */,
+/* 730 */,
+/* 731 */,
+/* 732 */,
+/* 733 */,
+/* 734 */,
+/* 735 */,
+/* 736 */,
+/* 737 */,
+/* 738 */,
+/* 739 */,
+/* 740 */,
+/* 741 */,
+/* 742 */,
+/* 743 */,
+/* 744 */,
+/* 745 */,
+/* 746 */,
+/* 747 */,
+/* 748 */,
+/* 749 */,
+/* 750 */,
+/* 751 */,
+/* 752 */,
+/* 753 */,
+/* 754 */,
+/* 755 */,
+/* 756 */,
+/* 757 */,
+/* 758 */,
+/* 759 */,
+/* 760 */,
+/* 761 */,
+/* 762 */,
+/* 763 */,
+/* 764 */,
+/* 765 */,
+/* 766 */,
+/* 767 */,
+/* 768 */,
+/* 769 */,
+/* 770 */,
+/* 771 */,
+/* 772 */,
+/* 773 */,
+/* 774 */,
+/* 775 */,
+/* 776 */,
+/* 777 */,
+/* 778 */,
+/* 779 */,
+/* 780 */,
+/* 781 */,
+/* 782 */,
+/* 783 */,
+/* 784 */,
+/* 785 */,
+/* 786 */,
+/* 787 */,
+/* 788 */,
+/* 789 */,
+/* 790 */,
+/* 791 */,
+/* 792 */,
+/* 793 */,
+/* 794 */,
+/* 795 */,
+/* 796 */,
+/* 797 */,
+/* 798 */,
+/* 799 */,
+/* 800 */,
+/* 801 */,
+/* 802 */,
+/* 803 */,
+/* 804 */,
+/* 805 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -68680,13 +68787,13 @@
 	exports['default'] = thunk;
 
 /***/ },
-/* 726 */,
-/* 727 */,
-/* 728 */,
-/* 729 */,
-/* 730 */,
-/* 731 */,
-/* 732 */
+/* 806 */,
+/* 807 */,
+/* 808 */,
+/* 809 */,
+/* 810 */,
+/* 811 */,
+/* 812 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -69117,22 +69224,22 @@
 	
 	        })();
 	    }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	}(__webpack_require__(733)));
+	}(__webpack_require__(813)));
 
 
 /***/ },
-/* 733 */
+/* 813 */
 /***/ function(module, exports) {
 
 	module.exports = function() { throw new Error("define cannot be used indirect"); };
 
 
 /***/ },
-/* 734 */
+/* 814 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {//! moment.js
-	//! version : 2.13.0
+	//! version : 2.14.1
 	//! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 	//! license : MIT
 	//! momentjs.com
@@ -69157,6 +69264,19 @@
 	
 	    function isArray(input) {
 	        return input instanceof Array || Object.prototype.toString.call(input) === '[object Array]';
+	    }
+	
+	    function isObject(input) {
+	        return Object.prototype.toString.call(input) === '[object Object]';
+	    }
+	
+	    function isObjectEmpty(obj) {
+	        var k;
+	        for (k in obj) {
+	            // even if its not own property I'd still call it non-empty
+	            return false;
+	        }
+	        return true;
 	    }
 	
 	    function isDate(input) {
@@ -69354,7 +69474,8 @@
 	
 	    function absFloor (number) {
 	        if (number < 0) {
-	            return Math.ceil(number);
+	            // -0 -> 0
+	            return Math.ceil(number) || 0;
 	        } else {
 	            return Math.floor(number);
 	        }
@@ -69427,10 +69548,6 @@
 	        return input instanceof Function || Object.prototype.toString.call(input) === '[object Function]';
 	    }
 	
-	    function isObject(input) {
-	        return Object.prototype.toString.call(input) === '[object Object]';
-	    }
-	
 	    function locale_set__set (config) {
 	        var prop, i;
 	        for (i in config) {
@@ -69462,6 +69579,14 @@
 	                }
 	            }
 	        }
+	        for (prop in parentConfig) {
+	            if (hasOwnProp(parentConfig, prop) &&
+	                    !hasOwnProp(childConfig, prop) &&
+	                    isObject(parentConfig[prop])) {
+	                // make sure changes to properties don't modify parent config
+	                res[prop] = extend({}, res[prop]);
+	            }
+	        }
 	        return res;
 	    }
 	
@@ -69487,161 +69612,83 @@
 	        };
 	    }
 	
-	    // internal storage for locale config files
-	    var locales = {};
-	    var globalLocale;
+	    var defaultCalendar = {
+	        sameDay : '[Today at] LT',
+	        nextDay : '[Tomorrow at] LT',
+	        nextWeek : 'dddd [at] LT',
+	        lastDay : '[Yesterday at] LT',
+	        lastWeek : '[Last] dddd [at] LT',
+	        sameElse : 'L'
+	    };
 	
-	    function normalizeLocale(key) {
-	        return key ? key.toLowerCase().replace('_', '-') : key;
+	    function locale_calendar__calendar (key, mom, now) {
+	        var output = this._calendar[key] || this._calendar['sameElse'];
+	        return isFunction(output) ? output.call(mom, now) : output;
 	    }
 	
-	    // pick the locale from the array
-	    // try ['en-au', 'en-gb'] as 'en-au', 'en-gb', 'en', as in move through the list trying each
-	    // substring from most specific to least, but move to the next array item if it's a more specific variant than the current root
-	    function chooseLocale(names) {
-	        var i = 0, j, next, locale, split;
+	    var defaultLongDateFormat = {
+	        LTS  : 'h:mm:ss A',
+	        LT   : 'h:mm A',
+	        L    : 'MM/DD/YYYY',
+	        LL   : 'MMMM D, YYYY',
+	        LLL  : 'MMMM D, YYYY h:mm A',
+	        LLLL : 'dddd, MMMM D, YYYY h:mm A'
+	    };
 	
-	        while (i < names.length) {
-	            split = normalizeLocale(names[i]).split('-');
-	            j = split.length;
-	            next = normalizeLocale(names[i + 1]);
-	            next = next ? next.split('-') : null;
-	            while (j > 0) {
-	                locale = loadLocale(split.slice(0, j).join('-'));
-	                if (locale) {
-	                    return locale;
-	                }
-	                if (next && next.length >= j && compareArrays(split, next, true) >= j - 1) {
-	                    //the next array item is better than a shallower substring of this one
-	                    break;
-	                }
-	                j--;
-	            }
-	            i++;
+	    function longDateFormat (key) {
+	        var format = this._longDateFormat[key],
+	            formatUpper = this._longDateFormat[key.toUpperCase()];
+	
+	        if (format || !formatUpper) {
+	            return format;
 	        }
-	        return null;
+	
+	        this._longDateFormat[key] = formatUpper.replace(/MMMM|MM|DD|dddd/g, function (val) {
+	            return val.slice(1);
+	        });
+	
+	        return this._longDateFormat[key];
 	    }
 	
-	    function loadLocale(name) {
-	        var oldLocale = null;
-	        // TODO: Find a better way to register and load all the locales in Node
-	        if (!locales[name] && (typeof module !== 'undefined') &&
-	                module && module.exports) {
-	            try {
-	                oldLocale = globalLocale._abbr;
-	                __webpack_require__(735)("./" + name);
-	                // because defineLocale currently also sets the global locale, we
-	                // want to undo that for lazy loaded locales
-	                locale_locales__getSetGlobalLocale(oldLocale);
-	            } catch (e) { }
-	        }
-	        return locales[name];
+	    var defaultInvalidDate = 'Invalid date';
+	
+	    function invalidDate () {
+	        return this._invalidDate;
 	    }
 	
-	    // This function will load locale and then set the global locale.  If
-	    // no arguments are passed in, it will simply return the current global
-	    // locale key.
-	    function locale_locales__getSetGlobalLocale (key, values) {
-	        var data;
-	        if (key) {
-	            if (isUndefined(values)) {
-	                data = locale_locales__getLocale(key);
-	            }
-	            else {
-	                data = defineLocale(key, values);
-	            }
+	    var defaultOrdinal = '%d';
+	    var defaultOrdinalParse = /\d{1,2}/;
 	
-	            if (data) {
-	                // moment.duration._locale = moment._locale = data;
-	                globalLocale = data;
-	            }
-	        }
-	
-	        return globalLocale._abbr;
+	    function ordinal (number) {
+	        return this._ordinal.replace('%d', number);
 	    }
 	
-	    function defineLocale (name, config) {
-	        if (config !== null) {
-	            config.abbr = name;
-	            if (locales[name] != null) {
-	                deprecateSimple('defineLocaleOverride',
-	                        'use moment.updateLocale(localeName, config) to change ' +
-	                        'an existing locale. moment.defineLocale(localeName, ' +
-	                        'config) should only be used for creating a new locale');
-	                config = mergeConfigs(locales[name]._config, config);
-	            } else if (config.parentLocale != null) {
-	                if (locales[config.parentLocale] != null) {
-	                    config = mergeConfigs(locales[config.parentLocale]._config, config);
-	                } else {
-	                    // treat as if there is no base config
-	                    deprecateSimple('parentLocaleUndefined',
-	                            'specified parentLocale is not defined yet');
-	                }
-	            }
-	            locales[name] = new Locale(config);
+	    var defaultRelativeTime = {
+	        future : 'in %s',
+	        past   : '%s ago',
+	        s  : 'a few seconds',
+	        m  : 'a minute',
+	        mm : '%d minutes',
+	        h  : 'an hour',
+	        hh : '%d hours',
+	        d  : 'a day',
+	        dd : '%d days',
+	        M  : 'a month',
+	        MM : '%d months',
+	        y  : 'a year',
+	        yy : '%d years'
+	    };
 	
-	            // backwards compat for now: also set the locale
-	            locale_locales__getSetGlobalLocale(name);
-	
-	            return locales[name];
-	        } else {
-	            // useful for testing
-	            delete locales[name];
-	            return null;
-	        }
+	    function relative__relativeTime (number, withoutSuffix, string, isFuture) {
+	        var output = this._relativeTime[string];
+	        return (isFunction(output)) ?
+	            output(number, withoutSuffix, string, isFuture) :
+	            output.replace(/%d/i, number);
 	    }
 	
-	    function updateLocale(name, config) {
-	        if (config != null) {
-	            var locale;
-	            if (locales[name] != null) {
-	                config = mergeConfigs(locales[name]._config, config);
-	            }
-	            locale = new Locale(config);
-	            locale.parentLocale = locales[name];
-	            locales[name] = locale;
-	
-	            // backwards compat for now: also set the locale
-	            locale_locales__getSetGlobalLocale(name);
-	        } else {
-	            // pass null for config to unupdate, useful for tests
-	            if (locales[name] != null) {
-	                if (locales[name].parentLocale != null) {
-	                    locales[name] = locales[name].parentLocale;
-	                } else if (locales[name] != null) {
-	                    delete locales[name];
-	                }
-	            }
-	        }
-	        return locales[name];
-	    }
-	
-	    // returns locale data
-	    function locale_locales__getLocale (key) {
-	        var locale;
-	
-	        if (key && key._locale && key._locale._abbr) {
-	            key = key._locale._abbr;
-	        }
-	
-	        if (!key) {
-	            return globalLocale;
-	        }
-	
-	        if (!isArray(key)) {
-	            //short-circuit everything else
-	            locale = loadLocale(key);
-	            if (locale) {
-	                return locale;
-	            }
-	            key = [key];
-	        }
-	
-	        return chooseLocale(key);
-	    }
-	
-	    function locale_locales__listLocales() {
-	        return keys(locales);
+	    function pastFuture (diff, output) {
+	        var format = this._relativeTime[diff > 0 ? 'future' : 'past'];
+	        return isFunction(format) ? format(output) : format.replace(/%s/i, output);
 	    }
 	
 	    var aliases = {};
@@ -69672,6 +69719,23 @@
 	        return normalizedInput;
 	    }
 	
+	    var priorities = {};
+	
+	    function addUnitPriority(unit, priority) {
+	        priorities[unit] = priority;
+	    }
+	
+	    function getPrioritizedUnits(unitsObj) {
+	        var units = [];
+	        for (var u in unitsObj) {
+	            units.push({unit: u, priority: priorities[u]});
+	        }
+	        units.sort(function (a, b) {
+	            return a.priority - b.priority;
+	        });
+	        return units;
+	    }
+	
 	    function makeGetSet (unit, keepTime) {
 	        return function (value) {
 	            if (value != null) {
@@ -69697,11 +69761,21 @@
 	
 	    // MOMENTS
 	
-	    function getSet (units, value) {
-	        var unit;
+	    function stringGet (units) {
+	        units = normalizeUnits(units);
+	        if (isFunction(this[units])) {
+	            return this[units]();
+	        }
+	        return this;
+	    }
+	
+	
+	    function stringSet (units, value) {
 	        if (typeof units === 'object') {
-	            for (unit in units) {
-	                this.set(unit, units[unit]);
+	            units = normalizeObjectUnits(units);
+	            var prioritized = getPrioritizedUnits(units);
+	            for (var i = 0; i < prioritized.length; i++) {
+	                this[prioritized[i].unit](units[prioritized[i].unit]);
 	            }
 	        } else {
 	            units = normalizeUnits(units);
@@ -69941,6 +70015,10 @@
 	
 	    addUnitAlias('month', 'M');
 	
+	    // PRIORITY
+	
+	    addUnitPriority('month', 8);
+	
 	    // PARSING
 	
 	    addRegexToken('M',    match1to2);
@@ -69972,7 +70050,7 @@
 	    var defaultLocaleMonths = 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_');
 	    function localeMonths (m, format) {
 	        return isArray(this._months) ? this._months[m.month()] :
-	            this._months[MONTHS_IN_FORMAT.test(format) ? 'format' : 'standalone'][m.month()];
+	            this._months[(this._months.isFormat || MONTHS_IN_FORMAT).test(format) ? 'format' : 'standalone'][m.month()];
 	    }
 	
 	    var defaultLocaleMonthsShort = 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split('_');
@@ -70113,6 +70191,9 @@
 	                return this._monthsShortRegex;
 	            }
 	        } else {
+	            if (!hasOwnProp(this, '_monthsShortRegex')) {
+	                this._monthsShortRegex = defaultMonthsShortRegex;
+	            }
 	            return this._monthsShortStrictRegex && isStrict ?
 	                this._monthsShortStrictRegex : this._monthsShortRegex;
 	        }
@@ -70130,6 +70211,9 @@
 	                return this._monthsRegex;
 	            }
 	        } else {
+	            if (!hasOwnProp(this, '_monthsRegex')) {
+	                this._monthsRegex = defaultMonthsRegex;
+	            }
 	            return this._monthsStrictRegex && isStrict ?
 	                this._monthsStrictRegex : this._monthsRegex;
 	        }
@@ -70158,6 +70242,8 @@
 	        for (i = 0; i < 12; i++) {
 	            shortPieces[i] = regexEscape(shortPieces[i]);
 	            longPieces[i] = regexEscape(longPieces[i]);
+	        }
+	        for (i = 0; i < 24; i++) {
 	            mixedPieces[i] = regexEscape(mixedPieces[i]);
 	        }
 	
@@ -70165,6 +70251,873 @@
 	        this._monthsShortRegex = this._monthsRegex;
 	        this._monthsStrictRegex = new RegExp('^(' + longPieces.join('|') + ')', 'i');
 	        this._monthsShortStrictRegex = new RegExp('^(' + shortPieces.join('|') + ')', 'i');
+	    }
+	
+	    // FORMATTING
+	
+	    addFormatToken('Y', 0, 0, function () {
+	        var y = this.year();
+	        return y <= 9999 ? '' + y : '+' + y;
+	    });
+	
+	    addFormatToken(0, ['YY', 2], 0, function () {
+	        return this.year() % 100;
+	    });
+	
+	    addFormatToken(0, ['YYYY',   4],       0, 'year');
+	    addFormatToken(0, ['YYYYY',  5],       0, 'year');
+	    addFormatToken(0, ['YYYYYY', 6, true], 0, 'year');
+	
+	    // ALIASES
+	
+	    addUnitAlias('year', 'y');
+	
+	    // PRIORITIES
+	
+	    addUnitPriority('year', 1);
+	
+	    // PARSING
+	
+	    addRegexToken('Y',      matchSigned);
+	    addRegexToken('YY',     match1to2, match2);
+	    addRegexToken('YYYY',   match1to4, match4);
+	    addRegexToken('YYYYY',  match1to6, match6);
+	    addRegexToken('YYYYYY', match1to6, match6);
+	
+	    addParseToken(['YYYYY', 'YYYYYY'], YEAR);
+	    addParseToken('YYYY', function (input, array) {
+	        array[YEAR] = input.length === 2 ? utils_hooks__hooks.parseTwoDigitYear(input) : toInt(input);
+	    });
+	    addParseToken('YY', function (input, array) {
+	        array[YEAR] = utils_hooks__hooks.parseTwoDigitYear(input);
+	    });
+	    addParseToken('Y', function (input, array) {
+	        array[YEAR] = parseInt(input, 10);
+	    });
+	
+	    // HELPERS
+	
+	    function daysInYear(year) {
+	        return isLeapYear(year) ? 366 : 365;
+	    }
+	
+	    function isLeapYear(year) {
+	        return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+	    }
+	
+	    // HOOKS
+	
+	    utils_hooks__hooks.parseTwoDigitYear = function (input) {
+	        return toInt(input) + (toInt(input) > 68 ? 1900 : 2000);
+	    };
+	
+	    // MOMENTS
+	
+	    var getSetYear = makeGetSet('FullYear', true);
+	
+	    function getIsLeapYear () {
+	        return isLeapYear(this.year());
+	    }
+	
+	    function createDate (y, m, d, h, M, s, ms) {
+	        //can't just apply() to create a date:
+	        //http://stackoverflow.com/questions/181348/instantiating-a-javascript-object-by-calling-prototype-constructor-apply
+	        var date = new Date(y, m, d, h, M, s, ms);
+	
+	        //the date constructor remaps years 0-99 to 1900-1999
+	        if (y < 100 && y >= 0 && isFinite(date.getFullYear())) {
+	            date.setFullYear(y);
+	        }
+	        return date;
+	    }
+	
+	    function createUTCDate (y) {
+	        var date = new Date(Date.UTC.apply(null, arguments));
+	
+	        //the Date.UTC function remaps years 0-99 to 1900-1999
+	        if (y < 100 && y >= 0 && isFinite(date.getUTCFullYear())) {
+	            date.setUTCFullYear(y);
+	        }
+	        return date;
+	    }
+	
+	    // start-of-first-week - start-of-year
+	    function firstWeekOffset(year, dow, doy) {
+	        var // first-week day -- which january is always in the first week (4 for iso, 1 for other)
+	            fwd = 7 + dow - doy,
+	            // first-week day local weekday -- which local weekday is fwd
+	            fwdlw = (7 + createUTCDate(year, 0, fwd).getUTCDay() - dow) % 7;
+	
+	        return -fwdlw + fwd - 1;
+	    }
+	
+	    //http://en.wikipedia.org/wiki/ISO_week_date#Calculating_a_date_given_the_year.2C_week_number_and_weekday
+	    function dayOfYearFromWeeks(year, week, weekday, dow, doy) {
+	        var localWeekday = (7 + weekday - dow) % 7,
+	            weekOffset = firstWeekOffset(year, dow, doy),
+	            dayOfYear = 1 + 7 * (week - 1) + localWeekday + weekOffset,
+	            resYear, resDayOfYear;
+	
+	        if (dayOfYear <= 0) {
+	            resYear = year - 1;
+	            resDayOfYear = daysInYear(resYear) + dayOfYear;
+	        } else if (dayOfYear > daysInYear(year)) {
+	            resYear = year + 1;
+	            resDayOfYear = dayOfYear - daysInYear(year);
+	        } else {
+	            resYear = year;
+	            resDayOfYear = dayOfYear;
+	        }
+	
+	        return {
+	            year: resYear,
+	            dayOfYear: resDayOfYear
+	        };
+	    }
+	
+	    function weekOfYear(mom, dow, doy) {
+	        var weekOffset = firstWeekOffset(mom.year(), dow, doy),
+	            week = Math.floor((mom.dayOfYear() - weekOffset - 1) / 7) + 1,
+	            resWeek, resYear;
+	
+	        if (week < 1) {
+	            resYear = mom.year() - 1;
+	            resWeek = week + weeksInYear(resYear, dow, doy);
+	        } else if (week > weeksInYear(mom.year(), dow, doy)) {
+	            resWeek = week - weeksInYear(mom.year(), dow, doy);
+	            resYear = mom.year() + 1;
+	        } else {
+	            resYear = mom.year();
+	            resWeek = week;
+	        }
+	
+	        return {
+	            week: resWeek,
+	            year: resYear
+	        };
+	    }
+	
+	    function weeksInYear(year, dow, doy) {
+	        var weekOffset = firstWeekOffset(year, dow, doy),
+	            weekOffsetNext = firstWeekOffset(year + 1, dow, doy);
+	        return (daysInYear(year) - weekOffset + weekOffsetNext) / 7;
+	    }
+	
+	    // FORMATTING
+	
+	    addFormatToken('w', ['ww', 2], 'wo', 'week');
+	    addFormatToken('W', ['WW', 2], 'Wo', 'isoWeek');
+	
+	    // ALIASES
+	
+	    addUnitAlias('week', 'w');
+	    addUnitAlias('isoWeek', 'W');
+	
+	    // PRIORITIES
+	
+	    addUnitPriority('week', 5);
+	    addUnitPriority('isoWeek', 5);
+	
+	    // PARSING
+	
+	    addRegexToken('w',  match1to2);
+	    addRegexToken('ww', match1to2, match2);
+	    addRegexToken('W',  match1to2);
+	    addRegexToken('WW', match1to2, match2);
+	
+	    addWeekParseToken(['w', 'ww', 'W', 'WW'], function (input, week, config, token) {
+	        week[token.substr(0, 1)] = toInt(input);
+	    });
+	
+	    // HELPERS
+	
+	    // LOCALES
+	
+	    function localeWeek (mom) {
+	        return weekOfYear(mom, this._week.dow, this._week.doy).week;
+	    }
+	
+	    var defaultLocaleWeek = {
+	        dow : 0, // Sunday is the first day of the week.
+	        doy : 6  // The week that contains Jan 1st is the first week of the year.
+	    };
+	
+	    function localeFirstDayOfWeek () {
+	        return this._week.dow;
+	    }
+	
+	    function localeFirstDayOfYear () {
+	        return this._week.doy;
+	    }
+	
+	    // MOMENTS
+	
+	    function getSetWeek (input) {
+	        var week = this.localeData().week(this);
+	        return input == null ? week : this.add((input - week) * 7, 'd');
+	    }
+	
+	    function getSetISOWeek (input) {
+	        var week = weekOfYear(this, 1, 4).week;
+	        return input == null ? week : this.add((input - week) * 7, 'd');
+	    }
+	
+	    // FORMATTING
+	
+	    addFormatToken('d', 0, 'do', 'day');
+	
+	    addFormatToken('dd', 0, 0, function (format) {
+	        return this.localeData().weekdaysMin(this, format);
+	    });
+	
+	    addFormatToken('ddd', 0, 0, function (format) {
+	        return this.localeData().weekdaysShort(this, format);
+	    });
+	
+	    addFormatToken('dddd', 0, 0, function (format) {
+	        return this.localeData().weekdays(this, format);
+	    });
+	
+	    addFormatToken('e', 0, 0, 'weekday');
+	    addFormatToken('E', 0, 0, 'isoWeekday');
+	
+	    // ALIASES
+	
+	    addUnitAlias('day', 'd');
+	    addUnitAlias('weekday', 'e');
+	    addUnitAlias('isoWeekday', 'E');
+	
+	    // PRIORITY
+	    addUnitPriority('day', 11);
+	    addUnitPriority('weekday', 11);
+	    addUnitPriority('isoWeekday', 11);
+	
+	    // PARSING
+	
+	    addRegexToken('d',    match1to2);
+	    addRegexToken('e',    match1to2);
+	    addRegexToken('E',    match1to2);
+	    addRegexToken('dd',   function (isStrict, locale) {
+	        return locale.weekdaysMinRegex(isStrict);
+	    });
+	    addRegexToken('ddd',   function (isStrict, locale) {
+	        return locale.weekdaysShortRegex(isStrict);
+	    });
+	    addRegexToken('dddd',   function (isStrict, locale) {
+	        return locale.weekdaysRegex(isStrict);
+	    });
+	
+	    addWeekParseToken(['dd', 'ddd', 'dddd'], function (input, week, config, token) {
+	        var weekday = config._locale.weekdaysParse(input, token, config._strict);
+	        // if we didn't get a weekday name, mark the date as invalid
+	        if (weekday != null) {
+	            week.d = weekday;
+	        } else {
+	            getParsingFlags(config).invalidWeekday = input;
+	        }
+	    });
+	
+	    addWeekParseToken(['d', 'e', 'E'], function (input, week, config, token) {
+	        week[token] = toInt(input);
+	    });
+	
+	    // HELPERS
+	
+	    function parseWeekday(input, locale) {
+	        if (typeof input !== 'string') {
+	            return input;
+	        }
+	
+	        if (!isNaN(input)) {
+	            return parseInt(input, 10);
+	        }
+	
+	        input = locale.weekdaysParse(input);
+	        if (typeof input === 'number') {
+	            return input;
+	        }
+	
+	        return null;
+	    }
+	
+	    function parseIsoWeekday(input, locale) {
+	        if (typeof input === 'string') {
+	            return locale.weekdaysParse(input) % 7 || 7;
+	        }
+	        return isNaN(input) ? null : input;
+	    }
+	
+	    // LOCALES
+	
+	    var defaultLocaleWeekdays = 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_');
+	    function localeWeekdays (m, format) {
+	        return isArray(this._weekdays) ? this._weekdays[m.day()] :
+	            this._weekdays[this._weekdays.isFormat.test(format) ? 'format' : 'standalone'][m.day()];
+	    }
+	
+	    var defaultLocaleWeekdaysShort = 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_');
+	    function localeWeekdaysShort (m) {
+	        return this._weekdaysShort[m.day()];
+	    }
+	
+	    var defaultLocaleWeekdaysMin = 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_');
+	    function localeWeekdaysMin (m) {
+	        return this._weekdaysMin[m.day()];
+	    }
+	
+	    function day_of_week__handleStrictParse(weekdayName, format, strict) {
+	        var i, ii, mom, llc = weekdayName.toLocaleLowerCase();
+	        if (!this._weekdaysParse) {
+	            this._weekdaysParse = [];
+	            this._shortWeekdaysParse = [];
+	            this._minWeekdaysParse = [];
+	
+	            for (i = 0; i < 7; ++i) {
+	                mom = create_utc__createUTC([2000, 1]).day(i);
+	                this._minWeekdaysParse[i] = this.weekdaysMin(mom, '').toLocaleLowerCase();
+	                this._shortWeekdaysParse[i] = this.weekdaysShort(mom, '').toLocaleLowerCase();
+	                this._weekdaysParse[i] = this.weekdays(mom, '').toLocaleLowerCase();
+	            }
+	        }
+	
+	        if (strict) {
+	            if (format === 'dddd') {
+	                ii = indexOf.call(this._weekdaysParse, llc);
+	                return ii !== -1 ? ii : null;
+	            } else if (format === 'ddd') {
+	                ii = indexOf.call(this._shortWeekdaysParse, llc);
+	                return ii !== -1 ? ii : null;
+	            } else {
+	                ii = indexOf.call(this._minWeekdaysParse, llc);
+	                return ii !== -1 ? ii : null;
+	            }
+	        } else {
+	            if (format === 'dddd') {
+	                ii = indexOf.call(this._weekdaysParse, llc);
+	                if (ii !== -1) {
+	                    return ii;
+	                }
+	                ii = indexOf.call(this._shortWeekdaysParse, llc);
+	                if (ii !== -1) {
+	                    return ii;
+	                }
+	                ii = indexOf.call(this._minWeekdaysParse, llc);
+	                return ii !== -1 ? ii : null;
+	            } else if (format === 'ddd') {
+	                ii = indexOf.call(this._shortWeekdaysParse, llc);
+	                if (ii !== -1) {
+	                    return ii;
+	                }
+	                ii = indexOf.call(this._weekdaysParse, llc);
+	                if (ii !== -1) {
+	                    return ii;
+	                }
+	                ii = indexOf.call(this._minWeekdaysParse, llc);
+	                return ii !== -1 ? ii : null;
+	            } else {
+	                ii = indexOf.call(this._minWeekdaysParse, llc);
+	                if (ii !== -1) {
+	                    return ii;
+	                }
+	                ii = indexOf.call(this._weekdaysParse, llc);
+	                if (ii !== -1) {
+	                    return ii;
+	                }
+	                ii = indexOf.call(this._shortWeekdaysParse, llc);
+	                return ii !== -1 ? ii : null;
+	            }
+	        }
+	    }
+	
+	    function localeWeekdaysParse (weekdayName, format, strict) {
+	        var i, mom, regex;
+	
+	        if (this._weekdaysParseExact) {
+	            return day_of_week__handleStrictParse.call(this, weekdayName, format, strict);
+	        }
+	
+	        if (!this._weekdaysParse) {
+	            this._weekdaysParse = [];
+	            this._minWeekdaysParse = [];
+	            this._shortWeekdaysParse = [];
+	            this._fullWeekdaysParse = [];
+	        }
+	
+	        for (i = 0; i < 7; i++) {
+	            // make the regex if we don't have it already
+	
+	            mom = create_utc__createUTC([2000, 1]).day(i);
+	            if (strict && !this._fullWeekdaysParse[i]) {
+	                this._fullWeekdaysParse[i] = new RegExp('^' + this.weekdays(mom, '').replace('.', '\.?') + '$', 'i');
+	                this._shortWeekdaysParse[i] = new RegExp('^' + this.weekdaysShort(mom, '').replace('.', '\.?') + '$', 'i');
+	                this._minWeekdaysParse[i] = new RegExp('^' + this.weekdaysMin(mom, '').replace('.', '\.?') + '$', 'i');
+	            }
+	            if (!this._weekdaysParse[i]) {
+	                regex = '^' + this.weekdays(mom, '') + '|^' + this.weekdaysShort(mom, '') + '|^' + this.weekdaysMin(mom, '');
+	                this._weekdaysParse[i] = new RegExp(regex.replace('.', ''), 'i');
+	            }
+	            // test the regex
+	            if (strict && format === 'dddd' && this._fullWeekdaysParse[i].test(weekdayName)) {
+	                return i;
+	            } else if (strict && format === 'ddd' && this._shortWeekdaysParse[i].test(weekdayName)) {
+	                return i;
+	            } else if (strict && format === 'dd' && this._minWeekdaysParse[i].test(weekdayName)) {
+	                return i;
+	            } else if (!strict && this._weekdaysParse[i].test(weekdayName)) {
+	                return i;
+	            }
+	        }
+	    }
+	
+	    // MOMENTS
+	
+	    function getSetDayOfWeek (input) {
+	        if (!this.isValid()) {
+	            return input != null ? this : NaN;
+	        }
+	        var day = this._isUTC ? this._d.getUTCDay() : this._d.getDay();
+	        if (input != null) {
+	            input = parseWeekday(input, this.localeData());
+	            return this.add(input - day, 'd');
+	        } else {
+	            return day;
+	        }
+	    }
+	
+	    function getSetLocaleDayOfWeek (input) {
+	        if (!this.isValid()) {
+	            return input != null ? this : NaN;
+	        }
+	        var weekday = (this.day() + 7 - this.localeData()._week.dow) % 7;
+	        return input == null ? weekday : this.add(input - weekday, 'd');
+	    }
+	
+	    function getSetISODayOfWeek (input) {
+	        if (!this.isValid()) {
+	            return input != null ? this : NaN;
+	        }
+	
+	        // behaves the same as moment#day except
+	        // as a getter, returns 7 instead of 0 (1-7 range instead of 0-6)
+	        // as a setter, sunday should belong to the previous week.
+	
+	        if (input != null) {
+	            var weekday = parseIsoWeekday(input, this.localeData());
+	            return this.day(this.day() % 7 ? weekday : weekday - 7);
+	        } else {
+	            return this.day() || 7;
+	        }
+	    }
+	
+	    var defaultWeekdaysRegex = matchWord;
+	    function weekdaysRegex (isStrict) {
+	        if (this._weekdaysParseExact) {
+	            if (!hasOwnProp(this, '_weekdaysRegex')) {
+	                computeWeekdaysParse.call(this);
+	            }
+	            if (isStrict) {
+	                return this._weekdaysStrictRegex;
+	            } else {
+	                return this._weekdaysRegex;
+	            }
+	        } else {
+	            if (!hasOwnProp(this, '_weekdaysRegex')) {
+	                this._weekdaysRegex = defaultWeekdaysRegex;
+	            }
+	            return this._weekdaysStrictRegex && isStrict ?
+	                this._weekdaysStrictRegex : this._weekdaysRegex;
+	        }
+	    }
+	
+	    var defaultWeekdaysShortRegex = matchWord;
+	    function weekdaysShortRegex (isStrict) {
+	        if (this._weekdaysParseExact) {
+	            if (!hasOwnProp(this, '_weekdaysRegex')) {
+	                computeWeekdaysParse.call(this);
+	            }
+	            if (isStrict) {
+	                return this._weekdaysShortStrictRegex;
+	            } else {
+	                return this._weekdaysShortRegex;
+	            }
+	        } else {
+	            if (!hasOwnProp(this, '_weekdaysShortRegex')) {
+	                this._weekdaysShortRegex = defaultWeekdaysShortRegex;
+	            }
+	            return this._weekdaysShortStrictRegex && isStrict ?
+	                this._weekdaysShortStrictRegex : this._weekdaysShortRegex;
+	        }
+	    }
+	
+	    var defaultWeekdaysMinRegex = matchWord;
+	    function weekdaysMinRegex (isStrict) {
+	        if (this._weekdaysParseExact) {
+	            if (!hasOwnProp(this, '_weekdaysRegex')) {
+	                computeWeekdaysParse.call(this);
+	            }
+	            if (isStrict) {
+	                return this._weekdaysMinStrictRegex;
+	            } else {
+	                return this._weekdaysMinRegex;
+	            }
+	        } else {
+	            if (!hasOwnProp(this, '_weekdaysMinRegex')) {
+	                this._weekdaysMinRegex = defaultWeekdaysMinRegex;
+	            }
+	            return this._weekdaysMinStrictRegex && isStrict ?
+	                this._weekdaysMinStrictRegex : this._weekdaysMinRegex;
+	        }
+	    }
+	
+	
+	    function computeWeekdaysParse () {
+	        function cmpLenRev(a, b) {
+	            return b.length - a.length;
+	        }
+	
+	        var minPieces = [], shortPieces = [], longPieces = [], mixedPieces = [],
+	            i, mom, minp, shortp, longp;
+	        for (i = 0; i < 7; i++) {
+	            // make the regex if we don't have it already
+	            mom = create_utc__createUTC([2000, 1]).day(i);
+	            minp = this.weekdaysMin(mom, '');
+	            shortp = this.weekdaysShort(mom, '');
+	            longp = this.weekdays(mom, '');
+	            minPieces.push(minp);
+	            shortPieces.push(shortp);
+	            longPieces.push(longp);
+	            mixedPieces.push(minp);
+	            mixedPieces.push(shortp);
+	            mixedPieces.push(longp);
+	        }
+	        // Sorting makes sure if one weekday (or abbr) is a prefix of another it
+	        // will match the longer piece.
+	        minPieces.sort(cmpLenRev);
+	        shortPieces.sort(cmpLenRev);
+	        longPieces.sort(cmpLenRev);
+	        mixedPieces.sort(cmpLenRev);
+	        for (i = 0; i < 7; i++) {
+	            shortPieces[i] = regexEscape(shortPieces[i]);
+	            longPieces[i] = regexEscape(longPieces[i]);
+	            mixedPieces[i] = regexEscape(mixedPieces[i]);
+	        }
+	
+	        this._weekdaysRegex = new RegExp('^(' + mixedPieces.join('|') + ')', 'i');
+	        this._weekdaysShortRegex = this._weekdaysRegex;
+	        this._weekdaysMinRegex = this._weekdaysRegex;
+	
+	        this._weekdaysStrictRegex = new RegExp('^(' + longPieces.join('|') + ')', 'i');
+	        this._weekdaysShortStrictRegex = new RegExp('^(' + shortPieces.join('|') + ')', 'i');
+	        this._weekdaysMinStrictRegex = new RegExp('^(' + minPieces.join('|') + ')', 'i');
+	    }
+	
+	    // FORMATTING
+	
+	    function hFormat() {
+	        return this.hours() % 12 || 12;
+	    }
+	
+	    function kFormat() {
+	        return this.hours() || 24;
+	    }
+	
+	    addFormatToken('H', ['HH', 2], 0, 'hour');
+	    addFormatToken('h', ['hh', 2], 0, hFormat);
+	    addFormatToken('k', ['kk', 2], 0, kFormat);
+	
+	    addFormatToken('hmm', 0, 0, function () {
+	        return '' + hFormat.apply(this) + zeroFill(this.minutes(), 2);
+	    });
+	
+	    addFormatToken('hmmss', 0, 0, function () {
+	        return '' + hFormat.apply(this) + zeroFill(this.minutes(), 2) +
+	            zeroFill(this.seconds(), 2);
+	    });
+	
+	    addFormatToken('Hmm', 0, 0, function () {
+	        return '' + this.hours() + zeroFill(this.minutes(), 2);
+	    });
+	
+	    addFormatToken('Hmmss', 0, 0, function () {
+	        return '' + this.hours() + zeroFill(this.minutes(), 2) +
+	            zeroFill(this.seconds(), 2);
+	    });
+	
+	    function meridiem (token, lowercase) {
+	        addFormatToken(token, 0, 0, function () {
+	            return this.localeData().meridiem(this.hours(), this.minutes(), lowercase);
+	        });
+	    }
+	
+	    meridiem('a', true);
+	    meridiem('A', false);
+	
+	    // ALIASES
+	
+	    addUnitAlias('hour', 'h');
+	
+	    // PRIORITY
+	    addUnitPriority('hour', 13);
+	
+	    // PARSING
+	
+	    function matchMeridiem (isStrict, locale) {
+	        return locale._meridiemParse;
+	    }
+	
+	    addRegexToken('a',  matchMeridiem);
+	    addRegexToken('A',  matchMeridiem);
+	    addRegexToken('H',  match1to2);
+	    addRegexToken('h',  match1to2);
+	    addRegexToken('HH', match1to2, match2);
+	    addRegexToken('hh', match1to2, match2);
+	
+	    addRegexToken('hmm', match3to4);
+	    addRegexToken('hmmss', match5to6);
+	    addRegexToken('Hmm', match3to4);
+	    addRegexToken('Hmmss', match5to6);
+	
+	    addParseToken(['H', 'HH'], HOUR);
+	    addParseToken(['a', 'A'], function (input, array, config) {
+	        config._isPm = config._locale.isPM(input);
+	        config._meridiem = input;
+	    });
+	    addParseToken(['h', 'hh'], function (input, array, config) {
+	        array[HOUR] = toInt(input);
+	        getParsingFlags(config).bigHour = true;
+	    });
+	    addParseToken('hmm', function (input, array, config) {
+	        var pos = input.length - 2;
+	        array[HOUR] = toInt(input.substr(0, pos));
+	        array[MINUTE] = toInt(input.substr(pos));
+	        getParsingFlags(config).bigHour = true;
+	    });
+	    addParseToken('hmmss', function (input, array, config) {
+	        var pos1 = input.length - 4;
+	        var pos2 = input.length - 2;
+	        array[HOUR] = toInt(input.substr(0, pos1));
+	        array[MINUTE] = toInt(input.substr(pos1, 2));
+	        array[SECOND] = toInt(input.substr(pos2));
+	        getParsingFlags(config).bigHour = true;
+	    });
+	    addParseToken('Hmm', function (input, array, config) {
+	        var pos = input.length - 2;
+	        array[HOUR] = toInt(input.substr(0, pos));
+	        array[MINUTE] = toInt(input.substr(pos));
+	    });
+	    addParseToken('Hmmss', function (input, array, config) {
+	        var pos1 = input.length - 4;
+	        var pos2 = input.length - 2;
+	        array[HOUR] = toInt(input.substr(0, pos1));
+	        array[MINUTE] = toInt(input.substr(pos1, 2));
+	        array[SECOND] = toInt(input.substr(pos2));
+	    });
+	
+	    // LOCALES
+	
+	    function localeIsPM (input) {
+	        // IE8 Quirks Mode & IE7 Standards Mode do not allow accessing strings like arrays
+	        // Using charAt should be more compatible.
+	        return ((input + '').toLowerCase().charAt(0) === 'p');
+	    }
+	
+	    var defaultLocaleMeridiemParse = /[ap]\.?m?\.?/i;
+	    function localeMeridiem (hours, minutes, isLower) {
+	        if (hours > 11) {
+	            return isLower ? 'pm' : 'PM';
+	        } else {
+	            return isLower ? 'am' : 'AM';
+	        }
+	    }
+	
+	
+	    // MOMENTS
+	
+	    // Setting the hour should keep the time, because the user explicitly
+	    // specified which hour he wants. So trying to maintain the same hour (in
+	    // a new timezone) makes sense. Adding/subtracting hours does not follow
+	    // this rule.
+	    var getSetHour = makeGetSet('Hours', true);
+	
+	    var baseConfig = {
+	        calendar: defaultCalendar,
+	        longDateFormat: defaultLongDateFormat,
+	        invalidDate: defaultInvalidDate,
+	        ordinal: defaultOrdinal,
+	        ordinalParse: defaultOrdinalParse,
+	        relativeTime: defaultRelativeTime,
+	
+	        months: defaultLocaleMonths,
+	        monthsShort: defaultLocaleMonthsShort,
+	
+	        week: defaultLocaleWeek,
+	
+	        weekdays: defaultLocaleWeekdays,
+	        weekdaysMin: defaultLocaleWeekdaysMin,
+	        weekdaysShort: defaultLocaleWeekdaysShort,
+	
+	        meridiemParse: defaultLocaleMeridiemParse
+	    };
+	
+	    // internal storage for locale config files
+	    var locales = {};
+	    var globalLocale;
+	
+	    function normalizeLocale(key) {
+	        return key ? key.toLowerCase().replace('_', '-') : key;
+	    }
+	
+	    // pick the locale from the array
+	    // try ['en-au', 'en-gb'] as 'en-au', 'en-gb', 'en', as in move through the list trying each
+	    // substring from most specific to least, but move to the next array item if it's a more specific variant than the current root
+	    function chooseLocale(names) {
+	        var i = 0, j, next, locale, split;
+	
+	        while (i < names.length) {
+	            split = normalizeLocale(names[i]).split('-');
+	            j = split.length;
+	            next = normalizeLocale(names[i + 1]);
+	            next = next ? next.split('-') : null;
+	            while (j > 0) {
+	                locale = loadLocale(split.slice(0, j).join('-'));
+	                if (locale) {
+	                    return locale;
+	                }
+	                if (next && next.length >= j && compareArrays(split, next, true) >= j - 1) {
+	                    //the next array item is better than a shallower substring of this one
+	                    break;
+	                }
+	                j--;
+	            }
+	            i++;
+	        }
+	        return null;
+	    }
+	
+	    function loadLocale(name) {
+	        var oldLocale = null;
+	        // TODO: Find a better way to register and load all the locales in Node
+	        if (!locales[name] && (typeof module !== 'undefined') &&
+	                module && module.exports) {
+	            try {
+	                oldLocale = globalLocale._abbr;
+	                __webpack_require__(815)("./" + name);
+	                // because defineLocale currently also sets the global locale, we
+	                // want to undo that for lazy loaded locales
+	                locale_locales__getSetGlobalLocale(oldLocale);
+	            } catch (e) { }
+	        }
+	        return locales[name];
+	    }
+	
+	    // This function will load locale and then set the global locale.  If
+	    // no arguments are passed in, it will simply return the current global
+	    // locale key.
+	    function locale_locales__getSetGlobalLocale (key, values) {
+	        var data;
+	        if (key) {
+	            if (isUndefined(values)) {
+	                data = locale_locales__getLocale(key);
+	            }
+	            else {
+	                data = defineLocale(key, values);
+	            }
+	
+	            if (data) {
+	                // moment.duration._locale = moment._locale = data;
+	                globalLocale = data;
+	            }
+	        }
+	
+	        return globalLocale._abbr;
+	    }
+	
+	    function defineLocale (name, config) {
+	        if (config !== null) {
+	            var parentConfig = baseConfig;
+	            config.abbr = name;
+	            if (locales[name] != null) {
+	                deprecateSimple('defineLocaleOverride',
+	                        'use moment.updateLocale(localeName, config) to change ' +
+	                        'an existing locale. moment.defineLocale(localeName, ' +
+	                        'config) should only be used for creating a new locale ' +
+	                        'See http://momentjs.com/guides/#/warnings/define-locale/ for more info.');
+	                parentConfig = locales[name]._config;
+	            } else if (config.parentLocale != null) {
+	                if (locales[config.parentLocale] != null) {
+	                    parentConfig = locales[config.parentLocale]._config;
+	                } else {
+	                    // treat as if there is no base config
+	                    deprecateSimple('parentLocaleUndefined',
+	                            'specified parentLocale is not defined yet. See http://momentjs.com/guides/#/warnings/parent-locale/');
+	                }
+	            }
+	            locales[name] = new Locale(mergeConfigs(parentConfig, config));
+	
+	            // backwards compat for now: also set the locale
+	            locale_locales__getSetGlobalLocale(name);
+	
+	            return locales[name];
+	        } else {
+	            // useful for testing
+	            delete locales[name];
+	            return null;
+	        }
+	    }
+	
+	    function updateLocale(name, config) {
+	        if (config != null) {
+	            var locale, parentConfig = baseConfig;
+	            // MERGE
+	            if (locales[name] != null) {
+	                parentConfig = locales[name]._config;
+	            }
+	            config = mergeConfigs(parentConfig, config);
+	            locale = new Locale(config);
+	            locale.parentLocale = locales[name];
+	            locales[name] = locale;
+	
+	            // backwards compat for now: also set the locale
+	            locale_locales__getSetGlobalLocale(name);
+	        } else {
+	            // pass null for config to unupdate, useful for tests
+	            if (locales[name] != null) {
+	                if (locales[name].parentLocale != null) {
+	                    locales[name] = locales[name].parentLocale;
+	                } else if (locales[name] != null) {
+	                    delete locales[name];
+	                }
+	            }
+	        }
+	        return locales[name];
+	    }
+	
+	    // returns locale data
+	    function locale_locales__getLocale (key) {
+	        var locale;
+	
+	        if (key && key._locale && key._locale._abbr) {
+	            key = key._locale._abbr;
+	        }
+	
+	        if (!key) {
+	            return globalLocale;
+	        }
+	
+	        if (!isArray(key)) {
+	            //short-circuit everything else
+	            locale = loadLocale(key);
+	            if (locale) {
+	                return locale;
+	            }
+	            key = [key];
+	        }
+	
+	        return chooseLocale(key);
+	    }
+	
+	    function locale_locales__listLocales() {
+	        return keys(locales);
 	    }
 	
 	    function checkOverflow (m) {
@@ -70307,157 +71260,11 @@
 	        'moment construction falls back to js Date. This is ' +
 	        'discouraged and will be removed in upcoming major ' +
 	        'release. Please refer to ' +
-	        'https://github.com/moment/moment/issues/1407 for more info.',
+	        'http://momentjs.com/guides/#/warnings/js-date/ for more info.',
 	        function (config) {
 	            config._d = new Date(config._i + (config._useUTC ? ' UTC' : ''));
 	        }
 	    );
-	
-	    function createDate (y, m, d, h, M, s, ms) {
-	        //can't just apply() to create a date:
-	        //http://stackoverflow.com/questions/181348/instantiating-a-javascript-object-by-calling-prototype-constructor-apply
-	        var date = new Date(y, m, d, h, M, s, ms);
-	
-	        //the date constructor remaps years 0-99 to 1900-1999
-	        if (y < 100 && y >= 0 && isFinite(date.getFullYear())) {
-	            date.setFullYear(y);
-	        }
-	        return date;
-	    }
-	
-	    function createUTCDate (y) {
-	        var date = new Date(Date.UTC.apply(null, arguments));
-	
-	        //the Date.UTC function remaps years 0-99 to 1900-1999
-	        if (y < 100 && y >= 0 && isFinite(date.getUTCFullYear())) {
-	            date.setUTCFullYear(y);
-	        }
-	        return date;
-	    }
-	
-	    // FORMATTING
-	
-	    addFormatToken('Y', 0, 0, function () {
-	        var y = this.year();
-	        return y <= 9999 ? '' + y : '+' + y;
-	    });
-	
-	    addFormatToken(0, ['YY', 2], 0, function () {
-	        return this.year() % 100;
-	    });
-	
-	    addFormatToken(0, ['YYYY',   4],       0, 'year');
-	    addFormatToken(0, ['YYYYY',  5],       0, 'year');
-	    addFormatToken(0, ['YYYYYY', 6, true], 0, 'year');
-	
-	    // ALIASES
-	
-	    addUnitAlias('year', 'y');
-	
-	    // PARSING
-	
-	    addRegexToken('Y',      matchSigned);
-	    addRegexToken('YY',     match1to2, match2);
-	    addRegexToken('YYYY',   match1to4, match4);
-	    addRegexToken('YYYYY',  match1to6, match6);
-	    addRegexToken('YYYYYY', match1to6, match6);
-	
-	    addParseToken(['YYYYY', 'YYYYYY'], YEAR);
-	    addParseToken('YYYY', function (input, array) {
-	        array[YEAR] = input.length === 2 ? utils_hooks__hooks.parseTwoDigitYear(input) : toInt(input);
-	    });
-	    addParseToken('YY', function (input, array) {
-	        array[YEAR] = utils_hooks__hooks.parseTwoDigitYear(input);
-	    });
-	    addParseToken('Y', function (input, array) {
-	        array[YEAR] = parseInt(input, 10);
-	    });
-	
-	    // HELPERS
-	
-	    function daysInYear(year) {
-	        return isLeapYear(year) ? 366 : 365;
-	    }
-	
-	    function isLeapYear(year) {
-	        return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
-	    }
-	
-	    // HOOKS
-	
-	    utils_hooks__hooks.parseTwoDigitYear = function (input) {
-	        return toInt(input) + (toInt(input) > 68 ? 1900 : 2000);
-	    };
-	
-	    // MOMENTS
-	
-	    var getSetYear = makeGetSet('FullYear', true);
-	
-	    function getIsLeapYear () {
-	        return isLeapYear(this.year());
-	    }
-	
-	    // start-of-first-week - start-of-year
-	    function firstWeekOffset(year, dow, doy) {
-	        var // first-week day -- which january is always in the first week (4 for iso, 1 for other)
-	            fwd = 7 + dow - doy,
-	            // first-week day local weekday -- which local weekday is fwd
-	            fwdlw = (7 + createUTCDate(year, 0, fwd).getUTCDay() - dow) % 7;
-	
-	        return -fwdlw + fwd - 1;
-	    }
-	
-	    //http://en.wikipedia.org/wiki/ISO_week_date#Calculating_a_date_given_the_year.2C_week_number_and_weekday
-	    function dayOfYearFromWeeks(year, week, weekday, dow, doy) {
-	        var localWeekday = (7 + weekday - dow) % 7,
-	            weekOffset = firstWeekOffset(year, dow, doy),
-	            dayOfYear = 1 + 7 * (week - 1) + localWeekday + weekOffset,
-	            resYear, resDayOfYear;
-	
-	        if (dayOfYear <= 0) {
-	            resYear = year - 1;
-	            resDayOfYear = daysInYear(resYear) + dayOfYear;
-	        } else if (dayOfYear > daysInYear(year)) {
-	            resYear = year + 1;
-	            resDayOfYear = dayOfYear - daysInYear(year);
-	        } else {
-	            resYear = year;
-	            resDayOfYear = dayOfYear;
-	        }
-	
-	        return {
-	            year: resYear,
-	            dayOfYear: resDayOfYear
-	        };
-	    }
-	
-	    function weekOfYear(mom, dow, doy) {
-	        var weekOffset = firstWeekOffset(mom.year(), dow, doy),
-	            week = Math.floor((mom.dayOfYear() - weekOffset - 1) / 7) + 1,
-	            resWeek, resYear;
-	
-	        if (week < 1) {
-	            resYear = mom.year() - 1;
-	            resWeek = week + weeksInYear(resYear, dow, doy);
-	        } else if (week > weeksInYear(mom.year(), dow, doy)) {
-	            resWeek = week - weeksInYear(mom.year(), dow, doy);
-	            resYear = mom.year() + 1;
-	        } else {
-	            resYear = mom.year();
-	            resWeek = week;
-	        }
-	
-	        return {
-	            week: resWeek,
-	            year: resYear
-	        };
-	    }
-	
-	    function weeksInYear(year, dow, doy) {
-	        var weekOffset = firstWeekOffset(year, dow, doy),
-	            weekOffsetNext = firstWeekOffset(year + 1, dow, doy);
-	        return (daysInYear(year) - weekOffset + weekOffsetNext) / 7;
-	    }
 	
 	    // Pick the first defined of two or three arguments.
 	    function defaults(a, b, c) {
@@ -70655,9 +71462,9 @@
 	        }
 	
 	        // clear _12h flag if hour is <= 12
-	        if (getParsingFlags(config).bigHour === true &&
-	                config._a[HOUR] <= 12 &&
-	                config._a[HOUR] > 0) {
+	        if (config._a[HOUR] <= 12 &&
+	            getParsingFlags(config).bigHour === true &&
+	            config._a[HOUR] > 0) {
 	            getParsingFlags(config).bigHour = undefined;
 	        }
 	
@@ -70783,11 +71590,11 @@
 	            return new Moment(checkOverflow(input));
 	        } else if (isArray(format)) {
 	            configFromStringAndArray(config);
-	        } else if (format) {
-	            configFromStringAndFormat(config);
 	        } else if (isDate(input)) {
 	            config._d = input;
-	        } else {
+	        } else if (format) {
+	            configFromStringAndFormat(config);
+	        }  else {
 	            configFromInput(config);
 	        }
 	
@@ -70828,6 +71635,11 @@
 	            strict = locale;
 	            locale = undefined;
 	        }
+	
+	        if ((isObject(input) && isObjectEmpty(input)) ||
+	                (isArray(input) && input.length === 0)) {
+	            input = undefined;
+	        }
 	        // object construction must be done this way.
 	        // https://github.com/moment/moment/issues/1423
 	        c._isAMomentObject = true;
@@ -70845,19 +71657,19 @@
 	    }
 	
 	    var prototypeMin = deprecate(
-	         'moment().min is deprecated, use moment.max instead. https://github.com/moment/moment/issues/1548',
-	         function () {
-	             var other = local__createLocal.apply(null, arguments);
-	             if (this.isValid() && other.isValid()) {
-	                 return other < this ? this : other;
-	             } else {
-	                 return valid__createInvalid();
-	             }
-	         }
-	     );
+	        'moment().min is deprecated, use moment.max instead. http://momentjs.com/guides/#/warnings/min-max/',
+	        function () {
+	            var other = local__createLocal.apply(null, arguments);
+	            if (this.isValid() && other.isValid()) {
+	                return other < this ? this : other;
+	            } else {
+	                return valid__createInvalid();
+	            }
+	        }
+	    );
 	
 	    var prototypeMax = deprecate(
-	        'moment().max is deprecated, use moment.min instead. https://github.com/moment/moment/issues/1548',
+	        'moment().max is deprecated, use moment.min instead. http://momentjs.com/guides/#/warnings/min-max/',
 	        function () {
 	            var other = local__createLocal.apply(null, arguments);
 	            if (this.isValid() && other.isValid()) {
@@ -71276,7 +72088,8 @@
 	            var dur, tmp;
 	            //invert the arguments, but complain about it
 	            if (period !== null && !isNaN(+period)) {
-	                deprecateSimple(name, 'moment().' + name  + '(period, number) is deprecated. Please use moment().' + name + '(number, period).');
+	                deprecateSimple(name, 'moment().' + name  + '(period, number) is deprecated. Please use moment().' + name + '(number, period). ' +
+	                'See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.');
 	                tmp = val; val = period; period = tmp;
 	            }
 	
@@ -71316,20 +72129,24 @@
 	    var add_subtract__add      = createAdder(1, 'add');
 	    var add_subtract__subtract = createAdder(-1, 'subtract');
 	
-	    function moment_calendar__calendar (time, formats) {
-	        // We want to compare the start of today, vs this.
-	        // Getting start-of-today depends on whether we're local/utc/offset or not.
-	        var now = time || local__createLocal(),
-	            sod = cloneWithOffset(now, this).startOf('day'),
-	            diff = this.diff(sod, 'days', true),
-	            format = diff < -6 ? 'sameElse' :
+	    function getCalendarFormat(myMoment, now) {
+	        var diff = myMoment.diff(now, 'days', true);
+	        return diff < -6 ? 'sameElse' :
 	                diff < -1 ? 'lastWeek' :
 	                diff < 0 ? 'lastDay' :
 	                diff < 1 ? 'sameDay' :
 	                diff < 2 ? 'nextDay' :
 	                diff < 7 ? 'nextWeek' : 'sameElse';
+	    }
 	
-	        var output = formats && (isFunction(formats[format]) ? formats[format]() : formats[format]);
+	    function moment_calendar__calendar (time, formats) {
+	        // We want to compare the start of today, vs this.
+	        // Getting start-of-today depends on whether we're local/utc/offset or not.
+	        var now = time || local__createLocal(),
+	            sod = cloneWithOffset(now, this).startOf('day'),
+	            format = utils_hooks__hooks.calendarFormat(this, sod) || 'sameElse';
+	
+	        var output = formats && (isFunction(formats[format]) ? formats[format].call(this, now) : formats[format]);
 	
 	        return this.format(output || this.localeData().calendar(format, this, local__createLocal(now)));
 	    }
@@ -71546,27 +72363,27 @@
 	        // the following switch intentionally omits break keywords
 	        // to utilize falling through the cases.
 	        switch (units) {
-	        case 'year':
-	            this.month(0);
-	            /* falls through */
-	        case 'quarter':
-	        case 'month':
-	            this.date(1);
-	            /* falls through */
-	        case 'week':
-	        case 'isoWeek':
-	        case 'day':
-	        case 'date':
-	            this.hours(0);
-	            /* falls through */
-	        case 'hour':
-	            this.minutes(0);
-	            /* falls through */
-	        case 'minute':
-	            this.seconds(0);
-	            /* falls through */
-	        case 'second':
-	            this.milliseconds(0);
+	            case 'year':
+	                this.month(0);
+	                /* falls through */
+	            case 'quarter':
+	            case 'month':
+	                this.date(1);
+	                /* falls through */
+	            case 'week':
+	            case 'isoWeek':
+	            case 'day':
+	            case 'date':
+	                this.hours(0);
+	                /* falls through */
+	            case 'hour':
+	                this.minutes(0);
+	                /* falls through */
+	            case 'minute':
+	                this.seconds(0);
+	                /* falls through */
+	            case 'second':
+	                this.milliseconds(0);
 	        }
 	
 	        // weeks are a special case
@@ -71608,7 +72425,7 @@
 	    }
 	
 	    function toDate () {
-	        return this._offset ? new Date(this.valueOf()) : this._d;
+	        return new Date(this.valueOf());
 	    }
 	
 	    function toArray () {
@@ -71679,6 +72496,12 @@
 	
 	    addUnitAlias('weekYear', 'gg');
 	    addUnitAlias('isoWeekYear', 'GG');
+	
+	    // PRIORITY
+	
+	    addUnitPriority('weekYear', 1);
+	    addUnitPriority('isoWeekYear', 1);
+	
 	
 	    // PARSING
 	
@@ -71755,6 +72578,10 @@
 	
 	    addUnitAlias('quarter', 'Q');
 	
+	    // PRIORITY
+	
+	    addUnitPriority('quarter', 7);
+	
 	    // PARSING
 	
 	    addRegexToken('Q', match1);
@@ -71770,65 +72597,14 @@
 	
 	    // FORMATTING
 	
-	    addFormatToken('w', ['ww', 2], 'wo', 'week');
-	    addFormatToken('W', ['WW', 2], 'Wo', 'isoWeek');
-	
-	    // ALIASES
-	
-	    addUnitAlias('week', 'w');
-	    addUnitAlias('isoWeek', 'W');
-	
-	    // PARSING
-	
-	    addRegexToken('w',  match1to2);
-	    addRegexToken('ww', match1to2, match2);
-	    addRegexToken('W',  match1to2);
-	    addRegexToken('WW', match1to2, match2);
-	
-	    addWeekParseToken(['w', 'ww', 'W', 'WW'], function (input, week, config, token) {
-	        week[token.substr(0, 1)] = toInt(input);
-	    });
-	
-	    // HELPERS
-	
-	    // LOCALES
-	
-	    function localeWeek (mom) {
-	        return weekOfYear(mom, this._week.dow, this._week.doy).week;
-	    }
-	
-	    var defaultLocaleWeek = {
-	        dow : 0, // Sunday is the first day of the week.
-	        doy : 6  // The week that contains Jan 1st is the first week of the year.
-	    };
-	
-	    function localeFirstDayOfWeek () {
-	        return this._week.dow;
-	    }
-	
-	    function localeFirstDayOfYear () {
-	        return this._week.doy;
-	    }
-	
-	    // MOMENTS
-	
-	    function getSetWeek (input) {
-	        var week = this.localeData().week(this);
-	        return input == null ? week : this.add((input - week) * 7, 'd');
-	    }
-	
-	    function getSetISOWeek (input) {
-	        var week = weekOfYear(this, 1, 4).week;
-	        return input == null ? week : this.add((input - week) * 7, 'd');
-	    }
-	
-	    // FORMATTING
-	
 	    addFormatToken('D', ['DD', 2], 'Do', 'date');
 	
 	    // ALIASES
 	
 	    addUnitAlias('date', 'D');
+	
+	    // PRIOROITY
+	    addUnitPriority('date', 9);
 	
 	    // PARSING
 	
@@ -71849,332 +72625,14 @@
 	
 	    // FORMATTING
 	
-	    addFormatToken('d', 0, 'do', 'day');
-	
-	    addFormatToken('dd', 0, 0, function (format) {
-	        return this.localeData().weekdaysMin(this, format);
-	    });
-	
-	    addFormatToken('ddd', 0, 0, function (format) {
-	        return this.localeData().weekdaysShort(this, format);
-	    });
-	
-	    addFormatToken('dddd', 0, 0, function (format) {
-	        return this.localeData().weekdays(this, format);
-	    });
-	
-	    addFormatToken('e', 0, 0, 'weekday');
-	    addFormatToken('E', 0, 0, 'isoWeekday');
-	
-	    // ALIASES
-	
-	    addUnitAlias('day', 'd');
-	    addUnitAlias('weekday', 'e');
-	    addUnitAlias('isoWeekday', 'E');
-	
-	    // PARSING
-	
-	    addRegexToken('d',    match1to2);
-	    addRegexToken('e',    match1to2);
-	    addRegexToken('E',    match1to2);
-	    addRegexToken('dd',   function (isStrict, locale) {
-	        return locale.weekdaysMinRegex(isStrict);
-	    });
-	    addRegexToken('ddd',   function (isStrict, locale) {
-	        return locale.weekdaysShortRegex(isStrict);
-	    });
-	    addRegexToken('dddd',   function (isStrict, locale) {
-	        return locale.weekdaysRegex(isStrict);
-	    });
-	
-	    addWeekParseToken(['dd', 'ddd', 'dddd'], function (input, week, config, token) {
-	        var weekday = config._locale.weekdaysParse(input, token, config._strict);
-	        // if we didn't get a weekday name, mark the date as invalid
-	        if (weekday != null) {
-	            week.d = weekday;
-	        } else {
-	            getParsingFlags(config).invalidWeekday = input;
-	        }
-	    });
-	
-	    addWeekParseToken(['d', 'e', 'E'], function (input, week, config, token) {
-	        week[token] = toInt(input);
-	    });
-	
-	    // HELPERS
-	
-	    function parseWeekday(input, locale) {
-	        if (typeof input !== 'string') {
-	            return input;
-	        }
-	
-	        if (!isNaN(input)) {
-	            return parseInt(input, 10);
-	        }
-	
-	        input = locale.weekdaysParse(input);
-	        if (typeof input === 'number') {
-	            return input;
-	        }
-	
-	        return null;
-	    }
-	
-	    // LOCALES
-	
-	    var defaultLocaleWeekdays = 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_');
-	    function localeWeekdays (m, format) {
-	        return isArray(this._weekdays) ? this._weekdays[m.day()] :
-	            this._weekdays[this._weekdays.isFormat.test(format) ? 'format' : 'standalone'][m.day()];
-	    }
-	
-	    var defaultLocaleWeekdaysShort = 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_');
-	    function localeWeekdaysShort (m) {
-	        return this._weekdaysShort[m.day()];
-	    }
-	
-	    var defaultLocaleWeekdaysMin = 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_');
-	    function localeWeekdaysMin (m) {
-	        return this._weekdaysMin[m.day()];
-	    }
-	
-	    function day_of_week__handleStrictParse(weekdayName, format, strict) {
-	        var i, ii, mom, llc = weekdayName.toLocaleLowerCase();
-	        if (!this._weekdaysParse) {
-	            this._weekdaysParse = [];
-	            this._shortWeekdaysParse = [];
-	            this._minWeekdaysParse = [];
-	
-	            for (i = 0; i < 7; ++i) {
-	                mom = create_utc__createUTC([2000, 1]).day(i);
-	                this._minWeekdaysParse[i] = this.weekdaysMin(mom, '').toLocaleLowerCase();
-	                this._shortWeekdaysParse[i] = this.weekdaysShort(mom, '').toLocaleLowerCase();
-	                this._weekdaysParse[i] = this.weekdays(mom, '').toLocaleLowerCase();
-	            }
-	        }
-	
-	        if (strict) {
-	            if (format === 'dddd') {
-	                ii = indexOf.call(this._weekdaysParse, llc);
-	                return ii !== -1 ? ii : null;
-	            } else if (format === 'ddd') {
-	                ii = indexOf.call(this._shortWeekdaysParse, llc);
-	                return ii !== -1 ? ii : null;
-	            } else {
-	                ii = indexOf.call(this._minWeekdaysParse, llc);
-	                return ii !== -1 ? ii : null;
-	            }
-	        } else {
-	            if (format === 'dddd') {
-	                ii = indexOf.call(this._weekdaysParse, llc);
-	                if (ii !== -1) {
-	                    return ii;
-	                }
-	                ii = indexOf.call(this._shortWeekdaysParse, llc);
-	                if (ii !== -1) {
-	                    return ii;
-	                }
-	                ii = indexOf.call(this._minWeekdaysParse, llc);
-	                return ii !== -1 ? ii : null;
-	            } else if (format === 'ddd') {
-	                ii = indexOf.call(this._shortWeekdaysParse, llc);
-	                if (ii !== -1) {
-	                    return ii;
-	                }
-	                ii = indexOf.call(this._weekdaysParse, llc);
-	                if (ii !== -1) {
-	                    return ii;
-	                }
-	                ii = indexOf.call(this._minWeekdaysParse, llc);
-	                return ii !== -1 ? ii : null;
-	            } else {
-	                ii = indexOf.call(this._minWeekdaysParse, llc);
-	                if (ii !== -1) {
-	                    return ii;
-	                }
-	                ii = indexOf.call(this._weekdaysParse, llc);
-	                if (ii !== -1) {
-	                    return ii;
-	                }
-	                ii = indexOf.call(this._shortWeekdaysParse, llc);
-	                return ii !== -1 ? ii : null;
-	            }
-	        }
-	    }
-	
-	    function localeWeekdaysParse (weekdayName, format, strict) {
-	        var i, mom, regex;
-	
-	        if (this._weekdaysParseExact) {
-	            return day_of_week__handleStrictParse.call(this, weekdayName, format, strict);
-	        }
-	
-	        if (!this._weekdaysParse) {
-	            this._weekdaysParse = [];
-	            this._minWeekdaysParse = [];
-	            this._shortWeekdaysParse = [];
-	            this._fullWeekdaysParse = [];
-	        }
-	
-	        for (i = 0; i < 7; i++) {
-	            // make the regex if we don't have it already
-	
-	            mom = create_utc__createUTC([2000, 1]).day(i);
-	            if (strict && !this._fullWeekdaysParse[i]) {
-	                this._fullWeekdaysParse[i] = new RegExp('^' + this.weekdays(mom, '').replace('.', '\.?') + '$', 'i');
-	                this._shortWeekdaysParse[i] = new RegExp('^' + this.weekdaysShort(mom, '').replace('.', '\.?') + '$', 'i');
-	                this._minWeekdaysParse[i] = new RegExp('^' + this.weekdaysMin(mom, '').replace('.', '\.?') + '$', 'i');
-	            }
-	            if (!this._weekdaysParse[i]) {
-	                regex = '^' + this.weekdays(mom, '') + '|^' + this.weekdaysShort(mom, '') + '|^' + this.weekdaysMin(mom, '');
-	                this._weekdaysParse[i] = new RegExp(regex.replace('.', ''), 'i');
-	            }
-	            // test the regex
-	            if (strict && format === 'dddd' && this._fullWeekdaysParse[i].test(weekdayName)) {
-	                return i;
-	            } else if (strict && format === 'ddd' && this._shortWeekdaysParse[i].test(weekdayName)) {
-	                return i;
-	            } else if (strict && format === 'dd' && this._minWeekdaysParse[i].test(weekdayName)) {
-	                return i;
-	            } else if (!strict && this._weekdaysParse[i].test(weekdayName)) {
-	                return i;
-	            }
-	        }
-	    }
-	
-	    // MOMENTS
-	
-	    function getSetDayOfWeek (input) {
-	        if (!this.isValid()) {
-	            return input != null ? this : NaN;
-	        }
-	        var day = this._isUTC ? this._d.getUTCDay() : this._d.getDay();
-	        if (input != null) {
-	            input = parseWeekday(input, this.localeData());
-	            return this.add(input - day, 'd');
-	        } else {
-	            return day;
-	        }
-	    }
-	
-	    function getSetLocaleDayOfWeek (input) {
-	        if (!this.isValid()) {
-	            return input != null ? this : NaN;
-	        }
-	        var weekday = (this.day() + 7 - this.localeData()._week.dow) % 7;
-	        return input == null ? weekday : this.add(input - weekday, 'd');
-	    }
-	
-	    function getSetISODayOfWeek (input) {
-	        if (!this.isValid()) {
-	            return input != null ? this : NaN;
-	        }
-	        // behaves the same as moment#day except
-	        // as a getter, returns 7 instead of 0 (1-7 range instead of 0-6)
-	        // as a setter, sunday should belong to the previous week.
-	        return input == null ? this.day() || 7 : this.day(this.day() % 7 ? input : input - 7);
-	    }
-	
-	    var defaultWeekdaysRegex = matchWord;
-	    function weekdaysRegex (isStrict) {
-	        if (this._weekdaysParseExact) {
-	            if (!hasOwnProp(this, '_weekdaysRegex')) {
-	                computeWeekdaysParse.call(this);
-	            }
-	            if (isStrict) {
-	                return this._weekdaysStrictRegex;
-	            } else {
-	                return this._weekdaysRegex;
-	            }
-	        } else {
-	            return this._weekdaysStrictRegex && isStrict ?
-	                this._weekdaysStrictRegex : this._weekdaysRegex;
-	        }
-	    }
-	
-	    var defaultWeekdaysShortRegex = matchWord;
-	    function weekdaysShortRegex (isStrict) {
-	        if (this._weekdaysParseExact) {
-	            if (!hasOwnProp(this, '_weekdaysRegex')) {
-	                computeWeekdaysParse.call(this);
-	            }
-	            if (isStrict) {
-	                return this._weekdaysShortStrictRegex;
-	            } else {
-	                return this._weekdaysShortRegex;
-	            }
-	        } else {
-	            return this._weekdaysShortStrictRegex && isStrict ?
-	                this._weekdaysShortStrictRegex : this._weekdaysShortRegex;
-	        }
-	    }
-	
-	    var defaultWeekdaysMinRegex = matchWord;
-	    function weekdaysMinRegex (isStrict) {
-	        if (this._weekdaysParseExact) {
-	            if (!hasOwnProp(this, '_weekdaysRegex')) {
-	                computeWeekdaysParse.call(this);
-	            }
-	            if (isStrict) {
-	                return this._weekdaysMinStrictRegex;
-	            } else {
-	                return this._weekdaysMinRegex;
-	            }
-	        } else {
-	            return this._weekdaysMinStrictRegex && isStrict ?
-	                this._weekdaysMinStrictRegex : this._weekdaysMinRegex;
-	        }
-	    }
-	
-	
-	    function computeWeekdaysParse () {
-	        function cmpLenRev(a, b) {
-	            return b.length - a.length;
-	        }
-	
-	        var minPieces = [], shortPieces = [], longPieces = [], mixedPieces = [],
-	            i, mom, minp, shortp, longp;
-	        for (i = 0; i < 7; i++) {
-	            // make the regex if we don't have it already
-	            mom = create_utc__createUTC([2000, 1]).day(i);
-	            minp = this.weekdaysMin(mom, '');
-	            shortp = this.weekdaysShort(mom, '');
-	            longp = this.weekdays(mom, '');
-	            minPieces.push(minp);
-	            shortPieces.push(shortp);
-	            longPieces.push(longp);
-	            mixedPieces.push(minp);
-	            mixedPieces.push(shortp);
-	            mixedPieces.push(longp);
-	        }
-	        // Sorting makes sure if one weekday (or abbr) is a prefix of another it
-	        // will match the longer piece.
-	        minPieces.sort(cmpLenRev);
-	        shortPieces.sort(cmpLenRev);
-	        longPieces.sort(cmpLenRev);
-	        mixedPieces.sort(cmpLenRev);
-	        for (i = 0; i < 7; i++) {
-	            shortPieces[i] = regexEscape(shortPieces[i]);
-	            longPieces[i] = regexEscape(longPieces[i]);
-	            mixedPieces[i] = regexEscape(mixedPieces[i]);
-	        }
-	
-	        this._weekdaysRegex = new RegExp('^(' + mixedPieces.join('|') + ')', 'i');
-	        this._weekdaysShortRegex = this._weekdaysRegex;
-	        this._weekdaysMinRegex = this._weekdaysRegex;
-	
-	        this._weekdaysStrictRegex = new RegExp('^(' + longPieces.join('|') + ')', 'i');
-	        this._weekdaysShortStrictRegex = new RegExp('^(' + shortPieces.join('|') + ')', 'i');
-	        this._weekdaysMinStrictRegex = new RegExp('^(' + minPieces.join('|') + ')', 'i');
-	    }
-	
-	    // FORMATTING
-	
 	    addFormatToken('DDD', ['DDDD', 3], 'DDDo', 'dayOfYear');
 	
 	    // ALIASES
 	
 	    addUnitAlias('dayOfYear', 'DDD');
+	
+	    // PRIORITY
+	    addUnitPriority('dayOfYear', 4);
 	
 	    // PARSING
 	
@@ -72195,136 +72653,15 @@
 	
 	    // FORMATTING
 	
-	    function hFormat() {
-	        return this.hours() % 12 || 12;
-	    }
-	
-	    function kFormat() {
-	        return this.hours() || 24;
-	    }
-	
-	    addFormatToken('H', ['HH', 2], 0, 'hour');
-	    addFormatToken('h', ['hh', 2], 0, hFormat);
-	    addFormatToken('k', ['kk', 2], 0, kFormat);
-	
-	    addFormatToken('hmm', 0, 0, function () {
-	        return '' + hFormat.apply(this) + zeroFill(this.minutes(), 2);
-	    });
-	
-	    addFormatToken('hmmss', 0, 0, function () {
-	        return '' + hFormat.apply(this) + zeroFill(this.minutes(), 2) +
-	            zeroFill(this.seconds(), 2);
-	    });
-	
-	    addFormatToken('Hmm', 0, 0, function () {
-	        return '' + this.hours() + zeroFill(this.minutes(), 2);
-	    });
-	
-	    addFormatToken('Hmmss', 0, 0, function () {
-	        return '' + this.hours() + zeroFill(this.minutes(), 2) +
-	            zeroFill(this.seconds(), 2);
-	    });
-	
-	    function meridiem (token, lowercase) {
-	        addFormatToken(token, 0, 0, function () {
-	            return this.localeData().meridiem(this.hours(), this.minutes(), lowercase);
-	        });
-	    }
-	
-	    meridiem('a', true);
-	    meridiem('A', false);
-	
-	    // ALIASES
-	
-	    addUnitAlias('hour', 'h');
-	
-	    // PARSING
-	
-	    function matchMeridiem (isStrict, locale) {
-	        return locale._meridiemParse;
-	    }
-	
-	    addRegexToken('a',  matchMeridiem);
-	    addRegexToken('A',  matchMeridiem);
-	    addRegexToken('H',  match1to2);
-	    addRegexToken('h',  match1to2);
-	    addRegexToken('HH', match1to2, match2);
-	    addRegexToken('hh', match1to2, match2);
-	
-	    addRegexToken('hmm', match3to4);
-	    addRegexToken('hmmss', match5to6);
-	    addRegexToken('Hmm', match3to4);
-	    addRegexToken('Hmmss', match5to6);
-	
-	    addParseToken(['H', 'HH'], HOUR);
-	    addParseToken(['a', 'A'], function (input, array, config) {
-	        config._isPm = config._locale.isPM(input);
-	        config._meridiem = input;
-	    });
-	    addParseToken(['h', 'hh'], function (input, array, config) {
-	        array[HOUR] = toInt(input);
-	        getParsingFlags(config).bigHour = true;
-	    });
-	    addParseToken('hmm', function (input, array, config) {
-	        var pos = input.length - 2;
-	        array[HOUR] = toInt(input.substr(0, pos));
-	        array[MINUTE] = toInt(input.substr(pos));
-	        getParsingFlags(config).bigHour = true;
-	    });
-	    addParseToken('hmmss', function (input, array, config) {
-	        var pos1 = input.length - 4;
-	        var pos2 = input.length - 2;
-	        array[HOUR] = toInt(input.substr(0, pos1));
-	        array[MINUTE] = toInt(input.substr(pos1, 2));
-	        array[SECOND] = toInt(input.substr(pos2));
-	        getParsingFlags(config).bigHour = true;
-	    });
-	    addParseToken('Hmm', function (input, array, config) {
-	        var pos = input.length - 2;
-	        array[HOUR] = toInt(input.substr(0, pos));
-	        array[MINUTE] = toInt(input.substr(pos));
-	    });
-	    addParseToken('Hmmss', function (input, array, config) {
-	        var pos1 = input.length - 4;
-	        var pos2 = input.length - 2;
-	        array[HOUR] = toInt(input.substr(0, pos1));
-	        array[MINUTE] = toInt(input.substr(pos1, 2));
-	        array[SECOND] = toInt(input.substr(pos2));
-	    });
-	
-	    // LOCALES
-	
-	    function localeIsPM (input) {
-	        // IE8 Quirks Mode & IE7 Standards Mode do not allow accessing strings like arrays
-	        // Using charAt should be more compatible.
-	        return ((input + '').toLowerCase().charAt(0) === 'p');
-	    }
-	
-	    var defaultLocaleMeridiemParse = /[ap]\.?m?\.?/i;
-	    function localeMeridiem (hours, minutes, isLower) {
-	        if (hours > 11) {
-	            return isLower ? 'pm' : 'PM';
-	        } else {
-	            return isLower ? 'am' : 'AM';
-	        }
-	    }
-	
-	
-	    // MOMENTS
-	
-	    // Setting the hour should keep the time, because the user explicitly
-	    // specified which hour he wants. So trying to maintain the same hour (in
-	    // a new timezone) makes sense. Adding/subtracting hours does not follow
-	    // this rule.
-	    var getSetHour = makeGetSet('Hours', true);
-	
-	    // FORMATTING
-	
 	    addFormatToken('m', ['mm', 2], 0, 'minute');
 	
 	    // ALIASES
 	
 	    addUnitAlias('minute', 'm');
+	
+	    // PRIORITY
+	
+	    addUnitPriority('minute', 14);
 	
 	    // PARSING
 	
@@ -72343,6 +72680,10 @@
 	    // ALIASES
 	
 	    addUnitAlias('second', 's');
+	
+	    // PRIORITY
+	
+	    addUnitPriority('second', 15);
 	
 	    // PARSING
 	
@@ -72388,6 +72729,10 @@
 	    // ALIASES
 	
 	    addUnitAlias('millisecond', 'ms');
+	
+	    // PRIORITY
+	
+	    addUnitPriority('millisecond', 16);
 	
 	    // PARSING
 	
@@ -72438,7 +72783,7 @@
 	    momentPrototype__proto.fromNow           = fromNow;
 	    momentPrototype__proto.to                = to;
 	    momentPrototype__proto.toNow             = toNow;
-	    momentPrototype__proto.get               = getSet;
+	    momentPrototype__proto.get               = stringGet;
 	    momentPrototype__proto.invalidAt         = invalidAt;
 	    momentPrototype__proto.isAfter           = isAfter;
 	    momentPrototype__proto.isBefore          = isBefore;
@@ -72453,7 +72798,7 @@
 	    momentPrototype__proto.max               = prototypeMax;
 	    momentPrototype__proto.min               = prototypeMin;
 	    momentPrototype__proto.parsingFlags      = parsingFlags;
-	    momentPrototype__proto.set               = getSet;
+	    momentPrototype__proto.set               = stringSet;
 	    momentPrototype__proto.startOf           = startOf;
 	    momentPrototype__proto.subtract          = add_subtract__subtract;
 	    momentPrototype__proto.toArray           = toArray;
@@ -72513,7 +72858,6 @@
 	    momentPrototype__proto.parseZone            = setOffsetToParsedOffset;
 	    momentPrototype__proto.hasAlignedHourOffset = hasAlignedHourOffset;
 	    momentPrototype__proto.isDST                = isDaylightSavingTime;
-	    momentPrototype__proto.isDSTShifted         = isDaylightSavingTimeShifted;
 	    momentPrototype__proto.isLocal              = isLocal;
 	    momentPrototype__proto.isUtcOffset          = isUtcOffset;
 	    momentPrototype__proto.isUtc                = isUtc;
@@ -72527,7 +72871,8 @@
 	    momentPrototype__proto.dates  = deprecate('dates accessor is deprecated. Use date instead.', getSetDayOfMonth);
 	    momentPrototype__proto.months = deprecate('months accessor is deprecated. Use month instead', getSetMonth);
 	    momentPrototype__proto.years  = deprecate('years accessor is deprecated. Use year instead', getSetYear);
-	    momentPrototype__proto.zone   = deprecate('moment().zone is deprecated, use moment().utcOffset instead. https://github.com/moment/moment/issues/1779', getSetZone);
+	    momentPrototype__proto.zone   = deprecate('moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/', getSetZone);
+	    momentPrototype__proto.isDSTShifted = deprecate('isDSTShifted is deprecated. See http://momentjs.com/guides/#/warnings/dst-shifted/ for more information', isDaylightSavingTimeShifted);
 	
 	    var momentPrototype = momentPrototype__proto;
 	
@@ -72539,143 +72884,46 @@
 	        return local__createLocal.apply(null, arguments).parseZone();
 	    }
 	
-	    var defaultCalendar = {
-	        sameDay : '[Today at] LT',
-	        nextDay : '[Tomorrow at] LT',
-	        nextWeek : 'dddd [at] LT',
-	        lastDay : '[Yesterday at] LT',
-	        lastWeek : '[Last] dddd [at] LT',
-	        sameElse : 'L'
-	    };
-	
-	    function locale_calendar__calendar (key, mom, now) {
-	        var output = this._calendar[key];
-	        return isFunction(output) ? output.call(mom, now) : output;
-	    }
-	
-	    var defaultLongDateFormat = {
-	        LTS  : 'h:mm:ss A',
-	        LT   : 'h:mm A',
-	        L    : 'MM/DD/YYYY',
-	        LL   : 'MMMM D, YYYY',
-	        LLL  : 'MMMM D, YYYY h:mm A',
-	        LLLL : 'dddd, MMMM D, YYYY h:mm A'
-	    };
-	
-	    function longDateFormat (key) {
-	        var format = this._longDateFormat[key],
-	            formatUpper = this._longDateFormat[key.toUpperCase()];
-	
-	        if (format || !formatUpper) {
-	            return format;
-	        }
-	
-	        this._longDateFormat[key] = formatUpper.replace(/MMMM|MM|DD|dddd/g, function (val) {
-	            return val.slice(1);
-	        });
-	
-	        return this._longDateFormat[key];
-	    }
-	
-	    var defaultInvalidDate = 'Invalid date';
-	
-	    function invalidDate () {
-	        return this._invalidDate;
-	    }
-	
-	    var defaultOrdinal = '%d';
-	    var defaultOrdinalParse = /\d{1,2}/;
-	
-	    function ordinal (number) {
-	        return this._ordinal.replace('%d', number);
-	    }
-	
 	    function preParsePostFormat (string) {
 	        return string;
 	    }
 	
-	    var defaultRelativeTime = {
-	        future : 'in %s',
-	        past   : '%s ago',
-	        s  : 'a few seconds',
-	        m  : 'a minute',
-	        mm : '%d minutes',
-	        h  : 'an hour',
-	        hh : '%d hours',
-	        d  : 'a day',
-	        dd : '%d days',
-	        M  : 'a month',
-	        MM : '%d months',
-	        y  : 'a year',
-	        yy : '%d years'
-	    };
-	
-	    function relative__relativeTime (number, withoutSuffix, string, isFuture) {
-	        var output = this._relativeTime[string];
-	        return (isFunction(output)) ?
-	            output(number, withoutSuffix, string, isFuture) :
-	            output.replace(/%d/i, number);
-	    }
-	
-	    function pastFuture (diff, output) {
-	        var format = this._relativeTime[diff > 0 ? 'future' : 'past'];
-	        return isFunction(format) ? format(output) : format.replace(/%s/i, output);
-	    }
-	
 	    var prototype__proto = Locale.prototype;
 	
-	    prototype__proto._calendar       = defaultCalendar;
 	    prototype__proto.calendar        = locale_calendar__calendar;
-	    prototype__proto._longDateFormat = defaultLongDateFormat;
 	    prototype__proto.longDateFormat  = longDateFormat;
-	    prototype__proto._invalidDate    = defaultInvalidDate;
 	    prototype__proto.invalidDate     = invalidDate;
-	    prototype__proto._ordinal        = defaultOrdinal;
 	    prototype__proto.ordinal         = ordinal;
-	    prototype__proto._ordinalParse   = defaultOrdinalParse;
 	    prototype__proto.preparse        = preParsePostFormat;
 	    prototype__proto.postformat      = preParsePostFormat;
-	    prototype__proto._relativeTime   = defaultRelativeTime;
 	    prototype__proto.relativeTime    = relative__relativeTime;
 	    prototype__proto.pastFuture      = pastFuture;
 	    prototype__proto.set             = locale_set__set;
 	
 	    // Month
 	    prototype__proto.months            =        localeMonths;
-	    prototype__proto._months           = defaultLocaleMonths;
 	    prototype__proto.monthsShort       =        localeMonthsShort;
-	    prototype__proto._monthsShort      = defaultLocaleMonthsShort;
 	    prototype__proto.monthsParse       =        localeMonthsParse;
-	    prototype__proto._monthsRegex      = defaultMonthsRegex;
 	    prototype__proto.monthsRegex       = monthsRegex;
-	    prototype__proto._monthsShortRegex = defaultMonthsShortRegex;
 	    prototype__proto.monthsShortRegex  = monthsShortRegex;
 	
 	    // Week
 	    prototype__proto.week = localeWeek;
-	    prototype__proto._week = defaultLocaleWeek;
 	    prototype__proto.firstDayOfYear = localeFirstDayOfYear;
 	    prototype__proto.firstDayOfWeek = localeFirstDayOfWeek;
 	
 	    // Day of Week
 	    prototype__proto.weekdays       =        localeWeekdays;
-	    prototype__proto._weekdays      = defaultLocaleWeekdays;
 	    prototype__proto.weekdaysMin    =        localeWeekdaysMin;
-	    prototype__proto._weekdaysMin   = defaultLocaleWeekdaysMin;
 	    prototype__proto.weekdaysShort  =        localeWeekdaysShort;
-	    prototype__proto._weekdaysShort = defaultLocaleWeekdaysShort;
 	    prototype__proto.weekdaysParse  =        localeWeekdaysParse;
 	
-	    prototype__proto._weekdaysRegex      = defaultWeekdaysRegex;
 	    prototype__proto.weekdaysRegex       =        weekdaysRegex;
-	    prototype__proto._weekdaysShortRegex = defaultWeekdaysShortRegex;
 	    prototype__proto.weekdaysShortRegex  =        weekdaysShortRegex;
-	    prototype__proto._weekdaysMinRegex   = defaultWeekdaysMinRegex;
 	    prototype__proto.weekdaysMinRegex    =        weekdaysMinRegex;
 	
 	    // Hours
 	    prototype__proto.isPM = localeIsPM;
-	    prototype__proto._meridiemParse = defaultLocaleMeridiemParse;
 	    prototype__proto.meridiem = localeMeridiem;
 	
 	    function lists__get (format, index, field, setter) {
@@ -73004,6 +73252,18 @@
 	        return substituteTimeAgo.apply(null, a);
 	    }
 	
+	    // This function allows you to set the rounding function for relative time strings
+	    function duration_humanize__getSetRelativeTimeRounding (roundingFunction) {
+	        if (roundingFunction === undefined) {
+	            return round;
+	        }
+	        if (typeof(roundingFunction) === 'function') {
+	            round = roundingFunction;
+	            return true;
+	        }
+	        return false;
+	    }
+	
 	    // This function allows you to set a threshold for relative time strings
 	    function duration_humanize__getSetRelativeTimeThreshold (threshold, limit) {
 	        if (thresholds[threshold] === undefined) {
@@ -73136,7 +73396,7 @@
 	    // Side effect imports
 	
 	
-	    utils_hooks__hooks.version = '2.13.0';
+	    utils_hooks__hooks.version = '2.14.1';
 	
 	    setHookCallback(local__createLocal);
 	
@@ -73163,7 +73423,9 @@
 	    utils_hooks__hooks.locales               = locale_locales__listLocales;
 	    utils_hooks__hooks.weekdaysShort         = lists__listWeekdaysShort;
 	    utils_hooks__hooks.normalizeUnits        = normalizeUnits;
+	    utils_hooks__hooks.relativeTimeRounding = duration_humanize__getSetRelativeTimeRounding;
 	    utils_hooks__hooks.relativeTimeThreshold = duration_humanize__getSetRelativeTimeThreshold;
+	    utils_hooks__hooks.calendarFormat        = getCalendarFormat;
 	    utils_hooks__hooks.prototype             = momentPrototype;
 	
 	    var _moment = utils_hooks__hooks;
@@ -73174,210 +73436,212 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
 
 /***/ },
-/* 735 */
+/* 815 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./af": 736,
-		"./af.js": 736,
-		"./ar": 737,
-		"./ar-ma": 738,
-		"./ar-ma.js": 738,
-		"./ar-sa": 739,
-		"./ar-sa.js": 739,
-		"./ar-tn": 740,
-		"./ar-tn.js": 740,
-		"./ar.js": 737,
-		"./az": 741,
-		"./az.js": 741,
-		"./be": 742,
-		"./be.js": 742,
-		"./bg": 743,
-		"./bg.js": 743,
-		"./bn": 744,
-		"./bn.js": 744,
-		"./bo": 745,
-		"./bo.js": 745,
-		"./br": 746,
-		"./br.js": 746,
-		"./bs": 747,
-		"./bs.js": 747,
-		"./ca": 748,
-		"./ca.js": 748,
-		"./cs": 749,
-		"./cs.js": 749,
-		"./cv": 750,
-		"./cv.js": 750,
-		"./cy": 751,
-		"./cy.js": 751,
-		"./da": 752,
-		"./da.js": 752,
-		"./de": 753,
-		"./de-at": 754,
-		"./de-at.js": 754,
-		"./de.js": 753,
-		"./dv": 755,
-		"./dv.js": 755,
-		"./el": 756,
-		"./el.js": 756,
-		"./en-au": 757,
-		"./en-au.js": 757,
-		"./en-ca": 758,
-		"./en-ca.js": 758,
-		"./en-gb": 759,
-		"./en-gb.js": 759,
-		"./en-ie": 760,
-		"./en-ie.js": 760,
-		"./en-nz": 761,
-		"./en-nz.js": 761,
-		"./eo": 762,
-		"./eo.js": 762,
-		"./es": 763,
-		"./es.js": 763,
-		"./et": 764,
-		"./et.js": 764,
-		"./eu": 765,
-		"./eu.js": 765,
-		"./fa": 766,
-		"./fa.js": 766,
-		"./fi": 767,
-		"./fi.js": 767,
-		"./fo": 768,
-		"./fo.js": 768,
-		"./fr": 769,
-		"./fr-ca": 770,
-		"./fr-ca.js": 770,
-		"./fr-ch": 771,
-		"./fr-ch.js": 771,
-		"./fr.js": 769,
-		"./fy": 772,
-		"./fy.js": 772,
-		"./gd": 773,
-		"./gd.js": 773,
-		"./gl": 774,
-		"./gl.js": 774,
-		"./he": 775,
-		"./he.js": 775,
-		"./hi": 776,
-		"./hi.js": 776,
-		"./hr": 777,
-		"./hr.js": 777,
-		"./hu": 778,
-		"./hu.js": 778,
-		"./hy-am": 779,
-		"./hy-am.js": 779,
-		"./id": 780,
-		"./id.js": 780,
-		"./is": 781,
-		"./is.js": 781,
-		"./it": 782,
-		"./it.js": 782,
-		"./ja": 783,
-		"./ja.js": 783,
-		"./jv": 784,
-		"./jv.js": 784,
-		"./ka": 785,
-		"./ka.js": 785,
-		"./kk": 786,
-		"./kk.js": 786,
-		"./km": 787,
-		"./km.js": 787,
-		"./ko": 788,
-		"./ko.js": 788,
-		"./ky": 789,
-		"./ky.js": 789,
-		"./lb": 790,
-		"./lb.js": 790,
-		"./lo": 791,
-		"./lo.js": 791,
-		"./lt": 792,
-		"./lt.js": 792,
-		"./lv": 793,
-		"./lv.js": 793,
-		"./me": 794,
-		"./me.js": 794,
-		"./mk": 795,
-		"./mk.js": 795,
-		"./ml": 796,
-		"./ml.js": 796,
-		"./mr": 797,
-		"./mr.js": 797,
-		"./ms": 798,
-		"./ms-my": 799,
-		"./ms-my.js": 799,
-		"./ms.js": 798,
-		"./my": 800,
-		"./my.js": 800,
-		"./nb": 801,
-		"./nb.js": 801,
-		"./ne": 802,
-		"./ne.js": 802,
-		"./nl": 803,
-		"./nl.js": 803,
-		"./nn": 804,
-		"./nn.js": 804,
-		"./pa-in": 805,
-		"./pa-in.js": 805,
-		"./pl": 806,
-		"./pl.js": 806,
-		"./pt": 807,
-		"./pt-br": 808,
-		"./pt-br.js": 808,
-		"./pt.js": 807,
-		"./ro": 809,
-		"./ro.js": 809,
-		"./ru": 810,
-		"./ru.js": 810,
-		"./se": 811,
-		"./se.js": 811,
-		"./si": 812,
-		"./si.js": 812,
-		"./sk": 813,
-		"./sk.js": 813,
-		"./sl": 814,
-		"./sl.js": 814,
-		"./sq": 815,
-		"./sq.js": 815,
-		"./sr": 816,
-		"./sr-cyrl": 817,
-		"./sr-cyrl.js": 817,
-		"./sr.js": 816,
-		"./ss": 818,
-		"./ss.js": 818,
-		"./sv": 819,
-		"./sv.js": 819,
-		"./sw": 820,
-		"./sw.js": 820,
-		"./ta": 821,
-		"./ta.js": 821,
-		"./te": 822,
-		"./te.js": 822,
-		"./th": 823,
-		"./th.js": 823,
-		"./tl-ph": 824,
-		"./tl-ph.js": 824,
-		"./tlh": 825,
-		"./tlh.js": 825,
-		"./tr": 826,
-		"./tr.js": 826,
-		"./tzl": 827,
-		"./tzl.js": 827,
-		"./tzm": 828,
-		"./tzm-latn": 829,
-		"./tzm-latn.js": 829,
-		"./tzm.js": 828,
-		"./uk": 830,
-		"./uk.js": 830,
-		"./uz": 831,
-		"./uz.js": 831,
-		"./vi": 832,
-		"./vi.js": 832,
-		"./x-pseudo": 833,
-		"./x-pseudo.js": 833,
-		"./zh-cn": 834,
-		"./zh-cn.js": 834,
-		"./zh-tw": 835,
-		"./zh-tw.js": 835
+		"./af": 816,
+		"./af.js": 816,
+		"./ar": 817,
+		"./ar-ma": 818,
+		"./ar-ma.js": 818,
+		"./ar-sa": 819,
+		"./ar-sa.js": 819,
+		"./ar-tn": 820,
+		"./ar-tn.js": 820,
+		"./ar.js": 817,
+		"./az": 821,
+		"./az.js": 821,
+		"./be": 822,
+		"./be.js": 822,
+		"./bg": 823,
+		"./bg.js": 823,
+		"./bn": 824,
+		"./bn.js": 824,
+		"./bo": 825,
+		"./bo.js": 825,
+		"./br": 826,
+		"./br.js": 826,
+		"./bs": 827,
+		"./bs.js": 827,
+		"./ca": 828,
+		"./ca.js": 828,
+		"./cs": 829,
+		"./cs.js": 829,
+		"./cv": 830,
+		"./cv.js": 830,
+		"./cy": 831,
+		"./cy.js": 831,
+		"./da": 832,
+		"./da.js": 832,
+		"./de": 833,
+		"./de-at": 834,
+		"./de-at.js": 834,
+		"./de.js": 833,
+		"./dv": 835,
+		"./dv.js": 835,
+		"./el": 836,
+		"./el.js": 836,
+		"./en-au": 837,
+		"./en-au.js": 837,
+		"./en-ca": 838,
+		"./en-ca.js": 838,
+		"./en-gb": 839,
+		"./en-gb.js": 839,
+		"./en-ie": 840,
+		"./en-ie.js": 840,
+		"./en-nz": 841,
+		"./en-nz.js": 841,
+		"./eo": 842,
+		"./eo.js": 842,
+		"./es": 843,
+		"./es-do": 844,
+		"./es-do.js": 844,
+		"./es.js": 843,
+		"./et": 845,
+		"./et.js": 845,
+		"./eu": 846,
+		"./eu.js": 846,
+		"./fa": 847,
+		"./fa.js": 847,
+		"./fi": 848,
+		"./fi.js": 848,
+		"./fo": 849,
+		"./fo.js": 849,
+		"./fr": 850,
+		"./fr-ca": 851,
+		"./fr-ca.js": 851,
+		"./fr-ch": 852,
+		"./fr-ch.js": 852,
+		"./fr.js": 850,
+		"./fy": 853,
+		"./fy.js": 853,
+		"./gd": 854,
+		"./gd.js": 854,
+		"./gl": 855,
+		"./gl.js": 855,
+		"./he": 856,
+		"./he.js": 856,
+		"./hi": 857,
+		"./hi.js": 857,
+		"./hr": 858,
+		"./hr.js": 858,
+		"./hu": 859,
+		"./hu.js": 859,
+		"./hy-am": 860,
+		"./hy-am.js": 860,
+		"./id": 861,
+		"./id.js": 861,
+		"./is": 862,
+		"./is.js": 862,
+		"./it": 863,
+		"./it.js": 863,
+		"./ja": 864,
+		"./ja.js": 864,
+		"./jv": 865,
+		"./jv.js": 865,
+		"./ka": 866,
+		"./ka.js": 866,
+		"./kk": 867,
+		"./kk.js": 867,
+		"./km": 868,
+		"./km.js": 868,
+		"./ko": 869,
+		"./ko.js": 869,
+		"./ky": 870,
+		"./ky.js": 870,
+		"./lb": 871,
+		"./lb.js": 871,
+		"./lo": 872,
+		"./lo.js": 872,
+		"./lt": 873,
+		"./lt.js": 873,
+		"./lv": 874,
+		"./lv.js": 874,
+		"./me": 875,
+		"./me.js": 875,
+		"./mk": 876,
+		"./mk.js": 876,
+		"./ml": 877,
+		"./ml.js": 877,
+		"./mr": 878,
+		"./mr.js": 878,
+		"./ms": 879,
+		"./ms-my": 880,
+		"./ms-my.js": 880,
+		"./ms.js": 879,
+		"./my": 881,
+		"./my.js": 881,
+		"./nb": 882,
+		"./nb.js": 882,
+		"./ne": 883,
+		"./ne.js": 883,
+		"./nl": 884,
+		"./nl.js": 884,
+		"./nn": 885,
+		"./nn.js": 885,
+		"./pa-in": 886,
+		"./pa-in.js": 886,
+		"./pl": 887,
+		"./pl.js": 887,
+		"./pt": 888,
+		"./pt-br": 889,
+		"./pt-br.js": 889,
+		"./pt.js": 888,
+		"./ro": 890,
+		"./ro.js": 890,
+		"./ru": 891,
+		"./ru.js": 891,
+		"./se": 892,
+		"./se.js": 892,
+		"./si": 893,
+		"./si.js": 893,
+		"./sk": 894,
+		"./sk.js": 894,
+		"./sl": 895,
+		"./sl.js": 895,
+		"./sq": 896,
+		"./sq.js": 896,
+		"./sr": 897,
+		"./sr-cyrl": 898,
+		"./sr-cyrl.js": 898,
+		"./sr.js": 897,
+		"./ss": 899,
+		"./ss.js": 899,
+		"./sv": 900,
+		"./sv.js": 900,
+		"./sw": 901,
+		"./sw.js": 901,
+		"./ta": 902,
+		"./ta.js": 902,
+		"./te": 903,
+		"./te.js": 903,
+		"./th": 904,
+		"./th.js": 904,
+		"./tl-ph": 905,
+		"./tl-ph.js": 905,
+		"./tlh": 906,
+		"./tlh.js": 906,
+		"./tr": 907,
+		"./tr.js": 907,
+		"./tzl": 908,
+		"./tzl.js": 908,
+		"./tzm": 909,
+		"./tzm-latn": 910,
+		"./tzm-latn.js": 910,
+		"./tzm.js": 909,
+		"./uk": 911,
+		"./uk.js": 911,
+		"./uz": 912,
+		"./uz.js": 912,
+		"./vi": 913,
+		"./vi.js": 913,
+		"./x-pseudo": 914,
+		"./x-pseudo.js": 914,
+		"./zh-cn": 915,
+		"./zh-cn.js": 915,
+		"./zh-tw": 916,
+		"./zh-tw.js": 916
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -73390,27 +73654,27 @@
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 735;
+	webpackContext.id = 815;
 
 
 /***/ },
-/* 736 */
+/* 816 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : afrikaans (af)
+	//! locale : Afrikaans [af]
 	//! author : Werner Mollentze : https://github.com/wernerm
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
 	
 	    var af = moment.defineLocale('af', {
 	        months : 'Januarie_Februarie_Maart_April_Mei_Junie_Julie_Augustus_September_Oktober_November_Desember'.split('_'),
-	        monthsShort : 'Jan_Feb_Mar_Apr_Mei_Jun_Jul_Aug_Sep_Okt_Nov_Des'.split('_'),
+	        monthsShort : 'Jan_Feb_Mrt_Apr_Mei_Jun_Jul_Aug_Sep_Okt_Nov_Des'.split('_'),
 	        weekdays : 'Sondag_Maandag_Dinsdag_Woensdag_Donderdag_Vrydag_Saterdag'.split('_'),
 	        weekdaysShort : 'Son_Maa_Din_Woe_Don_Vry_Sat'.split('_'),
 	        weekdaysMin : 'So_Ma_Di_Wo_Do_Vr_Sa'.split('_'),
@@ -73471,18 +73735,18 @@
 	}));
 
 /***/ },
-/* 737 */
+/* 817 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! Locale: Arabic (ar)
-	//! Author: Abdel Said: https://github.com/abdelsaid
-	//! Changes in months, weekdays: Ahmed Elkhatib
+	//! locale : Arabic [ar]
+	//! author : Abdel Said: https://github.com/abdelsaid
+	//! changes in months, weekdays: Ahmed Elkhatib
 	//! Native plural forms: forabi https://github.com/forabi
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -73612,17 +73876,17 @@
 	}));
 
 /***/ },
-/* 738 */
+/* 818 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Moroccan Arabic (ar-ma)
+	//! locale : Arabic (Morocco) [ar-ma]
 	//! author : ElFadili Yassine : https://github.com/ElFadiliY
 	//! author : Abdel Said : https://github.com/abdelsaid
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -73676,16 +73940,16 @@
 	}));
 
 /***/ },
-/* 739 */
+/* 819 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Arabic Saudi Arabia (ar-sa)
+	//! locale : Arabic (Saudi Arabia) [ar-sa]
 	//! author : Suhail Alkowaileet : https://github.com/xsoh
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -73784,15 +74048,15 @@
 	}));
 
 /***/ },
-/* 740 */
+/* 820 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale  : Tunisian Arabic (ar-tn)
+	//! locale  :  Arabic (Tunisia) [ar-tn]
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -73846,16 +74110,16 @@
 	}));
 
 /***/ },
-/* 741 */
+/* 821 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : azerbaijani (az)
+	//! locale : Azerbaijani [az]
 	//! author : topchiyev : https://github.com/topchiyev
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -73955,18 +74219,18 @@
 	}));
 
 /***/ },
-/* 742 */
+/* 822 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : belarusian (be)
+	//! locale : Belarusian [be]
 	//! author : Dmitry Demidov : https://github.com/demidov91
 	//! author: Praleska: http://praleska.pro/
 	//! Author : Menelion Elensúle : https://github.com/Oire
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -74024,15 +74288,15 @@
 	            },
 	            lastWeek: function () {
 	                switch (this.day()) {
-	                case 0:
-	                case 3:
-	                case 5:
-	                case 6:
-	                    return '[У мінулую] dddd [ў] LT';
-	                case 1:
-	                case 2:
-	                case 4:
-	                    return '[У мінулы] dddd [ў] LT';
+	                    case 0:
+	                    case 3:
+	                    case 5:
+	                    case 6:
+	                        return '[У мінулую] dddd [ў] LT';
+	                    case 1:
+	                    case 2:
+	                    case 4:
+	                        return '[У мінулы] dddd [ў] LT';
 	                }
 	            },
 	            sameElse: 'L'
@@ -74070,16 +74334,16 @@
 	        ordinalParse: /\d{1,2}-(і|ы|га)/,
 	        ordinal: function (number, period) {
 	            switch (period) {
-	            case 'M':
-	            case 'd':
-	            case 'DDD':
-	            case 'w':
-	            case 'W':
-	                return (number % 10 === 2 || number % 10 === 3) && (number % 100 !== 12 && number % 100 !== 13) ? number + '-і' : number + '-ы';
-	            case 'D':
-	                return number + '-га';
-	            default:
-	                return number;
+	                case 'M':
+	                case 'd':
+	                case 'DDD':
+	                case 'w':
+	                case 'W':
+	                    return (number % 10 === 2 || number % 10 === 3) && (number % 100 !== 12 && number % 100 !== 13) ? number + '-і' : number + '-ы';
+	                case 'D':
+	                    return number + '-га';
+	                default:
+	                    return number;
 	            }
 	        },
 	        week : {
@@ -74093,16 +74357,16 @@
 	}));
 
 /***/ },
-/* 743 */
+/* 823 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : bulgarian (bg)
+	//! locale : Bulgarian [bg]
 	//! author : Krasen Borisov : https://github.com/kraz
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -74128,15 +74392,15 @@
 	            lastDay : '[Вчера в] LT',
 	            lastWeek : function () {
 	                switch (this.day()) {
-	                case 0:
-	                case 3:
-	                case 6:
-	                    return '[В изминалата] dddd [в] LT';
-	                case 1:
-	                case 2:
-	                case 4:
-	                case 5:
-	                    return '[В изминалия] dddd [в] LT';
+	                    case 0:
+	                    case 3:
+	                    case 6:
+	                        return '[В изминалата] dddd [в] LT';
+	                    case 1:
+	                    case 2:
+	                    case 4:
+	                    case 5:
+	                        return '[В изминалия] dddd [в] LT';
 	                }
 	            },
 	            sameElse : 'L'
@@ -74187,16 +74451,16 @@
 	}));
 
 /***/ },
-/* 744 */
+/* 824 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Bengali (bn)
+	//! locale : Bengali [bn]
 	//! author : Kaushik Gandhi : https://github.com/kaushikgandhi
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -74310,16 +74574,16 @@
 	}));
 
 /***/ },
-/* 745 */
+/* 825 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : tibetan (bo)
+	//! locale : Tibetan [bo]
 	//! author : Thupten N. Chakrishar : https://github.com/vajradog
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -74433,16 +74697,16 @@
 	}));
 
 /***/ },
-/* 746 */
+/* 826 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : breton (br)
+	//! locale : Breton [br]
 	//! author : Jean-Baptiste Le Duigou : https://github.com/jbleduigou
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -74457,14 +74721,14 @@
 	    }
 	    function specialMutationForYears(number) {
 	        switch (lastNumber(number)) {
-	        case 1:
-	        case 3:
-	        case 4:
-	        case 5:
-	        case 9:
-	            return number + ' bloaz';
-	        default:
-	            return number + ' vloaz';
+	            case 1:
+	            case 3:
+	            case 4:
+	            case 5:
+	            case 9:
+	                return number + ' bloaz';
+	            default:
+	                return number + ' vloaz';
 	        }
 	    }
 	    function lastNumber(number) {
@@ -74545,17 +74809,17 @@
 	}));
 
 /***/ },
-/* 747 */
+/* 827 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : bosnian (bs)
+	//! locale : Bosnian [bs]
 	//! author : Nedim Cholich : https://github.com/frontyard
 	//! based on (hr) translation by Bojan Marković
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -74563,53 +74827,53 @@
 	    function translate(number, withoutSuffix, key) {
 	        var result = number + ' ';
 	        switch (key) {
-	        case 'm':
-	            return withoutSuffix ? 'jedna minuta' : 'jedne minute';
-	        case 'mm':
-	            if (number === 1) {
-	                result += 'minuta';
-	            } else if (number === 2 || number === 3 || number === 4) {
-	                result += 'minute';
-	            } else {
-	                result += 'minuta';
-	            }
-	            return result;
-	        case 'h':
-	            return withoutSuffix ? 'jedan sat' : 'jednog sata';
-	        case 'hh':
-	            if (number === 1) {
-	                result += 'sat';
-	            } else if (number === 2 || number === 3 || number === 4) {
-	                result += 'sata';
-	            } else {
-	                result += 'sati';
-	            }
-	            return result;
-	        case 'dd':
-	            if (number === 1) {
-	                result += 'dan';
-	            } else {
-	                result += 'dana';
-	            }
-	            return result;
-	        case 'MM':
-	            if (number === 1) {
-	                result += 'mjesec';
-	            } else if (number === 2 || number === 3 || number === 4) {
-	                result += 'mjeseca';
-	            } else {
-	                result += 'mjeseci';
-	            }
-	            return result;
-	        case 'yy':
-	            if (number === 1) {
-	                result += 'godina';
-	            } else if (number === 2 || number === 3 || number === 4) {
-	                result += 'godine';
-	            } else {
-	                result += 'godina';
-	            }
-	            return result;
+	            case 'm':
+	                return withoutSuffix ? 'jedna minuta' : 'jedne minute';
+	            case 'mm':
+	                if (number === 1) {
+	                    result += 'minuta';
+	                } else if (number === 2 || number === 3 || number === 4) {
+	                    result += 'minute';
+	                } else {
+	                    result += 'minuta';
+	                }
+	                return result;
+	            case 'h':
+	                return withoutSuffix ? 'jedan sat' : 'jednog sata';
+	            case 'hh':
+	                if (number === 1) {
+	                    result += 'sat';
+	                } else if (number === 2 || number === 3 || number === 4) {
+	                    result += 'sata';
+	                } else {
+	                    result += 'sati';
+	                }
+	                return result;
+	            case 'dd':
+	                if (number === 1) {
+	                    result += 'dan';
+	                } else {
+	                    result += 'dana';
+	                }
+	                return result;
+	            case 'MM':
+	                if (number === 1) {
+	                    result += 'mjesec';
+	                } else if (number === 2 || number === 3 || number === 4) {
+	                    result += 'mjeseca';
+	                } else {
+	                    result += 'mjeseci';
+	                }
+	                return result;
+	            case 'yy':
+	                if (number === 1) {
+	                    result += 'godina';
+	                } else if (number === 2 || number === 3 || number === 4) {
+	                    result += 'godine';
+	                } else {
+	                    result += 'godina';
+	                }
+	                return result;
 	        }
 	    }
 	
@@ -74634,32 +74898,32 @@
 	            nextDay  : '[sutra u] LT',
 	            nextWeek : function () {
 	                switch (this.day()) {
-	                case 0:
-	                    return '[u] [nedjelju] [u] LT';
-	                case 3:
-	                    return '[u] [srijedu] [u] LT';
-	                case 6:
-	                    return '[u] [subotu] [u] LT';
-	                case 1:
-	                case 2:
-	                case 4:
-	                case 5:
-	                    return '[u] dddd [u] LT';
+	                    case 0:
+	                        return '[u] [nedjelju] [u] LT';
+	                    case 3:
+	                        return '[u] [srijedu] [u] LT';
+	                    case 6:
+	                        return '[u] [subotu] [u] LT';
+	                    case 1:
+	                    case 2:
+	                    case 4:
+	                    case 5:
+	                        return '[u] dddd [u] LT';
 	                }
 	            },
 	            lastDay  : '[jučer u] LT',
 	            lastWeek : function () {
 	                switch (this.day()) {
-	                case 0:
-	                case 3:
-	                    return '[prošlu] dddd [u] LT';
-	                case 6:
-	                    return '[prošle] [subote] [u] LT';
-	                case 1:
-	                case 2:
-	                case 4:
-	                case 5:
-	                    return '[prošli] dddd [u] LT';
+	                    case 0:
+	                    case 3:
+	                        return '[prošlu] dddd [u] LT';
+	                    case 6:
+	                        return '[prošle] [subote] [u] LT';
+	                    case 1:
+	                    case 2:
+	                    case 4:
+	                    case 5:
+	                        return '[prošli] dddd [u] LT';
 	                }
 	            },
 	            sameElse : 'L'
@@ -74692,16 +74956,16 @@
 	}));
 
 /***/ },
-/* 748 */
+/* 828 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : catalan (ca)
+	//! locale : Catalan [ca]
 	//! author : Juan G. Hurtado : https://github.com/juanghurtado
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -74777,16 +75041,16 @@
 	}));
 
 /***/ },
-/* 749 */
+/* 829 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : czech (cs)
+	//! locale : Czech [cs]
 	//! author : petrbela : https://github.com/petrbela
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -74799,53 +75063,53 @@
 	    function translate(number, withoutSuffix, key, isFuture) {
 	        var result = number + ' ';
 	        switch (key) {
-	        case 's':  // a few seconds / in a few seconds / a few seconds ago
-	            return (withoutSuffix || isFuture) ? 'pár sekund' : 'pár sekundami';
-	        case 'm':  // a minute / in a minute / a minute ago
-	            return withoutSuffix ? 'minuta' : (isFuture ? 'minutu' : 'minutou');
-	        case 'mm': // 9 minutes / in 9 minutes / 9 minutes ago
-	            if (withoutSuffix || isFuture) {
-	                return result + (plural(number) ? 'minuty' : 'minut');
-	            } else {
-	                return result + 'minutami';
-	            }
-	            break;
-	        case 'h':  // an hour / in an hour / an hour ago
-	            return withoutSuffix ? 'hodina' : (isFuture ? 'hodinu' : 'hodinou');
-	        case 'hh': // 9 hours / in 9 hours / 9 hours ago
-	            if (withoutSuffix || isFuture) {
-	                return result + (plural(number) ? 'hodiny' : 'hodin');
-	            } else {
-	                return result + 'hodinami';
-	            }
-	            break;
-	        case 'd':  // a day / in a day / a day ago
-	            return (withoutSuffix || isFuture) ? 'den' : 'dnem';
-	        case 'dd': // 9 days / in 9 days / 9 days ago
-	            if (withoutSuffix || isFuture) {
-	                return result + (plural(number) ? 'dny' : 'dní');
-	            } else {
-	                return result + 'dny';
-	            }
-	            break;
-	        case 'M':  // a month / in a month / a month ago
-	            return (withoutSuffix || isFuture) ? 'měsíc' : 'měsícem';
-	        case 'MM': // 9 months / in 9 months / 9 months ago
-	            if (withoutSuffix || isFuture) {
-	                return result + (plural(number) ? 'měsíce' : 'měsíců');
-	            } else {
-	                return result + 'měsíci';
-	            }
-	            break;
-	        case 'y':  // a year / in a year / a year ago
-	            return (withoutSuffix || isFuture) ? 'rok' : 'rokem';
-	        case 'yy': // 9 years / in 9 years / 9 years ago
-	            if (withoutSuffix || isFuture) {
-	                return result + (plural(number) ? 'roky' : 'let');
-	            } else {
-	                return result + 'lety';
-	            }
-	            break;
+	            case 's':  // a few seconds / in a few seconds / a few seconds ago
+	                return (withoutSuffix || isFuture) ? 'pár sekund' : 'pár sekundami';
+	            case 'm':  // a minute / in a minute / a minute ago
+	                return withoutSuffix ? 'minuta' : (isFuture ? 'minutu' : 'minutou');
+	            case 'mm': // 9 minutes / in 9 minutes / 9 minutes ago
+	                if (withoutSuffix || isFuture) {
+	                    return result + (plural(number) ? 'minuty' : 'minut');
+	                } else {
+	                    return result + 'minutami';
+	                }
+	                break;
+	            case 'h':  // an hour / in an hour / an hour ago
+	                return withoutSuffix ? 'hodina' : (isFuture ? 'hodinu' : 'hodinou');
+	            case 'hh': // 9 hours / in 9 hours / 9 hours ago
+	                if (withoutSuffix || isFuture) {
+	                    return result + (plural(number) ? 'hodiny' : 'hodin');
+	                } else {
+	                    return result + 'hodinami';
+	                }
+	                break;
+	            case 'd':  // a day / in a day / a day ago
+	                return (withoutSuffix || isFuture) ? 'den' : 'dnem';
+	            case 'dd': // 9 days / in 9 days / 9 days ago
+	                if (withoutSuffix || isFuture) {
+	                    return result + (plural(number) ? 'dny' : 'dní');
+	                } else {
+	                    return result + 'dny';
+	                }
+	                break;
+	            case 'M':  // a month / in a month / a month ago
+	                return (withoutSuffix || isFuture) ? 'měsíc' : 'měsícem';
+	            case 'MM': // 9 months / in 9 months / 9 months ago
+	                if (withoutSuffix || isFuture) {
+	                    return result + (plural(number) ? 'měsíce' : 'měsíců');
+	                } else {
+	                    return result + 'měsíci';
+	                }
+	                break;
+	            case 'y':  // a year / in a year / a year ago
+	                return (withoutSuffix || isFuture) ? 'rok' : 'rokem';
+	            case 'yy': // 9 years / in 9 years / 9 years ago
+	                if (withoutSuffix || isFuture) {
+	                    return result + (plural(number) ? 'roky' : 'let');
+	                } else {
+	                    return result + 'lety';
+	                }
+	                break;
 	        }
 	    }
 	
@@ -74883,43 +75147,44 @@
 	            L : 'DD.MM.YYYY',
 	            LL : 'D. MMMM YYYY',
 	            LLL : 'D. MMMM YYYY H:mm',
-	            LLLL : 'dddd D. MMMM YYYY H:mm'
+	            LLLL : 'dddd D. MMMM YYYY H:mm',
+	            l : 'D. M. YYYY'
 	        },
 	        calendar : {
 	            sameDay: '[dnes v] LT',
 	            nextDay: '[zítra v] LT',
 	            nextWeek: function () {
 	                switch (this.day()) {
-	                case 0:
-	                    return '[v neděli v] LT';
-	                case 1:
-	                case 2:
-	                    return '[v] dddd [v] LT';
-	                case 3:
-	                    return '[ve středu v] LT';
-	                case 4:
-	                    return '[ve čtvrtek v] LT';
-	                case 5:
-	                    return '[v pátek v] LT';
-	                case 6:
-	                    return '[v sobotu v] LT';
+	                    case 0:
+	                        return '[v neděli v] LT';
+	                    case 1:
+	                    case 2:
+	                        return '[v] dddd [v] LT';
+	                    case 3:
+	                        return '[ve středu v] LT';
+	                    case 4:
+	                        return '[ve čtvrtek v] LT';
+	                    case 5:
+	                        return '[v pátek v] LT';
+	                    case 6:
+	                        return '[v sobotu v] LT';
 	                }
 	            },
 	            lastDay: '[včera v] LT',
 	            lastWeek: function () {
 	                switch (this.day()) {
-	                case 0:
-	                    return '[minulou neděli v] LT';
-	                case 1:
-	                case 2:
-	                    return '[minulé] dddd [v] LT';
-	                case 3:
-	                    return '[minulou středu v] LT';
-	                case 4:
-	                case 5:
-	                    return '[minulý] dddd [v] LT';
-	                case 6:
-	                    return '[minulou sobotu v] LT';
+	                    case 0:
+	                        return '[minulou neděli v] LT';
+	                    case 1:
+	                    case 2:
+	                        return '[minulé] dddd [v] LT';
+	                    case 3:
+	                        return '[minulou středu v] LT';
+	                    case 4:
+	                    case 5:
+	                        return '[minulý] dddd [v] LT';
+	                    case 6:
+	                        return '[minulou sobotu v] LT';
 	                }
 	            },
 	            sameElse: 'L'
@@ -74952,16 +75217,16 @@
 	}));
 
 /***/ },
-/* 750 */
+/* 830 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : chuvash (cv)
+	//! locale : Chuvash [cv]
 	//! author : Anatoly Mironov : https://github.com/mirontoli
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -75019,16 +75284,16 @@
 	}));
 
 /***/ },
-/* 751 */
+/* 831 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Welsh (cy)
+	//! locale : Welsh [cy]
 	//! author : Robert Allen
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -75103,16 +75368,16 @@
 	}));
 
 /***/ },
-/* 752 */
+/* 832 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : danish (da)
+	//! locale : Danish [da]
 	//! author : Ulrik Nielsen : https://github.com/mrbase
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -75167,18 +75432,18 @@
 	}));
 
 /***/ },
-/* 753 */
+/* 833 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : german (de)
+	//! locale : German [de]
 	//! author : lluchs : https://github.com/lluchs
 	//! author: Menelion Elensúle: https://github.com/Oire
 	//! author : Mikolaj Dadela : https://github.com/mik01aj
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -75249,19 +75514,19 @@
 	}));
 
 /***/ },
-/* 754 */
+/* 834 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : austrian german (de-at)
+	//! locale : German (Austria) [de-at]
 	//! author : lluchs : https://github.com/lluchs
 	//! author: Menelion Elensúle: https://github.com/Oire
 	//! author : Martin Groller : https://github.com/MadMG
 	//! author : Mikolaj Dadela : https://github.com/mik01aj
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -75332,16 +75597,16 @@
 	}));
 
 /***/ },
-/* 755 */
+/* 835 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : dhivehi (dv)
+	//! locale : Maldivian [dv]
 	//! author : Jawish Hameed : https://github.com/jawish
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -75435,16 +75700,16 @@
 	}));
 
 /***/ },
-/* 756 */
+/* 836 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : modern greek (el)
+	//! locale : Greek [el]
 	//! author : Aggelos Karalias : https://github.com/mehiel
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -75537,15 +75802,15 @@
 	}));
 
 /***/ },
-/* 757 */
+/* 837 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : australian english (en-au)
+	//! locale : English (Australia) [en-au]
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -75607,16 +75872,16 @@
 	}));
 
 /***/ },
-/* 758 */
+/* 838 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : canadian english (en-ca)
+	//! locale : English (Canada) [en-ca]
 	//! author : Jonathan Abourbih : https://github.com/jonbca
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -75674,16 +75939,16 @@
 	}));
 
 /***/ },
-/* 759 */
+/* 839 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : great britain english (en-gb)
+	//! locale : English (United Kingdom) [en-gb]
 	//! author : Chris Gedrim : https://github.com/chrisgedrim
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -75745,16 +76010,16 @@
 	}));
 
 /***/ },
-/* 760 */
+/* 840 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Irish english (en-ie)
+	//! locale : English (Ireland) [en-ie]
 	//! author : Chris Cartlidge : https://github.com/chriscartlidge
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -75816,15 +76081,15 @@
 	}));
 
 /***/ },
-/* 761 */
+/* 841 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : New Zealand english (en-nz)
+	//! locale : English (New Zealand) [en-nz]
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -75886,18 +76151,18 @@
 	}));
 
 /***/ },
-/* 762 */
+/* 842 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : esperanto (eo)
+	//! locale : Esperanto [eo]
 	//! author : Colin Dean : https://github.com/colindean
 	//! komento: Mi estas malcerta se mi korekte traktis akuzativojn en tiu traduko.
 	//!          Se ne, bonvolu korekti kaj avizi min por ke mi povas lerni!
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -75963,16 +76228,16 @@
 	}));
 
 /***/ },
-/* 763 */
+/* 843 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : spanish (es)
+	//! locale : Spanish [es]
 	//! author : Julio Napurí : https://github.com/julionc
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -76048,17 +76313,101 @@
 	}));
 
 /***/ },
-/* 764 */
+/* 844 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : estonian (et)
+	//! locale : Spanish (Dominican Republic) [es-do]
+	
+	;(function (global, factory) {
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+	   factory(global.moment)
+	}(this, function (moment) { 'use strict';
+	
+	
+	    var monthsShortDot = 'ene._feb._mar._abr._may._jun._jul._ago._sep._oct._nov._dic.'.split('_'),
+	        monthsShort = 'ene_feb_mar_abr_may_jun_jul_ago_sep_oct_nov_dic'.split('_');
+	
+	    var es_do = moment.defineLocale('es-do', {
+	        months : 'enero_febrero_marzo_abril_mayo_junio_julio_agosto_septiembre_octubre_noviembre_diciembre'.split('_'),
+	        monthsShort : function (m, format) {
+	            if (/-MMM-/.test(format)) {
+	                return monthsShort[m.month()];
+	            } else {
+	                return monthsShortDot[m.month()];
+	            }
+	        },
+	        monthsParseExact : true,
+	        weekdays : 'domingo_lunes_martes_miércoles_jueves_viernes_sábado'.split('_'),
+	        weekdaysShort : 'dom._lun._mar._mié._jue._vie._sáb.'.split('_'),
+	        weekdaysMin : 'do_lu_ma_mi_ju_vi_sá'.split('_'),
+	        weekdaysParseExact : true,
+	        longDateFormat : {
+	            LT : 'h:mm A',
+	            LTS : 'h:mm:ss A',
+	            L : 'DD/MM/YYYY',
+	            LL : 'D [de] MMMM [de] YYYY',
+	            LLL : 'D [de] MMMM [de] YYYY h:mm A',
+	            LLLL : 'dddd, D [de] MMMM [de] YYYY h:mm A'
+	        },
+	        calendar : {
+	            sameDay : function () {
+	                return '[hoy a la' + ((this.hours() !== 1) ? 's' : '') + '] LT';
+	            },
+	            nextDay : function () {
+	                return '[mañana a la' + ((this.hours() !== 1) ? 's' : '') + '] LT';
+	            },
+	            nextWeek : function () {
+	                return 'dddd [a la' + ((this.hours() !== 1) ? 's' : '') + '] LT';
+	            },
+	            lastDay : function () {
+	                return '[ayer a la' + ((this.hours() !== 1) ? 's' : '') + '] LT';
+	            },
+	            lastWeek : function () {
+	                return '[el] dddd [pasado a la' + ((this.hours() !== 1) ? 's' : '') + '] LT';
+	            },
+	            sameElse : 'L'
+	        },
+	        relativeTime : {
+	            future : 'en %s',
+	            past : 'hace %s',
+	            s : 'unos segundos',
+	            m : 'un minuto',
+	            mm : '%d minutos',
+	            h : 'una hora',
+	            hh : '%d horas',
+	            d : 'un día',
+	            dd : '%d días',
+	            M : 'un mes',
+	            MM : '%d meses',
+	            y : 'un año',
+	            yy : '%d años'
+	        },
+	        ordinalParse : /\d{1,2}º/,
+	        ordinal : '%dº',
+	        week : {
+	            dow : 1, // Monday is the first day of the week.
+	            doy : 4  // The week that contains Jan 4th is the first week of the year.
+	        }
+	    });
+	
+	    return es_do;
+	
+	}));
+
+/***/ },
+/* 845 */
+/***/ function(module, exports, __webpack_require__) {
+
+	//! moment.js locale configuration
+	//! locale : Estonian [et]
 	//! author : Henry Kehlmann : https://github.com/madhenry
 	//! improvements : Illimar Tambek : https://github.com/ragulka
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -76132,16 +76481,16 @@
 	}));
 
 /***/ },
-/* 765 */
+/* 846 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : euskara (eu)
+	//! locale : Basque [eu]
 	//! author : Eneko Illarramendi : https://github.com/eillarra
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -76202,16 +76551,16 @@
 	}));
 
 /***/ },
-/* 766 */
+/* 847 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Persian (fa)
+	//! locale : Persian [fa]
 	//! author : Ebrahim Byagowi : https://github.com/ebraminio
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -76312,16 +76661,16 @@
 	}));
 
 /***/ },
-/* 767 */
+/* 848 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : finnish (fi)
+	//! locale : Finnish [fi]
 	//! author : Tarmo Aidantausta : https://github.com/bleadof
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -76334,33 +76683,33 @@
 	    function translate(number, withoutSuffix, key, isFuture) {
 	        var result = '';
 	        switch (key) {
-	        case 's':
-	            return isFuture ? 'muutaman sekunnin' : 'muutama sekunti';
-	        case 'm':
-	            return isFuture ? 'minuutin' : 'minuutti';
-	        case 'mm':
-	            result = isFuture ? 'minuutin' : 'minuuttia';
-	            break;
-	        case 'h':
-	            return isFuture ? 'tunnin' : 'tunti';
-	        case 'hh':
-	            result = isFuture ? 'tunnin' : 'tuntia';
-	            break;
-	        case 'd':
-	            return isFuture ? 'päivän' : 'päivä';
-	        case 'dd':
-	            result = isFuture ? 'päivän' : 'päivää';
-	            break;
-	        case 'M':
-	            return isFuture ? 'kuukauden' : 'kuukausi';
-	        case 'MM':
-	            result = isFuture ? 'kuukauden' : 'kuukautta';
-	            break;
-	        case 'y':
-	            return isFuture ? 'vuoden' : 'vuosi';
-	        case 'yy':
-	            result = isFuture ? 'vuoden' : 'vuotta';
-	            break;
+	            case 's':
+	                return isFuture ? 'muutaman sekunnin' : 'muutama sekunti';
+	            case 'm':
+	                return isFuture ? 'minuutin' : 'minuutti';
+	            case 'mm':
+	                result = isFuture ? 'minuutin' : 'minuuttia';
+	                break;
+	            case 'h':
+	                return isFuture ? 'tunnin' : 'tunti';
+	            case 'hh':
+	                result = isFuture ? 'tunnin' : 'tuntia';
+	                break;
+	            case 'd':
+	                return isFuture ? 'päivän' : 'päivä';
+	            case 'dd':
+	                result = isFuture ? 'päivän' : 'päivää';
+	                break;
+	            case 'M':
+	                return isFuture ? 'kuukauden' : 'kuukausi';
+	            case 'MM':
+	                result = isFuture ? 'kuukauden' : 'kuukautta';
+	                break;
+	            case 'y':
+	                return isFuture ? 'vuoden' : 'vuosi';
+	            case 'yy':
+	                result = isFuture ? 'vuoden' : 'vuotta';
+	                break;
 	        }
 	        result = verbalNumber(number, isFuture) + ' ' + result;
 	        return result;
@@ -76423,16 +76772,16 @@
 	}));
 
 /***/ },
-/* 768 */
+/* 849 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : faroese (fo)
+	//! locale : Faroese [fo]
 	//! author : Ragnar Johannesen : https://github.com/ragnar123
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -76487,16 +76836,16 @@
 	}));
 
 /***/ },
-/* 769 */
+/* 850 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : french (fr)
+	//! locale : French [fr]
 	//! author : John Fischer : https://github.com/jfroffice
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -76555,16 +76904,16 @@
 	}));
 
 /***/ },
-/* 770 */
+/* 851 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : canadian french (fr-ca)
+	//! locale : French (Canada) [fr-ca]
 	//! author : Jonathan Abourbih : https://github.com/jonbca
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -76619,16 +76968,16 @@
 	}));
 
 /***/ },
-/* 771 */
+/* 852 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : swiss french (fr)
+	//! locale : French (Switzerland) [fr-ch]
 	//! author : Gaspard Bucher : https://github.com/gaspard
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -76687,16 +77036,16 @@
 	}));
 
 /***/ },
-/* 772 */
+/* 853 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : frisian (fy)
+	//! locale : Frisian [fy]
 	//! author : Robin van der Vliet : https://github.com/robin0van0der0v
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -76764,16 +77113,16 @@
 	}));
 
 /***/ },
-/* 773 */
+/* 854 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : great britain scottish gealic (gd)
+	//! locale : Scottish Gaelic [gd]
 	//! author : Jon Ashdown : https://github.com/jonashdown
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -76844,16 +77193,16 @@
 	}));
 
 /***/ },
-/* 774 */
+/* 855 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : galician (gl)
+	//! locale : Galician [gl]
 	//! author : Juan G. Hurtado : https://github.com/juanghurtado
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -76925,18 +77274,18 @@
 	}));
 
 /***/ },
-/* 775 */
+/* 856 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Hebrew (he)
+	//! locale : Hebrew [he]
 	//! author : Tomer Cohen : https://github.com/tomer
 	//! author : Moshe Simantov : https://github.com/DevelopmentIL
 	//! author : Tal Ater : https://github.com/TalAter
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -77028,16 +77377,16 @@
 	}));
 
 /***/ },
-/* 776 */
+/* 857 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : hindi (hi)
+	//! locale : Hindi [hi]
 	//! author : Mayank Singhal : https://github.com/mayanksinghal
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -77156,16 +77505,16 @@
 	}));
 
 /***/ },
-/* 777 */
+/* 858 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : hrvatski (hr)
+	//! locale : Croatian [hr]
 	//! author : Bojan Marković : https://github.com/bmarkovic
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -77173,53 +77522,53 @@
 	    function translate(number, withoutSuffix, key) {
 	        var result = number + ' ';
 	        switch (key) {
-	        case 'm':
-	            return withoutSuffix ? 'jedna minuta' : 'jedne minute';
-	        case 'mm':
-	            if (number === 1) {
-	                result += 'minuta';
-	            } else if (number === 2 || number === 3 || number === 4) {
-	                result += 'minute';
-	            } else {
-	                result += 'minuta';
-	            }
-	            return result;
-	        case 'h':
-	            return withoutSuffix ? 'jedan sat' : 'jednog sata';
-	        case 'hh':
-	            if (number === 1) {
-	                result += 'sat';
-	            } else if (number === 2 || number === 3 || number === 4) {
-	                result += 'sata';
-	            } else {
-	                result += 'sati';
-	            }
-	            return result;
-	        case 'dd':
-	            if (number === 1) {
-	                result += 'dan';
-	            } else {
-	                result += 'dana';
-	            }
-	            return result;
-	        case 'MM':
-	            if (number === 1) {
-	                result += 'mjesec';
-	            } else if (number === 2 || number === 3 || number === 4) {
-	                result += 'mjeseca';
-	            } else {
-	                result += 'mjeseci';
-	            }
-	            return result;
-	        case 'yy':
-	            if (number === 1) {
-	                result += 'godina';
-	            } else if (number === 2 || number === 3 || number === 4) {
-	                result += 'godine';
-	            } else {
-	                result += 'godina';
-	            }
-	            return result;
+	            case 'm':
+	                return withoutSuffix ? 'jedna minuta' : 'jedne minute';
+	            case 'mm':
+	                if (number === 1) {
+	                    result += 'minuta';
+	                } else if (number === 2 || number === 3 || number === 4) {
+	                    result += 'minute';
+	                } else {
+	                    result += 'minuta';
+	                }
+	                return result;
+	            case 'h':
+	                return withoutSuffix ? 'jedan sat' : 'jednog sata';
+	            case 'hh':
+	                if (number === 1) {
+	                    result += 'sat';
+	                } else if (number === 2 || number === 3 || number === 4) {
+	                    result += 'sata';
+	                } else {
+	                    result += 'sati';
+	                }
+	                return result;
+	            case 'dd':
+	                if (number === 1) {
+	                    result += 'dan';
+	                } else {
+	                    result += 'dana';
+	                }
+	                return result;
+	            case 'MM':
+	                if (number === 1) {
+	                    result += 'mjesec';
+	                } else if (number === 2 || number === 3 || number === 4) {
+	                    result += 'mjeseca';
+	                } else {
+	                    result += 'mjeseci';
+	                }
+	                return result;
+	            case 'yy':
+	                if (number === 1) {
+	                    result += 'godina';
+	                } else if (number === 2 || number === 3 || number === 4) {
+	                    result += 'godine';
+	                } else {
+	                    result += 'godina';
+	                }
+	                return result;
 	        }
 	    }
 	
@@ -77247,32 +77596,32 @@
 	            nextDay  : '[sutra u] LT',
 	            nextWeek : function () {
 	                switch (this.day()) {
-	                case 0:
-	                    return '[u] [nedjelju] [u] LT';
-	                case 3:
-	                    return '[u] [srijedu] [u] LT';
-	                case 6:
-	                    return '[u] [subotu] [u] LT';
-	                case 1:
-	                case 2:
-	                case 4:
-	                case 5:
-	                    return '[u] dddd [u] LT';
+	                    case 0:
+	                        return '[u] [nedjelju] [u] LT';
+	                    case 3:
+	                        return '[u] [srijedu] [u] LT';
+	                    case 6:
+	                        return '[u] [subotu] [u] LT';
+	                    case 1:
+	                    case 2:
+	                    case 4:
+	                    case 5:
+	                        return '[u] dddd [u] LT';
 	                }
 	            },
 	            lastDay  : '[jučer u] LT',
 	            lastWeek : function () {
 	                switch (this.day()) {
-	                case 0:
-	                case 3:
-	                    return '[prošlu] dddd [u] LT';
-	                case 6:
-	                    return '[prošle] [subote] [u] LT';
-	                case 1:
-	                case 2:
-	                case 4:
-	                case 5:
-	                    return '[prošli] dddd [u] LT';
+	                    case 0:
+	                    case 3:
+	                        return '[prošlu] dddd [u] LT';
+	                    case 6:
+	                        return '[prošle] [subote] [u] LT';
+	                    case 1:
+	                    case 2:
+	                    case 4:
+	                    case 5:
+	                        return '[prošli] dddd [u] LT';
 	                }
 	            },
 	            sameElse : 'L'
@@ -77305,16 +77654,16 @@
 	}));
 
 /***/ },
-/* 778 */
+/* 859 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : hungarian (hu)
+	//! locale : Hungarian [hu]
 	//! author : Adam Brunner : https://github.com/adambrunner
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -77324,28 +77673,28 @@
 	        var num = number,
 	            suffix;
 	        switch (key) {
-	        case 's':
-	            return (isFuture || withoutSuffix) ? 'néhány másodperc' : 'néhány másodperce';
-	        case 'm':
-	            return 'egy' + (isFuture || withoutSuffix ? ' perc' : ' perce');
-	        case 'mm':
-	            return num + (isFuture || withoutSuffix ? ' perc' : ' perce');
-	        case 'h':
-	            return 'egy' + (isFuture || withoutSuffix ? ' óra' : ' órája');
-	        case 'hh':
-	            return num + (isFuture || withoutSuffix ? ' óra' : ' órája');
-	        case 'd':
-	            return 'egy' + (isFuture || withoutSuffix ? ' nap' : ' napja');
-	        case 'dd':
-	            return num + (isFuture || withoutSuffix ? ' nap' : ' napja');
-	        case 'M':
-	            return 'egy' + (isFuture || withoutSuffix ? ' hónap' : ' hónapja');
-	        case 'MM':
-	            return num + (isFuture || withoutSuffix ? ' hónap' : ' hónapja');
-	        case 'y':
-	            return 'egy' + (isFuture || withoutSuffix ? ' év' : ' éve');
-	        case 'yy':
-	            return num + (isFuture || withoutSuffix ? ' év' : ' éve');
+	            case 's':
+	                return (isFuture || withoutSuffix) ? 'néhány másodperc' : 'néhány másodperce';
+	            case 'm':
+	                return 'egy' + (isFuture || withoutSuffix ? ' perc' : ' perce');
+	            case 'mm':
+	                return num + (isFuture || withoutSuffix ? ' perc' : ' perce');
+	            case 'h':
+	                return 'egy' + (isFuture || withoutSuffix ? ' óra' : ' órája');
+	            case 'hh':
+	                return num + (isFuture || withoutSuffix ? ' óra' : ' órája');
+	            case 'd':
+	                return 'egy' + (isFuture || withoutSuffix ? ' nap' : ' napja');
+	            case 'dd':
+	                return num + (isFuture || withoutSuffix ? ' nap' : ' napja');
+	            case 'M':
+	                return 'egy' + (isFuture || withoutSuffix ? ' hónap' : ' hónapja');
+	            case 'MM':
+	                return num + (isFuture || withoutSuffix ? ' hónap' : ' hónapja');
+	            case 'y':
+	                return 'egy' + (isFuture || withoutSuffix ? ' év' : ' éve');
+	            case 'yy':
+	                return num + (isFuture || withoutSuffix ? ' év' : ' éve');
 	        }
 	        return '';
 	    }
@@ -77418,16 +77767,16 @@
 	}));
 
 /***/ },
-/* 779 */
+/* 860 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Armenian (hy-am)
+	//! locale : Armenian [hy-am]
 	//! author : Armendarabyan : https://github.com/armendarabyan
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -77494,16 +77843,16 @@
 	        ordinalParse: /\d{1,2}|\d{1,2}-(ին|րդ)/,
 	        ordinal: function (number, period) {
 	            switch (period) {
-	            case 'DDD':
-	            case 'w':
-	            case 'W':
-	            case 'DDDo':
-	                if (number === 1) {
-	                    return number + '-ին';
-	                }
-	                return number + '-րդ';
-	            default:
-	                return number;
+	                case 'DDD':
+	                case 'w':
+	                case 'W':
+	                case 'DDDo':
+	                    if (number === 1) {
+	                        return number + '-ին';
+	                    }
+	                    return number + '-րդ';
+	                default:
+	                    return number;
 	            }
 	        },
 	        week : {
@@ -77517,17 +77866,17 @@
 	}));
 
 /***/ },
-/* 780 */
+/* 861 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Bahasa Indonesia (id)
+	//! locale : Indonesian [id]
 	//! author : Mohammad Satrio Utomo : https://github.com/tyok
 	//! reference: http://id.wikisource.org/wiki/Pedoman_Umum_Ejaan_Bahasa_Indonesia_yang_Disempurnakan
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -77604,16 +77953,16 @@
 	}));
 
 /***/ },
-/* 781 */
+/* 862 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : icelandic (is)
+	//! locale : Icelandic [is]
 	//! author : Hinrik Örn Sigurðsson : https://github.com/hinrik
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -77629,59 +77978,59 @@
 	    function translate(number, withoutSuffix, key, isFuture) {
 	        var result = number + ' ';
 	        switch (key) {
-	        case 's':
-	            return withoutSuffix || isFuture ? 'nokkrar sekúndur' : 'nokkrum sekúndum';
-	        case 'm':
-	            return withoutSuffix ? 'mínúta' : 'mínútu';
-	        case 'mm':
-	            if (plural(number)) {
-	                return result + (withoutSuffix || isFuture ? 'mínútur' : 'mínútum');
-	            } else if (withoutSuffix) {
-	                return result + 'mínúta';
-	            }
-	            return result + 'mínútu';
-	        case 'hh':
-	            if (plural(number)) {
-	                return result + (withoutSuffix || isFuture ? 'klukkustundir' : 'klukkustundum');
-	            }
-	            return result + 'klukkustund';
-	        case 'd':
-	            if (withoutSuffix) {
-	                return 'dagur';
-	            }
-	            return isFuture ? 'dag' : 'degi';
-	        case 'dd':
-	            if (plural(number)) {
-	                if (withoutSuffix) {
-	                    return result + 'dagar';
+	            case 's':
+	                return withoutSuffix || isFuture ? 'nokkrar sekúndur' : 'nokkrum sekúndum';
+	            case 'm':
+	                return withoutSuffix ? 'mínúta' : 'mínútu';
+	            case 'mm':
+	                if (plural(number)) {
+	                    return result + (withoutSuffix || isFuture ? 'mínútur' : 'mínútum');
+	                } else if (withoutSuffix) {
+	                    return result + 'mínúta';
 	                }
-	                return result + (isFuture ? 'daga' : 'dögum');
-	            } else if (withoutSuffix) {
-	                return result + 'dagur';
-	            }
-	            return result + (isFuture ? 'dag' : 'degi');
-	        case 'M':
-	            if (withoutSuffix) {
-	                return 'mánuður';
-	            }
-	            return isFuture ? 'mánuð' : 'mánuði';
-	        case 'MM':
-	            if (plural(number)) {
-	                if (withoutSuffix) {
-	                    return result + 'mánuðir';
+	                return result + 'mínútu';
+	            case 'hh':
+	                if (plural(number)) {
+	                    return result + (withoutSuffix || isFuture ? 'klukkustundir' : 'klukkustundum');
 	                }
-	                return result + (isFuture ? 'mánuði' : 'mánuðum');
-	            } else if (withoutSuffix) {
-	                return result + 'mánuður';
-	            }
-	            return result + (isFuture ? 'mánuð' : 'mánuði');
-	        case 'y':
-	            return withoutSuffix || isFuture ? 'ár' : 'ári';
-	        case 'yy':
-	            if (plural(number)) {
-	                return result + (withoutSuffix || isFuture ? 'ár' : 'árum');
-	            }
-	            return result + (withoutSuffix || isFuture ? 'ár' : 'ári');
+	                return result + 'klukkustund';
+	            case 'd':
+	                if (withoutSuffix) {
+	                    return 'dagur';
+	                }
+	                return isFuture ? 'dag' : 'degi';
+	            case 'dd':
+	                if (plural(number)) {
+	                    if (withoutSuffix) {
+	                        return result + 'dagar';
+	                    }
+	                    return result + (isFuture ? 'daga' : 'dögum');
+	                } else if (withoutSuffix) {
+	                    return result + 'dagur';
+	                }
+	                return result + (isFuture ? 'dag' : 'degi');
+	            case 'M':
+	                if (withoutSuffix) {
+	                    return 'mánuður';
+	                }
+	                return isFuture ? 'mánuð' : 'mánuði';
+	            case 'MM':
+	                if (plural(number)) {
+	                    if (withoutSuffix) {
+	                        return result + 'mánuðir';
+	                    }
+	                    return result + (isFuture ? 'mánuði' : 'mánuðum');
+	                } else if (withoutSuffix) {
+	                    return result + 'mánuður';
+	                }
+	                return result + (isFuture ? 'mánuð' : 'mánuði');
+	            case 'y':
+	                return withoutSuffix || isFuture ? 'ár' : 'ári';
+	            case 'yy':
+	                if (plural(number)) {
+	                    return result + (withoutSuffix || isFuture ? 'ár' : 'árum');
+	                }
+	                return result + (withoutSuffix || isFuture ? 'ár' : 'ári');
 	        }
 	    }
 	
@@ -77735,17 +78084,17 @@
 	}));
 
 /***/ },
-/* 782 */
+/* 863 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : italian (it)
+	//! locale : Italian [it]
 	//! author : Lorenzo : https://github.com/aliem
 	//! author: Mattia Larentis: https://github.com/nostalgiaz
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -77809,16 +78158,16 @@
 	}));
 
 /***/ },
-/* 783 */
+/* 864 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : japanese (ja)
+	//! locale : Japanese [ja]
 	//! author : LI Long : https://github.com/baryon
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -77859,12 +78208,12 @@
 	        ordinalParse : /\d{1,2}日/,
 	        ordinal : function (number, period) {
 	            switch (period) {
-	            case 'd':
-	            case 'D':
-	            case 'DDD':
-	                return number + '日';
-	            default:
-	                return number;
+	                case 'd':
+	                case 'D':
+	                case 'DDD':
+	                    return number + '日';
+	                default:
+	                    return number;
 	            }
 	        },
 	        relativeTime : {
@@ -77889,17 +78238,17 @@
 	}));
 
 /***/ },
-/* 784 */
+/* 865 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Boso Jowo (jv)
+	//! locale : Japanese [jv]
 	//! author : Rony Lantip : https://github.com/lantip
 	//! reference: http://jv.wikipedia.org/wiki/Basa_Jawa
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -77976,16 +78325,16 @@
 	}));
 
 /***/ },
-/* 785 */
+/* 866 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Georgian (ka)
+	//! locale : Georgian [ka]
 	//! author : Irakli Janiashvili : https://github.com/irakli-janiashvili
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -78069,16 +78418,16 @@
 	}));
 
 /***/ },
-/* 786 */
+/* 867 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : kazakh (kk)
+	//! locale : Kazakh [kk]
 	//! authors : Nurlan Rakhimzhanov : https://github.com/nurlan
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -78160,16 +78509,16 @@
 	}));
 
 /***/ },
-/* 787 */
+/* 868 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : khmer (km)
+	//! locale : Cambodian [km]
 	//! author : Kruy Vanna : https://github.com/kruyvanna
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -78222,11 +78571,11 @@
 	}));
 
 /***/ },
-/* 788 */
+/* 869 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : korean (ko)
+	//! locale : Korean [ko]
 	//!
 	//! authors
 	//!
@@ -78234,8 +78583,8 @@
 	//! - Jeeeyul Lee <jeeeyul@gmail.com>
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -78294,16 +78643,16 @@
 	}));
 
 /***/ },
-/* 789 */
+/* 870 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : kyrgyz (ky)
+	//! locale : Kyrgyz [ky]
 	//! author : Chyngyz Arystan uulu : https://github.com/chyngyz
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -78386,16 +78735,16 @@
 	}));
 
 /***/ },
-/* 790 */
+/* 871 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Luxembourgish (lb)
+	//! locale : Luxembourgish [lb]
 	//! author : mweimerskirch : https://github.com/mweimerskirch, David Raison : https://github.com/kwisatz
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -78526,16 +78875,16 @@
 	}));
 
 /***/ },
-/* 791 */
+/* 872 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : lao (lo)
+	//! locale : Lao [lo]
 	//! author : Ryan Hart : https://github.com/ryanhart2
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -78600,16 +78949,16 @@
 	}));
 
 /***/ },
-/* 792 */
+/* 873 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Lithuanian (lt)
+	//! locale : Lithuanian [lt]
 	//! author : Mindaugas Mozūras : https://github.com/mmozuras
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -78659,7 +79008,8 @@
 	    var lt = moment.defineLocale('lt', {
 	        months : {
 	            format: 'sausio_vasario_kovo_balandžio_gegužės_birželio_liepos_rugpjūčio_rugsėjo_spalio_lapkričio_gruodžio'.split('_'),
-	            standalone: 'sausis_vasaris_kovas_balandis_gegužė_birželis_liepa_rugpjūtis_rugsėjis_spalis_lapkritis_gruodis'.split('_')
+	            standalone: 'sausis_vasaris_kovas_balandis_gegužė_birželis_liepa_rugpjūtis_rugsėjis_spalis_lapkritis_gruodis'.split('_'),
+	            isFormat: /D[oD]?(\[[^\[\]]*\]|\s+)+MMMM?|MMMM?(\[[^\[\]]*\]|\s+)+D[oD]?/
 	        },
 	        monthsShort : 'sau_vas_kov_bal_geg_bir_lie_rgp_rgs_spa_lap_grd'.split('_'),
 	        weekdays : {
@@ -78720,17 +79070,17 @@
 	}));
 
 /***/ },
-/* 793 */
+/* 874 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : latvian (lv)
+	//! locale : Latvian [lv]
 	//! author : Kristaps Karlsons : https://github.com/skakri
 	//! author : Jānis Elmeris : https://github.com/JanisE
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -78753,11 +79103,11 @@
 	    function format(forms, number, withoutSuffix) {
 	        if (withoutSuffix) {
 	            // E.g. "21 minūte", "3 minūtes".
-	            return number % 10 === 1 && number !== 11 ? forms[2] : forms[3];
+	            return number % 10 === 1 && number % 100 !== 11 ? forms[2] : forms[3];
 	        } else {
 	            // E.g. "21 minūtes" as in "pēc 21 minūtes".
 	            // E.g. "3 minūtēm" as in "pēc 3 minūtēm".
-	            return number % 10 === 1 && number !== 11 ? forms[0] : forms[1];
+	            return number % 10 === 1 && number % 100 !== 11 ? forms[0] : forms[1];
 	        }
 	    }
 	    function relativeTimeWithPlural(number, withoutSuffix, key) {
@@ -78821,16 +79171,16 @@
 	}));
 
 /***/ },
-/* 794 */
+/* 875 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Montenegrin (me)
+	//! locale : Montenegrin [me]
 	//! author : Miodrag Nikač <miodrag@restartit.me> : https://github.com/miodragnikac
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -78880,17 +79230,17 @@
 	
 	            nextWeek: function () {
 	                switch (this.day()) {
-	                case 0:
-	                    return '[u] [nedjelju] [u] LT';
-	                case 3:
-	                    return '[u] [srijedu] [u] LT';
-	                case 6:
-	                    return '[u] [subotu] [u] LT';
-	                case 1:
-	                case 2:
-	                case 4:
-	                case 5:
-	                    return '[u] dddd [u] LT';
+	                    case 0:
+	                        return '[u] [nedjelju] [u] LT';
+	                    case 3:
+	                        return '[u] [srijedu] [u] LT';
+	                    case 6:
+	                        return '[u] [subotu] [u] LT';
+	                    case 1:
+	                    case 2:
+	                    case 4:
+	                    case 5:
+	                        return '[u] dddd [u] LT';
 	                }
 	            },
 	            lastDay  : '[juče u] LT',
@@ -78936,16 +79286,16 @@
 	}));
 
 /***/ },
-/* 795 */
+/* 876 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : macedonian (mk)
+	//! locale : Macedonian [mk]
 	//! author : Borislav Mickov : https://github.com/B0k0
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -78971,15 +79321,15 @@
 	            lastDay : '[Вчера во] LT',
 	            lastWeek : function () {
 	                switch (this.day()) {
-	                case 0:
-	                case 3:
-	                case 6:
-	                    return '[Изминатата] dddd [во] LT';
-	                case 1:
-	                case 2:
-	                case 4:
-	                case 5:
-	                    return '[Изминатиот] dddd [во] LT';
+	                    case 0:
+	                    case 3:
+	                    case 6:
+	                        return '[Изминатата] dddd [во] LT';
+	                    case 1:
+	                    case 2:
+	                    case 4:
+	                    case 5:
+	                        return '[Изминатиот] dddd [во] LT';
 	                }
 	            },
 	            sameElse : 'L'
@@ -79030,16 +79380,16 @@
 	}));
 
 /***/ },
-/* 796 */
+/* 877 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : malayalam (ml)
+	//! locale : Malayalam [ml]
 	//! author : Floyd Pink : https://github.com/floydpink
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -79115,17 +79465,17 @@
 	}));
 
 /***/ },
-/* 797 */
+/* 878 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Marathi (mr)
+	//! locale : Marathi [mr]
 	//! author : Harshad Kale : https://github.com/kalehv
 	//! author : Vivek Athalye : https://github.com/vnathalye
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -79278,16 +79628,16 @@
 	}));
 
 /***/ },
-/* 798 */
+/* 879 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Bahasa Malaysia (ms-MY)
+	//! locale : Malay [ms]
 	//! author : Weldan Jamili : https://github.com/weldan
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -79364,16 +79714,17 @@
 	}));
 
 /***/ },
-/* 799 */
+/* 880 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Bahasa Malaysia (ms-MY)
+	//! locale : Malay [ms-my]
+	//! note : DEPRECATED, the correct one is [ms]
 	//! author : Weldan Jamili : https://github.com/weldan
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -79450,16 +79801,16 @@
 	}));
 
 /***/ },
-/* 800 */
+/* 881 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Burmese (my)
+	//! locale : Burmese [my]
 	//! author : Squar team, mysquar.com
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -79547,17 +79898,17 @@
 	}));
 
 /***/ },
-/* 801 */
+/* 882 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : norwegian bokmål (nb)
+	//! locale : Norwegian Bokmål [nb]
 	//! authors : Espen Hovlandsdal : https://github.com/rexxars
 	//!           Sigurd Gartmann : https://github.com/sigurdga
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -79614,16 +79965,16 @@
 	}));
 
 /***/ },
-/* 802 */
+/* 883 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : nepali/nepalese
+	//! locale : Nepalese [ne]
 	//! author : suvash : https://github.com/suvash
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -79741,16 +80092,16 @@
 	}));
 
 /***/ },
-/* 803 */
+/* 884 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : dutch (nl)
+	//! locale : Dutch [nl]
 	//! author : Joris Röling : https://github.com/jjupiter
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -79818,16 +80169,16 @@
 	}));
 
 /***/ },
-/* 804 */
+/* 885 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : norwegian nynorsk (nn)
+	//! locale : Nynorsk [nn]
 	//! author : https://github.com/mechuwind
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -79882,16 +80233,16 @@
 	}));
 
 /***/ },
-/* 805 */
+/* 886 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : punjabi india (pa-in)
+	//! locale : Punjabi (India) [pa-in]
 	//! author : Harpreet Singh : https://github.com/harpreetkhalsagtbit
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -80010,16 +80361,16 @@
 	}));
 
 /***/ },
-/* 806 */
+/* 887 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : polish (pl)
+	//! locale : Polish [pl]
 	//! author : Rafal Hirsz : https://github.com/evoL
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -80032,18 +80383,18 @@
 	    function translate(number, withoutSuffix, key) {
 	        var result = number + ' ';
 	        switch (key) {
-	        case 'm':
-	            return withoutSuffix ? 'minuta' : 'minutę';
-	        case 'mm':
-	            return result + (plural(number) ? 'minuty' : 'minut');
-	        case 'h':
-	            return withoutSuffix  ? 'godzina'  : 'godzinę';
-	        case 'hh':
-	            return result + (plural(number) ? 'godziny' : 'godzin');
-	        case 'MM':
-	            return result + (plural(number) ? 'miesiące' : 'miesięcy');
-	        case 'yy':
-	            return result + (plural(number) ? 'lata' : 'lat');
+	            case 'm':
+	                return withoutSuffix ? 'minuta' : 'minutę';
+	            case 'mm':
+	                return result + (plural(number) ? 'minuty' : 'minut');
+	            case 'h':
+	                return withoutSuffix  ? 'godzina'  : 'godzinę';
+	            case 'hh':
+	                return result + (plural(number) ? 'godziny' : 'godzin');
+	            case 'MM':
+	                return result + (plural(number) ? 'miesiące' : 'miesięcy');
+	            case 'yy':
+	                return result + (plural(number) ? 'lata' : 'lat');
 	        }
 	    }
 	
@@ -80079,14 +80430,14 @@
 	            lastDay: '[Wczoraj o] LT',
 	            lastWeek: function () {
 	                switch (this.day()) {
-	                case 0:
-	                    return '[W zeszłą niedzielę o] LT';
-	                case 3:
-	                    return '[W zeszłą środę o] LT';
-	                case 6:
-	                    return '[W zeszłą sobotę o] LT';
-	                default:
-	                    return '[W zeszły] dddd [o] LT';
+	                    case 0:
+	                        return '[W zeszłą niedzielę o] LT';
+	                    case 3:
+	                        return '[W zeszłą środę o] LT';
+	                    case 6:
+	                        return '[W zeszłą sobotę o] LT';
+	                    default:
+	                        return '[W zeszły] dddd [o] LT';
 	                }
 	            },
 	            sameElse: 'L'
@@ -80119,16 +80470,16 @@
 	}));
 
 /***/ },
-/* 807 */
+/* 888 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : portuguese (pt)
+	//! locale : Portuguese [pt]
 	//! author : Jefferson : https://github.com/jalex79
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -80188,16 +80539,16 @@
 	}));
 
 /***/ },
-/* 808 */
+/* 889 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : brazilian portuguese (pt-br)
+	//! locale : Portuguese (Brazil) [pt-br]
 	//! author : Caio Ribeiro Pereira : https://github.com/caio-ribeiro-pereira
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -80253,17 +80604,17 @@
 	}));
 
 /***/ },
-/* 809 */
+/* 890 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : romanian (ro)
+	//! locale : Romanian [ro]
 	//! author : Vlad Gurdiga : https://github.com/gurdiga
 	//! author : Valentin Agachi : https://github.com/avaly
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -80332,18 +80683,18 @@
 	}));
 
 /***/ },
-/* 810 */
+/* 891 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : russian (ru)
+	//! locale : Russian [ru]
 	//! author : Viktorminator : https://github.com/Viktorminator
 	//! Author : Menelion Elensúle : https://github.com/Oire
 	//! author : Коренберг Марк : https://github.com/socketpair
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -80392,10 +80743,18 @@
 	        monthsParse : monthsParse,
 	        longMonthsParse : monthsParse,
 	        shortMonthsParse : monthsParse,
-	        monthsRegex: /^(сентябр[яь]|октябр[яь]|декабр[яь]|феврал[яь]|январ[яь]|апрел[яь]|августа?|ноябр[яь]|сент\.|февр\.|нояб\.|июнь|янв.|июль|дек.|авг.|апр.|марта|мар[.т]|окт.|июн[яь]|июл[яь]|ма[яй])/i,
-	        monthsShortRegex: /^(сентябр[яь]|октябр[яь]|декабр[яь]|феврал[яь]|январ[яь]|апрел[яь]|августа?|ноябр[яь]|сент\.|февр\.|нояб\.|июнь|янв.|июль|дек.|авг.|апр.|марта|мар[.т]|окт.|июн[яь]|июл[яь]|ма[яй])/i,
-	        monthsStrictRegex: /^(сентябр[яь]|октябр[яь]|декабр[яь]|феврал[яь]|январ[яь]|апрел[яь]|августа?|ноябр[яь]|марта?|июн[яь]|июл[яь]|ма[яй])/i,
-	        monthsShortStrictRegex: /^(нояб\.|февр\.|сент\.|июль|янв\.|июн[яь]|мар[.т]|авг\.|апр\.|окт\.|дек\.|ма[яй])/i,
+	
+	        // полные названия с падежами, по три буквы, для некоторых, по 4 буквы, сокращения с точкой и без точки
+	        monthsRegex: /^(январ[ья]|янв\.?|феврал[ья]|февр?\.?|марта?|мар\.?|апрел[ья]|апр\.?|ма[йя]|июн[ья]|июн\.?|июл[ья]|июл\.?|августа?|авг\.?|сентябр[ья]|сент?\.?|октябр[ья]|окт\.?|ноябр[ья]|нояб?\.?|декабр[ья]|дек\.?)/i,
+	
+	        // копия предыдущего
+	        monthsShortRegex: /^(январ[ья]|янв\.?|феврал[ья]|февр?\.?|марта?|мар\.?|апрел[ья]|апр\.?|ма[йя]|июн[ья]|июн\.?|июл[ья]|июл\.?|августа?|авг\.?|сентябр[ья]|сент?\.?|октябр[ья]|окт\.?|ноябр[ья]|нояб?\.?|декабр[ья]|дек\.?)/i,
+	
+	        // полные названия с падежами
+	        monthsStrictRegex: /^(январ[яь]|феврал[яь]|марта?|апрел[яь]|ма[яй]|июн[яь]|июл[яь]|августа?|сентябр[яь]|октябр[яь]|ноябр[яь]|декабр[яь])/i,
+	
+	        // Выражение, которое соотвествует только сокращённым формам
+	        monthsShortStrictRegex: /^(янв\.|февр?\.|мар[т.]|апр\.|ма[яй]|июн[ья.]|июл[ья.]|авг\.|сент?\.|окт\.|нояб?\.|дек\.)/i,
 	        longDateFormat : {
 	            LT : 'HH:mm',
 	            LTS : 'HH:mm:ss',
@@ -80411,16 +80770,16 @@
 	            nextWeek: function (now) {
 	                if (now.week() !== this.week()) {
 	                    switch (this.day()) {
-	                    case 0:
-	                        return '[В следующее] dddd [в] LT';
-	                    case 1:
-	                    case 2:
-	                    case 4:
-	                        return '[В следующий] dddd [в] LT';
-	                    case 3:
-	                    case 5:
-	                    case 6:
-	                        return '[В следующую] dddd [в] LT';
+	                        case 0:
+	                            return '[В следующее] dddd [в] LT';
+	                        case 1:
+	                        case 2:
+	                        case 4:
+	                            return '[В следующий] dddd [в] LT';
+	                        case 3:
+	                        case 5:
+	                        case 6:
+	                            return '[В следующую] dddd [в] LT';
 	                    }
 	                } else {
 	                    if (this.day() === 2) {
@@ -80433,16 +80792,16 @@
 	            lastWeek: function (now) {
 	                if (now.week() !== this.week()) {
 	                    switch (this.day()) {
-	                    case 0:
-	                        return '[В прошлое] dddd [в] LT';
-	                    case 1:
-	                    case 2:
-	                    case 4:
-	                        return '[В прошлый] dddd [в] LT';
-	                    case 3:
-	                    case 5:
-	                    case 6:
-	                        return '[В прошлую] dddd [в] LT';
+	                        case 0:
+	                            return '[В прошлое] dddd [в] LT';
+	                        case 1:
+	                        case 2:
+	                        case 4:
+	                            return '[В прошлый] dddd [в] LT';
+	                        case 3:
+	                        case 5:
+	                        case 6:
+	                            return '[В прошлую] dddd [в] LT';
 	                    }
 	                } else {
 	                    if (this.day() === 2) {
@@ -80487,17 +80846,17 @@
 	        ordinalParse: /\d{1,2}-(й|го|я)/,
 	        ordinal: function (number, period) {
 	            switch (period) {
-	            case 'M':
-	            case 'd':
-	            case 'DDD':
-	                return number + '-й';
-	            case 'D':
-	                return number + '-го';
-	            case 'w':
-	            case 'W':
-	                return number + '-я';
-	            default:
-	                return number;
+	                case 'M':
+	                case 'd':
+	                case 'DDD':
+	                    return number + '-й';
+	                case 'D':
+	                    return number + '-го';
+	                case 'w':
+	                case 'W':
+	                    return number + '-я';
+	                default:
+	                    return number;
 	            }
 	        },
 	        week : {
@@ -80511,16 +80870,16 @@
 	}));
 
 /***/ },
-/* 811 */
+/* 892 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Northern Sami (se)
+	//! locale : Northern Sami [se]
 	//! authors : Bård Rolstad Henriksen : https://github.com/karamell
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -80576,16 +80935,16 @@
 	}));
 
 /***/ },
-/* 812 */
+/* 893 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Sinhalese (si)
+	//! locale : Sinhalese [si]
 	//! author : Sampath Sitinamaluwa : https://github.com/sampathsris
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -80651,17 +81010,17 @@
 	}));
 
 /***/ },
-/* 813 */
+/* 894 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : slovak (sk)
+	//! locale : Slovak [sk]
 	//! author : Martin Minka : https://github.com/k2s
 	//! based on work of petrbela : https://github.com/petrbela
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -80674,53 +81033,53 @@
 	    function translate(number, withoutSuffix, key, isFuture) {
 	        var result = number + ' ';
 	        switch (key) {
-	        case 's':  // a few seconds / in a few seconds / a few seconds ago
-	            return (withoutSuffix || isFuture) ? 'pár sekúnd' : 'pár sekundami';
-	        case 'm':  // a minute / in a minute / a minute ago
-	            return withoutSuffix ? 'minúta' : (isFuture ? 'minútu' : 'minútou');
-	        case 'mm': // 9 minutes / in 9 minutes / 9 minutes ago
-	            if (withoutSuffix || isFuture) {
-	                return result + (plural(number) ? 'minúty' : 'minút');
-	            } else {
-	                return result + 'minútami';
-	            }
-	            break;
-	        case 'h':  // an hour / in an hour / an hour ago
-	            return withoutSuffix ? 'hodina' : (isFuture ? 'hodinu' : 'hodinou');
-	        case 'hh': // 9 hours / in 9 hours / 9 hours ago
-	            if (withoutSuffix || isFuture) {
-	                return result + (plural(number) ? 'hodiny' : 'hodín');
-	            } else {
-	                return result + 'hodinami';
-	            }
-	            break;
-	        case 'd':  // a day / in a day / a day ago
-	            return (withoutSuffix || isFuture) ? 'deň' : 'dňom';
-	        case 'dd': // 9 days / in 9 days / 9 days ago
-	            if (withoutSuffix || isFuture) {
-	                return result + (plural(number) ? 'dni' : 'dní');
-	            } else {
-	                return result + 'dňami';
-	            }
-	            break;
-	        case 'M':  // a month / in a month / a month ago
-	            return (withoutSuffix || isFuture) ? 'mesiac' : 'mesiacom';
-	        case 'MM': // 9 months / in 9 months / 9 months ago
-	            if (withoutSuffix || isFuture) {
-	                return result + (plural(number) ? 'mesiace' : 'mesiacov');
-	            } else {
-	                return result + 'mesiacmi';
-	            }
-	            break;
-	        case 'y':  // a year / in a year / a year ago
-	            return (withoutSuffix || isFuture) ? 'rok' : 'rokom';
-	        case 'yy': // 9 years / in 9 years / 9 years ago
-	            if (withoutSuffix || isFuture) {
-	                return result + (plural(number) ? 'roky' : 'rokov');
-	            } else {
-	                return result + 'rokmi';
-	            }
-	            break;
+	            case 's':  // a few seconds / in a few seconds / a few seconds ago
+	                return (withoutSuffix || isFuture) ? 'pár sekúnd' : 'pár sekundami';
+	            case 'm':  // a minute / in a minute / a minute ago
+	                return withoutSuffix ? 'minúta' : (isFuture ? 'minútu' : 'minútou');
+	            case 'mm': // 9 minutes / in 9 minutes / 9 minutes ago
+	                if (withoutSuffix || isFuture) {
+	                    return result + (plural(number) ? 'minúty' : 'minút');
+	                } else {
+	                    return result + 'minútami';
+	                }
+	                break;
+	            case 'h':  // an hour / in an hour / an hour ago
+	                return withoutSuffix ? 'hodina' : (isFuture ? 'hodinu' : 'hodinou');
+	            case 'hh': // 9 hours / in 9 hours / 9 hours ago
+	                if (withoutSuffix || isFuture) {
+	                    return result + (plural(number) ? 'hodiny' : 'hodín');
+	                } else {
+	                    return result + 'hodinami';
+	                }
+	                break;
+	            case 'd':  // a day / in a day / a day ago
+	                return (withoutSuffix || isFuture) ? 'deň' : 'dňom';
+	            case 'dd': // 9 days / in 9 days / 9 days ago
+	                if (withoutSuffix || isFuture) {
+	                    return result + (plural(number) ? 'dni' : 'dní');
+	                } else {
+	                    return result + 'dňami';
+	                }
+	                break;
+	            case 'M':  // a month / in a month / a month ago
+	                return (withoutSuffix || isFuture) ? 'mesiac' : 'mesiacom';
+	            case 'MM': // 9 months / in 9 months / 9 months ago
+	                if (withoutSuffix || isFuture) {
+	                    return result + (plural(number) ? 'mesiace' : 'mesiacov');
+	                } else {
+	                    return result + 'mesiacmi';
+	                }
+	                break;
+	            case 'y':  // a year / in a year / a year ago
+	                return (withoutSuffix || isFuture) ? 'rok' : 'rokom';
+	            case 'yy': // 9 years / in 9 years / 9 years ago
+	                if (withoutSuffix || isFuture) {
+	                    return result + (plural(number) ? 'roky' : 'rokov');
+	                } else {
+	                    return result + 'rokmi';
+	                }
+	                break;
 	        }
 	    }
 	
@@ -80743,36 +81102,36 @@
 	            nextDay: '[zajtra o] LT',
 	            nextWeek: function () {
 	                switch (this.day()) {
-	                case 0:
-	                    return '[v nedeľu o] LT';
-	                case 1:
-	                case 2:
-	                    return '[v] dddd [o] LT';
-	                case 3:
-	                    return '[v stredu o] LT';
-	                case 4:
-	                    return '[vo štvrtok o] LT';
-	                case 5:
-	                    return '[v piatok o] LT';
-	                case 6:
-	                    return '[v sobotu o] LT';
+	                    case 0:
+	                        return '[v nedeľu o] LT';
+	                    case 1:
+	                    case 2:
+	                        return '[v] dddd [o] LT';
+	                    case 3:
+	                        return '[v stredu o] LT';
+	                    case 4:
+	                        return '[vo štvrtok o] LT';
+	                    case 5:
+	                        return '[v piatok o] LT';
+	                    case 6:
+	                        return '[v sobotu o] LT';
 	                }
 	            },
 	            lastDay: '[včera o] LT',
 	            lastWeek: function () {
 	                switch (this.day()) {
-	                case 0:
-	                    return '[minulú nedeľu o] LT';
-	                case 1:
-	                case 2:
-	                    return '[minulý] dddd [o] LT';
-	                case 3:
-	                    return '[minulú stredu o] LT';
-	                case 4:
-	                case 5:
-	                    return '[minulý] dddd [o] LT';
-	                case 6:
-	                    return '[minulú sobotu o] LT';
+	                    case 0:
+	                        return '[minulú nedeľu o] LT';
+	                    case 1:
+	                    case 2:
+	                        return '[minulý] dddd [o] LT';
+	                    case 3:
+	                        return '[minulú stredu o] LT';
+	                    case 4:
+	                    case 5:
+	                        return '[minulý] dddd [o] LT';
+	                    case 6:
+	                        return '[minulú sobotu o] LT';
 	                }
 	            },
 	            sameElse: 'L'
@@ -80805,16 +81164,16 @@
 	}));
 
 /***/ },
-/* 814 */
+/* 895 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : slovenian (sl)
+	//! locale : Slovenian [sl]
 	//! author : Robert Sedovšek : https://github.com/sedovsek
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -80822,71 +81181,71 @@
 	    function processRelativeTime(number, withoutSuffix, key, isFuture) {
 	        var result = number + ' ';
 	        switch (key) {
-	        case 's':
-	            return withoutSuffix || isFuture ? 'nekaj sekund' : 'nekaj sekundami';
-	        case 'm':
-	            return withoutSuffix ? 'ena minuta' : 'eno minuto';
-	        case 'mm':
-	            if (number === 1) {
-	                result += withoutSuffix ? 'minuta' : 'minuto';
-	            } else if (number === 2) {
-	                result += withoutSuffix || isFuture ? 'minuti' : 'minutama';
-	            } else if (number < 5) {
-	                result += withoutSuffix || isFuture ? 'minute' : 'minutami';
-	            } else {
-	                result += withoutSuffix || isFuture ? 'minut' : 'minutami';
-	            }
-	            return result;
-	        case 'h':
-	            return withoutSuffix ? 'ena ura' : 'eno uro';
-	        case 'hh':
-	            if (number === 1) {
-	                result += withoutSuffix ? 'ura' : 'uro';
-	            } else if (number === 2) {
-	                result += withoutSuffix || isFuture ? 'uri' : 'urama';
-	            } else if (number < 5) {
-	                result += withoutSuffix || isFuture ? 'ure' : 'urami';
-	            } else {
-	                result += withoutSuffix || isFuture ? 'ur' : 'urami';
-	            }
-	            return result;
-	        case 'd':
-	            return withoutSuffix || isFuture ? 'en dan' : 'enim dnem';
-	        case 'dd':
-	            if (number === 1) {
-	                result += withoutSuffix || isFuture ? 'dan' : 'dnem';
-	            } else if (number === 2) {
-	                result += withoutSuffix || isFuture ? 'dni' : 'dnevoma';
-	            } else {
-	                result += withoutSuffix || isFuture ? 'dni' : 'dnevi';
-	            }
-	            return result;
-	        case 'M':
-	            return withoutSuffix || isFuture ? 'en mesec' : 'enim mesecem';
-	        case 'MM':
-	            if (number === 1) {
-	                result += withoutSuffix || isFuture ? 'mesec' : 'mesecem';
-	            } else if (number === 2) {
-	                result += withoutSuffix || isFuture ? 'meseca' : 'mesecema';
-	            } else if (number < 5) {
-	                result += withoutSuffix || isFuture ? 'mesece' : 'meseci';
-	            } else {
-	                result += withoutSuffix || isFuture ? 'mesecev' : 'meseci';
-	            }
-	            return result;
-	        case 'y':
-	            return withoutSuffix || isFuture ? 'eno leto' : 'enim letom';
-	        case 'yy':
-	            if (number === 1) {
-	                result += withoutSuffix || isFuture ? 'leto' : 'letom';
-	            } else if (number === 2) {
-	                result += withoutSuffix || isFuture ? 'leti' : 'letoma';
-	            } else if (number < 5) {
-	                result += withoutSuffix || isFuture ? 'leta' : 'leti';
-	            } else {
-	                result += withoutSuffix || isFuture ? 'let' : 'leti';
-	            }
-	            return result;
+	            case 's':
+	                return withoutSuffix || isFuture ? 'nekaj sekund' : 'nekaj sekundami';
+	            case 'm':
+	                return withoutSuffix ? 'ena minuta' : 'eno minuto';
+	            case 'mm':
+	                if (number === 1) {
+	                    result += withoutSuffix ? 'minuta' : 'minuto';
+	                } else if (number === 2) {
+	                    result += withoutSuffix || isFuture ? 'minuti' : 'minutama';
+	                } else if (number < 5) {
+	                    result += withoutSuffix || isFuture ? 'minute' : 'minutami';
+	                } else {
+	                    result += withoutSuffix || isFuture ? 'minut' : 'minutami';
+	                }
+	                return result;
+	            case 'h':
+	                return withoutSuffix ? 'ena ura' : 'eno uro';
+	            case 'hh':
+	                if (number === 1) {
+	                    result += withoutSuffix ? 'ura' : 'uro';
+	                } else if (number === 2) {
+	                    result += withoutSuffix || isFuture ? 'uri' : 'urama';
+	                } else if (number < 5) {
+	                    result += withoutSuffix || isFuture ? 'ure' : 'urami';
+	                } else {
+	                    result += withoutSuffix || isFuture ? 'ur' : 'urami';
+	                }
+	                return result;
+	            case 'd':
+	                return withoutSuffix || isFuture ? 'en dan' : 'enim dnem';
+	            case 'dd':
+	                if (number === 1) {
+	                    result += withoutSuffix || isFuture ? 'dan' : 'dnem';
+	                } else if (number === 2) {
+	                    result += withoutSuffix || isFuture ? 'dni' : 'dnevoma';
+	                } else {
+	                    result += withoutSuffix || isFuture ? 'dni' : 'dnevi';
+	                }
+	                return result;
+	            case 'M':
+	                return withoutSuffix || isFuture ? 'en mesec' : 'enim mesecem';
+	            case 'MM':
+	                if (number === 1) {
+	                    result += withoutSuffix || isFuture ? 'mesec' : 'mesecem';
+	                } else if (number === 2) {
+	                    result += withoutSuffix || isFuture ? 'meseca' : 'mesecema';
+	                } else if (number < 5) {
+	                    result += withoutSuffix || isFuture ? 'mesece' : 'meseci';
+	                } else {
+	                    result += withoutSuffix || isFuture ? 'mesecev' : 'meseci';
+	                }
+	                return result;
+	            case 'y':
+	                return withoutSuffix || isFuture ? 'eno leto' : 'enim letom';
+	            case 'yy':
+	                if (number === 1) {
+	                    result += withoutSuffix || isFuture ? 'leto' : 'letom';
+	                } else if (number === 2) {
+	                    result += withoutSuffix || isFuture ? 'leti' : 'letoma';
+	                } else if (number < 5) {
+	                    result += withoutSuffix || isFuture ? 'leta' : 'leti';
+	                } else {
+	                    result += withoutSuffix || isFuture ? 'let' : 'leti';
+	                }
+	                return result;
 	        }
 	    }
 	
@@ -80912,33 +81271,33 @@
 	
 	            nextWeek : function () {
 	                switch (this.day()) {
-	                case 0:
-	                    return '[v] [nedeljo] [ob] LT';
-	                case 3:
-	                    return '[v] [sredo] [ob] LT';
-	                case 6:
-	                    return '[v] [soboto] [ob] LT';
-	                case 1:
-	                case 2:
-	                case 4:
-	                case 5:
-	                    return '[v] dddd [ob] LT';
+	                    case 0:
+	                        return '[v] [nedeljo] [ob] LT';
+	                    case 3:
+	                        return '[v] [sredo] [ob] LT';
+	                    case 6:
+	                        return '[v] [soboto] [ob] LT';
+	                    case 1:
+	                    case 2:
+	                    case 4:
+	                    case 5:
+	                        return '[v] dddd [ob] LT';
 	                }
 	            },
 	            lastDay  : '[včeraj ob] LT',
 	            lastWeek : function () {
 	                switch (this.day()) {
-	                case 0:
-	                    return '[prejšnjo] [nedeljo] [ob] LT';
-	                case 3:
-	                    return '[prejšnjo] [sredo] [ob] LT';
-	                case 6:
-	                    return '[prejšnjo] [soboto] [ob] LT';
-	                case 1:
-	                case 2:
-	                case 4:
-	                case 5:
-	                    return '[prejšnji] dddd [ob] LT';
+	                    case 0:
+	                        return '[prejšnjo] [nedeljo] [ob] LT';
+	                    case 3:
+	                        return '[prejšnjo] [sredo] [ob] LT';
+	                    case 6:
+	                        return '[prejšnjo] [soboto] [ob] LT';
+	                    case 1:
+	                    case 2:
+	                    case 4:
+	                    case 5:
+	                        return '[prejšnji] dddd [ob] LT';
 	                }
 	            },
 	            sameElse : 'L'
@@ -80971,18 +81330,18 @@
 	}));
 
 /***/ },
-/* 815 */
+/* 896 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Albanian (sq)
+	//! locale : Albanian [sq]
 	//! author : Flakërim Ismani : https://github.com/flakerimi
 	//! author: Menelion Elensúle: https://github.com/Oire (tests)
 	//! author : Oerd Cukalla : https://github.com/oerd (fixes)
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -81045,16 +81404,16 @@
 	}));
 
 /***/ },
-/* 816 */
+/* 897 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Serbian-latin (sr)
+	//! locale : Serbian [sr]
 	//! author : Milan Janačković<milanjanackovic@gmail.com> : https://github.com/milan-j
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -81103,17 +81462,17 @@
 	            nextDay: '[sutra u] LT',
 	            nextWeek: function () {
 	                switch (this.day()) {
-	                case 0:
-	                    return '[u] [nedelju] [u] LT';
-	                case 3:
-	                    return '[u] [sredu] [u] LT';
-	                case 6:
-	                    return '[u] [subotu] [u] LT';
-	                case 1:
-	                case 2:
-	                case 4:
-	                case 5:
-	                    return '[u] dddd [u] LT';
+	                    case 0:
+	                        return '[u] [nedelju] [u] LT';
+	                    case 3:
+	                        return '[u] [sredu] [u] LT';
+	                    case 6:
+	                        return '[u] [subotu] [u] LT';
+	                    case 1:
+	                    case 2:
+	                    case 4:
+	                    case 5:
+	                        return '[u] dddd [u] LT';
 	                }
 	            },
 	            lastDay  : '[juče u] LT',
@@ -81159,16 +81518,16 @@
 	}));
 
 /***/ },
-/* 817 */
+/* 898 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Serbian-cyrillic (sr-cyrl)
+	//! locale : Serbian Cyrillic [sr-cyrl]
 	//! author : Milan Janačković<milanjanackovic@gmail.com> : https://github.com/milan-j
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -81217,17 +81576,17 @@
 	            nextDay: '[сутра у] LT',
 	            nextWeek: function () {
 	                switch (this.day()) {
-	                case 0:
-	                    return '[у] [недељу] [у] LT';
-	                case 3:
-	                    return '[у] [среду] [у] LT';
-	                case 6:
-	                    return '[у] [суботу] [у] LT';
-	                case 1:
-	                case 2:
-	                case 4:
-	                case 5:
-	                    return '[у] dddd [у] LT';
+	                    case 0:
+	                        return '[у] [недељу] [у] LT';
+	                    case 3:
+	                        return '[у] [среду] [у] LT';
+	                    case 6:
+	                        return '[у] [суботу] [у] LT';
+	                    case 1:
+	                    case 2:
+	                    case 4:
+	                    case 5:
+	                        return '[у] dddd [у] LT';
 	                }
 	            },
 	            lastDay  : '[јуче у] LT',
@@ -81273,16 +81632,16 @@
 	}));
 
 /***/ },
-/* 818 */
+/* 899 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : siSwati (ss)
+	//! locale : Swazi [ss]
 	//! author : Nicolai Davies<mail@nicolai.io> : https://github.com/nicolaidavies
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -81366,16 +81725,16 @@
 	}));
 
 /***/ },
-/* 819 */
+/* 900 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : swedish (sv)
+	//! locale : Swedish [sv]
 	//! author : Jens Alm : https://github.com/ulmus
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -81439,16 +81798,16 @@
 	}));
 
 /***/ },
-/* 820 */
+/* 901 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : swahili (sw)
+	//! locale : Swahili [sw]
 	//! author : Fahad Kassim : https://github.com/fadsel
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -81502,16 +81861,16 @@
 	}));
 
 /***/ },
-/* 821 */
+/* 902 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : tamil (ta)
+	//! locale : Tamil [ta]
 	//! author : Arjunkumar Krishnamoorthy : https://github.com/tk120404
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -81635,16 +81994,16 @@
 	}));
 
 /***/ },
-/* 822 */
+/* 903 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : telugu (te)
+	//! locale : Telugu [te]
 	//! author : Krishna Chaitanya Thota : https://github.com/kcthota
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -81728,23 +82087,23 @@
 	}));
 
 /***/ },
-/* 823 */
+/* 904 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : thai (th)
+	//! locale : Thai [th]
 	//! author : Kridsada Thanabulpong : https://github.com/sirn
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
 	
 	    var th = moment.defineLocale('th', {
 	        months : 'มกราคม_กุมภาพันธ์_มีนาคม_เมษายน_พฤษภาคม_มิถุนายน_กรกฎาคม_สิงหาคม_กันยายน_ตุลาคม_พฤศจิกายน_ธันวาคม'.split('_'),
-	        monthsShort : 'มกรา_กุมภา_มีนา_เมษา_พฤษภา_มิถุนา_กรกฎา_สิงหา_กันยา_ตุลา_พฤศจิกา_ธันวา'.split('_'),
+	        monthsShort : 'ม.ค._ก.พ._มี.ค._เม.ย._พ.ค._มิ.ย._ก.ค._ส.ค._ก.ย._ต.ค._พ.ย._ธ.ค.'.split('_'),
 	        monthsParseExact: true,
 	        weekdays : 'อาทิตย์_จันทร์_อังคาร_พุธ_พฤหัสบดี_ศุกร์_เสาร์'.split('_'),
 	        weekdaysShort : 'อาทิตย์_จันทร์_อังคาร_พุธ_พฤหัส_ศุกร์_เสาร์'.split('_'), // yes, three characters difference
@@ -81799,16 +82158,16 @@
 	}));
 
 /***/ },
-/* 824 */
+/* 905 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Tagalog/Filipino (tl-ph)
+	//! locale : Tagalog (Philippines) [tl-ph]
 	//! author : Dan Hagman
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -81865,16 +82224,16 @@
 	}));
 
 /***/ },
-/* 825 */
+/* 906 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Klingon (tlh)
+	//! locale : Klingon [tlh]
 	//! author : Dominika Kruk : https://github.com/amaranthrose
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -81884,24 +82243,24 @@
 	    function translateFuture(output) {
 	        var time = output;
 	        time = (output.indexOf('jaj') !== -1) ?
-	    	time.slice(0, -3) + 'leS' :
-	    	(output.indexOf('jar') !== -1) ?
-	    	time.slice(0, -3) + 'waQ' :
-	    	(output.indexOf('DIS') !== -1) ?
-	    	time.slice(0, -3) + 'nem' :
-	    	time + ' pIq';
+	        time.slice(0, -3) + 'leS' :
+	        (output.indexOf('jar') !== -1) ?
+	        time.slice(0, -3) + 'waQ' :
+	        (output.indexOf('DIS') !== -1) ?
+	        time.slice(0, -3) + 'nem' :
+	        time + ' pIq';
 	        return time;
 	    }
 	
 	    function translatePast(output) {
 	        var time = output;
 	        time = (output.indexOf('jaj') !== -1) ?
-	    	time.slice(0, -3) + 'Hu’' :
-	    	(output.indexOf('jar') !== -1) ?
-	    	time.slice(0, -3) + 'wen' :
-	    	(output.indexOf('DIS') !== -1) ?
-	    	time.slice(0, -3) + 'ben' :
-	    	time + ' ret';
+	        time.slice(0, -3) + 'Hu’' :
+	        (output.indexOf('jar') !== -1) ?
+	        time.slice(0, -3) + 'wen' :
+	        (output.indexOf('DIS') !== -1) ?
+	        time.slice(0, -3) + 'ben' :
+	        time + ' ret';
 	        return time;
 	    }
 	
@@ -81923,9 +82282,9 @@
 	
 	    function numberAsNoun(number) {
 	        var hundred = Math.floor((number % 1000) / 100),
-	    	ten = Math.floor((number % 100) / 10),
-	    	one = number % 10,
-	    	word = '';
+	        ten = Math.floor((number % 100) / 10),
+	        one = number % 10,
+	        word = '';
 	        if (hundred > 0) {
 	            word += numbersNouns[hundred] + 'vatlh';
 	        }
@@ -81989,17 +82348,17 @@
 	}));
 
 /***/ },
-/* 826 */
+/* 907 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : turkish (tr)
+	//! locale : Turkish [tr]
 	//! authors : Erhan Gundogan : https://github.com/erhangundogan,
 	//!           Burak Yiğit Kaya: https://github.com/BYK
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -82083,16 +82442,16 @@
 	}));
 
 /***/ },
-/* 827 */
+/* 908 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : talossan (tzl)
+	//! locale : Talossan [tzl]
 	//! author : Robin van der Vliet : https://github.com/robin0van0der0v with the help of Iustì Canun
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -82178,16 +82537,16 @@
 	}));
 
 /***/ },
-/* 828 */
+/* 909 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Morocco Central Atlas Tamaziɣt (tzm)
+	//! locale : Central Atlas Tamazight [tzm]
 	//! author : Abdel Said : https://github.com/abdelsaid
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -82240,16 +82599,16 @@
 	}));
 
 /***/ },
-/* 829 */
+/* 910 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Morocco Central Atlas Tamaziɣt in Latin (tzm-latn)
+	//! locale : Central Atlas Tamazight Latin [tzm-latn]
 	//! author : Abdel Said : https://github.com/abdelsaid
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -82302,17 +82661,17 @@
 	}));
 
 /***/ },
-/* 830 */
+/* 911 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : ukrainian (uk)
+	//! locale : Ukrainian [uk]
 	//! author : zemlanin : https://github.com/zemlanin
 	//! Author : Menelion Elensúle : https://github.com/Oire
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -82382,15 +82741,15 @@
 	            nextWeek: processHoursFunction('[У] dddd ['),
 	            lastWeek: function () {
 	                switch (this.day()) {
-	                case 0:
-	                case 3:
-	                case 5:
-	                case 6:
-	                    return processHoursFunction('[Минулої] dddd [').call(this);
-	                case 1:
-	                case 2:
-	                case 4:
-	                    return processHoursFunction('[Минулого] dddd [').call(this);
+	                    case 0:
+	                    case 3:
+	                    case 5:
+	                    case 6:
+	                        return processHoursFunction('[Минулої] dddd [').call(this);
+	                    case 1:
+	                    case 2:
+	                    case 4:
+	                        return processHoursFunction('[Минулого] dddd [').call(this);
 	                }
 	            },
 	            sameElse: 'L'
@@ -82429,16 +82788,16 @@
 	        ordinalParse: /\d{1,2}-(й|го)/,
 	        ordinal: function (number, period) {
 	            switch (period) {
-	            case 'M':
-	            case 'd':
-	            case 'DDD':
-	            case 'w':
-	            case 'W':
-	                return number + '-й';
-	            case 'D':
-	                return number + '-го';
-	            default:
-	                return number;
+	                case 'M':
+	                case 'd':
+	                case 'DDD':
+	                case 'w':
+	                case 'W':
+	                    return number + '-й';
+	                case 'D':
+	                    return number + '-го';
+	                default:
+	                    return number;
 	            }
 	        },
 	        week : {
@@ -82452,16 +82811,16 @@
 	}));
 
 /***/ },
-/* 831 */
+/* 912 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : uzbek (uz)
+	//! locale : Uzbek [uz]
 	//! author : Sardor Muminov : https://github.com/muminoff
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -82514,16 +82873,16 @@
 	}));
 
 /***/ },
-/* 832 */
+/* 913 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : vietnamese (vi)
+	//! locale : Vietnamese [vi]
 	//! author : Bang Nguyen : https://github.com/bangnk
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -82597,16 +82956,16 @@
 	}));
 
 /***/ },
-/* 833 */
+/* 914 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : pseudo (x-pseudo)
+	//! locale : Pseudo [x-pseudo]
 	//! author : Andrew Hood : https://github.com/andrewhood125
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -82669,17 +83028,17 @@
 	}));
 
 /***/ },
-/* 834 */
+/* 915 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : chinese (zh-cn)
+	//! locale : Chinese (China) [zh-cn]
 	//! author : suupic : https://github.com/suupic
 	//! author : Zeno Zeng : https://github.com/zenozeng
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -82760,17 +83119,17 @@
 	        ordinalParse: /\d{1,2}(日|月|周)/,
 	        ordinal : function (number, period) {
 	            switch (period) {
-	            case 'd':
-	            case 'D':
-	            case 'DDD':
-	                return number + '日';
-	            case 'M':
-	                return number + '月';
-	            case 'w':
-	            case 'W':
-	                return number + '周';
-	            default:
-	                return number;
+	                case 'd':
+	                case 'D':
+	                case 'DDD':
+	                    return number + '日';
+	                case 'M':
+	                    return number + '月';
+	                case 'w':
+	                case 'W':
+	                    return number + '周';
+	                default:
+	                    return number;
 	            }
 	        },
 	        relativeTime : {
@@ -82800,16 +83159,17 @@
 	}));
 
 /***/ },
-/* 835 */
+/* 916 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : traditional chinese (zh-tw)
+	//! locale : Chinese (Taiwan) [zh-tw]
 	//! author : Ben : https://github.com/ben-lin
+	//! author : Chris Lam : https://github.com/hehachris
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(734)) :
-	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	    true ? factory(__webpack_require__(814)) :
+	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
 	
@@ -82832,12 +83192,12 @@
 	            lll : 'YYYY年MMMD日Ah點mm分',
 	            llll : 'YYYY年MMMD日ddddAh點mm分'
 	        },
-	        meridiemParse: /早上|上午|中午|下午|晚上/,
+	        meridiemParse: /凌晨|早上|上午|中午|下午|晚上/,
 	        meridiemHour : function (hour, meridiem) {
 	            if (hour === 12) {
 	                hour = 0;
 	            }
-	            if (meridiem === '早上' || meridiem === '上午') {
+	            if (meridiem === '凌晨' || meridiem === '早上' || meridiem === '上午') {
 	                return hour;
 	            } else if (meridiem === '中午') {
 	                return hour >= 11 ? hour : hour + 12;
@@ -82847,7 +83207,9 @@
 	        },
 	        meridiem : function (hour, minute, isLower) {
 	            var hm = hour * 100 + minute;
-	            if (hm < 900) {
+	            if (hm < 600) {
+	                return '凌晨';
+	            } else if (hm < 900) {
 	                return '早上';
 	            } else if (hm < 1130) {
 	                return '上午';
@@ -82870,33 +83232,33 @@
 	        ordinalParse: /\d{1,2}(日|月|週)/,
 	        ordinal : function (number, period) {
 	            switch (period) {
-	            case 'd' :
-	            case 'D' :
-	            case 'DDD' :
-	                return number + '日';
-	            case 'M' :
-	                return number + '月';
-	            case 'w' :
-	            case 'W' :
-	                return number + '週';
-	            default :
-	                return number;
+	                case 'd' :
+	                case 'D' :
+	                case 'DDD' :
+	                    return number + '日';
+	                case 'M' :
+	                    return number + '月';
+	                case 'w' :
+	                case 'W' :
+	                    return number + '週';
+	                default :
+	                    return number;
 	            }
 	        },
 	        relativeTime : {
 	            future : '%s內',
 	            past : '%s前',
 	            s : '幾秒',
-	            m : '1分鐘',
-	            mm : '%d分鐘',
-	            h : '1小時',
-	            hh : '%d小時',
-	            d : '1天',
-	            dd : '%d天',
-	            M : '1個月',
-	            MM : '%d個月',
-	            y : '1年',
-	            yy : '%d年'
+	            m : '1 分鐘',
+	            mm : '%d 分鐘',
+	            h : '1 小時',
+	            hh : '%d 小時',
+	            d : '1 天',
+	            dd : '%d 天',
+	            M : '1 個月',
+	            MM : '%d 個月',
+	            y : '1 年',
+	            yy : '%d 年'
 	        }
 	    });
 	
