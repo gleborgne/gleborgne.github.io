@@ -1244,14 +1244,14 @@ webpackJsonp([0],[
 	var React = __webpack_require__(91);
 	var ReactDOM = __webpack_require__(107);
 	var app_routes_1 = __webpack_require__(196);
-	var store_1 = __webpack_require__(804);
+	var store_1 = __webpack_require__(807);
 	var react_redux_1 = __webpack_require__(276);
 	var react_router_1 = __webpack_require__(197);
 	var react_router_redux_1 = __webpack_require__(551);
 	var i18nservice_1 = __webpack_require__(304);
 	var userservice_1 = __webpack_require__(542);
-	__webpack_require__(808);
-	__webpack_require__(810);
+	__webpack_require__(811);
+	__webpack_require__(813);
 	var usedHistory = react_router_1.hashHistory;
 	var store = store_1.default(usedHistory, {});
 	var history = react_router_redux_1.syncHistoryWithStore(usedHistory, store);
@@ -1872,19 +1872,19 @@ webpackJsonp([0],[
 	var contenteditor_1 = __webpack_require__(601);
 	var entityschema_1 = __webpack_require__(686);
 	var home_1 = __webpack_require__(700);
-	var front_appshell_1 = __webpack_require__(756);
-	var sessions_1 = __webpack_require__(765);
-	var sessiondetail_1 = __webpack_require__(768);
-	var sessionsagenda_1 = __webpack_require__(771);
-	var speakers_1 = __webpack_require__(774);
-	var speakerdetail_1 = __webpack_require__(777);
-	var exhibitors_1 = __webpack_require__(780);
-	var exhibitordetail_1 = __webpack_require__(783);
-	var chat_1 = __webpack_require__(786);
-	var contentpage_1 = __webpack_require__(789);
-	var profile_1 = __webpack_require__(792);
-	var contact_1 = __webpack_require__(798);
-	var thematique_1 = __webpack_require__(801);
+	var front_appshell_1 = __webpack_require__(759);
+	var sessions_1 = __webpack_require__(768);
+	var sessiondetail_1 = __webpack_require__(771);
+	var sessionsagenda_1 = __webpack_require__(774);
+	var speakers_1 = __webpack_require__(777);
+	var speakerdetail_1 = __webpack_require__(780);
+	var exhibitors_1 = __webpack_require__(783);
+	var exhibitordetail_1 = __webpack_require__(786);
+	var chat_1 = __webpack_require__(789);
+	var contentpage_1 = __webpack_require__(792);
+	var profile_1 = __webpack_require__(795);
+	var contact_1 = __webpack_require__(801);
+	var thematique_1 = __webpack_require__(804);
 	var userservice_1 = __webpack_require__(542);
 	var eventservice_1 = __webpack_require__(550);
 	var redux_1 = __webpack_require__(263);
@@ -15475,6 +15475,14 @@ webpackJsonp([0],[
 	                    fr: "bla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla bla"
 	                },
 	            },
+	            actions: [
+	                {
+	                    link: "allsessions",
+	                    title: {
+	                        fr: "toutes les sessions",
+	                    },
+	                }
+	            ],
 	            theme: {
 	                preTitleColor: "#1478CE",
 	                titleColor: "#000000",
@@ -15496,6 +15504,14 @@ webpackJsonp([0],[
 	                    fr: "Speakers",
 	                },
 	            },
+	            actions: [
+	                {
+	                    link: "allspeakers",
+	                    title: {
+	                        fr: "tous les speakers",
+	                    },
+	                }
+	            ],
 	            theme: {
 	                preTitleColor: "#FFFFFF",
 	                titleColor: "#000000",
@@ -15563,6 +15579,14 @@ webpackJsonp([0],[
 	                itemsDisplayMode: 'carousel',
 	                maxItems: 20
 	            },
+	            actions: [
+	                {
+	                    link: "allexhibitors",
+	                    title: {
+	                        fr: "tous les exposants",
+	                    },
+	                }
+	            ],
 	            theme: {
 	                preTitleColor: "#1478CE",
 	                titleColor: "#000000",
@@ -15600,6 +15624,11 @@ webpackJsonp([0],[
 	                },
 	            },
 	            properties: {}
+	        },
+	        {
+	            id: "entityactions",
+	            type: "entityactions",
+	            themePreset: "darkbloc"
 	        },
 	        {
 	            id: "comingsessions",
@@ -15752,6 +15781,11 @@ webpackJsonp([0],[
 	            }
 	        },
 	        {
+	            id: "entityactions",
+	            type: "entityactions",
+	            themePreset: "primarycolorbloc"
+	        },
+	        {
 	            id: "speakers",
 	            type: "speakers",
 	            header: {
@@ -15762,12 +15796,7 @@ webpackJsonp([0],[
 	                    fr: "Speakers",
 	                },
 	            },
-	            theme: {
-	                preTitleColor: "#FFFFFF",
-	                titleColor: "#000000",
-	                bgColor: "#1478CE",
-	                textColor: "#FFFFFF",
-	            },
+	            themePreset: 'lightgreybloc',
 	            layout: 'center',
 	            properties: {
 	                itemsDisplayMode: 'list',
@@ -15891,14 +15920,19 @@ webpackJsonp([0],[
 	            }
 	        },
 	        {
+	            id: "entityactions",
+	            type: "entityactions",
+	            themePreset: "primarycolorbloc"
+	        },
+	        {
 	            id: "comingsessions",
 	            type: "comingsessions",
 	            header: {
 	                preTitle: {
-	                    fr: "Vous aimerez",
+	                    fr: "Il vous",
 	                },
 	                title: {
-	                    fr: "aussi",
+	                    fr: "présente",
 	                },
 	                description: {
 	                    fr: "bla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla bla"
@@ -15929,10 +15963,7 @@ webpackJsonp([0],[
 	                itemsDisplayMode: 'carousel',
 	                maxItems: 20
 	            },
-	            theme: {
-	                preTitleColor: "#1478CE",
-	                titleColor: "#000000",
-	            }
+	            themePreset: "lightgreybloc"
 	        }
 	    ]
 	};
@@ -15980,6 +16011,11 @@ webpackJsonp([0],[
 	                    }
 	                ]
 	            }
+	        },
+	        {
+	            id: "entityactions",
+	            type: "entityactions",
+	            themePreset: "darkbloc"
 	        },
 	        {
 	            id: "thematiquewall",
@@ -16422,7 +16458,7 @@ webpackJsonp([0],[
 	            id: "darkbloc",
 	            name: "dark bloc",
 	            bgColor: "#111",
-	            preTitleColor: "#0D7BC6",
+	            preTitleColor: "#FFF",
 	            titleColor: "#0D7BC6",
 	            textColor: "#FFF"
 	        },
@@ -28096,7 +28132,7 @@ webpackJsonp([0],[
 	var React = __webpack_require__(91);
 	var react_redux_1 = __webpack_require__(276);
 	var dynamicpage_1 = __webpack_require__(701);
-	__webpack_require__(754);
+	__webpack_require__(757);
 	var HomePageComponent = (function (_super) {
 	    __extends(HomePageComponent, _super);
 	    function HomePageComponent() {
@@ -28135,7 +28171,7 @@ webpackJsonp([0],[
 	};
 	var React = __webpack_require__(91);
 	var dynamiccontent_1 = __webpack_require__(702);
-	var loader_1 = __webpack_require__(751);
+	var loader_1 = __webpack_require__(754);
 	var react_redux_1 = __webpack_require__(276);
 	var page_1 = __webpack_require__(536);
 	var DynamicPageComponent = (function (_super) {
@@ -28194,7 +28230,7 @@ webpackJsonp([0],[
 	var React = __webpack_require__(91);
 	var dynamiccontentbloc_1 = __webpack_require__(703);
 	var react_redux_1 = __webpack_require__(276);
-	__webpack_require__(749);
+	__webpack_require__(752);
 	var DynamicContentComponent = (function (_super) {
 	    __extends(DynamicContentComponent, _super);
 	    function DynamicContentComponent(props) {
@@ -28259,6 +28295,7 @@ webpackJsonp([0],[
 	var bloc_thematiqueteaser_1 = __webpack_require__(742);
 	var bloc_thematiquewall_1 = __webpack_require__(743);
 	var bloc_entitydetail_1 = __webpack_require__(746);
+	var bloc_entityactions_1 = __webpack_require__(749);
 	var catalog = {
 	    "comingsessions": bloc_comingsessions_1.BlocComingSessions,
 	    "exhibitors": bloc_exhibitors_1.BlocExhibitors,
@@ -28269,7 +28306,8 @@ webpackJsonp([0],[
 	    "socialnetworking": bloc_socialnetworking_1.BlocSocialNetworking,
 	    "thematiqueteaser": bloc_thematiqueteaser_1.BlocThematiqueTeaser,
 	    "thematiquewall": bloc_thematiquewall_1.BlocThematiqueWall,
-	    "entitydetail": bloc_entitydetail_1.BlocEntityDetail
+	    "entitydetail": bloc_entitydetail_1.BlocEntityDetail,
+	    "entityactions": bloc_entityactions_1.BlocEntityActions
 	};
 	var DynamicContentBloc = (function (_super) {
 	    __extends(DynamicContentBloc, _super);
@@ -28375,6 +28413,7 @@ webpackJsonp([0],[
 	    return c > 3 && r && Object.defineProperty(target, key, r), r;
 	};
 	var React = __webpack_require__(91);
+	var react_router_1 = __webpack_require__(197);
 	var decorators_1 = __webpack_require__(299);
 	var DynamicBloc = (function (_super) {
 	    __extends(DynamicBloc, _super);
@@ -28406,7 +28445,7 @@ webpackJsonp([0],[
 	        _super.apply(this, arguments);
 	    }
 	    BlocTitle.prototype.render = function () {
-	        var pretitle, title, subtitle, description;
+	        var pretitle, title, subtitle, description, actions;
 	        var language = "fr";
 	        var header = this.props.header || this.props.template.header;
 	        var theme = this.context["blocTheme"];
@@ -28434,7 +28473,10 @@ webpackJsonp([0],[
 	        if (header.description) {
 	            description = React.createElement("div", {className: "description"}, header.description[language]);
 	        }
-	        return React.createElement("header", {className: "bloc-header"}, pretitle, title, subtitle, description);
+	        if (this.props.template.actions && this.props.template.actions.length) {
+	            actions = React.createElement(BlocActions, __assign({}, this.props));
+	        }
+	        return React.createElement("header", {className: "bloc-header"}, pretitle, title, subtitle, description, actions);
 	    };
 	    BlocTitle = __decorate([
 	        decorators_1.injectcontext({ blocTheme: React.PropTypes.object })
@@ -28442,6 +28484,34 @@ webpackJsonp([0],[
 	    return BlocTitle;
 	}(React.Component));
 	exports.BlocTitle = BlocTitle;
+	var BlocActions = (function (_super) {
+	    __extends(BlocActions, _super);
+	    function BlocActions() {
+	        _super.apply(this, arguments);
+	    }
+	    BlocActions.prototype.render = function () {
+	        var _this = this;
+	        var actions;
+	        if (this.props.template.actions) {
+	            actions = this.props.template.actions.map(function (a) {
+	                return React.createElement(react_router_1.Link, {role: "button", key: "a.link", to: getTargetPage(a.link, _this.props.event, _this.props.context)}, a.title["fr"]);
+	            });
+	        }
+	        return React.createElement("div", {className: "bloc-actions"}, actions);
+	    };
+	    return BlocActions;
+	}(React.Component));
+	exports.BlocActions = BlocActions;
+	function getTargetPage(link, event, context) {
+	    if (link == "allsessions")
+	        return "/preview/" + event.id + "/sessions";
+	    if (link == "allspeakers")
+	        return "/preview/" + event.id + "/speakers";
+	    if (link == "allexhibitors")
+	        return "/preview/" + event.id + "/exhibitors";
+	    return "/preview/" + event.id;
+	}
+	exports.getTargetPage = getTargetPage;
 	var BlocLayout = (function (_super) {
 	    __extends(BlocLayout, _super);
 	    function BlocLayout() {
@@ -28533,7 +28603,7 @@ webpackJsonp([0],[
 	                return React.createElement(BlocComingSessionsItem, {session: session, event: _this.props.event, template: _this.props.template, key: session.id});
 	            });
 	        }
-	        return React.createElement(common_1.DynamicBloc, __assign({}, this.props), React.createElement("div", {className: "bloc-comingsessions list " + this.props.className}, React.createElement(common_1.BlocTitle, {template: this.props.template, i18nService: this.props.i18nService}), React.createElement("div", {className: "bloc-comingsessions-items bloc-content"}, speakers)));
+	        return React.createElement(common_1.DynamicBloc, __assign({}, this.props), React.createElement("div", {className: "bloc-comingsessions list " + this.props.className}, React.createElement(common_1.BlocTitle, __assign({}, this.props)), React.createElement("div", {className: "bloc-comingsessions-items bloc-content"}, speakers)));
 	    };
 	    return BlocComingSessionsList;
 	}(React.Component));
@@ -28561,7 +28631,7 @@ webpackJsonp([0],[
 	                return React.createElement("div", {className: "sessionslide", key: session.id}, React.createElement(BlocComingSessionsItem, {session: session, event: _this.props.event, template: _this.props.template}));
 	            });
 	        }
-	        return React.createElement(common_1.DynamicBloc, __assign({}, this.props), React.createElement("div", {className: "bloc-comingsessions carousel " + this.props.className}, React.createElement(common_1.BlocTitle, {template: this.props.template, i18nService: this.props.i18nService}), React.createElement(Slider, __assign({}, settings, {children: speakers, className: "bloc-content"})), React.createElement("div", {className: "clearfix"})));
+	        return React.createElement(common_1.DynamicBloc, __assign({}, this.props), React.createElement("div", {className: "bloc-comingsessions carousel " + this.props.className}, React.createElement(common_1.BlocTitle, __assign({}, this.props)), React.createElement(Slider, __assign({}, settings, {children: speakers, className: "bloc-content"})), React.createElement("div", {className: "clearfix"})));
 	    };
 	    return BlocComingSessionsCarousel;
 	}(React.Component));
@@ -30609,7 +30679,7 @@ webpackJsonp([0],[
 	                return React.createElement(BlocExhibitorsItem, __assign({exhibitor: s}, _this.props, {key: speaker.id}));
 	            });
 	        }
-	        return React.createElement(common_1.DynamicBloc, __assign({}, this.props), React.createElement("div", {className: "bloc-exhibitors list" + this.props.className}, React.createElement(common_1.BlocTitle, {template: this.props.template, i18nService: this.props.i18nService}), React.createElement("div", {className: "bloc-exhibitors-items bloc-content"}, exhibitors)));
+	        return React.createElement(common_1.DynamicBloc, __assign({}, this.props), React.createElement("div", {className: "bloc-exhibitors list" + this.props.className}, React.createElement(common_1.BlocTitle, __assign({}, this.props)), React.createElement("div", {className: "bloc-exhibitors-items bloc-content"}, exhibitors)));
 	    };
 	    return BlocSpeakersList;
 	}(React.Component));
@@ -30650,7 +30720,7 @@ webpackJsonp([0],[
 	                return React.createElement("div", {className: "exhibitorslide", key: exhibitor.id}, React.createElement(BlocExhibitorsItem, __assign({exhibitor: s}, _this.props)));
 	            });
 	        }
-	        return React.createElement(common_1.DynamicBloc, __assign({}, this.props), React.createElement("div", {className: "bloc-exhibitors carousel " + this.props.className}, React.createElement(common_1.BlocTitle, {template: this.props.template, i18nService: this.props.i18nService}), React.createElement(Slider, __assign({}, settings, {children: exhibitors, className: "bloc-content"})), React.createElement("div", {className: "clearfix"})));
+	        return React.createElement(common_1.DynamicBloc, __assign({}, this.props), React.createElement("div", {className: "bloc-exhibitors carousel " + this.props.className}, React.createElement(common_1.BlocTitle, __assign({}, this.props)), React.createElement(Slider, __assign({}, settings, {children: exhibitors, className: "bloc-content"})), React.createElement("div", {className: "clearfix"})));
 	    };
 	    return BlocExhibitorsCarousel;
 	}(React.Component));
@@ -30750,7 +30820,7 @@ webpackJsonp([0],[
 	        _super.apply(this, arguments);
 	    }
 	    BlocNews.prototype.render = function () {
-	        return React.createElement(common_1.DynamicBloc, __assign({}, this.props), React.createElement("div", {className: "bloc-news " + this.props.className, style: this.props.baseStyle}, React.createElement(common_1.BlocTitle, {template: this.props.template, i18nService: this.props.i18nService})));
+	        return React.createElement(common_1.DynamicBloc, __assign({}, this.props), React.createElement("div", {className: "bloc-news " + this.props.className, style: this.props.baseStyle}, React.createElement(common_1.BlocTitle, __assign({}, this.props))));
 	    };
 	    return BlocNews;
 	}(React.Component));
@@ -30790,7 +30860,7 @@ webpackJsonp([0],[
 	    }
 	    BlocPictureTeaser.prototype.render = function () {
 	        var template = this.props.template;
-	        return React.createElement(common_1.DynamicBloc, __assign({}, this.props), React.createElement("div", {className: "dynamic-bloc-pictureteaser " + this.props.className}, React.createElement(common_1.BlocTitle, {template: template, i18nService: this.props.i18nService})));
+	        return React.createElement(common_1.DynamicBloc, __assign({}, this.props), React.createElement("div", {className: "dynamic-bloc-pictureteaser " + this.props.className}, React.createElement(common_1.BlocTitle, __assign({}, this.props))));
 	    };
 	    return BlocPictureTeaser;
 	}(React.Component));
@@ -30868,7 +30938,7 @@ webpackJsonp([0],[
 	        _super.apply(this, arguments);
 	    }
 	    BlocPracticalInfos.prototype.render = function () {
-	        return React.createElement(common_1.DynamicBloc, __assign({}, this.props), React.createElement("div", {className: "bloc-practicalinfos " + this.props.className, style: this.props.baseStyle}, React.createElement(common_1.BlocTitle, {template: this.props.template, i18nService: this.props.i18nService})));
+	        return React.createElement(common_1.DynamicBloc, __assign({}, this.props), React.createElement("div", {className: "bloc-practicalinfos " + this.props.className, style: this.props.baseStyle}, React.createElement(common_1.BlocTitle, __assign({}, this.props))));
 	    };
 	    return BlocPracticalInfos;
 	}(React.Component));
@@ -30954,7 +31024,7 @@ webpackJsonp([0],[
 	                return React.createElement(BlocSpeakersItem, {speaker: s, event: _this.props.event, key: speaker.id});
 	            });
 	        }
-	        return React.createElement(common_1.DynamicBloc, __assign({}, this.props), React.createElement("div", {className: "bloc-speakers list " + this.props.className}, React.createElement(common_1.BlocTitle, {template: this.props.template, i18nService: this.props.i18nService}), React.createElement("div", {className: "bloc-speakers-items bloc-content"}, speakers)));
+	        return React.createElement(common_1.DynamicBloc, __assign({}, this.props), React.createElement("div", {className: "bloc-speakers list " + this.props.className}, React.createElement(common_1.BlocTitle, __assign({}, this.props)), React.createElement("div", {className: "bloc-speakers-items bloc-content"}, speakers)));
 	    };
 	    return BlocSpeakersList;
 	}(React.Component));
@@ -30995,7 +31065,7 @@ webpackJsonp([0],[
 	                return React.createElement("div", {className: "speakerslide", key: speaker.id}, React.createElement(BlocSpeakersItem, {speaker: s, event: _this.props.event}));
 	            });
 	        }
-	        return React.createElement(common_1.DynamicBloc, __assign({}, this.props), React.createElement("div", {className: "bloc-speakers carousel " + this.props.className}, React.createElement(common_1.BlocTitle, {template: this.props.template, i18nService: this.props.i18nService}), React.createElement(Slider, __assign({}, settings, {children: speakers, className: "bloc-content"})), React.createElement("div", {className: "clearfix"})));
+	        return React.createElement(common_1.DynamicBloc, __assign({}, this.props), React.createElement("div", {className: "bloc-speakers carousel " + this.props.className}, React.createElement(common_1.BlocTitle, __assign({}, this.props)), React.createElement(Slider, __assign({}, settings, {children: speakers, className: "bloc-content"})), React.createElement("div", {className: "clearfix"})));
 	    };
 	    return BlocSpeakersCarousel;
 	}(React.Component));
@@ -31122,7 +31192,7 @@ webpackJsonp([0],[
 	        else {
 	            content = React.createElement(OptIn, __assign({key: "optin"}, this.props));
 	        }
-	        return React.createElement(common_2.DynamicBloc, __assign({}, this.props), React.createElement("div", {className: "bloc-socialnetworking " + this.props.className}, React.createElement(common_1.BlocTitle, {template: this.props.template, i18nService: this.props.i18nService}), React.createElement(ReactCSSTransitionGroup, {component: "section", className: "bloc-content", transitionName: "fadetransition", transitionEnterTimeout: 300, transitionLeave: false}, content)));
+	        return React.createElement(common_2.DynamicBloc, __assign({}, this.props), React.createElement("div", {className: "bloc-socialnetworking " + this.props.className}, React.createElement(common_1.BlocTitle, __assign({}, this.props)), React.createElement(ReactCSSTransitionGroup, {component: "section", className: "bloc-content", transitionName: "fadetransition", transitionEnterTimeout: 300, transitionLeave: false}, content)));
 	    };
 	    return BlocSocialNetworkingComponent;
 	}(React.Component));
@@ -31210,7 +31280,7 @@ webpackJsonp([0],[
 	        var recommanded = recommandedItems.map(function (p) {
 	            return React.createElement(ContactItem, __assign({key: p.id}, _this.props, {contact: p}));
 	        });
-	        return React.createElement("div", {className: "recommanded"}, React.createElement("h4", null, "Prenez contact avec"), React.createElement("div", {className: "contacts"}, recommanded), React.createElement("div", {className: "search"}, React.createElement("button", null, "Chercher un participant")));
+	        return React.createElement("div", {className: "recommanded"}, React.createElement("h4", null, "Prenez contact avec"), React.createElement("div", {className: "contacts"}, recommanded), React.createElement("div", {className: "search"}, React.createElement("button", null, "Chercher un participant"), React.createElement("button", null, "Toutes les recommandations")));
 	    };
 	    return RecommandedContacts;
 	}(React.Component));
@@ -31293,7 +31363,7 @@ webpackJsonp([0],[
 	
 	
 	// module
-	exports.push([module.id, ".bloc-socialnetworking .bloc-content-panel.optin .optindesc {\n  font-size: 1.3rem;\n  margin-bottom: 0.5em;\n}\n.bloc-socialnetworking .bloc-content-panel.optin .optinremark {\n  opacity: 0.6;\n  font-size: 0.9rem;\n  font-style: italic;\n}\n.bloc-socialnetworking .bloc-content-panel.optin .optinactions {\n  text-align: right;\n  margin-top: 0.5em;\n}\n.bloc-socialnetworking .bloc-content-panel.optin .optinactions button {\n  margin-left: 10px;\n}\n.bloc-socialnetworking .userthematiques {\n  display: flex;\n  flex-flow: row wrap;\n}\n.bloc-socialnetworking .userthematiques .themesummary {\n  background-color: #333;\n  padding: 8px 16px;\n  margin: 0 4px 4px 0;\n}\n.bloc-socialnetworking .contacts {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-around;\n}\n.bloc-socialnetworking .contacts .contact {\n  width: 180px;\n  height: 200px;\n  margin: 10px;\n  text-align: center;\n  font-size: 1.1rem;\n}\n.bloc-socialnetworking .contacts .contact .contact-pic {\n  background-color: rgba(255, 255, 255, 0.5);\n  width: 80px;\n  height: 80px;\n  border-radius: 50%;\n  margin: auto;\n  margin-bottom: 1rem;\n  background-size: cover;\n  background-position: center;\n}\n.bloc-socialnetworking .contacts .contact .contact-company,\n.bloc-socialnetworking .contacts .contact .contact-title {\n  opacity: 0.4;\n  font-style: italic;\n  font-size: 0.9rem;\n}\n.bloc-socialnetworking .contacts .contact .contact-company {\n  opacity: 0.6;\n  text-transform: uppercase;\n}\n@media screen and (max-width: 800px) {\n  .bloc-socialnetworking .contacts {\n    justify-content: space-around;\n  }\n  .bloc-socialnetworking .contacts .contact {\n    width: 160px;\n  }\n}\n", ""]);
+	exports.push([module.id, ".bloc-socialnetworking .bloc-content-panel.optin .optindesc {\n  font-size: 1.3rem;\n  margin-bottom: 0.5em;\n}\n.bloc-socialnetworking .bloc-content-panel.optin .optinremark {\n  opacity: 0.6;\n  font-size: 0.9rem;\n  font-style: italic;\n}\n.bloc-socialnetworking .bloc-content-panel.optin .optinactions {\n  text-align: right;\n  margin-top: 0.5em;\n}\n.bloc-socialnetworking .bloc-content-panel.optin .optinactions button {\n  margin-left: 10px;\n}\n.bloc-socialnetworking .userthematiques {\n  display: flex;\n  flex-flow: row wrap;\n}\n.bloc-socialnetworking .userthematiques .themesummary {\n  background-color: #333;\n  padding: 8px 16px;\n  margin: 0 4px 4px 0;\n}\n.bloc-socialnetworking .recommanded .search {\n  text-align: right;\n}\n.bloc-socialnetworking .recommanded .search button {\n  margin-left: 4px;\n}\n.bloc-socialnetworking .contacts {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-around;\n}\n.bloc-socialnetworking .contacts .contact {\n  width: 180px;\n  height: 200px;\n  margin: 10px;\n  text-align: center;\n  font-size: 1.1rem;\n}\n.bloc-socialnetworking .contacts .contact .contact-pic {\n  background-color: rgba(255, 255, 255, 0.5);\n  width: 80px;\n  height: 80px;\n  border-radius: 50%;\n  margin: auto;\n  margin-bottom: 1rem;\n  background-size: cover;\n  background-position: center;\n}\n.bloc-socialnetworking .contacts .contact .contact-company,\n.bloc-socialnetworking .contacts .contact .contact-title {\n  opacity: 0.4;\n  font-style: italic;\n  font-size: 0.9rem;\n}\n.bloc-socialnetworking .contacts .contact .contact-company {\n  opacity: 0.6;\n  text-transform: uppercase;\n}\n@media screen and (max-width: 800px) {\n  .bloc-socialnetworking .contacts {\n    justify-content: space-around;\n  }\n  .bloc-socialnetworking .contacts .contact {\n    width: 160px;\n  }\n}\n", ""]);
 	
 	// exports
 
@@ -31333,7 +31403,7 @@ webpackJsonp([0],[
 	            title: { "fr": thematique.title },
 	            description: { "fr": thematique.description }
 	        };
-	        return React.createElement(common_1.DynamicBloc, __assign({}, this.props), React.createElement("div", {className: "dynamic-bloc-thematiqueteaser " + this.props.className}, React.createElement(common_1.BlocTitle, {template: template, i18nService: this.props.i18nService, header: header})));
+	        return React.createElement(common_1.DynamicBloc, __assign({}, this.props), React.createElement("div", {className: "dynamic-bloc-thematiqueteaser " + this.props.className}, React.createElement(common_1.BlocTitle, __assign({}, this.props, {header: header}))));
 	    };
 	    return BlocThematiqueTeaser;
 	}(React.Component));
@@ -31396,7 +31466,7 @@ webpackJsonp([0],[
 	        var recommanded = recommandedItems.map(function (p) {
 	            return React.createElement(ContactItem, __assign({key: p.id}, _this.props, {contact: p}));
 	        });
-	        return React.createElement("div", {className: "bloc-header"}, React.createElement("h4", null, "Prenez contact avec"), React.createElement("div", {className: "contacts"}, recommanded));
+	        return React.createElement("div", {className: "bloc-header"}, React.createElement("h4", null, "Prenez contact avec"), React.createElement("div", {className: "contacts"}, recommanded), React.createElement("div", {className: "actions"}, React.createElement("button", null, "Toutes les recommandations")));
 	    };
 	    return BlocThematiqueWallContacts;
 	}(React.Component));
@@ -31487,7 +31557,7 @@ webpackJsonp([0],[
 	        var messages = fakeMessages.map(function (msg) {
 	            return React.createElement("div", {key: msg.id, className: "message"}, React.createElement("div", {className: "message-body"}, React.createElement("div", {className: "message-text"}, msg.text), React.createElement("div", {className: "message-sender"}, "envoyé par ", msg.sender.fullname, " ", msg.date)), React.createElement("div", {className: "message-footer"}, React.createElement("div", {className: "social"}, React.createElement("div", {className: "field"}, React.createElement("i", {className: "dripicons-thumbs-up"}), msg.social.likes || 0), React.createElement("div", {className: "field"}, React.createElement("i", {className: "dripicons-message"}), msg.social.comments || 0)), React.createElement("div", {className: "actions"}, React.createElement("button", null, "répondre"))));
 	        });
-	        return React.createElement("div", {className: "bloc-content"}, React.createElement("h4", null, "Derniers messages"), React.createElement("div", {className: "messages"}, messages), React.createElement("div", {className: "actions"}, React.createElement("button", null, "Voir tous les messages")));
+	        return React.createElement("div", {className: "bloc-content"}, React.createElement("h4", null, "Derniers messages"), React.createElement("div", {className: "messages"}, messages), React.createElement("div", {className: "actions"}, React.createElement("button", null, "Ajouter un message"), React.createElement("button", null, "Voir tous les messages")));
 	    };
 	    return BlocThematiqueWallMessages;
 	}(React.Component));
@@ -31537,7 +31607,7 @@ webpackJsonp([0],[
 	
 	
 	// module
-	exports.push([module.id, ".dynamic-bloc-thematiquewall h4 {\n  font-size: 16pt;\n  font-weight: 300;\n  margin-top: 0;\n  margin-bottom: 1em;\n}\n.dynamic-bloc-thematiquewall .contacts {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-around;\n}\n.dynamic-bloc-thematiquewall .contact {\n  display: flex;\n  flex-flow: column nowrap;\n  align-items: center;\n  justify-content: center;\n  width: 160px;\n  margin-right: 16px;\n  margin-bottom: 16px;\n  text-align: center;\n}\n.dynamic-bloc-thematiquewall .contact .contact-pic {\n  width: 48px;\n  height: 48px;\n  border-radius: 50%;\n  background-color: #DDD;\n  background-size: cover;\n  background-position: center;\n  margin-right: 10px;\n  margin-bottom: 8px;\n}\n.dynamic-bloc-thematiquewall .contact .contact-company,\n.dynamic-bloc-thematiquewall .contact .contact-title {\n  opacity: 0.4;\n  font-style: italic;\n  font-size: 0.9rem;\n}\n.dynamic-bloc-thematiquewall .contact .contact-company {\n  opacity: 0.6;\n  text-transform: uppercase;\n}\n.dynamic-bloc-thematiquewall .messages .message {\n  border: 1px solid #555;\n  margin-bottom: 8px;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-body {\n  padding: 16px;\n  background-color: white;\n  color: black;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-body .message-sender {\n  font-size: 0.8rem;\n  margin-top: 3px;\n  color: #AAA;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer {\n  background-color: #444;\n  padding: 4px 16px;\n  display: flex;\n  color: #AAA;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer .social {\n  flex: 1;\n  display: flex;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer .social .field {\n  margin-right: 10px;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer .social .field i {\n  margin-right: 4px;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer .actions {\n  display: flex;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer .actions button {\n  margin: 0;\n  padding: 0;\n  background-color: transparent;\n  border: none;\n  color: inherit;\n}\n@media screen and (max-width: 800px) {\n  .dynamic-bloc-thematiquewall {\n    justify-content: space-around;\n  }\n}\n", ""]);
+	exports.push([module.id, ".dynamic-bloc-thematiquewall h4 {\n  font-size: 16pt;\n  font-weight: 300;\n  margin-top: 0;\n  margin-bottom: 1em;\n}\n.dynamic-bloc-thematiquewall .contacts {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-around;\n}\n.dynamic-bloc-thematiquewall .contact {\n  display: flex;\n  flex-flow: column nowrap;\n  align-items: center;\n  justify-content: center;\n  width: 160px;\n  margin-right: 16px;\n  margin-bottom: 16px;\n  text-align: center;\n}\n.dynamic-bloc-thematiquewall .contact .contact-pic {\n  width: 48px;\n  height: 48px;\n  border-radius: 50%;\n  background-color: #DDD;\n  background-size: cover;\n  background-position: center;\n  margin-right: 10px;\n  margin-bottom: 8px;\n}\n.dynamic-bloc-thematiquewall .contact .contact-company,\n.dynamic-bloc-thematiquewall .contact .contact-title {\n  opacity: 0.4;\n  font-style: italic;\n  font-size: 0.9rem;\n}\n.dynamic-bloc-thematiquewall .contact .contact-company {\n  opacity: 0.6;\n  text-transform: uppercase;\n}\n.dynamic-bloc-thematiquewall .bloc-content > .actions {\n  display: flex;\n  justify-content: flex-end;\n}\n.dynamic-bloc-thematiquewall .bloc-content > .actions button {\n  margin-left: 4px;\n}\n.dynamic-bloc-thematiquewall .messages .message {\n  border: 1px solid #555;\n  margin-bottom: 8px;\n  background-color: white;\n  color: black;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-body {\n  padding: 16px;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-body .message-sender {\n  font-size: 0.8rem;\n  margin-top: 3px;\n  color: #AAA;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer {\n  padding: 4px 16px;\n  display: flex;\n  color: #BBB;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer .social {\n  flex: 1;\n  display: flex;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer .social .field {\n  margin-right: 10px;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer .social .field i {\n  margin-right: 4px;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer .actions {\n  display: flex;\n  justify-content: flex-end;\n}\n.dynamic-bloc-thematiquewall .messages .message .message-footer .actions button {\n  margin: 0;\n  padding: 0;\n  background-color: transparent;\n  border: none;\n  color: inherit;\n  margin-left: 4px;\n}\n@media screen and (max-width: 800px) {\n  .dynamic-bloc-thematiquewall {\n    justify-content: space-around;\n  }\n}\n", ""]);
 	
 	// exports
 
@@ -31666,8 +31736,9 @@ webpackJsonp([0],[
 	        var url = entity[this.props.entitybloc.fields[0].name];
 	        if (url) {
 	            picStyle.backgroundImage = 'url("' + url + '")';
+	            return React.createElement("div", {className: "picture" + (this.props.bubble ? " bubble" : ""), style: picStyle});
 	        }
-	        return React.createElement("div", {className: "picture" + (this.props.bubble ? " bubble" : ""), style: picStyle});
+	        return React.createElement("div", {className: "empty"});
 	    };
 	    return EntityDetailPicture;
 	}(React.Component));
@@ -31720,10 +31791,125 @@ webpackJsonp([0],[
 /* 749 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(24), ReactMount = __webpack_require__(26), React = __webpack_require__(91); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var __assign = (this && this.__assign) || Object.assign || function(t) {
+	    for (var s, i = 1, n = arguments.length; i < n; i++) {
+	        s = arguments[i];
+	        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+	            t[p] = s[p];
+	    }
+	    return t;
+	};
+	var React = __webpack_require__(91);
+	var common_1 = __webpack_require__(705);
+	__webpack_require__(750);
+	var BlocEntityActions = (function (_super) {
+	    __extends(BlocEntityActions, _super);
+	    function BlocEntityActions() {
+	        _super.apply(this, arguments);
+	    }
+	    BlocEntityActions.prototype.render = function () {
+	        var blocActions;
+	        if (this.props.context.session) {
+	            blocActions = React.createElement(SessionActions, __assign({}, this.props));
+	        }
+	        else if (this.props.context.speaker) {
+	            blocActions = React.createElement(SpeakerActions, __assign({}, this.props));
+	        }
+	        else if (this.props.context.exhibitor) {
+	            blocActions = React.createElement(ExhibitorActions, __assign({}, this.props));
+	        }
+	        else if (this.props.context.thematique) {
+	            blocActions = React.createElement(ThematiqueActions, __assign({}, this.props));
+	        }
+	        else if (this.props.context.participant) {
+	            blocActions = React.createElement(ParticipantActions, __assign({}, this.props));
+	        }
+	        if (blocActions) {
+	            return React.createElement(common_1.DynamicBloc, __assign({}, this.props), React.createElement("div", {className: "dynamiccontentbloc"}, blocActions));
+	        }
+	        else {
+	            return React.createElement("div", {className: "empty"});
+	        }
+	    };
+	    return BlocEntityActions;
+	}(React.Component));
+	exports.BlocEntityActions = BlocEntityActions;
+	var SessionActions = (function (_super) {
+	    __extends(SessionActions, _super);
+	    function SessionActions() {
+	        _super.apply(this, arguments);
+	    }
+	    SessionActions.prototype.render = function () {
+	        return React.createElement("div", {className: "entityactions"}, React.createElement("button", null, "Ajouter dans mon agenda"), React.createElement("button", null, "Ajouter aux favoris"), React.createElement("button", null, "Poser une question"));
+	    };
+	    return SessionActions;
+	}(React.Component));
+	exports.SessionActions = SessionActions;
+	var SpeakerActions = (function (_super) {
+	    __extends(SpeakerActions, _super);
+	    function SpeakerActions() {
+	        _super.apply(this, arguments);
+	    }
+	    SpeakerActions.prototype.render = function () {
+	        return React.createElement("div", {className: "entityactions"}, React.createElement("button", null, "Envoyer un message"), React.createElement("button", null, "Inviter sur Linkedin"));
+	    };
+	    return SpeakerActions;
+	}(React.Component));
+	exports.SpeakerActions = SpeakerActions;
+	var ThematiqueActions = (function (_super) {
+	    __extends(ThematiqueActions, _super);
+	    function ThematiqueActions() {
+	        _super.apply(this, arguments);
+	    }
+	    ThematiqueActions.prototype.render = function () {
+	        return React.createElement("div", {className: "entityactions"}, React.createElement("button", null, "Ajouter aux favoris"), React.createElement("button", null, "Poser une question"));
+	    };
+	    return ThematiqueActions;
+	}(React.Component));
+	exports.ThematiqueActions = ThematiqueActions;
+	var ExhibitorActions = (function (_super) {
+	    __extends(ExhibitorActions, _super);
+	    function ExhibitorActions() {
+	        _super.apply(this, arguments);
+	    }
+	    ExhibitorActions.prototype.render = function () {
+	        return React.createElement("div", {className: "entityactions"}, React.createElement("button", null, "Ajouter aux favoris"), React.createElement("button", null, "Poser une question"));
+	    };
+	    return ExhibitorActions;
+	}(React.Component));
+	exports.ExhibitorActions = ExhibitorActions;
+	var ParticipantActions = (function (_super) {
+	    __extends(ParticipantActions, _super);
+	    function ParticipantActions() {
+	        _super.apply(this, arguments);
+	    }
+	    ParticipantActions.prototype.render = function () {
+	        return React.createElement("div", {className: "entityactions"}, React.createElement("button", null, "Envoyer un message"), React.createElement("button", null, "Inviter sur Linkedin"));
+	    };
+	    return ParticipantActions;
+	}(React.Component));
+	exports.ParticipantActions = ParticipantActions;
+	
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(293); if (makeExportsHot(module, __webpack_require__(91))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "bloc.entityactions.tsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
+
+/***/ },
+/* 750 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(750);
+	var content = __webpack_require__(751);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(303)(content, {});
@@ -31732,8 +31918,8 @@ webpackJsonp([0],[
 	if(true) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept(750, function() {
-				var newContent = __webpack_require__(750);
+			module.hot.accept(751, function() {
+				var newContent = __webpack_require__(751);
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -31743,7 +31929,7 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 750 */
+/* 751 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(302)();
@@ -31751,40 +31937,10 @@ webpackJsonp([0],[
 	
 	
 	// module
-	exports.push([module.id, ".dynamiccontentblocwrapper {\n  padding: 60px;\n  background-color: white;\n  box-sizing: border-box;\n  width: 100%;\n  overflow: hidden;\n}\n.dynamiccontentblocwrapper .bloc-content {\n  position: relative;\n}\n.dynamiccontentblocwrapper h1,\n.dynamiccontentblocwrapper h2,\n.dynamiccontentblocwrapper h3 {\n  text-transform: uppercase;\n  font-weight: 300;\n  line-height: 1;\n  margin-top: 0;\n}\n.dynamiccontentblocwrapper h1 {\n  font-size: 36pt;\n}\n.dynamiccontentblocwrapper h2 {\n  font-size: 24pt;\n}\n.dynamiccontentblocwrapper h3 {\n  font-size: 18pt;\n}\n.dynamiccontentblocwrapper .dynamiccontentbloc {\n  max-width: 1280px;\n  margin: auto;\n}\n.dynamiccontentblocwrapper .dynamiccontentbloc .bloc-header h1,\n.dynamiccontentblocwrapper .dynamiccontentbloc .bloc-header h2,\n.dynamiccontentblocwrapper .dynamiccontentbloc .bloc-header h3 {\n  margin: 0;\n}\n.dynamiccontentblocwrapper .dynamiccontentbloc .bloc-header .description {\n  margin-top: 1em;\n}\n.dynamiccontentblocwrapper.align-center .bloc-header {\n  text-align: center;\n  margin-bottom: 1em;\n}\n.dynamiccontentblocwrapper.align-center .bloc-header h2,\n.dynamiccontentblocwrapper.align-center .bloc-header h3 {\n  text-align: center;\n}\n.dynamiccontentblocwrapper.align-left .dynamiccontentbloc .bloc-header {\n  float: left;\n  width: 400px;\n  margin-right: 80px;\n}\n.dynamiccontentblocwrapper.align-left .dynamiccontentbloc .bloc-content {\n  overflow: hidden;\n}\n.dynamiccontentblocwrapper.align-right .dynamiccontentbloc .bloc-header {\n  float: right;\n  width: 400px;\n  margin-left: 80px;\n}\n.dynamiccontentblocwrapper.align-right .dynamiccontentbloc .bloc-content {\n  overflow: hidden;\n}\n.dynamiccontentblocwrapper .slick-next {\n  right: 0;\n}\n.dynamiccontentblocwrapper .slick-prev {\n  left: 0;\n}\n@media screen and (max-width: 1366px) {\n  .dynamiccontentblocwrapper {\n    padding: 60px;\n  }\n  .dynamiccontentblocwrapper.align-right .dynamiccontentbloc .bloc-header {\n    margin-left: 40px;\n    width: 300px;\n  }\n  .dynamiccontentblocwrapper.align-left .dynamiccontentbloc .bloc-header {\n    margin-right: 40px;\n    width: 300px;\n  }\n}\n@media screen and (max-width: 1024px) {\n  .dynamiccontentblocwrapper {\n    padding: 40px;\n  }\n  .dynamiccontentblocwrapper .dynamiccontentbloc .bloc-header {\n    margin-bottom: 1em;\n  }\n  .dynamiccontentblocwrapper .dynamiccontentbloc .bloc-header h2 {\n    font-size: 28pt;\n  }\n  .dynamiccontentblocwrapper .dynamiccontentbloc .bloc-header h3 {\n    font-size: 14pt;\n  }\n  .dynamiccontentblocwrapper.align-right .dynamiccontentbloc .bloc-header {\n    margin-left: 0;\n    width: auto;\n    float: none;\n  }\n  .dynamiccontentblocwrapper.align-left .dynamiccontentbloc .bloc-header {\n    margin-right: 0;\n    width: auto;\n    float: none;\n  }\n}\n@media screen and (max-width: 1024px) {\n  .dynamiccontentblocwrapper {\n    padding: 20px;\n  }\n}\n", ""]);
+	exports.push([module.id, ".dynamiccontentblocwrapper.bloc-wrapper-entityactions {\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n.dynamiccontentblocwrapper.bloc-wrapper-entityactions .entityactions {\n  text-align: right;\n}\n.dynamiccontentblocwrapper.bloc-wrapper-entityactions .entityactions button,\n.dynamiccontentblocwrapper.bloc-wrapper-entityactions .entityactions a[role=button] {\n  margin-left: 4px;\n}\n", ""]);
 	
 	// exports
 
-
-/***/ },
-/* 751 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(24), ReactMount = __webpack_require__(26), React = __webpack_require__(91); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-	
-	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var React = __webpack_require__(91);
-	__webpack_require__(752);
-	var Loader = (function (_super) {
-	    __extends(Loader, _super);
-	    function Loader() {
-	        _super.apply(this, arguments);
-	    }
-	    Loader.prototype.render = function () {
-	        return React.createElement("div", {className: "loaderindicator " + (this.props.className || "") + (this.props.theme ? " theme-" + this.props.theme : "")}, this.props.message || 'Chargement', " ", React.createElement("i", {className: "spinner"}));
-	    };
-	    return Loader;
-	}(React.Component));
-	exports.Loader = Loader;
-	
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(293); if (makeExportsHot(module, __webpack_require__(91))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "loader.tsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
 
 /***/ },
 /* 752 */
@@ -31821,7 +31977,7 @@ webpackJsonp([0],[
 	
 	
 	// module
-	exports.push([module.id, ".loaderindicator {\n  display: flex;\n  align-items: center;\n}\n.loaderindicator .spinner {\n  margin-left: 8px;\n  display: block;\n  border-radius: 50%;\n  width: 20px;\n  height: 20px;\n  min-width: 20px;\n  min-height: 20px;\n  border: 4px solid rgba(255, 116, 48, 0.4);\n  border-top-color: rgba(255, 116, 48, 0.8);\n  animation: loaderspin 1s infinite linear;\n  flex-shrink: 0;\n}\n.loaderindicator.theme-dark .spinner {\n  border-color: rgba(0, 0, 0, 0.15);\n  border-top-color: rgba(0, 0, 0, 0.4);\n}\n.loaderindicator.theme-blue .spinner {\n  border-color: rgba(0, 0, 255, 0.3);\n  border-top-color: rgba(0, 0, 255, 0.7);\n}\n.loaderindicator.big .spinner {\n  border-width: 6px;\n  width: 40px;\n  height: 40px;\n  min-width: 40px;\n  min-height: 40px;\n}\n@-webkit-keyframes loaderspin {\n  from {\n    -webkit-transform: rotate(0deg);\n  }\n  to {\n    -webkit-transform: rotate(360deg);\n  }\n}\n@keyframes loaderspin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n", ""]);
+	exports.push([module.id, ".dynamiccontentblocwrapper {\n  padding: 60px;\n  background-color: white;\n  box-sizing: border-box;\n  width: 100%;\n  overflow: hidden;\n}\n.dynamiccontentblocwrapper .bloc-content {\n  position: relative;\n}\n.dynamiccontentblocwrapper h1,\n.dynamiccontentblocwrapper h2,\n.dynamiccontentblocwrapper h3 {\n  text-transform: uppercase;\n  font-weight: 300;\n  line-height: 1;\n  margin-top: 0;\n}\n.dynamiccontentblocwrapper h1 {\n  font-size: 36pt;\n}\n.dynamiccontentblocwrapper h2 {\n  font-size: 24pt;\n}\n.dynamiccontentblocwrapper h3 {\n  font-size: 18pt;\n}\n.dynamiccontentblocwrapper .bloc-actions {\n  margin-top: 1em;\n}\n.dynamiccontentblocwrapper .dynamiccontentbloc {\n  max-width: 1280px;\n  margin: auto;\n}\n.dynamiccontentblocwrapper .dynamiccontentbloc .bloc-header h1,\n.dynamiccontentblocwrapper .dynamiccontentbloc .bloc-header h2,\n.dynamiccontentblocwrapper .dynamiccontentbloc .bloc-header h3 {\n  margin: 0;\n}\n.dynamiccontentblocwrapper .dynamiccontentbloc .bloc-header .description {\n  margin-top: 1em;\n}\n.dynamiccontentblocwrapper.align-center .bloc-header {\n  text-align: center;\n  margin-bottom: 1em;\n}\n.dynamiccontentblocwrapper.align-center .bloc-header h2,\n.dynamiccontentblocwrapper.align-center .bloc-header h3 {\n  text-align: center;\n}\n.dynamiccontentblocwrapper.align-left .dynamiccontentbloc .bloc-header {\n  float: left;\n  width: 400px;\n  margin-right: 80px;\n}\n.dynamiccontentblocwrapper.align-left .dynamiccontentbloc .bloc-content {\n  overflow: hidden;\n}\n.dynamiccontentblocwrapper.align-right .dynamiccontentbloc .bloc-header {\n  float: right;\n  width: 400px;\n  margin-left: 80px;\n}\n.dynamiccontentblocwrapper.align-right .dynamiccontentbloc .bloc-content {\n  overflow: hidden;\n}\n.dynamiccontentblocwrapper .slick-next {\n  right: 0;\n}\n.dynamiccontentblocwrapper .slick-prev {\n  left: 0;\n}\n@media screen and (max-width: 1366px) {\n  .dynamiccontentblocwrapper {\n    padding: 60px;\n  }\n  .dynamiccontentblocwrapper.align-right .dynamiccontentbloc .bloc-header {\n    margin-left: 40px;\n    width: 300px;\n  }\n  .dynamiccontentblocwrapper.align-left .dynamiccontentbloc .bloc-header {\n    margin-right: 40px;\n    width: 300px;\n  }\n}\n@media screen and (max-width: 1024px) {\n  .dynamiccontentblocwrapper {\n    padding: 40px;\n  }\n  .dynamiccontentblocwrapper .dynamiccontentbloc .bloc-header {\n    margin-bottom: 1em;\n  }\n  .dynamiccontentblocwrapper .dynamiccontentbloc .bloc-header h2 {\n    font-size: 28pt;\n  }\n  .dynamiccontentblocwrapper .dynamiccontentbloc .bloc-header h3 {\n    font-size: 14pt;\n  }\n  .dynamiccontentblocwrapper.align-right .dynamiccontentbloc .bloc-header {\n    margin-left: 0;\n    width: auto;\n    float: none;\n  }\n  .dynamiccontentblocwrapper.align-left .dynamiccontentbloc .bloc-header {\n    margin-right: 0;\n    width: auto;\n    float: none;\n  }\n}\n@media screen and (max-width: 1024px) {\n  .dynamiccontentblocwrapper {\n    padding: 20px;\n  }\n}\n", ""]);
 	
 	// exports
 
@@ -31830,10 +31986,40 @@ webpackJsonp([0],[
 /* 754 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(24), ReactMount = __webpack_require__(26), React = __webpack_require__(91); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var React = __webpack_require__(91);
+	__webpack_require__(755);
+	var Loader = (function (_super) {
+	    __extends(Loader, _super);
+	    function Loader() {
+	        _super.apply(this, arguments);
+	    }
+	    Loader.prototype.render = function () {
+	        return React.createElement("div", {className: "loaderindicator " + (this.props.className || "") + (this.props.theme ? " theme-" + this.props.theme : "")}, this.props.message || 'Chargement', " ", React.createElement("i", {className: "spinner"}));
+	    };
+	    return Loader;
+	}(React.Component));
+	exports.Loader = Loader;
+	
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(293); if (makeExportsHot(module, __webpack_require__(91))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "loader.tsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
+
+/***/ },
+/* 755 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(755);
+	var content = __webpack_require__(756);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(303)(content, {});
@@ -31842,8 +32028,8 @@ webpackJsonp([0],[
 	if(true) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept(755, function() {
-				var newContent = __webpack_require__(755);
+			module.hot.accept(756, function() {
+				var newContent = __webpack_require__(756);
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -31853,7 +32039,47 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 755 */
+/* 756 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(302)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".loaderindicator {\n  display: flex;\n  align-items: center;\n}\n.loaderindicator .spinner {\n  margin-left: 8px;\n  display: block;\n  border-radius: 50%;\n  width: 20px;\n  height: 20px;\n  min-width: 20px;\n  min-height: 20px;\n  border: 4px solid rgba(255, 116, 48, 0.4);\n  border-top-color: rgba(255, 116, 48, 0.8);\n  animation: loaderspin 1s infinite linear;\n  flex-shrink: 0;\n}\n.loaderindicator.theme-dark .spinner {\n  border-color: rgba(0, 0, 0, 0.15);\n  border-top-color: rgba(0, 0, 0, 0.4);\n}\n.loaderindicator.theme-blue .spinner {\n  border-color: rgba(0, 0, 255, 0.3);\n  border-top-color: rgba(0, 0, 255, 0.7);\n}\n.loaderindicator.big .spinner {\n  border-width: 6px;\n  width: 40px;\n  height: 40px;\n  min-width: 40px;\n  min-height: 40px;\n}\n@-webkit-keyframes loaderspin {\n  from {\n    -webkit-transform: rotate(0deg);\n  }\n  to {\n    -webkit-transform: rotate(360deg);\n  }\n}\n@keyframes loaderspin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 757 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(758);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(303)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(true) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept(758, function() {
+				var newContent = __webpack_require__(758);
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 758 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(302)();
@@ -31867,7 +32093,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 756 */
+/* 759 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(24), ReactMount = __webpack_require__(26), React = __webpack_require__(91); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -31885,9 +32111,9 @@ webpackJsonp([0],[
 	var visualstateservice_1 = __webpack_require__(314);
 	var containerquery_1 = __webpack_require__(292);
 	var burgermenu_1 = __webpack_require__(311);
-	var front_appheader_1 = __webpack_require__(757);
-	var front_menu_1 = __webpack_require__(760);
-	__webpack_require__(763);
+	var front_appheader_1 = __webpack_require__(760);
+	var front_menu_1 = __webpack_require__(763);
+	__webpack_require__(766);
 	var mediaquery = {
 	    XXS: {
 	        minWidth: 200
@@ -31969,7 +32195,7 @@ webpackJsonp([0],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
 
 /***/ },
-/* 757 */
+/* 760 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(24), ReactMount = __webpack_require__(26), React = __webpack_require__(91); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -31990,7 +32216,7 @@ webpackJsonp([0],[
 	};
 	var React = __webpack_require__(91);
 	var react_router_1 = __webpack_require__(197);
-	__webpack_require__(758);
+	__webpack_require__(761);
 	var FrontAppHeader = (function (_super) {
 	    __extends(FrontAppHeader, _super);
 	    function FrontAppHeader() {
@@ -32038,110 +32264,6 @@ webpackJsonp([0],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
 
 /***/ },
-/* 758 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(759);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(303)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(true) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept(759, function() {
-				var newContent = __webpack_require__(759);
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 759 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(302)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".front-app-header {\n  height: 60px;\n  background-color: #111;\n  color: white;\n  display: flex;\n  align-items: center;\n  padding: 0 0 0 60px;\n}\n.front-app-header .logo a {\n  display: block;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  margin-right: 20px;\n}\n.front-app-header .logo img {\n  max-height: 48px;\n}\n.front-app-header .front-app-header-menu {\n  flex: 1;\n}\n.front-app-header .front-app-header-menu a {\n  color: white;\n  margin-right: 20px;\n  text-decoration: none;\n  font-size: 1.2rem;\n  font-weight: 300;\n  text-transform: uppercase;\n}\n.front-app-header .front-app-header-items {\n  display: flex;\n  align-items: center;\n}\n.front-app-header .front-app-header-items a {\n  display: block;\n  text-decoration: none;\n  width: 60px;\n  height: 60px;\n  line-height: 60px;\n  color: white;\n  text-align: center;\n  font-size: 16pt;\n}\n@media screen and (max-width: 1024px) {\n  .front-app-header .front-app-header-menu a {\n    display: none;\n  }\n}\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 760 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(24), ReactMount = __webpack_require__(26), React = __webpack_require__(91); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-	
-	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var __assign = (this && this.__assign) || Object.assign || function(t) {
-	    for (var s, i = 1, n = arguments.length; i < n; i++) {
-	        s = arguments[i];
-	        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-	            t[p] = s[p];
-	    }
-	    return t;
-	};
-	var React = __webpack_require__(91);
-	var react_router_1 = __webpack_require__(197);
-	__webpack_require__(761);
-	var FrontMenu = (function (_super) {
-	    __extends(FrontMenu, _super);
-	    function FrontMenu() {
-	        _super.apply(this, arguments);
-	    }
-	    FrontMenu.prototype.overlayClicked = function (arg) {
-	        if (arg.target.className == "front-menu-overlay") {
-	            arg.preventDefault();
-	            arg.stopPropagation();
-	            if (this.props.onOverlayClick)
-	                this.props.onOverlayClick(arg);
-	        }
-	    };
-	    FrontMenu.prototype.render = function () {
-	        return React.createElement("div", {className: "front-menu" + (this.props.collapsed ? "" : " expanded")}, React.createElement("div", {className: "front-menu-overlay", onClick: this.overlayClicked.bind(this)}), React.createElement(FrontMenuItems, __assign({}, this.props)));
-	    };
-	    return FrontMenu;
-	}(React.Component));
-	exports.FrontMenu = FrontMenu;
-	var FrontMenuItems = (function (_super) {
-	    __extends(FrontMenuItems, _super);
-	    function FrontMenuItems() {
-	        _super.apply(this, arguments);
-	    }
-	    FrontMenuItems.prototype.render = function () {
-	        var _this = this;
-	        var style = {};
-	        if (this.props.visualTheme.theme.primaryColor) {
-	            style.backgroundColor = this.props.visualTheme.theme.primaryColor;
-	            style.color = this.props.visualTheme.theme.accentColor;
-	        }
-	        return React.createElement("div", {className: "front-menu-items", style: style}, React.createElement(react_router_1.Link, {to: "/preview/" + this.props.event.id + "/sessions", onClick: function (arg) { return _this.props.onOverlayClick(arg); }}, "Sessions"), React.createElement(react_router_1.Link, {to: "/preview/" + this.props.event.id + "/speakers", onClick: function (arg) { return _this.props.onOverlayClick(arg); }}, "Speakers"), React.createElement(react_router_1.Link, {to: "/preview/" + this.props.event.id + "/agenda", onClick: function (arg) { return _this.props.onOverlayClick(arg); }}, "Mon agenda"), React.createElement(react_router_1.Link, {to: "/preview/" + this.props.event.id + "/profile", onClick: function (arg) { return _this.props.onOverlayClick(arg); }}, "Mon profile"));
-	    };
-	    return FrontMenuItems;
-	}(React.Component));
-	exports.FrontMenuItems = FrontMenuItems;
-	
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(293); if (makeExportsHot(module, __webpack_require__(91))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "front.menu.tsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
-
-/***/ },
 /* 761 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -32176,53 +32298,13 @@ webpackJsonp([0],[
 	
 	
 	// module
-	exports.push([module.id, ".front-menu {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  pointer-events: none;\n}\n.front-menu .front-menu-overlay {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  background-color: #000;\n  opacity: 0;\n  pointer-events: none;\n  transition: opacity 200ms ease-out;\n}\n.front-menu .front-menu-items {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 400px;\n  max-width: 90%;\n  height: 100%;\n  padding: 60px 20px 20px 20px;\n  box-sizing: border-box;\n  transform: translate3d(-100%, 0, 0);\n  transition: transform 200ms ease-out;\n}\n.front-menu .front-menu-items a {\n  display: block;\n  color: inherit;\n  text-decoration: none;\n  font-size: 1.2em;\n  margin-bottom: 8px;\n}\n.front-menu.expanded {\n  pointer-events: all;\n}\n.front-menu.expanded .front-menu-overlay {\n  opacity: 0.4;\n  pointer-events: all;\n}\n.front-menu.expanded .front-menu-items {\n  transform: translate3d(0, 0, 0);\n}\n", ""]);
+	exports.push([module.id, ".front-app-header {\n  height: 60px;\n  background-color: #111;\n  color: white;\n  display: flex;\n  align-items: center;\n  padding: 0 0 0 60px;\n}\n.front-app-header .logo a {\n  display: block;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  margin-right: 20px;\n}\n.front-app-header .logo img {\n  max-height: 48px;\n}\n.front-app-header .front-app-header-menu {\n  flex: 1;\n}\n.front-app-header .front-app-header-menu a {\n  color: white;\n  margin-right: 20px;\n  text-decoration: none;\n  font-size: 1.2rem;\n  font-weight: 300;\n  text-transform: uppercase;\n}\n.front-app-header .front-app-header-items {\n  display: flex;\n  align-items: center;\n}\n.front-app-header .front-app-header-items a {\n  display: block;\n  text-decoration: none;\n  width: 60px;\n  height: 60px;\n  line-height: 60px;\n  color: white;\n  text-align: center;\n  font-size: 16pt;\n}\n@media screen and (max-width: 1024px) {\n  .front-app-header .front-app-header-menu a {\n    display: none;\n  }\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
 /* 763 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(764);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(303)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(true) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept(764, function() {
-				var newContent = __webpack_require__(764);
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 764 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(302)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".front-app-shell {\n  width: 100%;\n  height: 100%;\n}\n.front-app-shell .app-page {\n  background-color: #EEE;\n}\n.front-app-shell .app-page > header {\n  background-color: #222;\n  color: white;\n}\n.front-app-shell-layout {\n  width: 100%;\n  height: 100%;\n  position: relative;\n}\n.front-page-wrapper {\n  width: 100%;\n  height: 100%;\n  position: relative;\n  overflow: hidden;\n}\n.front-page-container {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 60px;\n  bottom: 0;\n}\n.front-app-footer {\n  position: absolute;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  height: 40px;\n}\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 765 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(24), ReactMount = __webpack_require__(26), React = __webpack_require__(91); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -32233,24 +32315,97 @@ webpackJsonp([0],[
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
+	var __assign = (this && this.__assign) || Object.assign || function(t) {
+	    for (var s, i = 1, n = arguments.length; i < n; i++) {
+	        s = arguments[i];
+	        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+	            t[p] = s[p];
+	    }
+	    return t;
+	};
 	var React = __webpack_require__(91);
-	var page_1 = __webpack_require__(536);
-	__webpack_require__(766);
-	var SessionsListPage = (function (_super) {
-	    __extends(SessionsListPage, _super);
-	    function SessionsListPage() {
+	var react_router_1 = __webpack_require__(197);
+	__webpack_require__(764);
+	var FrontMenu = (function (_super) {
+	    __extends(FrontMenu, _super);
+	    function FrontMenu() {
 	        _super.apply(this, arguments);
 	    }
-	    SessionsListPage.prototype.render = function () {
-	        return React.createElement(page_1.AppPage, {className: "sessionslistpage"}, "sessions");
+	    FrontMenu.prototype.overlayClicked = function (arg) {
+	        if (arg.target.className == "front-menu-overlay") {
+	            arg.preventDefault();
+	            arg.stopPropagation();
+	            if (this.props.onOverlayClick)
+	                this.props.onOverlayClick(arg);
+	        }
 	    };
-	    return SessionsListPage;
+	    FrontMenu.prototype.render = function () {
+	        return React.createElement("div", {className: "front-menu" + (this.props.collapsed ? "" : " expanded")}, React.createElement("div", {className: "front-menu-overlay", onClick: this.overlayClicked.bind(this)}), React.createElement(FrontMenuItems, __assign({}, this.props)));
+	    };
+	    return FrontMenu;
 	}(React.Component));
-	exports.SessionsListPage = SessionsListPage;
+	exports.FrontMenu = FrontMenu;
+	var FrontMenuItems = (function (_super) {
+	    __extends(FrontMenuItems, _super);
+	    function FrontMenuItems() {
+	        _super.apply(this, arguments);
+	    }
+	    FrontMenuItems.prototype.render = function () {
+	        var _this = this;
+	        var style = {};
+	        if (this.props.visualTheme.theme.primaryColor) {
+	            style.backgroundColor = this.props.visualTheme.theme.primaryColor;
+	            style.color = this.props.visualTheme.theme.accentColor;
+	        }
+	        return React.createElement("div", {className: "front-menu-items", style: style}, React.createElement("div", {className: "userbloc"}), React.createElement("div", {className: "menulinks"}, React.createElement(react_router_1.Link, {to: "/preview/" + this.props.event.id + "/", onClick: function (arg) { return _this.props.onOverlayClick(arg); }}, "Accueil"), React.createElement(react_router_1.Link, {to: "/preview/" + this.props.event.id + "/sessions", onClick: function (arg) { return _this.props.onOverlayClick(arg); }}, "Sessions"), React.createElement(react_router_1.Link, {to: "/preview/" + this.props.event.id + "/speakers", onClick: function (arg) { return _this.props.onOverlayClick(arg); }}, "Speakers"), React.createElement(react_router_1.Link, {to: "/preview/" + this.props.event.id + "/agenda", onClick: function (arg) { return _this.props.onOverlayClick(arg); }}, "Mon agenda"), React.createElement(react_router_1.Link, {to: "/preview/" + this.props.event.id + "/profile", onClick: function (arg) { return _this.props.onOverlayClick(arg); }}, "Mon profile")));
+	    };
+	    return FrontMenuItems;
+	}(React.Component));
+	exports.FrontMenuItems = FrontMenuItems;
 	
 
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(293); if (makeExportsHot(module, __webpack_require__(91))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "sessions.tsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(293); if (makeExportsHot(module, __webpack_require__(91))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "front.menu.tsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
+
+/***/ },
+/* 764 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(765);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(303)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(true) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept(765, function() {
+				var newContent = __webpack_require__(765);
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 765 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(302)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".front-menu {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  pointer-events: none;\n}\n.front-menu .front-menu-overlay {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  background-color: #000;\n  opacity: 0;\n  pointer-events: none;\n  transition: opacity 200ms ease-out;\n}\n.front-menu .front-menu-items {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 300px;\n  max-width: 90%;\n  height: 100%;\n  padding: 60px 20px 20px 20px;\n  box-sizing: border-box;\n  transform: translate3d(-100%, 0, 0);\n  transition: transform 200ms ease-out;\n}\n.front-menu .front-menu-items a {\n  display: block;\n  color: inherit;\n  text-decoration: none;\n  font-size: 1.4em;\n  margin-bottom: 8px;\n  font-weight: 300;\n}\n.front-menu.expanded {\n  pointer-events: all;\n}\n.front-menu.expanded .front-menu-overlay {\n  opacity: 0.4;\n  pointer-events: all;\n}\n.front-menu.expanded .front-menu-items {\n  transform: translate3d(0, 0, 0);\n}\n", ""]);
+	
+	// exports
+
 
 /***/ },
 /* 766 */
@@ -32287,7 +32442,7 @@ webpackJsonp([0],[
 	
 	
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, ".front-app-shell {\n  width: 100%;\n  height: 100%;\n}\n.front-app-shell .app-page {\n  background-color: #EEE;\n}\n.front-app-shell .app-page > header {\n  background-color: #222;\n  color: white;\n}\n.front-app-shell-layout {\n  width: 100%;\n  height: 100%;\n  position: relative;\n}\n.front-page-wrapper {\n  width: 100%;\n  height: 100%;\n  position: relative;\n  overflow: hidden;\n}\n.front-page-container {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 60px;\n  bottom: 0;\n}\n.front-app-footer {\n  position: absolute;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  height: 40px;\n}\n", ""]);
 	
 	// exports
 
@@ -32305,39 +32460,22 @@ webpackJsonp([0],[
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var React = __webpack_require__(91);
-	var dynamicpage_1 = __webpack_require__(701);
-	var react_redux_1 = __webpack_require__(276);
+	var page_1 = __webpack_require__(536);
 	__webpack_require__(769);
-	var SessionDetailPageComponent = (function (_super) {
-	    __extends(SessionDetailPageComponent, _super);
-	    function SessionDetailPageComponent() {
+	var SessionsListPage = (function (_super) {
+	    __extends(SessionsListPage, _super);
+	    function SessionsListPage() {
 	        _super.apply(this, arguments);
 	    }
-	    SessionDetailPageComponent.prototype.render = function () {
-	        var sessionid = this.props.params.sessionid;
-	        var session = this.props.sessions.sessions.filter(function (t) { return t.id == sessionid; })[0];
-	        var context = {
-	            session: session,
-	            entity: session,
-	            entitySchema: this.props.entities.schemas.session
-	        };
-	        return React.createElement(dynamicpage_1.DynamicPage, {template: "session", context: context, user: this.props.user, event: this.props.event, visualTheme: this.props.visualTheme, templates: this.props.templates});
+	    SessionsListPage.prototype.render = function () {
+	        return React.createElement(page_1.AppPage, {className: "sessionslistpage"}, "sessions");
 	    };
-	    return SessionDetailPageComponent;
+	    return SessionsListPage;
 	}(React.Component));
-	function mapStateToProps(state) {
-	    return {
-	        user: state.user,
-	        event: state.event.current,
-	        templates: state.event.templates,
-	        sessions: state.event.sessions,
-	        entities: state.event.entities,
-	    };
-	}
-	exports.SessionDetailPage = react_redux_1.connect(mapStateToProps)(SessionDetailPageComponent);
+	exports.SessionsListPage = SessionsListPage;
 	
 
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(293); if (makeExportsHot(module, __webpack_require__(91))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "sessiondetail.tsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(293); if (makeExportsHot(module, __webpack_require__(91))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "sessions.tsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
 
 /***/ },
@@ -32393,22 +32531,39 @@ webpackJsonp([0],[
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var React = __webpack_require__(91);
-	var page_1 = __webpack_require__(536);
+	var dynamicpage_1 = __webpack_require__(701);
+	var react_redux_1 = __webpack_require__(276);
 	__webpack_require__(772);
-	var SessionsAgendaPage = (function (_super) {
-	    __extends(SessionsAgendaPage, _super);
-	    function SessionsAgendaPage() {
+	var SessionDetailPageComponent = (function (_super) {
+	    __extends(SessionDetailPageComponent, _super);
+	    function SessionDetailPageComponent() {
 	        _super.apply(this, arguments);
 	    }
-	    SessionsAgendaPage.prototype.render = function () {
-	        return React.createElement(page_1.AppPage, {className: "sessionsagendapage"}, "agenda");
+	    SessionDetailPageComponent.prototype.render = function () {
+	        var sessionid = this.props.params.sessionid;
+	        var session = this.props.sessions.sessions.filter(function (t) { return t.id == sessionid; })[0];
+	        var context = {
+	            session: session,
+	            entity: session,
+	            entitySchema: this.props.entities.schemas.session
+	        };
+	        return React.createElement(dynamicpage_1.DynamicPage, {template: "session", context: context, user: this.props.user, event: this.props.event, visualTheme: this.props.visualTheme, templates: this.props.templates});
 	    };
-	    return SessionsAgendaPage;
+	    return SessionDetailPageComponent;
 	}(React.Component));
-	exports.SessionsAgendaPage = SessionsAgendaPage;
+	function mapStateToProps(state) {
+	    return {
+	        user: state.user,
+	        event: state.event.current,
+	        templates: state.event.templates,
+	        sessions: state.event.sessions,
+	        entities: state.event.entities,
+	    };
+	}
+	exports.SessionDetailPage = react_redux_1.connect(mapStateToProps)(SessionDetailPageComponent);
 	
 
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(293); if (makeExportsHot(module, __webpack_require__(91))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "sessionsagenda.tsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(293); if (makeExportsHot(module, __webpack_require__(91))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "sessiondetail.tsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
 
 /***/ },
@@ -32466,20 +32621,20 @@ webpackJsonp([0],[
 	var React = __webpack_require__(91);
 	var page_1 = __webpack_require__(536);
 	__webpack_require__(775);
-	var SpeakersListPage = (function (_super) {
-	    __extends(SpeakersListPage, _super);
-	    function SpeakersListPage() {
+	var SessionsAgendaPage = (function (_super) {
+	    __extends(SessionsAgendaPage, _super);
+	    function SessionsAgendaPage() {
 	        _super.apply(this, arguments);
 	    }
-	    SpeakersListPage.prototype.render = function () {
-	        return React.createElement(page_1.AppPage, {className: "speakerslistpage"}, "speakers");
+	    SessionsAgendaPage.prototype.render = function () {
+	        return React.createElement(page_1.AppPage, {className: "sessionsagendapage"}, "agenda");
 	    };
-	    return SpeakersListPage;
+	    return SessionsAgendaPage;
 	}(React.Component));
-	exports.SpeakersListPage = SpeakersListPage;
+	exports.SessionsAgendaPage = SessionsAgendaPage;
 	
 
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(293); if (makeExportsHot(module, __webpack_require__(91))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "speakers.tsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(293); if (makeExportsHot(module, __webpack_require__(91))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "sessionsagenda.tsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
 
 /***/ },
@@ -32535,39 +32690,22 @@ webpackJsonp([0],[
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var React = __webpack_require__(91);
-	var dynamicpage_1 = __webpack_require__(701);
-	var react_redux_1 = __webpack_require__(276);
+	var page_1 = __webpack_require__(536);
 	__webpack_require__(778);
-	var SpeakerDetailPageComponent = (function (_super) {
-	    __extends(SpeakerDetailPageComponent, _super);
-	    function SpeakerDetailPageComponent() {
+	var SpeakersListPage = (function (_super) {
+	    __extends(SpeakersListPage, _super);
+	    function SpeakersListPage() {
 	        _super.apply(this, arguments);
 	    }
-	    SpeakerDetailPageComponent.prototype.render = function () {
-	        var speakerid = this.props.params.speakerid;
-	        var speaker = this.props.speakers.speakers.filter(function (t) { return t.id == speakerid; })[0];
-	        var context = {
-	            speaker: speaker,
-	            entity: speaker,
-	            entiySchema: this.props.entities.schemas.speaker
-	        };
-	        return React.createElement(dynamicpage_1.DynamicPage, {template: "speaker", context: context, user: this.props.user, event: this.props.event, visualTheme: this.props.visualTheme, templates: this.props.templates});
+	    SpeakersListPage.prototype.render = function () {
+	        return React.createElement(page_1.AppPage, {className: "speakerslistpage"}, "speakers");
 	    };
-	    return SpeakerDetailPageComponent;
+	    return SpeakersListPage;
 	}(React.Component));
-	function mapStateToProps(state) {
-	    return {
-	        user: state.user,
-	        event: state.event.current,
-	        templates: state.event.templates,
-	        speakers: state.event.speakers,
-	        entities: state.event.entities,
-	    };
-	}
-	exports.SpeakerDetailPage = react_redux_1.connect(mapStateToProps)(SpeakerDetailPageComponent);
+	exports.SpeakersListPage = SpeakersListPage;
 	
 
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(293); if (makeExportsHot(module, __webpack_require__(91))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "speakerdetail.tsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(293); if (makeExportsHot(module, __webpack_require__(91))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "speakers.tsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
 
 /***/ },
@@ -32623,22 +32761,39 @@ webpackJsonp([0],[
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var React = __webpack_require__(91);
-	var page_1 = __webpack_require__(536);
+	var dynamicpage_1 = __webpack_require__(701);
+	var react_redux_1 = __webpack_require__(276);
 	__webpack_require__(781);
-	var ExhibitorsListPage = (function (_super) {
-	    __extends(ExhibitorsListPage, _super);
-	    function ExhibitorsListPage() {
+	var SpeakerDetailPageComponent = (function (_super) {
+	    __extends(SpeakerDetailPageComponent, _super);
+	    function SpeakerDetailPageComponent() {
 	        _super.apply(this, arguments);
 	    }
-	    ExhibitorsListPage.prototype.render = function () {
-	        return React.createElement(page_1.AppPage, {className: "exhibitorslistpage"}, "speakers");
+	    SpeakerDetailPageComponent.prototype.render = function () {
+	        var speakerid = this.props.params.speakerid;
+	        var speaker = this.props.speakers.speakers.filter(function (t) { return t.id == speakerid; })[0];
+	        var context = {
+	            speaker: speaker,
+	            entity: speaker,
+	            entiySchema: this.props.entities.schemas.speaker
+	        };
+	        return React.createElement(dynamicpage_1.DynamicPage, {template: "speaker", context: context, user: this.props.user, event: this.props.event, visualTheme: this.props.visualTheme, templates: this.props.templates});
 	    };
-	    return ExhibitorsListPage;
+	    return SpeakerDetailPageComponent;
 	}(React.Component));
-	exports.ExhibitorsListPage = ExhibitorsListPage;
+	function mapStateToProps(state) {
+	    return {
+	        user: state.user,
+	        event: state.event.current,
+	        templates: state.event.templates,
+	        speakers: state.event.speakers,
+	        entities: state.event.entities,
+	    };
+	}
+	exports.SpeakerDetailPage = react_redux_1.connect(mapStateToProps)(SpeakerDetailPageComponent);
 	
 
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(293); if (makeExportsHot(module, __webpack_require__(91))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "exhibitors.tsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(293); if (makeExportsHot(module, __webpack_require__(91))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "speakerdetail.tsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
 
 /***/ },
@@ -32694,39 +32849,22 @@ webpackJsonp([0],[
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var React = __webpack_require__(91);
-	var dynamicpage_1 = __webpack_require__(701);
-	var react_redux_1 = __webpack_require__(276);
+	var page_1 = __webpack_require__(536);
 	__webpack_require__(784);
-	var ExhibitorDetailPageComponent = (function (_super) {
-	    __extends(ExhibitorDetailPageComponent, _super);
-	    function ExhibitorDetailPageComponent() {
+	var ExhibitorsListPage = (function (_super) {
+	    __extends(ExhibitorsListPage, _super);
+	    function ExhibitorsListPage() {
 	        _super.apply(this, arguments);
 	    }
-	    ExhibitorDetailPageComponent.prototype.render = function () {
-	        var exhibitorid = this.props.params.exhibitorid;
-	        var exhibitor = this.props.exhibitors.exhibitors.filter(function (t) { return t.id == exhibitorid; })[0];
-	        var context = {
-	            exhibitor: exhibitor,
-	            entity: exhibitor,
-	            entiySchema: this.props.entities.schemas.speaker
-	        };
-	        return React.createElement(dynamicpage_1.DynamicPage, {template: "exhibitor", context: context, user: this.props.user, event: this.props.event, visualTheme: this.props.visualTheme, templates: this.props.templates});
+	    ExhibitorsListPage.prototype.render = function () {
+	        return React.createElement(page_1.AppPage, {className: "exhibitorslistpage"}, "exposants");
 	    };
-	    return ExhibitorDetailPageComponent;
+	    return ExhibitorsListPage;
 	}(React.Component));
-	function mapStateToProps(state) {
-	    return {
-	        user: state.user,
-	        event: state.event.current,
-	        templates: state.event.templates,
-	        exhibitors: state.event.exhibitors,
-	        entities: state.event.entities,
-	    };
-	}
-	exports.ExhibitorDetailPage = react_redux_1.connect(mapStateToProps)(ExhibitorDetailPageComponent);
+	exports.ExhibitorsListPage = ExhibitorsListPage;
 	
 
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(293); if (makeExportsHot(module, __webpack_require__(91))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "exhibitordetail.tsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(293); if (makeExportsHot(module, __webpack_require__(91))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "exhibitors.tsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
 
 /***/ },
@@ -32781,6 +32919,94 @@ webpackJsonp([0],[
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
+	var React = __webpack_require__(91);
+	var dynamicpage_1 = __webpack_require__(701);
+	var react_redux_1 = __webpack_require__(276);
+	__webpack_require__(787);
+	var ExhibitorDetailPageComponent = (function (_super) {
+	    __extends(ExhibitorDetailPageComponent, _super);
+	    function ExhibitorDetailPageComponent() {
+	        _super.apply(this, arguments);
+	    }
+	    ExhibitorDetailPageComponent.prototype.render = function () {
+	        var exhibitorid = this.props.params.exhibitorid;
+	        var exhibitor = this.props.exhibitors.exhibitors.filter(function (t) { return t.id == exhibitorid; })[0];
+	        var context = {
+	            exhibitor: exhibitor,
+	            entity: exhibitor,
+	            entiySchema: this.props.entities.schemas.speaker
+	        };
+	        return React.createElement(dynamicpage_1.DynamicPage, {template: "exhibitor", context: context, user: this.props.user, event: this.props.event, visualTheme: this.props.visualTheme, templates: this.props.templates});
+	    };
+	    return ExhibitorDetailPageComponent;
+	}(React.Component));
+	function mapStateToProps(state) {
+	    return {
+	        user: state.user,
+	        event: state.event.current,
+	        templates: state.event.templates,
+	        exhibitors: state.event.exhibitors,
+	        entities: state.event.entities,
+	    };
+	}
+	exports.ExhibitorDetailPage = react_redux_1.connect(mapStateToProps)(ExhibitorDetailPageComponent);
+	
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(293); if (makeExportsHot(module, __webpack_require__(91))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "exhibitordetail.tsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
+
+/***/ },
+/* 787 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(788);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(303)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(true) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept(788, function() {
+				var newContent = __webpack_require__(788);
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 788 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(302)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 789 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(24), ReactMount = __webpack_require__(26), React = __webpack_require__(91); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
 	var __assign = (this && this.__assign) || Object.assign || function(t) {
 	    for (var s, i = 1, n = arguments.length; i < n; i++) {
 	        s = arguments[i];
@@ -32800,7 +33026,7 @@ webpackJsonp([0],[
 	var page_1 = __webpack_require__(536);
 	var event_participantservice_1 = __webpack_require__(567);
 	var decorators_1 = __webpack_require__(299);
-	__webpack_require__(787);
+	__webpack_require__(790);
 	var ChatPageComponent = (function (_super) {
 	    __extends(ChatPageComponent, _super);
 	    function ChatPageComponent(props) {
@@ -32929,77 +33155,6 @@ webpackJsonp([0],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
 
 /***/ },
-/* 787 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(788);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(303)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(true) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept(788, function() {
-				var newContent = __webpack_require__(788);
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 788 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(302)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".chatpage {\n  background-color: #EEE;\n}\n.chatpage .chatpagecontent {\n  position: relative;\n  width: 100%;\n  height: 100%;\n}\n.chatpage .chat-contactspanel {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  width: 400px;\n  background-color: white;\n  border-right: 1px solid #DDD;\n  box-sizing: border-box;\n  padding: 40px;\n}\n.chatpage .chat-contactspanel h2 {\n  font-weight: 300;\n  margin-top: 0;\n}\n.chatpage .chat-contactspanel .contact {\n  margin-bottom: 8px;\n}\n.chatpage .contact {\n  display: flex;\n  align-items: center;\n}\n.chatpage .contact .contact-pic {\n  width: 48px;\n  height: 48px;\n  border-radius: 50%;\n  background-size: cover;\n  background-position: center;\n  margin-right: 16px;\n  background-color: #DDD;\n}\n.chatpage .contact .contact-name {\n  font-size: 16pt;\n}\n.chatpage .chat-messagespanel {\n  position: absolute;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  left: 400px;\n}\n.chatpage .chat-messagespanel .chat-messagespanel-content {\n  position: relative;\n  width: 100%;\n  height: 100%;\n}\n.chatpage .chat-messagespanel .chat-messagespanel-content .chat-messagestarget {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 80px;\n  background-color: white;\n  border-bottom: 1px solid #DDD;\n  box-sizing: border-box;\n  padding: 8px 16px;\n}\n.chatpage .chat-messagespanel .chat-messagespanel-content .chat-messagestarget .chatwith {\n  color: #AAA;\n  font-size: 0.7rem;\n  text-transform: uppercase;\n}\n.chatpage .chat-messagespanel .chat-messagespanel-content .chat-messages {\n  position: absolute;\n  bottom: 120px;\n  left: 0;\n  right: 0;\n  top: 80px;\n  box-sizing: border-box;\n}\n.chatpage .chat-messagespanel .chat-messagespanel-content .chat-messagesinput {\n  position: absolute;\n  height: 120px;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: white;\n  border-top: 1px solid #DDD;\n  box-sizing: border-box;\n  display: flex;\n  flex-flow: column nowrap;\n}\n.chatpage .chat-messagespanel .chat-messagespanel-content .chat-messagesinput .chat-messagesinput-types {\n  display: flex;\n  align-items: center;\n  padding: 4px 16px;\n}\n.chatpage .chat-messagespanel .chat-messagespanel-content .chat-messagesinput .chat-messagesinput-types a {\n  font-size: 0.8rem;\n  text-transform: uppercase;\n  margin-right: 10px;\n  color: #999;\n}\n.chatpage .chat-messagespanel .chat-messagespanel-content .chat-messagesinput .chat-messagesinput-types a.selected {\n  color: blue;\n}\n.chatpage .chat-messagespanel .chat-messagespanel-content .chat-messagesinput .chat-messagesinput-content {\n  flex: 1;\n  position: relative;\n}\n.chatpage .chat-messagespanel .chat-messagespanel-content .chat-messagesinput .chat-messagesinput-message {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  padding: 0 16px 4px 16px;\n  display: flex;\n  box-sizing: border-box;\n}\n.chatpage .chat-messagespanel .chat-messagespanel-content .chat-messagesinput .chat-messagesinput-message textarea {\n  box-sizing: border-box;\n  flex: 1;\n  border: 1.1px solid #EEE;\n  width: 100%;\n  height: 100%;\n  margin-right: 4px;\n}\n@media screen and (max-width: 1024px) {\n  .chatpage .chat-contactspanel {\n    visibility: hidden;\n  }\n  .chatpage .chat-messagespanel {\n    left: 0;\n  }\n}\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 789 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(24), ReactMount = __webpack_require__(26), React = __webpack_require__(91); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-	
-	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var React = __webpack_require__(91);
-	var page_1 = __webpack_require__(536);
-	__webpack_require__(790);
-	var ContentPage = (function (_super) {
-	    __extends(ContentPage, _super);
-	    function ContentPage() {
-	        _super.apply(this, arguments);
-	    }
-	    ContentPage.prototype.render = function () {
-	        return React.createElement(page_1.AppPage, {className: "contentpage"}, "contentpage");
-	    };
-	    return ContentPage;
-	}(React.Component));
-	exports.ContentPage = ContentPage;
-	
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(293); if (makeExportsHot(module, __webpack_require__(91))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "contentpage.tsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
-
-/***/ },
 /* 790 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -33034,13 +33189,84 @@ webpackJsonp([0],[
 	
 	
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, ".chatpage {\n  background-color: #EEE;\n}\n.chatpage .chatpagecontent {\n  position: relative;\n  width: 100%;\n  height: 100%;\n}\n.chatpage .chat-contactspanel {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  width: 400px;\n  background-color: white;\n  border-right: 1px solid #DDD;\n  box-sizing: border-box;\n  padding: 40px;\n}\n.chatpage .chat-contactspanel h2 {\n  font-weight: 300;\n  margin-top: 0;\n}\n.chatpage .chat-contactspanel .contact {\n  margin-bottom: 8px;\n}\n.chatpage .contact {\n  display: flex;\n  align-items: center;\n}\n.chatpage .contact .contact-pic {\n  width: 48px;\n  height: 48px;\n  border-radius: 50%;\n  background-size: cover;\n  background-position: center;\n  margin-right: 16px;\n  background-color: #DDD;\n}\n.chatpage .contact .contact-name {\n  font-size: 16pt;\n}\n.chatpage .chat-messagespanel {\n  position: absolute;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  left: 400px;\n}\n.chatpage .chat-messagespanel .chat-messagespanel-content {\n  position: relative;\n  width: 100%;\n  height: 100%;\n}\n.chatpage .chat-messagespanel .chat-messagespanel-content .chat-messagestarget {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 80px;\n  background-color: white;\n  border-bottom: 1px solid #DDD;\n  box-sizing: border-box;\n  padding: 8px 16px;\n}\n.chatpage .chat-messagespanel .chat-messagespanel-content .chat-messagestarget .chatwith {\n  color: #AAA;\n  font-size: 0.7rem;\n  text-transform: uppercase;\n}\n.chatpage .chat-messagespanel .chat-messagespanel-content .chat-messages {\n  position: absolute;\n  bottom: 120px;\n  left: 0;\n  right: 0;\n  top: 80px;\n  box-sizing: border-box;\n}\n.chatpage .chat-messagespanel .chat-messagespanel-content .chat-messagesinput {\n  position: absolute;\n  height: 120px;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: white;\n  border-top: 1px solid #DDD;\n  box-sizing: border-box;\n  display: flex;\n  flex-flow: column nowrap;\n}\n.chatpage .chat-messagespanel .chat-messagespanel-content .chat-messagesinput .chat-messagesinput-types {\n  display: flex;\n  align-items: center;\n  padding: 4px 16px;\n}\n.chatpage .chat-messagespanel .chat-messagespanel-content .chat-messagesinput .chat-messagesinput-types a {\n  font-size: 0.8rem;\n  text-transform: uppercase;\n  margin-right: 10px;\n  color: #999;\n}\n.chatpage .chat-messagespanel .chat-messagespanel-content .chat-messagesinput .chat-messagesinput-types a.selected {\n  color: blue;\n}\n.chatpage .chat-messagespanel .chat-messagespanel-content .chat-messagesinput .chat-messagesinput-content {\n  flex: 1;\n  position: relative;\n}\n.chatpage .chat-messagespanel .chat-messagespanel-content .chat-messagesinput .chat-messagesinput-message {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  padding: 0 16px 4px 16px;\n  display: flex;\n  box-sizing: border-box;\n}\n.chatpage .chat-messagespanel .chat-messagespanel-content .chat-messagesinput .chat-messagesinput-message textarea {\n  box-sizing: border-box;\n  flex: 1;\n  border: 1.1px solid #EEE;\n  width: 100%;\n  height: 100%;\n  margin-right: 4px;\n}\n@media screen and (max-width: 1024px) {\n  .chatpage .chat-contactspanel {\n    visibility: hidden;\n  }\n  .chatpage .chat-messagespanel {\n    left: 0;\n  }\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
 /* 792 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(24), ReactMount = __webpack_require__(26), React = __webpack_require__(91); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var React = __webpack_require__(91);
+	var page_1 = __webpack_require__(536);
+	__webpack_require__(793);
+	var ContentPage = (function (_super) {
+	    __extends(ContentPage, _super);
+	    function ContentPage() {
+	        _super.apply(this, arguments);
+	    }
+	    ContentPage.prototype.render = function () {
+	        return React.createElement(page_1.AppPage, {className: "contentpage"}, "contentpage");
+	    };
+	    return ContentPage;
+	}(React.Component));
+	exports.ContentPage = ContentPage;
+	
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(293); if (makeExportsHot(module, __webpack_require__(91))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "contentpage.tsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
+
+/***/ },
+/* 793 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(794);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(303)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(true) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept(794, function() {
+				var newContent = __webpack_require__(794);
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 794 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(302)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 795 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(24), ReactMount = __webpack_require__(26), React = __webpack_require__(91); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -33063,10 +33289,10 @@ webpackJsonp([0],[
 	var page_1 = __webpack_require__(536);
 	var react_redux_1 = __webpack_require__(276);
 	var redux_1 = __webpack_require__(263);
-	var toggle_1 = __webpack_require__(793);
+	var toggle_1 = __webpack_require__(796);
 	var user_preferenceservice_1 = __webpack_require__(546);
 	var ReactCSSTransitionGroup = __webpack_require__(285);
-	__webpack_require__(796);
+	__webpack_require__(799);
 	var ProfilePageComponent = (function (_super) {
 	    __extends(ProfilePageComponent, _super);
 	    function ProfilePageComponent(props) {
@@ -33305,7 +33531,7 @@ webpackJsonp([0],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
 
 /***/ },
-/* 793 */
+/* 796 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(24), ReactMount = __webpack_require__(26), React = __webpack_require__(91); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -33317,7 +33543,7 @@ webpackJsonp([0],[
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var React = __webpack_require__(91);
-	__webpack_require__(794);
+	__webpack_require__(797);
 	var Toggle = (function (_super) {
 	    __extends(Toggle, _super);
 	    function Toggle(props) {
@@ -33398,13 +33624,13 @@ webpackJsonp([0],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
 
 /***/ },
-/* 794 */
+/* 797 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(795);
+	var content = __webpack_require__(798);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(303)(content, {});
@@ -33413,8 +33639,8 @@ webpackJsonp([0],[
 	if(true) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept(795, function() {
-				var newContent = __webpack_require__(795);
+			module.hot.accept(798, function() {
+				var newContent = __webpack_require__(798);
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -33424,7 +33650,7 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 795 */
+/* 798 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(302)();
@@ -33438,13 +33664,13 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 796 */
+/* 799 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(797);
+	var content = __webpack_require__(800);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(303)(content, {});
@@ -33453,8 +33679,8 @@ webpackJsonp([0],[
 	if(true) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept(797, function() {
-				var newContent = __webpack_require__(797);
+			module.hot.accept(800, function() {
+				var newContent = __webpack_require__(800);
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -33464,7 +33690,7 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 797 */
+/* 800 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(302)();
@@ -33478,7 +33704,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 798 */
+/* 801 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(24), ReactMount = __webpack_require__(26), React = __webpack_require__(91); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -33508,7 +33734,7 @@ webpackJsonp([0],[
 	var page_1 = __webpack_require__(536);
 	var event_participantservice_1 = __webpack_require__(567);
 	var decorators_1 = __webpack_require__(299);
-	__webpack_require__(799);
+	__webpack_require__(802);
 	var ContactPageComponent = (function (_super) {
 	    __extends(ContactPageComponent, _super);
 	    function ContactPageComponent(props) {
@@ -33600,95 +33826,6 @@ webpackJsonp([0],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
 
 /***/ },
-/* 799 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(800);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(303)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(true) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept(800, function() {
-				var newContent = __webpack_require__(800);
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 800 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(302)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".contactpage {\n  background-color: #EEE;\n}\n.contactpage .contactdesc {\n  background-color: white;\n}\n.contactpage .contactdesc .photo {\n  float: left;\n  background-color: rgba(255, 255, 255, 0.5);\n  width: 200px;\n  height: 200px;\n  border-radius: 50%;\n  margin-right: 80px;\n  margin-bottom: 1rem;\n  background-size: cover;\n  background-position: center;\n}\n.contactpage .contactdesc h2 {\n  font-size: 30pt;\n  font-weight: 300;\n}\n.contactpage .contactdesc .details {\n  overflow: hidden;\n}\n.contactpage .contactdesc .takecontact {\n  margin-top: 1em;\n}\n.contactpage .contactdesc .takecontact button {\n  margin-right: 8px;\n}\n.contactpage .contact-thematiques {\n  background-color: #EEE;\n}\n.contactpage .thematiques-items {\n  display: flex;\n  flex-flow: row wrap;\n}\n.contactpage .thematiques-items .contact-thematique {\n  width: 200px;\n  border: 1px solid #DDD;\n  background-color: #FFF;\n  padding: 16px;\n  margin: 0 4px 4px 0;\n  box-sizing: border-box;\n}\n.contactpage .thematiques-items .contact-thematique h4 {\n  margin-top: 0;\n  font-size: 20pt;\n  font-weight: 300;\n  text-transform: uppercase;\n}\n.contactpage .thematiques-items .contact-thematique h5 {\n  margin-bottom: 0.2em;\n}\n@media screen and (max-width: 800px) {\n  .contactpage .contactdesc .photo {\n    float: none;\n    margin: auto;\n  }\n  .contactpage .thematiques-items {\n    display: block;\n  }\n  .contactpage .thematiques-items .contact-thematique {\n    width: 100%;\n  }\n}\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 801 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(24), ReactMount = __webpack_require__(26), React = __webpack_require__(91); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-	
-	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var React = __webpack_require__(91);
-	var dynamicpage_1 = __webpack_require__(701);
-	var react_redux_1 = __webpack_require__(276);
-	__webpack_require__(802);
-	var ThematiqueDetailPageComponent = (function (_super) {
-	    __extends(ThematiqueDetailPageComponent, _super);
-	    function ThematiqueDetailPageComponent() {
-	        _super.apply(this, arguments);
-	    }
-	    ThematiqueDetailPageComponent.prototype.render = function () {
-	        var thematiqueid = this.props.params.thematiqueid;
-	        var thematique = this.props.thematiques.thematiques.filter(function (t) { return t.id == thematiqueid; })[0];
-	        var context = {
-	            thematique: thematique,
-	            entity: thematique,
-	            entitySchema: this.props.entities.schemas.thematique
-	        };
-	        return React.createElement(dynamicpage_1.DynamicPage, {template: "thematique", context: context, user: this.props.user, event: this.props.event, visualTheme: this.props.visualTheme, templates: this.props.templates});
-	    };
-	    return ThematiqueDetailPageComponent;
-	}(React.Component));
-	exports.ThematiqueDetailPageComponent = ThematiqueDetailPageComponent;
-	function mapStateToProps(state) {
-	    return {
-	        user: state.user,
-	        event: state.event.current,
-	        templates: state.event.templates,
-	        thematiques: state.event.thematiques,
-	        entities: state.event.entities,
-	    };
-	}
-	exports.ThematiqueDetailPage = react_redux_1.connect(mapStateToProps)(ThematiqueDetailPageComponent);
-	
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(293); if (makeExportsHot(module, __webpack_require__(91))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "thematique.tsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
-
-/***/ },
 /* 802 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -33723,7 +33860,7 @@ webpackJsonp([0],[
 	
 	
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, ".contactpage {\n  background-color: #EEE;\n}\n.contactpage .contactdesc {\n  background-color: white;\n}\n.contactpage .contactdesc .photo {\n  float: left;\n  background-color: rgba(255, 255, 255, 0.5);\n  width: 200px;\n  height: 200px;\n  border-radius: 50%;\n  margin-right: 80px;\n  margin-bottom: 1rem;\n  background-size: cover;\n  background-position: center;\n}\n.contactpage .contactdesc h2 {\n  font-size: 30pt;\n  font-weight: 300;\n}\n.contactpage .contactdesc .details {\n  overflow: hidden;\n}\n.contactpage .contactdesc .takecontact {\n  margin-top: 1em;\n}\n.contactpage .contactdesc .takecontact button {\n  margin-right: 8px;\n}\n.contactpage .contact-thematiques {\n  background-color: #EEE;\n}\n.contactpage .thematiques-items {\n  display: flex;\n  flex-flow: row wrap;\n}\n.contactpage .thematiques-items .contact-thematique {\n  width: 200px;\n  border: 1px solid #DDD;\n  background-color: #FFF;\n  padding: 16px;\n  margin: 0 4px 4px 0;\n  box-sizing: border-box;\n}\n.contactpage .thematiques-items .contact-thematique h4 {\n  margin-top: 0;\n  font-size: 20pt;\n  font-weight: 300;\n  text-transform: uppercase;\n}\n.contactpage .thematiques-items .contact-thematique h5 {\n  margin-bottom: 0.2em;\n}\n@media screen and (max-width: 800px) {\n  .contactpage .contactdesc .photo {\n    float: none;\n    margin: auto;\n  }\n  .contactpage .thematiques-items {\n    display: block;\n  }\n  .contactpage .thematiques-items .contact-thematique {\n    width: 100%;\n  }\n}\n", ""]);
 	
 	// exports
 
@@ -33735,11 +33872,100 @@ webpackJsonp([0],[
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(24), ReactMount = __webpack_require__(26), React = __webpack_require__(91); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 	
 	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var React = __webpack_require__(91);
+	var dynamicpage_1 = __webpack_require__(701);
+	var react_redux_1 = __webpack_require__(276);
+	__webpack_require__(805);
+	var ThematiqueDetailPageComponent = (function (_super) {
+	    __extends(ThematiqueDetailPageComponent, _super);
+	    function ThematiqueDetailPageComponent() {
+	        _super.apply(this, arguments);
+	    }
+	    ThematiqueDetailPageComponent.prototype.render = function () {
+	        var thematiqueid = this.props.params.thematiqueid;
+	        var thematique = this.props.thematiques.thematiques.filter(function (t) { return t.id == thematiqueid; })[0];
+	        var context = {
+	            thematique: thematique,
+	            entity: thematique,
+	            entitySchema: this.props.entities.schemas.thematique
+	        };
+	        return React.createElement(dynamicpage_1.DynamicPage, {template: "thematique", context: context, user: this.props.user, event: this.props.event, visualTheme: this.props.visualTheme, templates: this.props.templates});
+	    };
+	    return ThematiqueDetailPageComponent;
+	}(React.Component));
+	exports.ThematiqueDetailPageComponent = ThematiqueDetailPageComponent;
+	function mapStateToProps(state) {
+	    return {
+	        user: state.user,
+	        event: state.event.current,
+	        templates: state.event.templates,
+	        thematiques: state.event.thematiques,
+	        entities: state.event.entities,
+	    };
+	}
+	exports.ThematiqueDetailPage = react_redux_1.connect(mapStateToProps)(ThematiqueDetailPageComponent);
+	
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(293); if (makeExportsHot(module, __webpack_require__(91))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "thematique.tsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
+
+/***/ },
+/* 805 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(806);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(303)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(true) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept(806, function() {
+				var newContent = __webpack_require__(806);
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 806 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(302)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 807 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(24), ReactMount = __webpack_require__(26), React = __webpack_require__(91); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	
+	"use strict";
 	var redux_1 = __webpack_require__(263);
-	var redux_thunk_1 = __webpack_require__(805);
+	var redux_thunk_1 = __webpack_require__(808);
 	var react_router_redux_1 = __webpack_require__(551);
-	var promise_1 = __webpack_require__(806);
-	var services_1 = __webpack_require__(807);
+	var promise_1 = __webpack_require__(809);
+	var services_1 = __webpack_require__(810);
 	function configureStore(routerHistory, initialState) {
 	    var store = redux_1.createStore(services_1.rootReducer, redux_1.compose.apply(void 0, [redux_1.applyMiddleware.apply(void 0, _getMiddleware(routerHistory))].concat(_getEnhancers())));
 	    if (true)
@@ -33766,8 +33992,8 @@ webpackJsonp([0],[
 	}
 	function _enableHotLoader(store) {
 	    if (true) {
-	        module.hot.accept(807, function () {
-	            var nextRootReducer = __webpack_require__(807);
+	        module.hot.accept(810, function () {
+	            var nextRootReducer = __webpack_require__(810);
 	            store.replaceReducer(nextRootReducer);
 	        });
 	    }
@@ -33780,8 +34006,8 @@ webpackJsonp([0],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
 
 /***/ },
-/* 805 */,
-/* 806 */
+/* 808 */,
+/* 809 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(24), ReactMount = __webpack_require__(26), React = __webpack_require__(91); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -33829,7 +34055,7 @@ webpackJsonp([0],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
 
 /***/ },
-/* 807 */
+/* 810 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(24), ReactMount = __webpack_require__(26), React = __webpack_require__(91); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -33854,13 +34080,13 @@ webpackJsonp([0],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
 
 /***/ },
-/* 808 */
+/* 811 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(809);
+	var content = __webpack_require__(812);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(303)(content, {});
@@ -33869,8 +34095,8 @@ webpackJsonp([0],[
 	if(true) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept(809, function() {
-				var newContent = __webpack_require__(809);
+			module.hot.accept(812, function() {
+				var newContent = __webpack_require__(812);
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -33880,7 +34106,7 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 809 */
+/* 812 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(302)();
@@ -33888,19 +34114,19 @@ webpackJsonp([0],[
 	
 	
 	// module
-	exports.push([module.id, "h1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: 'Dosis', 'Segoe UI', 'Helvetica';\n}\nbutton,\na[role=button] {\n  background-color: #df1976;\n  color: white;\n  font-family: 'Dosis', 'Segoe UI', 'Helvetica';\n  padding: 0.3em 1em;\n  border: 2px solid #df1976;\n  font-size: 1rem;\n  text-decoration: none;\n  margin: 0;\n  vertical-align: middle;\n}\nbutton:hover,\na[role=button]:hover {\n  background-color: #ea4190;\n}\nbutton:active,\na[role=button]:active {\n  background-color: #b1145e;\n}\nbutton:disabled,\na[role=button]:disabled {\n  background-color: #555;\n  border-color: #666;\n  opacity: 0.5;\n}\nbutton.linkbtn,\na[role=button].linkbtn {\n  color: #ff7430;\n  background-color: transparent;\n  border: none;\n}\n.clickable,\na,\nbutton,\ninput[type=button] {\n  touch-action: manipulation;\n  cursor: pointer;\n}\n.back-dataform h3,\n.back-dataform h4,\n.back-dataform h5,\n.back-dataform h6 {\n  margin-top: 0;\n}\n.back-dataform h4 {\n  color: #555;\n}\n.back-dataform h5 {\n  color: #555;\n}\n.back-dataform .field {\n  margin-bottom: 0.4em;\n  display: flex;\n  align-items: center;\n}\n.back-dataform .field > label:not(.forcheckbox) {\n  width: 200px;\n  text-align: right;\n  margin-right: 20px;\n}\n.back-dataform .field .stretch {\n  flex: 1;\n}\n.back-dataform .fieldbloc {\n  padding: 8px;\n  border: 1px solid #EEE;\n  margin-bottom: 0.4em;\n}\n.back-dataform input[type=text],\n.back-dataform input[type=number],\n.back-dataform input[type=mail],\n.back-dataform input[type=url],\n.back-dataform textarea,\n.back-dataform select {\n  box-sizing: border-box;\n  border: 1px solid #DDD;\n  padding: 0.3em 0.5em;\n}\n.back-dataform input[type=text]:focus,\n.back-dataform input[type=number]:focus,\n.back-dataform input[type=mail]:focus,\n.back-dataform input[type=url]:focus,\n.back-dataform textarea:focus,\n.back-dataform select:focus {\n  border-color: #ff7430;\n}\n.back-dataform textarea {\n  display: block;\n  height: 100px;\n}\n.clearfix {\n  display: block;\n}\n.clearfix:after {\n  content: \".\";\n  display: block;\n  clear: both;\n  visibility: hidden;\n  line-height: 0;\n  height: 0;\n}\n", ""]);
+	exports.push([module.id, "h1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: 'Dosis', 'Segoe UI', 'Helvetica';\n}\nbutton,\na[role=button] {\n  background-color: #df1976;\n  color: white;\n  font-family: 'Dosis', 'Segoe UI', 'Helvetica';\n  padding: 0.3em 1em;\n  border: 2px solid #df1976;\n  font-size: 1rem;\n  text-decoration: none;\n  margin: 0;\n  vertical-align: middle;\n  display: inline-block;\n  box-sizing: border-box;\n}\nbutton:hover,\na[role=button]:hover {\n  background-color: #ea4190;\n}\nbutton:active,\na[role=button]:active {\n  background-color: #b1145e;\n}\nbutton:disabled,\na[role=button]:disabled {\n  background-color: #555;\n  border-color: #666;\n  opacity: 0.5;\n}\nbutton.linkbtn,\na[role=button].linkbtn {\n  color: #ff7430;\n  background-color: transparent;\n  border: none;\n}\n.clickable,\na,\nbutton,\ninput[type=button] {\n  touch-action: manipulation;\n  cursor: pointer;\n}\n.back-dataform h3,\n.back-dataform h4,\n.back-dataform h5,\n.back-dataform h6 {\n  margin-top: 0;\n}\n.back-dataform h4 {\n  color: #555;\n}\n.back-dataform h5 {\n  color: #555;\n}\n.back-dataform .field {\n  margin-bottom: 0.4em;\n  display: flex;\n  align-items: center;\n}\n.back-dataform .field > label:not(.forcheckbox) {\n  width: 200px;\n  text-align: right;\n  margin-right: 20px;\n}\n.back-dataform .field .stretch {\n  flex: 1;\n}\n.back-dataform .fieldbloc {\n  padding: 8px;\n  border: 1px solid #EEE;\n  margin-bottom: 0.4em;\n}\n.back-dataform input[type=text],\n.back-dataform input[type=number],\n.back-dataform input[type=mail],\n.back-dataform input[type=url],\n.back-dataform textarea,\n.back-dataform select {\n  box-sizing: border-box;\n  border: 1px solid #DDD;\n  padding: 0.3em 0.5em;\n}\n.back-dataform input[type=text]:focus,\n.back-dataform input[type=number]:focus,\n.back-dataform input[type=mail]:focus,\n.back-dataform input[type=url]:focus,\n.back-dataform textarea:focus,\n.back-dataform select:focus {\n  border-color: #ff7430;\n}\n.back-dataform textarea {\n  display: block;\n  height: 100px;\n}\n.clearfix {\n  display: block;\n}\n.clearfix:after {\n  content: \".\";\n  display: block;\n  clear: both;\n  visibility: hidden;\n  line-height: 0;\n  height: 0;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 810 */
+/* 813 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(811);
+	var content = __webpack_require__(814);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(303)(content, {});
@@ -33909,8 +34135,8 @@ webpackJsonp([0],[
 	if(true) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept(811, function() {
-				var newContent = __webpack_require__(811);
+			module.hot.accept(814, function() {
+				var newContent = __webpack_require__(814);
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -33920,7 +34146,7 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 811 */
+/* 814 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(302)();
