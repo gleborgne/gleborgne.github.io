@@ -1,0 +1,23 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+			<radialGradient id="fire_orb" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+				<stop offset="0%" stop-color="#FFB3B3"/>
+				<stop offset="50%" stop-color="#FF2D2D"/>
+				<stop offset="100%" stop-color="#8B0000"/>
+		</radialGradient>
+		<radialGradient id="fire_reflect_grad" cx="50%" cy="50%" r="50%">
+			<stop offset="0%" stop-color="#fff" stop-opacity="0.7"/>
+			<stop offset="70%" stop-color="#fff" stop-opacity="0.2"/>
+			<stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+		</radialGradient>
+		<radialGradient id="fire_shadow_grad" cx="50%" cy="50%" r="50%">
+			<stop offset="0%" stop-color="#B22222" stop-opacity="0.5"/>
+			<stop offset="70%" stop-color="#B22222" stop-opacity="0.15"/>
+			<stop offset="100%" stop-color="#B22222" stop-opacity="0"/>
+		</radialGradient>
+	</defs>
+	<circle cx="32" cy="32" r="28" fill="url(#fire_orb)" stroke="#222" stroke-width="2"/>
+	<ellipse cx="44" cy="20" rx="8.5" ry="4.5" fill="url(#fire_reflect_grad)" transform="rotate(45 44 20)"/>
+	<ellipse cx="24" cy="44" rx="13" ry="7" fill="url(#fire_shadow_grad)" transform="rotate(45 24 44)"/>
+		<path d="M32 32 Q36 36, 32 40 Q28 36, 32 32 Z" fill="#FF2D2D" opacity="0.13"/>
+</svg>

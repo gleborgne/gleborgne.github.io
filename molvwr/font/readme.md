@@ -1,1 +1,0 @@
-excellent icon font from http://www.antonps.com/outicons/

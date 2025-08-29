@@ -1,0 +1,23 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<radialGradient id="arcane_orb" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+			<stop offset="0%" stop-color="#E6E6FA"/>
+			<stop offset="60%" stop-color="#8A2BE2"/>
+			<stop offset="100%" stop-color="#4B0082"/>
+		</radialGradient>
+		<radialGradient id="arcane_reflect_grad" cx="50%" cy="50%" r="50%">
+			<stop offset="0%" stop-color="#fff" stop-opacity="0.7"/>
+			<stop offset="70%" stop-color="#fff" stop-opacity="0.2"/>
+			<stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+		</radialGradient>
+		<radialGradient id="arcane_shadow_grad" cx="50%" cy="50%" r="50%">
+			<stop offset="0%" stop-color="#4B0082" stop-opacity="0.5"/>
+			<stop offset="70%" stop-color="#4B0082" stop-opacity="0.15"/>
+			<stop offset="100%" stop-color="#4B0082" stop-opacity="0"/>
+		</radialGradient>
+	</defs>
+	<circle cx="32" cy="32" r="28" fill="url(#arcane_orb)" stroke="#222" stroke-width="2"/>
+	<ellipse cx="44" cy="20" rx="8.5" ry="4.5" fill="url(#arcane_reflect_grad)" transform="rotate(45 44 20)"/>
+	<ellipse cx="24" cy="44" rx="13" ry="7" fill="url(#arcane_shadow_grad)" transform="rotate(45 24 44)"/>
+	<path d="M32 32 Q36 36, 32 40 Q28 36, 32 32 Z" fill="#8A2BE2" opacity="0.13"/>
+</svg>
